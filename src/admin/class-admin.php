@@ -38,7 +38,7 @@ class Admin
             __('Mailcoach'),
             'manage_options',
             'wp-mailcoach',
-            function () { return $this->add_api_keys_callback(); }
+            function () { $this->add_api_keys_callback(); }
         );
     }
 
@@ -46,7 +46,7 @@ class Admin
     {
         // @todo tried to move html to separate file; not working
         // @todo investigate for boilerplate on OOP approach attempt?
-        
+
         echo file_get_contents( plugins_url( 'views/settings.php', __FILE__ ) );
     }
 

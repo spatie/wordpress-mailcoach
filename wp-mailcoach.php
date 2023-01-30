@@ -17,6 +17,10 @@ defined( 'ABSPATH' ) or exit;
 
 use Spatie\WordPressMailcoach\Admin\Admin;
 
+require_once('src/admin/class-admin.php');
+
+require __DIR__ . '/vendor/autoload.php';
+
 if (! class_exists(Admin::class)) {
     if (is_file(__DIR__ . '/vendor/autoload_packages.php')) {
         require_once __DIR__ . '/vendor/autoload_packages.php';
@@ -31,7 +35,9 @@ define('MAILCOACH_PLUGIN_FILE', __FILE__);
 define('MAILCOACH_API_KEY', null);
 define('MAILCOACH_DOMAIN', null);
 
-if ( is_admin() ) {
-    $admin = new Admin();
-    $admin->add_hooks();
+if ( is_admin()) {
+    //$admin = new Admin();
+    //$admin->add_hooks();
 }
+
+// @todo: activation_hook, deactivation_hook & uninstall methods

@@ -15,32 +15,12 @@ return array(
 		'path'    => array( $baseDir . '/src' )
 	),
 	'Spatie\\MailcoachSdk\\' => array(
-		'version' => '1.0.3.0',
+		'version' => '1.0.4.0',
 		'path'    => array( $vendorDir . '/spatie/mailcoach-sdk-php/src' )
 	),
-	'Psr\\Http\\Message\\' => array(
-		'version' => '1.0.1.0',
-		'path'    => array( $vendorDir . '/psr/http-message/src', $vendorDir . '/psr/http-factory/src' )
-	),
-	'Psr\\Http\\Client\\' => array(
-		'version' => '1.0.1.0',
-		'path'    => array( $vendorDir . '/psr/http-client/src' )
-	),
 	'PhpParser\\' => array(
-		'version' => '4.15.2.0',
+		'version' => '4.15.3.0',
 		'path'    => array( $vendorDir . '/nikic/php-parser/lib/PhpParser' )
-	),
-	'GuzzleHttp\\Psr7\\' => array(
-		'version' => '2.4.3.0',
-		'path'    => array( $vendorDir . '/guzzlehttp/psr7/src' )
-	),
-	'GuzzleHttp\\Promise\\' => array(
-		'version' => '1.5.2.0',
-		'path'    => array( $vendorDir . '/guzzlehttp/promises/src' )
-	),
-	'GuzzleHttp\\' => array(
-		'version' => '7.5.0.0',
-		'path'    => array( $vendorDir . '/guzzlehttp/guzzle/src' )
 	),
 	'Doctrine\\Instantiator\\' => array(
 		'version' => '2.0.0.0',
