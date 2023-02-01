@@ -7,16 +7,16 @@ class Settings
     private string $apiToken = '';
     private string $apiDomain = '';
 
-    public function initializeHooks()
+    public function initializeHooks(): void
     {
-        add_action('admin_init', fn() => $this->initializeSettings());
-        add_action('admin_menu', fn() => $this->createMenu());
+        add_action('admin_init', fn () => $this->initializeSettings());
+        add_action('admin_menu', fn () => $this->createMenu());
 
-        add_action('admin_post_nopriv_process_form', fn() => $this->submitSettings());
-        add_action('admin_post_process_form', fn() => $this->submitSettings());
+        add_action('admin_post_nopriv_process_form', fn () => $this->submitSettings());
+        add_action('admin_post_process_form', fn () => $this->submitSettings());
     }
 
-    public function createMenu()
+    public function createMenu(): void
     {
         add_menu_page(
             __('Mailcoach'),
@@ -28,18 +28,18 @@ class Settings
         );
     }
 
-    public function initializeSettings()
+    public function initializeSettings(): void
     {
         $this->apiToken = get_option('MAILCOACH_API_TOKEN');
         $this->apiDomain = get_option('MAILCOACH_API_DOMAIN');
     }
 
-    function showSettingsMenu()
+    public function showSettingsMenu(): void
     {
         ?>
         <div class="wrap"><div id="icon-tools" class="icon32"></div>
             <h2>Mailcoach API Key</h2>
-            <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="POST">
+            <form action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="POST">
                 <input type="text" name="mailcoach_api_key" placeholder="Enter API Key"  size="45" value="<?php echo get_option('mailcoach_api_key'); ?>">
                 <br /><br />
                 <input type="url" name="mailcoach_domain" placeholder="Enter Domain"  size="45" value="<?php echo get_option('mailcoach_domain'); ?>">
@@ -51,13 +51,13 @@ class Settings
         <?php
     }
 
-    function submitSettings()
+    public function submitSettings(): void
     {
         if (isset($_POST['mailcoach_api_key'])) {
-            $api_key = sanitize_text_field( $_POST['mailcoach_api_key'] );
+            $api_key = sanitize_text_field($_POST['mailcoach_api_key']);
             $api_exists = get_option('mailcoach_api_key');
 
-            if (!empty($api_key) && !empty($api_exists)) {
+            if (! empty($api_key) && ! empty($api_exists)) {
                 update_option('mailcoach_api_key', $api_key);
             } else {
                 add_option('mailcoach_api_key', $api_key);
@@ -65,10 +65,10 @@ class Settings
         }
 
         if (isset($_POST['mailcoach_domain'])) {
-            $api_key = sanitize_text_field( $_POST['mailcoach_domain'] );
+            $api_key = sanitize_text_field($_POST['mailcoach_domain']);
             $api_exists = get_option('mailcoach_domain');
 
-            if (!empty($api_key) && !empty($api_exists)) {
+            if (! empty($api_key) && ! empty($api_exists)) {
                 update_option('mailcoach_domain', $api_key);
             } else {
                 add_option('mailcoach_domain', $api_key);
