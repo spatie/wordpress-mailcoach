@@ -4,13 +4,13 @@ namespace Spatie\WordpressMailcoach\Admin;
 
 class Settings
 {
-    private string $apiToken;
-    private string $apiDomain;
+    private string $apiToken = '';
+    private string $apiDomain = '';
 
     public function initializeHooks()
     {
-        add_action('admin_menu', fn() => $this->createMenu());
         add_action('admin_init', fn() => $this->initializeSettings());
+        add_action('admin_menu', fn() => $this->createMenu());
 
         add_action('admin_post_nopriv_process_form', fn() => $this->submitSettings());
         add_action('admin_post_process_form', fn() => $this->submitSettings());

@@ -31,7 +31,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\WordPressMailcoach\\": "src"
+            "Spatie\\WordPressMailcoach\\": ""
         }
     },
     "autoload-dev": {
