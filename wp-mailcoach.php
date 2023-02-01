@@ -1,43 +1,68 @@
 <?php
 
+/**
+ * The plugin bootstrap file
+ *
+ * This file is read by WordPress to generate the plugin information in the plugin
+ * admin area. This file also includes all the dependencies used by the plugin,
+ * registers the activation and deactivation functions, and defines a function
+ * that starts the plugin.
+ *
+ * @link              https://mailcoach.app
+ * @since             1.0.0
+ * @package           Mailcoach
+ *
+ * @wordpress-plugin
+ * Plugin Name:       Mailcoach
+ * Plugin URI:        https://github.com/spatie/wordpress-mailcoach
+ * Description:       Show a summary of your Mailcoach campaigns, lists and templates.
+ * Version:           1.0.0
+ * Author:            Spatie
+ * Author URI:        https://spatie.be
+ * License:           MIT
+ * Text Domain:       mailcoach
+ * Domain Path:       /Languages
+ * Requires PHP:      8.0
+ */
+
+namespace Spatie\WordpressMailcoach;
+
+use Spatie\WordpressMailcoach\Includes\Activator;
+use Spatie\WordpressMailcoach\Includes\Main;
+
 // Prevent direct file access
 defined( 'ABSPATH' ) or exit;
 
-/**
- * Plugin Name: Spatie Mailcoach
- * Plugin URI: https://github.com/spatie/wordpress-mailcoach
- * Description: Show a summary of your Mailcoach campaigns, lists and templates.
- * Version: 0.0.0
- * Author: Spatie
- * Author URI: https://spatie.be
- * License: MIT
- * Requires PHP: 8.0
- * Tested up to: 6.1
- */
+// Autoloader
+require_once plugin_dir_path(__FILE__) . 'Autoloader.php';
 
-use Spatie\WordPressMailcoach\Admin\Admin;
-
-require_once('src/admin/class-admin.php');
-
-require __DIR__ . '/vendor/autoload.php';
-
-if (! class_exists(Admin::class)) {
-    if (is_file(__DIR__ . '/vendor/autoload_packages.php')) {
-        require_once __DIR__ . '/vendor/autoload_packages.php';
-    }
-}
-
-// bootstrap the core plugin
-// @todo can this be changed to constants?
-define('MAILCOACH_VERSION', '0.0.0');
-define('MAILCOACH_PLUGIN_DIR', __DIR__);
-define('MAILCOACH_PLUGIN_FILE', __FILE__);
+define('MAILCOACH_VERSION', '1.0.0');
 define('MAILCOACH_API_KEY', null);
 define('MAILCOACH_DOMAIN', null);
+define('MAILCOACH_PLUGIN_DIR', __DIR__);
+define('MAILCOACH_PLUGIN_FILE', __FILE__);
 
-if ( is_admin()) {
-    //$admin = new Admin();
-    //$admin->add_hooks();
+function activate_mailcoach() {
+    require_once plugin_dir_path( __FILE__ ) . 'includes/activator.php';
+    Activator::activate();
 }
 
-// @todo: activation_hook, deactivation_hook & uninstall methods
+register_activation_hook( __FILE__, 'activate_mailcoach' );
+
+/**
+ * Begins execution of the plugin.
+ *
+ * Since everything within the plugin is registered via hooks
+ * kicking off the plugin from this point in the file does
+ * not affect the page life cycle.
+ *
+ * @since    1.0.0
+ */
+function runPlugin(): void
+{
+    require_once plugin_dir_path( __FILE__ ) . 'includes/main.php';
+    $plugin = new Main();
+    $plugin->run();
+}
+
+runPlugin();
