@@ -28,10 +28,11 @@
 namespace Spatie\WordpressMailcoach;
 
 use Spatie\WordPressMailcoach\includes\Activator;
+use Spatie\WordPressMailcoach\Includes\Deactivator;
 use Spatie\WordPressMailcoach\includes\Main;
 
 // Prevent direct file access
-defined( 'ABSPATH' ) or exit;
+defined('ABSPATH') or exit;
 
 // Autoloader
 require_once plugin_dir_path(__FILE__) . 'Autoloader.php';
@@ -42,12 +43,19 @@ define('MAILCOACH_DOMAIN', null);
 define('MAILCOACH_PLUGIN_DIR', __DIR__);
 define('MAILCOACH_PLUGIN_FILE', __FILE__);
 
-function activate_mailcoach() {
-    require_once plugin_dir_path( __FILE__ ) . 'Includes/activator.php';
+function activate_mailcoach()
+{
+    require_once plugin_dir_path(__FILE__) . 'Includes/Activator.php.php';
     Activator::activate();
 }
 
-register_activation_hook( __FILE__, 'activate_mailcoach' );
+function deactivate_mailcoach()
+{
+    require_once plugin_dir_path(__FILE__) . 'Includes/Deactivator.php';
+    Deactivator::deactivate();
+}
+
+register_activation_hook(__FILE__, 'activate_mailcoach');
 
 /**
  * Begins execution of the plugin.
@@ -60,7 +68,7 @@ register_activation_hook( __FILE__, 'activate_mailcoach' );
  */
 function runPlugin(): void
 {
-    require_once plugin_dir_path( __FILE__ ) . 'Includes/Main.php';
+    require_once plugin_dir_path(__FILE__) . 'Includes/Main.php';
     $plugin = new Main();
     $plugin->run();
 }

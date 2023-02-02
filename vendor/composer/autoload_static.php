@@ -146,8 +146,8 @@ class ComposerStaticInite62b809dd1cd8002d3c4ad852630d1ff
         ),
         'Spatie\\WordPressMailcoach\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/admin',
-            1 => __DIR__ . '/../..' . '/includes',
+            0 => __DIR__ . '/../..' . '/Admin',
+            1 => __DIR__ . '/../..' . '/Includes',
         ),
         'Spatie\\MailcoachSdk\\' => 
         array (

@@ -32,7 +32,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\WordPressMailcoach\\": ["admin", "includes"]
+            "Spatie\\WordPressMailcoach\\": ["Admin", "Includes"]
         }
     },
     "autoload-dev": {

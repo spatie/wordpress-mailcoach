@@ -45,6 +45,7 @@ class Settings
 
     public function initializeSettings(): void
     {
+        // Keep in sync with allKeys()
         $this->apiToken = get_option('MAILCOACH_API_TOKEN');
         $this->apiDomain = get_option('MAILCOACH_API_DOMAIN');
     }
@@ -101,5 +102,13 @@ class Settings
     public function apiDomain(): string
     {
         return $this->apiDomain;
+    }
+
+    public function keys(): array
+    {
+        return [
+            'MAILCOACH_API_TOKEN',
+            'MAILCOACH_API_DOMAIN',
+        ];
     }
 }
