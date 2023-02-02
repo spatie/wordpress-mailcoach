@@ -5,6 +5,11 @@ namespace Spatie\WordpressMailcoach\Includes;
 use Spatie\WordPressMailcoach\admin\Admin;
 use Spatie\WordPressMailcoach\admin\Settings;
 
+// If this file is called directly, abort.
+if (! defined('ABSPATH')) {
+    exit;
+}
+
 class Main
 {
     public function run(): void

@@ -2,9 +2,9 @@
 
 namespace Spatie\WordpressMailcoach\Admin;
 
-// If this file is called directly, abort.
 use Spatie\WordPressMailcoach\MailcoachApi;
 
+// If this file is called directly, abort.
 if (! defined('ABSPATH')) {
     exit;
 }
