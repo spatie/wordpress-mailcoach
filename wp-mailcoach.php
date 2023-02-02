@@ -56,6 +56,7 @@ function deactivate_mailcoach()
 }
 
 register_activation_hook(__FILE__, 'activate_mailcoach');
+register_deactivation_hook( __FILE__, 'deactivate_mailcoach' );
 
 /**
  * Begins execution of the plugin.
