@@ -22,7 +22,6 @@ class Main
         if (is_admin()) {
             require_once plugin_dir_path(__FILE__) . '../Admin/settings.php';
             $settings = Settings::make();
-            //var_export($settings->apiEndpoint());die;
 
             require_once plugin_dir_path(__FILE__) . '../Admin/Admin.php';
             $admin = Admin::fromSettings($settings);

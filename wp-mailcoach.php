@@ -22,7 +22,7 @@
  * License:           MIT
  * Text Domain:       mailcoach
  * Domain Path:       /Languages
- * Requires PHP:      8.0
+ * Requires PHP:      7.4
  */
 
 namespace Spatie\WordpressMailcoach;
@@ -45,7 +45,7 @@ define('MAILCOACH_PLUGIN_FILE', __FILE__);
 
 function activate_mailcoach()
 {
-    require_once plugin_dir_path(__FILE__) . 'Includes/Activator.php.php';
+    require_once plugin_dir_path(__FILE__) . 'Includes/Activator.php';
     Activator::activate();
 }
 
@@ -56,17 +56,8 @@ function deactivate_mailcoach()
 }
 
 register_activation_hook(__FILE__, 'activate_mailcoach');
-register_deactivation_hook( __FILE__, 'deactivate_mailcoach' );
+register_deactivation_hook(__FILE__, 'deactivate_mailcoach');
 
-/**
- * Begins execution of the plugin.
- *
- * Since everything within the plugin is registered via hooks
- * kicking off the plugin from this point in the file does
- * not affect the page life cycle.
- *
- * @since    1.0.0
- */
 function runPlugin(): void
 {
     require_once plugin_dir_path(__FILE__) . 'Includes/Main.php';

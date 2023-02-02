@@ -34,6 +34,7 @@ class Admin
         add_action('wp_enqueue_scripts', fn () => $this->loadScripts());
 
         add_action('admin_menu', fn () => $this->createMenu());
+        add_action('admin_menu', fn () => $this->createFormsSubMenu());
     }
 
     public function loadScripts(): void
@@ -48,9 +49,21 @@ class Admin
             __('Mailcoach'),
             __('Mailcoach'),
             'manage_options',
-            'mailcoach-settings',
+            'mailcoach',
             fn () => $this->createHomepage(),
             'dashicons-email',
+        );
+    }
+
+    public function createFormsSubMenu(): void
+    {
+        add_submenu_page(
+            'mailcoach',
+            __('Forms', 'mailcoach'),
+            __('Forms', 'mailcoach'),
+            'manage_options',
+            'mailcoach-forms',
+            fn () => $this->createFormsSubPage(),
         );
     }
 
@@ -64,5 +77,11 @@ class Admin
 
             include __DIR__ . '/views/show-email-lists.php';
         }
+    }
+
+    public function createFormsSubPage(): void
+    {
+        echo '<h2>Forms</h2>';
+        echo '<p>Hola</p>';
     }
 }

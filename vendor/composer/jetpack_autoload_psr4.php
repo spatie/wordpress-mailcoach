@@ -74,9 +74,13 @@ return array(
 		'version' => 'dev-main',
 		'path'    => array( $baseDir . '/tests' )
 	),
-	'Spatie\\WordPressMailcoach\\' => array(
+	'Spatie\\WordPressMailcoach\\Includes\\' => array(
 		'version' => 'dev-main',
-		'path'    => array( $baseDir . '/Admin', $baseDir . '/Includes' )
+		'path'    => array( $baseDir . '/Includes' )
+	),
+	'Spatie\\WordPressMailcoach\\Admin\\' => array(
+		'version' => 'dev-main',
+		'path'    => array( $baseDir . '/Admin' )
 	),
 	'Spatie\\MailcoachSdk\\' => array(
 		'version' => '1.0.4.0',
