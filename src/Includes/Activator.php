@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\WordpressMailcoach\Includes;
+namespace Spatie\WordPressMailcoach\Includes;
 
 // If this file is called directly, abort.
 if (! defined('ABSPATH')) {

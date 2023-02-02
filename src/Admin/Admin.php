@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\WordpressMailcoach\Admin;
+namespace Spatie\WordPressMailcoach\Admin;
 
 // If this file is called directly, abort.
 if (! defined('ABSPATH')) {

@@ -38,8 +38,8 @@ class ComposerStaticInite62b809dd1cd8002d3c4ad852630d1ff
             'Symfony\\Component\\Filesystem\\' => 29,
             'Symfony\\Component\\EventDispatcher\\' => 34,
             'Symfony\\Component\\Console\\' => 26,
-            'Spatie\\WordpressMailcoach\\Tests\\' => 32,
-            'Spatie\\WordpressMailcoach\\' => 26,
+            'Spatie\\WordPressMailcoach\\Tests\\' => 32,
+            'Spatie\\WordPressMailcoach\\' => 26,
             'Spatie\\MailcoachSdk\\' => 20,
         ),
         'P' => 
@@ -140,11 +140,11 @@ class ComposerStaticInite62b809dd1cd8002d3c4ad852630d1ff
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
-        'Spatie\\WordpressMailcoach\\Tests\\' => 
+        'Spatie\\WordPressMailcoach\\Tests\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests',
         ),
-        'Spatie\\WordpressMailcoach\\' => 
+        'Spatie\\WordPressMailcoach\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
@@ -1817,12 +1817,12 @@ class ComposerStaticInite62b809dd1cd8002d3c4ad852630d1ff
         'Spatie\\MailcoachSdk\\Resources\\EmailList' => __DIR__ . '/..' . '/spatie/mailcoach-sdk-php/src/Resources/EmailList.php',
         'Spatie\\MailcoachSdk\\Resources\\Subscriber' => __DIR__ . '/..' . '/spatie/mailcoach-sdk-php/src/Resources/Subscriber.php',
         'Spatie\\MailcoachSdk\\Support\\PaginatedResults' => __DIR__ . '/..' . '/spatie/mailcoach-sdk-php/src/Support/PaginatedResults.php',
-        'Spatie\\WordpressMailcoach\\Admin\\Admin' => __DIR__ . '/../..' . '/src/Admin/Admin.php',
-        'Spatie\\WordpressMailcoach\\Admin\\MailcoachApi' => __DIR__ . '/../..' . '/src/Admin/MailcoachApi.php',
-        'Spatie\\WordpressMailcoach\\Admin\\Settings' => __DIR__ . '/../..' . '/src/Admin/Settings.php',
-        'Spatie\\WordpressMailcoach\\Includes\\Activator' => __DIR__ . '/../..' . '/src/Includes/Activator.php',
-        'Spatie\\WordpressMailcoach\\Includes\\Deactivator' => __DIR__ . '/../..' . '/src/Includes/Deactivator.php',
-        'Spatie\\WordpressMailcoach\\Includes\\Main' => __DIR__ . '/../..' . '/src/Includes/Main.php',
+        'Spatie\\WordPressMailcoach\\Admin\\Admin' => __DIR__ . '/../..' . '/src/Admin/Admin.php',
+        'Spatie\\WordPressMailcoach\\Admin\\MailcoachApi' => __DIR__ . '/../..' . '/src/Admin/MailcoachApi.php',
+        'Spatie\\WordPressMailcoach\\Admin\\Settings' => __DIR__ . '/../..' . '/src/Admin/Settings.php',
+        'Spatie\\WordPressMailcoach\\Includes\\Activator' => __DIR__ . '/../..' . '/src/Includes/Activator.php',
+        'Spatie\\WordPressMailcoach\\Includes\\Deactivator' => __DIR__ . '/../..' . '/src/Includes/Deactivator.php',
+        'Spatie\\WordPressMailcoach\\Includes\\Main' => __DIR__ . '/../..' . '/src/Includes/Main.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\Attribute\\AsCommand' => __DIR__ . '/..' . '/symfony/console/Attribute/AsCommand.php',

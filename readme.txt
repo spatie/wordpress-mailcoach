@@ -8,7 +8,7 @@ Tested up to: 6.1
 Stable tag: 1.7.4
 License: MIT
 
-This plugin shows a summary of your Mailcoach campaigns, lists and templates inside the Wordpress control panel.
+This plugin shows a summary of your Mailcoach campaigns, lists and templates inside the WordPress control panel.
 
 == Description ==
 

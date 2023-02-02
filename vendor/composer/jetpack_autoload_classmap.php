@@ -6442,27 +6442,27 @@ return array(
 		'version' => '1.0.5.0',
 		'path'    => $vendorDir . '/spatie/mailcoach-sdk-php/src/Support/PaginatedResults.php'
 	),
-	'Spatie\\WordpressMailcoach\\Admin\\Admin' => array(
+	'Spatie\\WordPressMailcoach\\Admin\\Admin' => array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/src/Admin/Admin.php'
 	),
-	'Spatie\\WordpressMailcoach\\Admin\\MailcoachApi' => array(
+	'Spatie\\WordPressMailcoach\\Admin\\MailcoachApi' => array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/src/Admin/MailcoachApi.php'
 	),
-	'Spatie\\WordpressMailcoach\\Admin\\Settings' => array(
+	'Spatie\\WordPressMailcoach\\Admin\\Settings' => array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/src/Admin/Settings.php'
 	),
-	'Spatie\\WordpressMailcoach\\Includes\\Activator' => array(
+	'Spatie\\WordPressMailcoach\\Includes\\Activator' => array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/src/Includes/Activator.php'
 	),
-	'Spatie\\WordpressMailcoach\\Includes\\Deactivator' => array(
+	'Spatie\\WordPressMailcoach\\Includes\\Deactivator' => array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/src/Includes/Deactivator.php'
 	),
-	'Spatie\\WordpressMailcoach\\Includes\\Main' => array(
+	'Spatie\\WordPressMailcoach\\Includes\\Main' => array(
 		'version' => 'dev-main',
 		'path'    => $baseDir . '/src/Includes/Main.php'
 	),
