@@ -39,8 +39,7 @@ class ComposerStaticInite62b809dd1cd8002d3c4ad852630d1ff
             'Symfony\\Component\\EventDispatcher\\' => 34,
             'Symfony\\Component\\Console\\' => 26,
             'Spatie\\WordPressMailcoach\\Tests\\' => 32,
-            'Spatie\\WordPressMailcoach\\Includes\\' => 35,
-            'Spatie\\WordPressMailcoach\\Admin\\' => 32,
+            'Spatie\\WordPressMailcoach\\' => 26,
             'Spatie\\MailcoachSdk\\' => 20,
         ),
         'P' => 
@@ -145,13 +144,9 @@ class ComposerStaticInite62b809dd1cd8002d3c4ad852630d1ff
         array (
             0 => __DIR__ . '/../..' . '/tests',
         ),
-        'Spatie\\WordPressMailcoach\\Includes\\' => 
+        'Spatie\\WordPressMailcoach\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/Includes',
-        ),
-        'Spatie\\WordPressMailcoach\\Admin\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/Admin',
+            0 => __DIR__ . '/../..' . '/src',
         ),
         'Spatie\\MailcoachSdk\\' => 
         array (

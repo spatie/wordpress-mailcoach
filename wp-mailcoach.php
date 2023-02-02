@@ -25,8 +25,6 @@
  * Requires PHP:      7.4
  */
 
-namespace Spatie\WordpressMailcoach;
-
 use Spatie\WordPressMailcoach\includes\Activator;
 use Spatie\WordPressMailcoach\Includes\Deactivator;
 use Spatie\WordPressMailcoach\includes\Main;
@@ -45,13 +43,13 @@ define('MAILCOACH_PLUGIN_FILE', __FILE__);
 
 function activate_mailcoach()
 {
-    require_once plugin_dir_path(__FILE__) . 'Includes/Activator.php';
+    require_once plugin_dir_path(__FILE__) . 'src/Includes/Activator.php';
     Activator::activate();
 }
 
 function deactivate_mailcoach()
 {
-    require_once plugin_dir_path(__FILE__) . 'Includes/Deactivator.php';
+    require_once plugin_dir_path(__FILE__) . 'src/Includes/Deactivator.php';
     Deactivator::deactivate();
 }
 
@@ -60,7 +58,7 @@ register_deactivation_hook(__FILE__, 'deactivate_mailcoach');
 
 function runPlugin(): void
 {
-    require_once plugin_dir_path(__FILE__) . 'Includes/Main.php';
+    require_once plugin_dir_path(__FILE__) . 'src/Includes/Main.php';
     $plugin = new Main();
     $plugin->run();
 }

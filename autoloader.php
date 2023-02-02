@@ -1,7 +1,5 @@
 <?php
 
-namespace Spatie\WordPressMailcoach;
-
 // If this file is called directly, abort.
 if (!defined('ABSPATH')) exit;
 
@@ -28,7 +26,7 @@ spl_autoload_register(function (string $className): void
     $prefix = 'Spatie\\WordPressMailcoach\\';
 
     // Base directory for the namespace prefix
-    $baseDir = __DIR__ . '/';
+    $baseDir = __DIR__ . '/src/';
 
     // Does the class use the namespace prefix?
     $prefixLength = strlen($prefix);

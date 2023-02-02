@@ -3,7 +3,7 @@
         'name' => 'spatie/wordpress-mailcoach',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'a11bed50448897ded5cb8446d97d43b3492bf48b',
+        'reference' => '598f43aee54f5478d340f23ed0a0c95390851b68',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -406,7 +406,7 @@
         'spatie/wordpress-mailcoach' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'a11bed50448897ded5cb8446d97d43b3492bf48b',
+            'reference' => '598f43aee54f5478d340f23ed0a0c95390851b68',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

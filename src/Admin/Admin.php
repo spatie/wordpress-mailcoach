@@ -17,7 +17,7 @@ class Admin
     {
         $this->settings = $settings;
 
-        require_once plugin_dir_path(__FILE__) . '../Admin/MailcoachApi.php';
+        require_once plugin_dir_path(__DIR__) . 'Admin/MailcoachApi.php';
         $this->mailcoach = MailcoachApi::fromSettings($settings);
     }
 
@@ -39,7 +39,7 @@ class Admin
 
     public function loadScripts(): void
     {
-        wp_register_style('mailcoach_admin_css', plugin_dir_url(__DIR__) . 'assets/admin/css/mailcoach.css');
+        wp_register_style('mailcoach_admin_css', plugin_dir_url(__FILE__) . 'css/mailcoach.css');
         wp_enqueue_style('mailcoach_admin_css');
     }
 
