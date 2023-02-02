@@ -43,7 +43,7 @@ define('MAILCOACH_PLUGIN_DIR', __DIR__);
 define('MAILCOACH_PLUGIN_FILE', __FILE__);
 
 function activate_mailcoach() {
-    require_once plugin_dir_path( __FILE__ ) . 'includes/activator.php';
+    require_once plugin_dir_path( __FILE__ ) . 'Includes/activator.php';
     Activator::activate();
 }
 
@@ -60,7 +60,7 @@ register_activation_hook( __FILE__, 'activate_mailcoach' );
  */
 function runPlugin(): void
 {
-    require_once plugin_dir_path( __FILE__ ) . 'includes/main.php';
+    require_once plugin_dir_path( __FILE__ ) . 'Includes/main.php';
     $plugin = new Main();
     $plugin->run();
 }

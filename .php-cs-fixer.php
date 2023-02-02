@@ -7,7 +7,7 @@ $finder = PhpCsFixer\Finder::create()
         'assets',
     ])
     ->in([
-        __DIR__ . '/Admins',
+        __DIR__ . '/Admin',
         __DIR__ . '/Includes',
     ])
     ->name('*.php')

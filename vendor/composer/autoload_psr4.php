@@ -23,7 +23,7 @@ return array(
     'Symfony\\Component\\EventDispatcher\\' => array($vendorDir . '/symfony/event-dispatcher'),
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
     'Spatie\\WordPressMailcoach\\Tests\\' => array($baseDir . '/tests'),
-    'Spatie\\WordPressMailcoach\\' => array($baseDir . '/'),
+    'Spatie\\WordPressMailcoach\\' => array($baseDir . '/admin', $baseDir . '/includes'),
     'Spatie\\MailcoachSdk\\' => array($vendorDir . '/spatie/mailcoach-sdk-php/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/src'),
     'Psr\\EventDispatcher\\' => array($vendorDir . '/psr/event-dispatcher/src'),

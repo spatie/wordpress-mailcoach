@@ -15,10 +15,11 @@ class Main
     private function defineAdminHooks(): void
     {
         if (is_admin()) {
-            require_once plugin_dir_path(__FILE__) . '../admin/settings.php';
+            require_once plugin_dir_path(__FILE__) . '../Admin/settings.php';
             $settings = new Settings();
 
-            $admin = new Admin($settings);
+            require_once plugin_dir_path(__FILE__) . '../Admin/Admin.php';
+            $admin = Admin::fromSettings($settings);
             $admin->initializeHooks();
         }
     }

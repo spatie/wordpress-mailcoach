@@ -3,7 +3,7 @@
 namespace Spatie\WordpressMailcoach\Admin;
 
 // If this file is called directly, abort.
-use Spatie\MailcoachSdk\Mailcoach;
+use Spatie\WordPressMailcoach\MailcoachApi;
 
 if (! defined('ABSPATH')) {
     exit;
@@ -13,12 +13,19 @@ class Admin
 {
     private Settings $settings;
 
-    private Mailcoach $mailcoach;
+    private MailcoachApi $mailcoach;
 
-    public function __construct(Settings $settings)
+    private function __construct(Settings $settings)
     {
         $this->settings = $settings;
-        $this->mailcoach = new Mailcoach($settings->apiToken(), $settings->apiDomain());
+
+        require_once plugin_dir_path(__FILE__) . '../Admin/MailcoachApi.php';
+        $this->mailcoach = MailcoachApi::fromSettings($settings);
+    }
+
+    public static function fromSettings(Settings $settings): Admin
+    {
+        return new self($settings);
     }
 
     public function initializeHooks(): void
@@ -31,18 +38,7 @@ class Admin
 
     public function loadScripts(): void
     {
-        // @todo move to functions.php
-        static $base = null;
-        if ($base === null) {
-            $base = plugins_url('/', MAILCOACH_PLUGIN_FILE);
-        }
-
-        wp_register_style('mailcoach_admin_css', $base . 'assets/admin/css/mailcoach.css');
+        wp_register_style('mailcoach_admin_css', plugin_dir_url(__DIR__) . 'assets/admin/css/mailcoach.css');
         wp_enqueue_style('mailcoach_admin_css');
-    }
-
-    public function email_lists()
-    {
-        return $this->mailcoach->emailLists();
     }
 }
