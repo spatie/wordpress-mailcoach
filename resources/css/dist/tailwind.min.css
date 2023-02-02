@@ -525,6 +525,22 @@ video {
   display: none;
 }
 
+.w-full {
+  width: 100%;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.p-0 {
+  padding: 0px;
+}
+
+.pb-24 {
+  padding-bottom: 6rem;
+}
+
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -536,4 +552,14 @@ video {
 
 .underline {
   text-decoration-line: underline;
+}
+
+@media (min-width: 768px) {
+  .md\:overflow-visible {
+    overflow: visible;
+  }
+
+  .md\:pb-0 {
+    padding-bottom: 0px;
+  }
 }
