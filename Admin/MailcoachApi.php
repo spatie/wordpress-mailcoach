@@ -14,13 +14,8 @@ class MailcoachApi
         $this->mailcoach = new Mailcoach($apiToken, $apiDomain);
     }
 
-    public static function fromSettings(Settings $settings)
+    public static function fromSettings(Settings $settings): MailcoachApi
     {
         return new self($settings->apiToken(), $settings->apiDomain());
-    }
-
-    public function emailLists()
-    {
-        return $this->mailcoach->emailLists();
     }
 }

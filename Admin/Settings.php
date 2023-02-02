@@ -7,6 +7,16 @@ class Settings
     private string $apiToken = '';
     private string $apiDomain = '';
 
+    private function __construct()
+    {
+        $this->initializeSettings();
+    }
+
+    public static function make(): self
+    {
+        return new self();
+    }
+
     public function initializeHooks(): void
     {
         add_action('admin_init', fn () => $this->initializeSettings());

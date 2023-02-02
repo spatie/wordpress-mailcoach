@@ -16,7 +16,7 @@ class Main
     {
         if (is_admin()) {
             require_once plugin_dir_path(__FILE__) . '../Admin/settings.php';
-            $settings = new Settings();
+            $settings = Settings::make();
 
             require_once plugin_dir_path(__FILE__) . '../Admin/Admin.php';
             $admin = Admin::fromSettings($settings);

@@ -60,7 +60,7 @@ register_activation_hook( __FILE__, 'activate_mailcoach' );
  */
 function runPlugin(): void
 {
-    require_once plugin_dir_path( __FILE__ ) . 'Includes/main.php';
+    require_once plugin_dir_path( __FILE__ ) . 'Includes/Main.php';
     $plugin = new Main();
     $plugin->run();
 }
