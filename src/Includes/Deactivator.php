@@ -1,9 +1,9 @@
 <?php
 
-namespace Spatie\WordPressMailcoach\Includes;
+namespace Spatie\WordpressMailcoach\Includes;
 
 // If this file is called directly, abort.
-use Spatie\WordPressMailcoach\Admin\Settings;
+use Spatie\WordpressMailcoach\Admin\Settings;
 
 if (! defined('ABSPATH')) {
     exit;

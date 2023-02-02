@@ -17,7 +17,7 @@ class Admin
     {
         $this->settings = $settings;
 
-        require_once plugin_dir_path(__DIR__) . 'Admin/MailcoachApi.php';
+        //require_once plugin_dir_path(__DIR__) . 'Admin/MailcoachApi.php';
         $this->mailcoach = MailcoachApi::fromSettings($settings);
     }
 

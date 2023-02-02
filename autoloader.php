@@ -23,10 +23,10 @@ if (!defined('ABSPATH')) exit;
 spl_autoload_register(function (string $className): void
 {
     // Project-specific namespace prefix
-    $prefix = 'Spatie\\WordPressMailcoach\\';
+    $prefix = 'Spatie\\WordpressMailcoach\\';
 
     // Base directory for the namespace prefix
-    $baseDir = __DIR__ . '/src/';
+    $baseDir = __DIR__ . '/';
 
     // Does the class use the namespace prefix?
     $prefixLength = strlen($prefix);

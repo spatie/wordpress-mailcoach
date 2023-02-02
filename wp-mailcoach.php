@@ -25,15 +25,15 @@
  * Requires PHP:      7.4
  */
 
-use Spatie\WordPressMailcoach\includes\Activator;
-use Spatie\WordPressMailcoach\Includes\Deactivator;
-use Spatie\WordPressMailcoach\includes\Main;
+use Spatie\WordpressMailcoach\includes\Activator;
+use Spatie\WordpressMailcoach\Includes\Deactivator;
+use Spatie\WordpressMailcoach\includes\Main;
 
 // Prevent direct file access
 defined('ABSPATH') or exit;
 
 // Autoloader
-require_once plugin_dir_path(__FILE__) . 'Autoloader.php';
+//require_once plugin_dir_path(__FILE__) . 'Autoloader.php';
 
 define('MAILCOACH_VERSION', '1.0.0');
 define('MAILCOACH_API_KEY', null);

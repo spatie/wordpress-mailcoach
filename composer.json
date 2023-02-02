@@ -32,12 +32,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\WordPressMailcoach\\": "src"
+            "Spatie\\WordpressMailcoach\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\WordPressMailcoach\\Tests\\": "tests"
+            "Spatie\\WordpressMailcoach\\Tests\\": "tests"
         }
     },
     "scripts": {

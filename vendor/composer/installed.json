@@ -2724,17 +2724,17 @@
         },
         {
             "name": "spatie/mailcoach-sdk-php",
-            "version": "1.0.4",
-            "version_normalized": "1.0.4.0",
+            "version": "1.0.5",
+            "version_normalized": "1.0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/mailcoach-sdk-php.git",
-                "reference": "5339798ba2b93a2fa203c16b80d61a27d74bb60a"
+                "reference": "22d9606943e9f8c29fbf93c962e3a7f232a051b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/mailcoach-sdk-php/zipball/5339798ba2b93a2fa203c16b80d61a27d74bb60a",
-                "reference": "5339798ba2b93a2fa203c16b80d61a27d74bb60a",
+                "url": "https://api.github.com/repos/spatie/mailcoach-sdk-php/zipball/22d9606943e9f8c29fbf93c962e3a7f232a051b8",
+                "reference": "22d9606943e9f8c29fbf93c962e3a7f232a051b8",
                 "shasum": ""
             },
             "require": {
@@ -2752,7 +2752,7 @@
             "suggest": {
                 "guzzlehttp/guzzle": "Make HTTP requests"
             },
-            "time": "2023-01-19T16:59:45+00:00",
+            "time": "2023-02-02T09:56:07+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -2779,7 +2779,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/mailcoach-sdk-php/issues",
-                "source": "https://github.com/spatie/mailcoach-sdk-php/tree/1.0.4"
+                "source": "https://github.com/spatie/mailcoach-sdk-php/tree/1.0.5"
             },
             "funding": [
                 {
