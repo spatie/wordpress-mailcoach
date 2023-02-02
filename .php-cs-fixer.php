@@ -4,13 +4,11 @@
 $finder = PhpCsFixer\Finder::create()
     ->exclude([
         'vendor',
-        'bootstrap',
-        'storage',
+        'assets',
     ])
     ->in([
-        __DIR__ . '/app',
-        __DIR__ . '/tests',
-        __DIR__ . '/database',
+        __DIR__ . '/Admins',
+        __DIR__ . '/Includes',
     ])
     ->name('*.php')
     ->notName('*.blade.php')

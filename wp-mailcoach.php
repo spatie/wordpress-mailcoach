@@ -27,8 +27,8 @@
 
 namespace Spatie\WordpressMailcoach;
 
-use Spatie\WordpressMailcoach\Includes\Activator;
-use Spatie\WordpressMailcoach\Includes\Main;
+use Spatie\WordPressMailcoach\includes\Activator;
+use Spatie\WordPressMailcoach\includes\Main;
 
 // Prevent direct file access
 defined( 'ABSPATH' ) or exit;

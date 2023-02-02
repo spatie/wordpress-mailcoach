@@ -2,8 +2,8 @@
 
 namespace Spatie\WordpressMailcoach\Includes;
 
-use Spatie\WordPressMailcoach\Admin\Admin;
-use Spatie\WordpressMailcoach\Admin\Settings;
+use Spatie\WordPressMailcoach\admin\Admin;
+use Spatie\WordPressMailcoach\admin\Settings;
 
 class Main
 {

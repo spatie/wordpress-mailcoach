@@ -78,12 +78,12 @@ class Settings
         wp_redirect($_SERVER['HTTP_REFERER']);
     }
 
-    public function apiToken()
+    public function apiToken(): string
     {
         return $this->apiToken;
     }
 
-    public function apiDomain()
+    public function apiDomain(): string
     {
         return $this->apiDomain;
     }

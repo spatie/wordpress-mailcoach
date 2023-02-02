@@ -6,9 +6,17 @@ $vendorDir = dirname(__DIR__);
 $baseDir   = dirname($vendorDir);
 
 return array(
+	'Attribute' => array(
+		'version' => '1.27.0.0',
+		'path'    => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php'
+	),
 	'Automattic\\Jetpack\\Autoloader\\AutoloadGenerator' => array(
 		'version' => '2.11.15.0',
 		'path'    => $vendorDir . '/automattic/jetpack-autoloader/src/AutoloadGenerator.php'
+	),
+	'Normalizer' => array(
+		'version' => '1.27.0.0',
+		'path'    => $vendorDir . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php'
 	),
 	'PHPUnit\\Exception' => array(
 		'version' => '9.5.28.0',
@@ -1686,6 +1694,14 @@ return array(
 		'version' => '3.2.1.0',
 		'path'    => $vendorDir . '/phar-io/version/src/VersionNumber.php'
 	),
+	'PhpToken' => array(
+		'version' => '1.27.0.0',
+		'path'    => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php'
+	),
+	'ReturnTypeWillChange' => array(
+		'version' => '1.27.0.0',
+		'path'    => $vendorDir . '/symfony/polyfill-php81/Resources/stubs/ReturnTypeWillChange.php'
+	),
 	'SebastianBergmann\\CliParser\\AmbiguousOptionException' => array(
 		'version' => '1.0.1.0',
 		'path'    => $vendorDir . '/sebastian/cli-parser/src/exceptions/AmbiguousOptionException.php'
@@ -2486,6 +2502,10 @@ return array(
 		'version' => '3.0.2.0',
 		'path'    => $vendorDir . '/sebastian/version/src/Version.php'
 	),
+	'Stringable' => array(
+		'version' => '1.27.0.0',
+		'path'    => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Stringable.php'
+	),
 	'TheSeer\\Tokenizer\\Exception' => array(
 		'version' => '1.2.1.0',
 		'path'    => $vendorDir . '/theseer/tokenizer/src/Exception.php'
@@ -2517,5 +2537,13 @@ return array(
 	'TheSeer\\Tokenizer\\XMLSerializer' => array(
 		'version' => '1.2.1.0',
 		'path'    => $vendorDir . '/theseer/tokenizer/src/XMLSerializer.php'
+	),
+	'UnhandledMatchError' => array(
+		'version' => '1.27.0.0',
+		'path'    => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php'
+	),
+	'ValueError' => array(
+		'version' => '1.27.0.0',
+		'path'    => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/ValueError.php'
 	),
 );
