@@ -32,11 +32,37 @@ class Admin
 
         add_action('admin_init', fn () => $this->loadScripts());
         add_action('wp_enqueue_scripts', fn () => $this->loadScripts());
+
+        add_action('admin_menu', fn () => $this->createMenu());
     }
 
     public function loadScripts(): void
     {
         wp_register_style('mailcoach_admin_css', plugin_dir_url(__DIR__) . 'assets/admin/css/mailcoach.css');
         wp_enqueue_style('mailcoach_admin_css');
+    }
+
+    public function createMenu(): void
+    {
+        add_menu_page(
+            __('Mailcoach'),
+            __('Mailcoach'),
+            'manage_options',
+            'mailcoach-settings',
+            fn () => $this->createHomepage(),
+            'dashicons-email',
+        );
+    }
+
+    public function createHomepage(): void
+    {
+        include __DIR__ . '/views/show-settings.php';
+
+        if ($this->mailcoach->hasCredentials()) {
+            $lists = $this->mailcoach->emailLists();
+            //var_dump($lists->results()[0]->attributes['name']);die;
+
+            include __DIR__ . '/views/show-email-lists.php';
+        }
     }
 }
