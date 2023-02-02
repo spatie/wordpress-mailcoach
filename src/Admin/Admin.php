@@ -32,6 +32,7 @@ class Admin
 
         add_action('admin_init', fn () => $this->loadScripts());
         add_action('wp_enqueue_scripts', fn () => $this->loadScripts());
+        add_action( 'enqueue_block_editor_assets', fn () => $this->loadScripts());
 
         add_action('admin_menu', fn () => $this->createMenu());
         add_action('admin_menu', fn () => $this->createFormsSubMenu());
@@ -39,7 +40,10 @@ class Admin
 
     public function loadScripts(): void
     {
-        wp_register_style('mailcoach_admin_css', plugin_dir_url(__FILE__) . 'css/mailcoach.css');
+        //wp_register_style('mailcoach_admin_css', plugin_dir_url(__FILE__) . 'css/mailcoach.css');
+        //wp_enqueue_style('mailcoach_admin_css');
+
+        wp_register_style('mailcoach_admin_css', plugin_dir_url(__DIR__) . '../resources/css/dist/tailwind.min.css');
         wp_enqueue_style('mailcoach_admin_css');
     }
 

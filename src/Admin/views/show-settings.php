@@ -1,5 +1,5 @@
 <div class="wrap"><div id="icon-tools" class="icon32"></div>
-    <h2>Mailcoach API Key</h2>
+    <h2 class="text-3xl font-bold underline">Mailcoach API Key</h2>
     <p class="description">
         <?php echo esc_html__( 'You can create an API key on the Profile page of your account.', 'wordpress-mailcoach' ); ?>
     </p>
