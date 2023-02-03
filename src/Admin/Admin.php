@@ -43,7 +43,7 @@ class Admin
         //wp_register_style('mailcoach_admin_css', plugin_dir_url(__FILE__) . 'css/mailcoach.css');
         //wp_enqueue_style('mailcoach_admin_css');
 
-        wp_register_style('mailcoach_admin_css', plugin_dir_url(__DIR__) . '../resources/css/dist/tailwind.min.css');
+        wp_register_style('mailcoach_admin_css', plugin_dir_url(__DIR__) . '../resources/dist/css/tailwind.min.css');
         wp_enqueue_style('mailcoach_admin_css');
     }
 
