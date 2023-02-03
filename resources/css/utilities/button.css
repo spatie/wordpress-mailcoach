@@ -1,4 +1,4 @@
-.button,
+.primary-button,
 input[type='file']::file-selector-button {
     @apply px-6;
     @apply h-10;
@@ -36,14 +36,14 @@ input[type='file']::file-selector-button {
     @apply -left-3;
 }
 
-.button:disabled {
+.primary-button:disabled {
     @apply opacity-50;
     @apply cursor-not-allowed;
 }
 
-.button:not(:disabled):hover,
-.button:not(:disabled):focus,
-.button.dropdown-trigger-open {
+.primary-button:not(:disabled):hover,
+.primary-button:not(:disabled):focus,
+.primary-button.dropdown-trigger-open {
     @apply text-white;
     @apply border-t-black/10;
     @apply border-l-black/10;
@@ -52,11 +52,11 @@ input[type='file']::file-selector-button {
     background-position: 0 0;
 }
 
-.button:not(:disabled):focus {
+.primary-button:not(:disabled):focus {
     @apply border-blue-500;
 }
 
-.button:not(:disabled):active {
+.primary-button:not(:disabled):active {
     @apply shadow-inner;
     @apply translate-y-px;
     @apply border-t-black/10;
@@ -88,12 +88,12 @@ input[type='file']::file-selector-button {
     @apply translate-y-px;
 }
 
-.button + .button {
+.primary-button + .primary-button {
     @apply ml-2;
 }
 
-.button + .button-secondary,
-.button + .button-cancel,
+.primary-button + .button-secondary,
+.primary-button + .button-cancel,
 .button-secondary + .button-secondary {
     @apply ml-4;
 }
@@ -119,7 +119,7 @@ input[type='file']::file-selector-button {
     @apply to-red-700;
 }
 
-.button.button-rounded {
+.primary-button.button-rounded {
     @apply p-0;
     @apply h-6;
     @apply w-6;
@@ -131,7 +131,7 @@ input[type='file']::file-selector-button {
     @apply text-white;
 }
 
-.button.button-green {
+.primary-button.button-green {
     @apply bg-green-800;
     @apply from-green-700/30;
     @apply via-green-700;
@@ -140,7 +140,7 @@ input[type='file']::file-selector-button {
     @apply shadow-green-800/20;
 }
 
-.button.button-green {
+.primary-button.button-green {
     @apply bg-green-700;
     @apply from-green-600/30;
     @apply via-green-600;
@@ -149,7 +149,7 @@ input[type='file']::file-selector-button {
     @apply shadow-green-800/20;
 }
 
-.button.button-orange {
+.primary-button.button-orange {
     @apply bg-orange-700;
     @apply from-orange-600/30;
     @apply via-orange-600;

@@ -1,16 +1,44 @@
-<div class="wrap"><div id="icon-tools" class="icon32"></div>
-    <h2 class="text-3xl font-bold underline">Mailcoach API Key</h2>
-    <p class="description">
-        <?php echo esc_html__( 'You can create an API key on the Profile page of your account.', 'wordpress-mailcoach' ); ?>
-    </p>
-    <form action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="POST">
-        <label for="mailcoach_api_token">API Key</label>
-        <input type="text" name="mailcoach_api_token" placeholder="Enter API Key"  size="45" value="<?php echo get_option('mailcoach_api_token'); ?>">
-        <br /><br />
-        <label for="mailcoach_api_endpoint">API Endpoint</label>
-        <input type="url" name="mailcoach_api_endpoint" placeholder="Enter Endpoint"  size="45" value="<?php echo get_option('mailcoach_api_endpoint'); ?>">
-        <input type="hidden" name="action" value="process_form">
-        <br /><br />
-        <input type="submit" name="submit" id="submit" class="update-button button button-primary" value="Update API Key"  />
-    </form>
-</div>
+<section class="flex-grow min-w-0 flex flex-col">
+    <div>
+        <form class="card-grid" method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="POST">
+            <fieldset class="card form-grid">
+                <div class="flex-none flex">
+                    <h1 class="mt-1 markup-h1 truncate text-3xl font-bold">Mailcoach API Settings</h1>
+                </div>
+
+                <p class="text-xs">
+                    <?php echo esc_html__( 'You can create an API key on the Profile page of your account.', 'wordpress-mailcoach' ); ?>
+                </p>
+
+                <div class="form-legend mt-8">
+                </div>
+
+                <div class="form-field">
+                    <label class="label label-required" for="emailList.default_reply_to_email">
+                        API Token
+                    </label>
+
+                    <input autocomplete="off" type="text" name="mailcoach_api_token" placeholder="Enter API Key" class="input " required value="<?php echo get_option('mailcoach_api_token'); ?>" label="API Token">
+                </div>
+
+                <div class="form-field mt-4">
+                    <label class="label label-required" for="mailcoach_api_endpoint">
+                        API Endpoint
+                    </label>
+
+                    <input autocomplete="off" type="url" name="mailcoach_api_endpoint" id="mailcoach_api_endpoint" class="input " placeholder="Enter Endpoint" required value="<?php echo get_option('mailcoach_api_endpoint'); ?>" label="API Endpoint">
+                </div>
+
+                <input type="hidden" name="action" value="process_form">
+
+                <div class="form-field mt-4">
+                    <button type="submit" name="submit" id="submit" class="primary-button mt-1">
+                        Update API Key
+                    </button>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+
+</section>
