@@ -14,11 +14,11 @@
                 </div>
 
                 <div class="form-field">
-                    <label class="label label-required" for="emailList.default_reply_to_email">
+                    <label class="label label-required" for="mailcoach_api_token">
                         API Token
                     </label>
 
-                    <input autocomplete="off" type="text" name="mailcoach_api_token" placeholder="Enter API Key" class="input " required value="<?php echo anonymizeSensitiveDate(get_option('mailcoach_api_token')); ?>" label="API Token">
+                    <input autocomplete="off" type="text" name="mailcoach_api_token" id="mailcoach_api_token" placeholder="Enter API Key" class="input " required value="<?php echo anonymizeSensitiveDate(get_option('mailcoach_api_token')); ?>" label="API Token">
                 </div>
 
                 <div class="form-field mt-4">
