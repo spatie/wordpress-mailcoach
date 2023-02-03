@@ -1,10 +1,12 @@
 {
     "private": true,
     "scripts": {
-        "watch": "npx tailwindcss -i ./resources/css/admin/tailwind.css -o ./resources/css/dist/tailwind.min.css --watch",
-        "build": "npx tailwindcss -i ./resources/css/admin/tailwind.css -o ./resources/css/dist/tailwind.min.css --minify"
+        "watch": "npx tailwindcss -i ./resources/css/admin/tailwind.css -o ./resources/dist/css/tailwind.min.css --watch",
+        "build": "npx tailwindcss -i ./resources/css/admin/tailwind.css -o ./resources/dist/css/tailwind.min.css --minify"
     },
     "devDependencies": {
+    },
+    "dependencies": {
         "tailwindcss": "^3.2.4"
     }
 }

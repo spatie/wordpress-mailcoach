@@ -1,5 +1,10 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+
+@import '../utilities/button.css';
+@import '../utilities/card.css';
+@import '../utilities/input.css';
+@import '../utilities/link.css';
 @import '../utilities/table.css';
 
-@import 'tailwindcss/base.css';
-@import 'tailwindcss/components.css';
-@import 'tailwindcss/utilities.css';
+@import "tailwindcss/utilities";
