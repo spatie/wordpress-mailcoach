@@ -6,6 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Whoops\\' => array($vendorDir . '/filp/whoops/src/Whoops'),
     'Symfony\\Polyfill\\Php81\\' => array($vendorDir . '/symfony/polyfill-php81'),
     'Symfony\\Polyfill\\Php80\\' => array($vendorDir . '/symfony/polyfill-php80'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
@@ -26,11 +27,20 @@ return array(
     'Spatie\\WordPressMailcoach\\' => array($baseDir . '/src'),
     'Spatie\\MailcoachSdk\\' => array($vendorDir . '/spatie/mailcoach-sdk-php/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/src'),
+    'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src', $vendorDir . '/psr/http-factory/src'),
+    'Psr\\Http\\Client\\' => array($vendorDir . '/psr/http-client/src'),
     'Psr\\EventDispatcher\\' => array($vendorDir . '/psr/event-dispatcher/src'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'Psr\\Cache\\' => array($vendorDir . '/psr/cache/src'),
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
     'PhpCsFixer\\' => array($vendorDir . '/friendsofphp/php-cs-fixer/src'),
+    'Pest\\Plugin\\' => array($vendorDir . '/pestphp/pest-plugin/src'),
+    'Pest\\' => array($vendorDir . '/pestphp/pest/src'),
+    'NunoMaduro\\Collision\\' => array($vendorDir . '/nunomaduro/collision/src'),
+    'MadeByDenis\\WpPestIntegrationTestSetup\\' => array($vendorDir . '/dingo-d/wp-pest-integration-test-setup/src'),
+    'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),
+    'GuzzleHttp\\Promise\\' => array($vendorDir . '/guzzlehttp/promises/src'),
+    'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),
     'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
     'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/src'),
     'Doctrine\\Common\\Annotations\\' => array($vendorDir . '/doctrine/annotations/lib/Doctrine/Common/Annotations'),
@@ -39,6 +49,7 @@ return array(
     'Composer\\Semver\\' => array($vendorDir . '/composer/semver/src'),
     'Composer\\Pcre\\' => array($vendorDir . '/composer/pcre/src'),
     'Composer\\Installers\\' => array($vendorDir . '/composer/installers/src/Composer/Installers'),
+    'Brain\\Monkey\\' => array($vendorDir . '/brain/monkey/src'),
     'Bamarni\\Composer\\Bin\\' => array($vendorDir . '/bamarni/composer-bin-plugin/src'),
     'Automattic\\Jetpack\\Autoloader\\' => array($vendorDir . '/automattic/jetpack-autoloader/src'),
 );
