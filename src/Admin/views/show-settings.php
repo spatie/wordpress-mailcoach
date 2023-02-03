@@ -18,7 +18,7 @@
                         API Token
                     </label>
 
-                    <input autocomplete="off" type="text" name="mailcoach_api_token" placeholder="Enter API Key" class="input " required value="<?php echo get_option('mailcoach_api_token'); ?>" label="API Token">
+                    <input autocomplete="off" type="text" name="mailcoach_api_token" placeholder="Enter API Key" class="input " required value="<?php echo anonymizeSensitiveDate(get_option('mailcoach_api_token')); ?>" label="API Token">
                 </div>
 
                 <div class="form-field mt-4">

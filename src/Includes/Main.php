@@ -27,5 +27,7 @@ class Main
             $admin = Admin::fromSettings($settings);
             $admin->initializeHooks();
         }
+
+        include plugin_dir_path(__DIR__) . 'functions.php';
     }
 }

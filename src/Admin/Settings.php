@@ -40,24 +40,29 @@ class Settings
     public function submitSettings(): void
     {
         if (isset($_POST['mailcoach_api_token'])) {
-            $api_key = sanitize_text_field($_POST['mailcoach_api_token']);
-            $api_exists = get_option('mailcoach_api_token');
+            $apiToken = sanitize_text_field($_POST['mailcoach_api_token']);
+            $storedApiToken = get_option('mailcoach_api_token');
 
-            if (! empty($api_key) && ! empty($api_exists)) {
-                update_option('mailcoach_api_token', $api_key);
+            if (! empty($apiToken) && ! empty($storedApiToken)) {
+                if (
+                    ! $this->lastCharsAreEqual($apiToken, $storedApiToken)
+                    && ! $this->containsAsterixSymbols($apiToken)
+                ) {
+                    update_option('mailcoach_api_token', $apiToken);
+                }
             } else {
-                add_option('mailcoach_api_token', $api_key);
+                add_option('mailcoach_api_token', $apiToken);
             }
         }
 
         if (isset($_POST['mailcoach_api_endpoint'])) {
-            $api_key = sanitize_text_field($_POST['mailcoach_api_endpoint']);
-            $api_exists = get_option('mailcoach_api_endpoint');
+            $apiEndpoint = sanitize_text_field($_POST['mailcoach_api_endpoint']);
+            $storedApiEndpoint = get_option('mailcoach_api_endpoint');
 
-            if (! empty($api_key) && ! empty($api_exists)) {
-                update_option('mailcoach_api_endpoint', $api_key);
+            if (! empty($apiEndpoint) && ! empty($storedApiEndpoint)) {
+                update_option('mailcoach_api_endpoint', $apiEndpoint);
             } else {
-                add_option('mailcoach_api_endpoint', $api_key);
+                add_option('mailcoach_api_endpoint', $apiEndpoint);
             }
         }
 
@@ -80,5 +85,18 @@ class Settings
             'mailcoach_api_token',
             'mailcoach_api_endpoint',
         ];
+    }
+
+    private function lastCharsAreEqual(string $original, string $given): bool
+    {
+        $given = substr($given, -4);
+        $original = substr($original, -4);
+
+        return substr($given, -4) === substr($original, -4);
+    }
+
+    private function containsAsterixSymbols(string $input): bool
+    {
+        return str_contains($input, '*');
     }
 }
