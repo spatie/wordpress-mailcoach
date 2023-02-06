@@ -2,7 +2,7 @@
     @apply flex-grow;
     @apply grid;
     @apply gap-y-6;
-    @apply max-w-full;
+    @apply max-w-[98%];
 }
 
 .card {
@@ -14,6 +14,7 @@
     @apply rounded-md;
     @apply border;
     @apply border-indigo-700/20;
+    @apply max-w-[98%];
 }
 
 .card .card-top-level {

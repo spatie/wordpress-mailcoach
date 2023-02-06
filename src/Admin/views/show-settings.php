@@ -1,7 +1,7 @@
 <section class="flex-grow min-w-0 flex flex-col">
     <div>
         <form class="card-grid" method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="POST">
-            <fieldset class="card form-grid">
+            <fieldset class="card form-grid max-w-[50%]">
                 <div class="flex-none flex">
                     <h1 class="mt-1 markup-h1 truncate text-3xl font-bold">Mailcoach API Settings</h1>
                 </div>

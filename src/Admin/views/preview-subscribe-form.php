@@ -10,7 +10,7 @@
             <hr>
         </div>
 
-        <div>
+        <div class="max-w-[30%]">
             <?php echo do_shortcode('[subscribe-form-mailcoach]'); ?>
         </div>
     </div>
