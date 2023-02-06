@@ -42,6 +42,11 @@ class MailcoachApi
         return $this->mailcoach->emailLists();
     }
 
+    public function subscribe()
+    {
+        $this->mailcoach->createSubscriber();
+    }
+
     public function showEmailLists(): void
     {
         include __DIR__ . '/views/show-email-lists.php';

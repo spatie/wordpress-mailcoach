@@ -16,8 +16,6 @@ class Admin
     private function __construct(Settings $settings)
     {
         $this->settings = $settings;
-
-        //require_once plugin_dir_path(__DIR__) . 'Admin/MailcoachApi.php';
         $this->mailcoach = MailcoachApi::fromSettings($settings);
     }
 
@@ -30,10 +28,9 @@ class Admin
     {
         $this->settings->initializeHooks();
 
-        //add_action('admin_init', fn () => $this->removeDefaultAdminStylesheets());
         add_action('admin_init', fn () => $this->loadScripts());
         add_action('wp_enqueue_scripts', fn () => $this->loadScripts(), 999);
-        add_action( 'enqueue_block_editor_assets', fn () => $this->loadScripts());
+        add_action('enqueue_block_editor_assets', fn () => $this->loadScripts());
 
         add_action('admin_menu', fn () => $this->createMenu());
         add_action('admin_menu', fn () => $this->createFormsSubMenu());
@@ -41,15 +38,8 @@ class Admin
 
     public function loadScripts(): void
     {
-        //wp_register_style('mailcoach_admin_css', plugin_dir_url(__FILE__) . 'css/mailcoach.css');
-        //wp_enqueue_style('mailcoach_admin_css');
-
-        //$this->removeDefaultAdminStylesheets();
-
         wp_register_style('mailcoach_admin_css', plugin_dir_url(__DIR__) . '../resources/dist/css/tailwind.min.css');
         wp_enqueue_style('mailcoach_admin_css');
-
-        //wp_register_style('wp-admin');
     }
 
     public function createMenu(): void
@@ -82,20 +72,14 @@ class Admin
 
         if ($this->mailcoach->hasCredentials()) {
             $lists = $this->mailcoach->emailLists();
-            //var_dump($lists->results()[0]->attributes['name']);die;
-
             include __DIR__ . '/views/show-email-lists.php';
         }
     }
 
     public function createFormsSubPage(): void
     {
-        echo '<h2>Forms</h2>';
-        echo '<p>Hola</p>';
-    }
-
-    public function removeDefaultAdminStylesheets(): void
-    {
-        wp_deregister_style('wp-admin');
+        $forms = Forms::make();
+        $forms->initializeHooks();
+        $forms->showForm();
     }
 }

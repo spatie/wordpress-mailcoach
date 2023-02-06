@@ -25,7 +25,7 @@
                 </thead>
                 <tbody>
                 <?php foreach ($lists->results() as $list) {
-                    $created = wp_date(get_option( 'date_format' ), strtotime($list->attributes['created_at']));
+                    $created = wp_date(get_option('date_format'), strtotime($list->attributes['created_at']));
 
                     echo "<tr>";
                     echo "<td>{$list->attributes['name']}</td>";
