@@ -15,8 +15,11 @@ class ComposerStaticInite62b809dd1cd8002d3c4ad852630d1ff
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
+        'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
+        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '051bafe20e2674435a162870efa2d2a7' => __DIR__ . '/..' . '/brain/monkey/inc/api.php',
+        '3074abeef0bacf5811f59e9dee6311d1' => __DIR__ . '/..' . '/spatie/ray/src/helpers.php',
         '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
         '7d3b315c4f303f2fc14aca642a738e50' => __DIR__ . '/..' . '/yoast/phpunit-polyfills/phpunitpolyfills-autoload.php',
         'f83ed111c2f97a0449abf067f157f418' => __DIR__ . '/..' . '/pestphp/pest/src/Functions.php',
@@ -38,6 +41,7 @@ class ComposerStaticInite62b809dd1cd8002d3c4ad852630d1ff
             'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Contracts\\Service\\' => 26,
             'Symfony\\Contracts\\EventDispatcher\\' => 34,
+            'Symfony\\Component\\VarDumper\\' => 28,
             'Symfony\\Component\\String\\' => 25,
             'Symfony\\Component\\Stopwatch\\' => 28,
             'Symfony\\Component\\Process\\' => 26,
@@ -46,9 +50,18 @@ class ComposerStaticInite62b809dd1cd8002d3c4ad852630d1ff
             'Symfony\\Component\\Filesystem\\' => 29,
             'Symfony\\Component\\EventDispatcher\\' => 34,
             'Symfony\\Component\\Console\\' => 26,
+            'Spatie\\WordPressRay\\' => 20,
             'Spatie\\WordPressMailcoach\\Tests\\' => 32,
             'Spatie\\WordPressMailcoach\\' => 26,
+            'Spatie\\Ray\\' => 11,
             'Spatie\\MailcoachSdk\\' => 20,
+            'Spatie\\Macroable\\' => 17,
+            'Spatie\\Backtrace\\' => 17,
+        ],
+        'R' =>
+        [
+            'Ramsey\\Uuid\\' => 12,
+            'Ramsey\\Collection\\' => 18,
         ],
         'P' =>
         [
@@ -81,6 +94,7 @@ class ComposerStaticInite62b809dd1cd8002d3c4ad852630d1ff
         ],
         'B' =>
         [
+            'Brick\\Math\\' => 11,
             'Brain\\Monkey\\' => 13,
             'Bamarni\\Composer\\Bin\\' => 21,
         ],
@@ -127,6 +141,10 @@ class ComposerStaticInite62b809dd1cd8002d3c4ad852630d1ff
         [
             0 => __DIR__ . '/..' . '/symfony/event-dispatcher-contracts',
         ],
+        'Symfony\\Component\\VarDumper\\' =>
+        [
+            0 => __DIR__ . '/..' . '/symfony/var-dumper',
+        ],
         'Symfony\\Component\\String\\' =>
         [
             0 => __DIR__ . '/..' . '/symfony/string',
@@ -159,6 +177,10 @@ class ComposerStaticInite62b809dd1cd8002d3c4ad852630d1ff
         [
             0 => __DIR__ . '/..' . '/symfony/console',
         ],
+        'Spatie\\WordPressRay\\' =>
+        [
+            0 => __DIR__ . '/../..' . '/wp-content/plugins/wordpress-ray/src',
+        ],
         'Spatie\\WordPressMailcoach\\Tests\\' =>
         [
             0 => __DIR__ . '/../..' . '/tests',
@@ -167,9 +189,29 @@ class ComposerStaticInite62b809dd1cd8002d3c4ad852630d1ff
         [
             0 => __DIR__ . '/../..' . '/src',
         ],
+        'Spatie\\Ray\\' =>
+        [
+            0 => __DIR__ . '/..' . '/spatie/ray/src',
+        ],
         'Spatie\\MailcoachSdk\\' =>
         [
             0 => __DIR__ . '/..' . '/spatie/mailcoach-sdk-php/src',
+        ],
+        'Spatie\\Macroable\\' =>
+        [
+            0 => __DIR__ . '/..' . '/spatie/macroable/src',
+        ],
+        'Spatie\\Backtrace\\' =>
+        [
+            0 => __DIR__ . '/..' . '/spatie/backtrace/src',
+        ],
+        'Ramsey\\Uuid\\' =>
+        [
+            0 => __DIR__ . '/..' . '/ramsey/uuid/src',
+        ],
+        'Ramsey\\Collection\\' =>
+        [
+            0 => __DIR__ . '/..' . '/ramsey/collection/src',
         ],
         'Psr\\Log\\' =>
         [
@@ -238,6 +280,10 @@ class ComposerStaticInite62b809dd1cd8002d3c4ad852630d1ff
         'Composer\\Installers\\' =>
         [
             0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
+        ],
+        'Brick\\Math\\' =>
+        [
+            0 => __DIR__ . '/..' . '/brick/math/src',
         ],
         'Brain\\Monkey\\' =>
         [

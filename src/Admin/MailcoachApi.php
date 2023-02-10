@@ -4,13 +4,14 @@ namespace Spatie\WordPressMailcoach\Admin;
 
 use Spatie\MailcoachSdk\Mailcoach;
 use Spatie\MailcoachSdk\Support\PaginatedResults;
+use Spatie\WordPressMailcoach\Support\HasHooks;
 
 // If this file is called directly, abort.
 if (! defined('ABSPATH')) {
     exit;
 }
 
-class MailcoachApi
+class MailcoachApi implements HasHooks
 {
     private Mailcoach $mailcoach;
 
@@ -27,6 +28,12 @@ class MailcoachApi
     public static function fromSettings(Settings $settings): MailcoachApi
     {
         return new self($settings->apiToken(), $settings->apiEndpoint());
+    }
+
+    public function initializeHooks(): void
+    {
+        add_action('admin_post_nopriv_process_subscribe_form', fn () => $this->createSubscriberFromShortCode());
+        add_action('admin_post_process_subscribe_form', fn () => $this->createSubscriberFromShortCode());
     }
 
     public function hasCredentials(): bool
@@ -48,8 +55,6 @@ class MailcoachApi
 
     public function createSubscriberFromShortCode(): void
     {
-        var_dump("ok");
-        die;
         if (! isset($_POST['mailcoach_subscribe_submit']) || ! isset($_POST['mailcoach_subscribe_nonce'])) {
             return;
         }
@@ -58,7 +63,7 @@ class MailcoachApi
             return;
         }
 
-        if (isset($_POST['email_list_uuid'])) {
+        if (! isset($_POST['email_list_uuid'])) {
             return;
         }
 
@@ -66,7 +71,7 @@ class MailcoachApi
 
         $attributes = [];
         foreach ($_POST as $key => $value) {
-            if (in_array($key, ['_wp_http_referer', 'mailcoach_subscribe_nonce', 'mailcoach_subscribe_submit', 'email_list_uuid'])) {
+            if (in_array($key, ['_wp_http_referer', 'mailcoach_subscribe_nonce', 'mailcoach_subscribe_submit', 'email_list_uuid', 'action'])) {
                 continue;
             }
 
@@ -74,5 +79,7 @@ class MailcoachApi
         }
 
         $this->mailcoach->createSubscriber($emailListUuid, $attributes);
+
+        wp_redirect($_SERVER['HTTP_REFERER']);
     }
 }

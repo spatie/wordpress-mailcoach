@@ -2,12 +2,14 @@
 
 namespace Spatie\WordPressMailcoach\Admin;
 
+use Spatie\WordPressMailcoach\Support\HasHooks;
+
 // If this file is called directly, abort.
 if (! defined('ABSPATH')) {
     exit;
 }
 
-class Settings
+class Settings implements HasHooks
 {
     private string $apiToken = '';
     private string $apiEndpoint = '';

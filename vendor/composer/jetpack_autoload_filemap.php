@@ -38,13 +38,25 @@ return [
         'version' => '9.6.3.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
     ],
+    'e39a8b23c42d4e1452234d762b03835a' => [
+        'version' => '4.7.3.0',
+        'path' => $vendorDir . '/ramsey/uuid/src/functions.php',
+    ],
     'a4a119a56e50fbb293281d9a48007e0e' => [
         'version' => '1.27.0.0',
         'path' => $vendorDir . '/symfony/polyfill-php80/bootstrap.php',
     ],
+    '667aeda72477189d0494fecd327c3641' => [
+        'version' => '6.2.5.0',
+        'path' => $vendorDir . '/symfony/var-dumper/Resources/functions/dump.php',
+    ],
     '051bafe20e2674435a162870efa2d2a7' => [
         'version' => '2.6.1.0',
         'path' => $vendorDir . '/brain/monkey/inc/api.php',
+    ],
+    '3074abeef0bacf5811f59e9dee6311d1' => [
+        'version' => '1.36.2.0',
+        'path' => $vendorDir . '/spatie/ray/src/helpers.php',
     ],
     '23c18046f52bef3eea034657bafda50f' => [
         'version' => '1.27.0.0',

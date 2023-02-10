@@ -2,12 +2,14 @@
 
 namespace Spatie\WordPressMailcoach\Admin;
 
+use Spatie\WordPressMailcoach\Support\HasHooks;
+
 // If this file is called directly, abort.
 if (! defined('ABSPATH')) {
     exit;
 }
 
-class Forms
+class Forms implements HasHooks
 {
     public static function make(): self
     {
