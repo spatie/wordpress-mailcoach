@@ -13,9 +13,7 @@ class Deactivator
 {
     public static function deactivate(): void
     {
-        $settings = Settings::make();
-
-        foreach ($settings->keys() as $setting) {
+        foreach (Settings::KEYS as $key) {
             //delete_option($setting); // @todo for testing purposes disabled
         }
     }

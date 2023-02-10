@@ -12,6 +12,14 @@ class Settings
     private string $apiToken = '';
     private string $apiEndpoint = '';
 
+    public const API_TOKEN = 'mailcoach_api_token';
+    public const API_ENDPOINT = 'mailcoach_api_endpoint';
+
+    public const KEYS = [
+        self::API_TOKEN,
+        self::API_ENDPOINT,
+    ];
+
     private function __construct()
     {
         $this->initializeSettings();
@@ -32,9 +40,8 @@ class Settings
 
     public function initializeSettings(): void
     {
-        // Keep in sync with allKeys()
-        $this->apiToken = get_option('mailcoach_api_token');
-        $this->apiEndpoint = get_option('mailcoach_api_endpoint');
+        $this->apiToken = get_option(self::API_TOKEN);
+        $this->apiEndpoint = get_option(self::API_ENDPOINT);
     }
 
     public function submitSettings(): void
@@ -77,14 +84,6 @@ class Settings
     public function apiEndpoint(): string
     {
         return $this->apiEndpoint;
-    }
-
-    public function keys(): array
-    {
-        return [
-            'mailcoach_api_token',
-            'mailcoach_api_endpoint',
-        ];
     }
 
     private function lastCharsAreEqual(string $original, string $given): bool
