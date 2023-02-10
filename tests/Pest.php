@@ -11,7 +11,7 @@
 |
 */
 
-// uses(Tests\TestCase::class)->in('Feature');
+uses(Yoast\WPTestUtils\BrainMonkey\TestCase::class)->in('Admin');
 
 /*
 |--------------------------------------------------------------------------
@@ -39,7 +39,7 @@ expect()->extend('toBeOne', function () {
 |
 */
 
-function something()
+function something(): void
 {
     // ..
 }
