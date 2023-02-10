@@ -40,7 +40,8 @@ class Admin
 
     public function createSubscriberFromShortCode(): void
     {
-        var_dump("ok");die;
+        var_dump("ok");
+        die;
         if (! isset($_POST['mailcoach_subscribe_submit']) || ! isset($_POST['mailcoach_subscribe_nonce'])) {
             return;
         }

@@ -7,7 +7,7 @@
                 </div>
 
                 <p class="text-xs">
-                    <?php echo esc_html__( 'You can create an API key on the Profile page of your account.', 'wordpress-mailcoach' ); ?>
+                    <?php echo esc_html__('You can create an API key on the Profile page of your account.', 'wordpress-mailcoach'); ?>
                 </p>
 
                 <div class="form-legend mt-8">

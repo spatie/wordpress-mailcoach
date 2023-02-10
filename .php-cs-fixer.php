@@ -7,8 +7,7 @@ $finder = PhpCsFixer\Finder::create()
         'assets',
     ])
     ->in([
-        __DIR__ . '/Admin',
-        __DIR__ . '/Includes',
+        __DIR__ . '/src',
     ])
     ->name('*.php')
     ->notName('*.blade.php')
