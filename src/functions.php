@@ -7,10 +7,9 @@ function anonymizeSensitiveDate(string $input): string
     return str_repeat('*', strlen($input) - 4) . substr($input, -4);
 }
 
-add_action('template_redirect', 'createSubscriberFromShortCode');
+//add_action('template_redirect', 'createSubscriberFromShortCode');
 
-/** @todo can we get this working in a class ? */
-function createSubscriberFromShortCode(): void
+/**function createSubscriberFromShortCode(): void
 {
     if (! isset($_POST['mailcoach_subscribe_submit']) || ! isset($_POST['mailcoach_subscribe_nonce'])) {
         return;
@@ -35,3 +34,4 @@ function createSubscriberFromShortCode(): void
 
     // @todo use MailcoachApi class to subscribe
 }
+*/

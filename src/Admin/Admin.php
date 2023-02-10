@@ -34,6 +34,37 @@ class Admin
 
         add_action('admin_menu', fn () => $this->createMenu());
         add_action('admin_menu', fn () => $this->createFormsSubMenu());
+
+        add_action('template_redirect', 'createSubscriberFromShortCode');
+    }
+
+    public function createSubscriberFromShortCode(): void
+    {
+        var_dump("ok");die;
+        if (! isset($_POST['mailcoach_subscribe_submit']) || ! isset($_POST['mailcoach_subscribe_nonce'])) {
+            return;
+        }
+
+        if (! wp_verify_nonce($_POST['mailcoach_subscribe_nonce'], 'faire-don')) {
+            return;
+        }
+
+        if (isset($_POST['email_list_uuid'])) {
+            return;
+        }
+
+        $emailListUuid = sanitize_text_field($_POST['email_list_uuid']);
+
+        $attributes = [];
+        foreach ($_POST as $key => $value) {
+            if (in_array($key, ['_wp_http_referer', 'mailcoach_subscribe_nonce', 'mailcoach_subscribe_submit', 'email_list_uuid'])) {
+                continue;
+            }
+
+            $attributes[$key] = sanitize_text_field($value);
+        }
+
+        $this->mailcoach->createSubscriber($emailListUuid, $attributes);
     }
 
     public function loadScripts(): void

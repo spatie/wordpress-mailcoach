@@ -12,10 +12,6 @@ if (! defined('ABSPATH')) {
 
 class Forms
 {
-    private function __construct()
-    {
-    }
-
     public static function make(): self
     {
         return new self();
@@ -26,15 +22,8 @@ class Forms
         add_action('init', fn () => $this->showForm());
     }
 
-    public function showForm()
+    public function showForm(): void
     {
         include __DIR__ . '/views/preview-subscribe-form.php';
-    }
-
-    public function submit()
-    {
-        if (isset($_POST['form_email'])) {
-            $email = sanitize_text_field($_POST['form_email']);
-        }
     }
 }
