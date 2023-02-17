@@ -15,7 +15,7 @@
         ?>
 
         <div class="card p-0 pb-24 md:pb-0 overflow-x-auto md:overflow-visible">
-            <table class="table-styled w-full">
+            <table class="table-styled table-auto">
                 <thead>
                 <tr>
                     <?php foreach ($headers as $header) {
