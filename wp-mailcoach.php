@@ -25,9 +25,9 @@
  * Requires PHP:      7.4
  */
 
-use Spatie\WordpressMailcoach\includes\Activator;
+use Spatie\WordpressMailcoach\Includes\Activator;
 use Spatie\WordpressMailcoach\Includes\Deactivator;
-use Spatie\WordpressMailcoach\includes\Main;
+use Spatie\WordpressMailcoach\Includes\Main;
 
 // Prevent direct file access
 defined('ABSPATH') or exit;
@@ -41,13 +41,13 @@ define('MAILCOACH_DOMAIN', null);
 define('MAILCOACH_PLUGIN_DIR', __DIR__);
 define('MAILCOACH_PLUGIN_FILE', __FILE__);
 
-function activate_mailcoach()
+function activate_mailcoach(): void
 {
     require_once plugin_dir_path(__FILE__) . 'src/Includes/Activator.php';
     Activator::activate();
 }
 
-function deactivate_mailcoach()
+function deactivate_mailcoach(): void
 {
     require_once plugin_dir_path(__FILE__) . 'src/Includes/Deactivator.php';
     Deactivator::deactivate();

@@ -11,7 +11,7 @@
         </div>
 
         <div class="max-w-[30%]">
-            <?php echo do_shortcode('[subscribe-form-mailcoach]'); ?>
+            <?php echo do_shortcode("[subscribe-form-mailcoach list={$list}]"); ?>
         </div>
     </div>
 </section>

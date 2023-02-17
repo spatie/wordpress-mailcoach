@@ -23,6 +23,8 @@ class Forms implements HasHooks
 
     public function showForm(): void
     {
+        $list = '4bee592b-a9bc-465a-94ed-7ad61cf0f54b';
+
         include __DIR__ . '/views/preview-subscribe-form.php';
     }
 }
