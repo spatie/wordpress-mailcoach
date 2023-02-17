@@ -75,6 +75,9 @@ class Admin implements HasHooks
 
         if ($this->mailcoach->hasCredentials()) {
             $lists = $this->mailcoach->emailLists();
+
+            $basePathUI = substr($this->settings->apiEndpoint(), 0, strpos($this->settings->apiEndpoint(), '.app') + 4);
+
             include __DIR__ . '/views/show-email-lists.php';
         }
     }
