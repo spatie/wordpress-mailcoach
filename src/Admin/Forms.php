@@ -35,4 +35,9 @@ class Forms implements HasHooks
 
         include __DIR__ . '/views/show-forms.php';
     }
+
+    public function createForm(): void
+    {
+        include __DIR__ . '/views/create-form.php';
+    }
 }

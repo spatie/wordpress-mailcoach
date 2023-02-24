@@ -1,7 +1,9 @@
 <?php
 
 // If this file is called directly, abort.
-if (!defined('ABSPATH')) exit;
+if (! defined('ABSPATH')) {
+    exit;
+}
 
 /**
  * The PSR-4 autoloader project-specific implementation.
@@ -20,8 +22,7 @@ if (!defined('ABSPATH')) exit;
  * @param   $className The fully-qualified class name.
  * @return void
  */
-spl_autoload_register(function (string $className): void
-{
+spl_autoload_register(function (string $className): void {
     // Project-specific namespace prefix
     $prefix = 'Spatie\\WordpressMailcoach\\';
 
@@ -30,8 +31,7 @@ spl_autoload_register(function (string $className): void
 
     // Does the class use the namespace prefix?
     $prefixLength = strlen($prefix);
-    if (strncmp($prefix, $className, $prefixLength) !== 0)
-    {
+    if (strncmp($prefix, $className, $prefixLength) !== 0) {
         // No, move to the next registered autoloader
         return;
     }
@@ -45,12 +45,9 @@ spl_autoload_register(function (string $className): void
     $filePath = $baseDir . str_replace('\\', '/', $relativeClassName) . '.php';
 
     // If the file exists, require it
-    if (file_exists($filePath))
-    {
+    if (file_exists($filePath)) {
         require_once $filePath;
-    }
-    else
-    {
+    } else {
         exit(esc_html("The file $className.php could not be found!"));
     }
 });

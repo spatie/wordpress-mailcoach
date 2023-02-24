@@ -1,7 +1,7 @@
 {
     "name": "spatie/wordpress-mailcoach",
     "type": "wordpress-plugin",
-    "description": "Display a Mailcoach summary inside Wordpress",
+    "description": "Display a Mailcoach summary inside WordPress",
     "keywords": [
         "spatie",
         "mailcoach",

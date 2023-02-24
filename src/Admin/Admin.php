@@ -67,6 +67,15 @@ class Admin implements HasHooks
             'mailcoach-forms',
             fn () => $this->createFormsSubPage(),
         );
+
+        add_submenu_page(
+            'mailcoach',
+            __('Add Form', 'mailcoach'),
+            __('Add Form', 'mailcoach'),
+            'manage_options',
+            'mailcoach-add-form',
+            fn () => $this->createFormsSubPage(),
+        );
     }
 
     public function createHomepage(): void

@@ -30,7 +30,7 @@
                     $linkToMailcoach = $basePathUI . '/email-lists/' . $list->attributes['uuid'] . '/summary';
 
                     echo "<tr>";
-                    echo "<td><a href='{$linkToMailcoach}'>{$list->attributes['name']}</a></td>";
+                    echo "<td><a href='{$linkToMailcoach}' target='_blank'>{$list->attributes['name']}</a></td>";
                     echo "<td class='text-xs'>{$list->attributes['uuid']}</td>";
                     echo "<td>{$list->attributes['active_subscribers_count']}</td>";
                     echo "<td>{$created}</td>";

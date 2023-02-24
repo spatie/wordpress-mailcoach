@@ -2,9 +2,9 @@
 
 # Mailcoach
 
-> Mailcoach for Wordpress
+> Mailcoach for WordPress
 
-This plugin shows a summary of your Mailcoach campaigns, lists and templates inside the Wordpress control panel.
+This plugin shows a summary of your Mailcoach campaigns, lists and templates inside the WordPress control panel.
 
 ![Screenshot](./docs/screenshot.png)
 
@@ -17,6 +17,12 @@ We highly appreciate you sending us a postcard from your hometown, mentioning wh
 ## Installation
 
 @todo
+
+- Get a proper form in the front
+- Gulp, Laravel Mix or Vite for bundling, minifying, ...
+- Tests ! (Pest not working out of the box)
+- Customizable forms
+- Security in WP, let a WP dev look at this plugin?
 
 
 ### Changelog
