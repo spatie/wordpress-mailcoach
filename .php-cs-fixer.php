@@ -5,12 +5,15 @@ $finder = PhpCsFixer\Finder::create()
     ->exclude([
         'vendor',
         'assets',
+        'wp',
+        'wp-content',
+        'node_modules',
+        'resources',
     ])
     ->in([
         __DIR__ . '/src',
     ])
     ->name('*.php')
-    ->notName('*.blade.php')
     ->ignoreDotFiles(true)
     ->ignoreVCS(true);
 

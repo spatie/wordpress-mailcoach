@@ -3,7 +3,7 @@
         <h1 class="mt-1 markup-h1 truncate text-xl font-bold">Forms</h1>
     </div>
 
-    <a href="">
+    <a href="<?php echo esc_url(admin_url('admin.php?page=mailcoach-add-form')); ?>">
         <button type="submit" name="submit" id="submit" class="primary-button mt-1">
             Add New
         </button>

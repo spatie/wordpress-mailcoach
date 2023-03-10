@@ -15,10 +15,13 @@ class Admin implements HasHooks
 
     private MailcoachApi $mailcoach;
 
+    private Forms $forms;
+
     private function __construct(Settings $settings)
     {
         $this->settings = $settings;
         $this->mailcoach = MailcoachApi::fromSettings($settings);
+        $this->forms = Forms::make();
     }
 
     public static function fromSettings(Settings $settings): Admin
@@ -74,7 +77,7 @@ class Admin implements HasHooks
             __('Add Form', 'mailcoach'),
             'manage_options',
             'mailcoach-add-form',
-            fn () => $this->createFormsSubPage(),
+            fn () => $this->createAddFormSubPage(),
         );
     }
 
@@ -93,8 +96,13 @@ class Admin implements HasHooks
 
     public function createFormsSubPage(): void
     {
-        $forms = Forms::make();
-        $forms->initializeHooks();
-        $forms->showForm();
+        $this->forms->initializeHooks();
+        $this->forms->showForm();
+    }
+
+    public function createAddFormSubPage(): void
+    {
+        $this->forms->initializeHooks();
+        $this->forms->createForm();
     }
 }

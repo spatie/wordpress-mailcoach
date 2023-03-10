@@ -19,6 +19,7 @@ class Forms implements HasHooks
     public function initializeHooks(): void
     {
         add_action('init', fn () => $this->showForm());
+        add_action('init', fn () => $this->createForm());
     }
 
     public function showForm(): void
