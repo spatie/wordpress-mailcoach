@@ -21,7 +21,7 @@ class Admin implements HasHooks
     {
         $this->settings = $settings;
         $this->mailcoach = MailcoachApi::fromSettings($settings);
-        $this->forms = Forms::make();
+        $this->forms = Forms::make($this->mailcoach);
     }
 
     public static function fromSettings(Settings $settings): Admin

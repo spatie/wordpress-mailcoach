@@ -11,9 +11,13 @@ if (! defined('ABSPATH')) {
 
 class Forms implements HasHooks
 {
-    public static function make(): self
+    private function __construct(private MailcoachApi $mailcoach)
     {
-        return new self();
+    }
+
+    public static function make(MailcoachApi $mailcoach): self
+    {
+        return new self($mailcoach);
     }
 
     public function initializeHooks(): void
@@ -39,6 +43,12 @@ class Forms implements HasHooks
 
     public function createForm(): void
     {
+        /** @var array{uuid: string, name: string} $emailLists */
+        $emailLists = [];
+        foreach ($this->mailcoach->emailLists()->results() as $list) {
+            $emailLists[] = ['uuid' => $list->uuid, 'name' => $list->name];
+        }
+
         include __DIR__ . '/views/create-form.php';
     }
 }

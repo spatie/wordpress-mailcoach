@@ -48,6 +48,11 @@ class MailcoachApi implements HasHooks
         return $this->mailcoach->emailLists();
     }
 
+    public function emailListsAsKeyValue(): array
+    {
+        $this->emailLists();
+    }
+
     public function showEmailLists(): void
     {
         include __DIR__ . '/views/show-email-lists.php';
