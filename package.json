@@ -1,16 +1,11 @@
 {
     "private": true,
     "scripts": {
-        "watch": "npx tailwindcss -i ./resources/css/admin/tailwind.css -o ./resources/dist/css/tailwind.min.css --watch",
-        "build": "npx tailwindcss -i ./resources/css/admin/tailwind.css -o ./resources/dist/css/tailwind.min.css --minify",
         "prepare": "husky install"
     },
     "devDependencies": {
         "husky": "^8.0.3",
         "lint-staged": "^13.1.1"
-    },
-    "dependencies": {
-        "tailwindcss": "^3.2.4"
     },
     "husky": {
         "hooks": {
