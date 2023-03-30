@@ -24,6 +24,8 @@ class Forms implements HasHooks
     {
         add_action('init', fn () => $this->showForm());
         add_action('init', fn () => $this->createForm());
+
+        add_action('admin_post_create_new_form', fn () => $this->storeForm());
     }
 
     public function showForm(): void
@@ -50,5 +52,10 @@ class Forms implements HasHooks
         }
 
         include __DIR__ . '/views/create-form.php';
+    }
+
+    public function storeForm(): void
+    {
+        wp_redirect($_SERVER['HTTP_REFERER']);
     }
 }

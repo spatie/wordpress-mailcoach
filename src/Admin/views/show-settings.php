@@ -29,7 +29,7 @@
                     <input autocomplete="off" type="url" name="mailcoach_api_endpoint" id="mailcoach_api_endpoint" class="input " placeholder="Enter Endpoint" required value="<?php echo get_option('mailcoach_api_endpoint'); ?>" label="API Endpoint">
                 </div>
 
-                <input type="hidden" name="action" value="process_form">
+                <input type="hidden" name="action" value="store_settings_form">
 
                 <div class="form-field mt-4">
                     <button type="submit" name="submit" id="submit" class="primary-button mt-1">
