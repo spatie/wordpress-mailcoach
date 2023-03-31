@@ -45,8 +45,8 @@ class Admin implements HasHooks
 
     public function loadScripts(): void
     {
-        wp_register_style('mailcoach_admin_css', plugin_dir_url(__DIR__) . '../resources/dist/css/tailwind.min.css');
-        wp_enqueue_style('mailcoach_admin_css');
+        //wp_register_style('mailcoach_admin_css', plugin_dir_url(__DIR__) . '../resources/dist/css/tailwind.min.css');
+        //wp_enqueue_style('mailcoach_admin_css');
     }
 
     public function createMenu(): void
