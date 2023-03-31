@@ -33,6 +33,7 @@ class Admin implements HasHooks
     {
         $this->settings->initializeHooks();
         $this->mailcoach->initializeHooks();
+        $this->forms->initializeActionHooks();
 
         add_action('admin_init', fn () => $this->loadScripts());
         add_action('wp_enqueue_scripts', fn () => $this->loadScripts(), 999);

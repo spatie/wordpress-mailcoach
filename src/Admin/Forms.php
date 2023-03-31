@@ -4,6 +4,8 @@ namespace Spatie\WordPressMailcoach\Admin;
 
 use Spatie\WordPressMailcoach\Support\HasHooks;
 
+use function Sodium\add;
+
 // If this file is called directly, abort.
 if (! defined('ABSPATH')) {
     exit;
@@ -20,12 +22,15 @@ class Forms implements HasHooks
         return new self($mailcoach);
     }
 
+    public function initializeActionHooks(): void
+    {
+        add_action('admin_post_create_new_form', fn () => $this->storeForm());
+    }
+
     public function initializeHooks(): void
     {
         add_action('init', fn () => $this->showForm());
         add_action('init', fn () => $this->createForm());
-
-        add_action('admin_post_create_new_form', fn () => $this->storeForm());
     }
 
     public function showForm(): void
@@ -56,6 +61,7 @@ class Forms implements HasHooks
 
     public function storeForm(): void
     {
-        wp_redirect($_SERVER['HTTP_REFERER']);
+        echo 'hello world';
+//        wp_redirect($_SERVER['HTTP_REFERER']);
     }
 }
