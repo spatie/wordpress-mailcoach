@@ -33,7 +33,8 @@ use Spatie\WordpressMailcoach\Includes\Main;
 defined('ABSPATH') or exit;
 
 // Autoloader
-//require_once plugin_dir_path(__FILE__) . 'Autoloader.php';
+require_once plugin_dir_path( __FILE__ ) . '/vendor/autoload_packages.php';
+require_once plugin_dir_path(__FILE__) . 'autoloader.php';
 
 define('MAILCOACH_VERSION', '1.0.0');
 define('MAILCOACH_API_KEY', null);
