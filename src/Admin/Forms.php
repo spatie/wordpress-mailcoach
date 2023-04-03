@@ -5,6 +5,7 @@ namespace Spatie\WordPressMailcoach\Admin;
 use Spatie\WordPressMailcoach\Admin\Data\StoreFormData;
 use Spatie\WordPressMailcoach\Admin\Repository\FormRepository;
 use Spatie\WordPressMailcoach\Admin\ValueObject\Form;
+use Spatie\WordPressMailcoach\Admin\ViewModel\CreateOrUpdateForm;
 use Spatie\WordPressMailcoach\Support\HasHooks;
 
 // If this file is called directly, abort.
@@ -57,11 +58,7 @@ class Forms implements HasHooks
 
     public function createForm(): void
     {
-        /** @var array{uuid: string, name: string} $emailLists */
-        $emailLists = [];
-        foreach ($this->mailcoach->emailLists()->results() as $list) {
-            $emailLists[] = ['uuid' => $list->uuid, 'name' => $list->name];
-        }
+        $view = new CreateOrUpdateForm($this->mailcoach);
 
         include __DIR__ . '/views/create-form.php';
     }
@@ -77,5 +74,10 @@ class Forms implements HasHooks
 
     public function editForm(): void
     {
+        $form = $this->formRepository->firstById($_GET['form']);
+
+        $view = new CreateOrUpdateForm($this->mailcoach, $form);
+
+        include __DIR__ . '/views/create-form.php';
     }
 }

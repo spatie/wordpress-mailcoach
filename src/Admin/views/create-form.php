@@ -1,4 +1,6 @@
-<?php /** @var array{uuid: string, name: string} $emailLists */ ?>
+<?php
+    /** @var \Spatie\WordPressMailcoach\Admin\ViewModel\CreateOrUpdateForm $view */
+    ?>
 
 <form class="card-grid" method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="POST">
     <input type="hidden" name="action" value="create_new_form">
@@ -6,25 +8,30 @@
 
     <section class="flex-grow min-w-0 flex flex-col">
         <div class="flex-none flex">
-            <h1 class="mt-1 markup-h1 truncate text-xl font-bold">Create Form</h1>
+            <h1 class="mt-1 markup-h1 truncate text-xl font-bold"><?php echo $view->pageTitle(); ?></h1>
         </div>
 
         <div>
             <label for="name">Name</label>
-            <input type="text" name="name" size="30" value="" id="name" spellcheck="true" autocomplete="off">
+            <input type="text" name="name" size="30" value="<?php echo $view->formName(); ?>" id="name" spellcheck="true" autocomplete="off">
         </div>
 
         <label for="email-list">Choose a list</label>
         <select name="email-list" id="email-list">
 
         <?php
-        foreach ($emailLists as $list) {
-            echo "<option value='{$list['uuid']}'>{$list['name']}</option>";
-        }
-?>
+            foreach ($view->emailLists() as $list) {
+                echo "<option value='{$list['uuid']}'";
+
+                if ($list['uuid'] === $view->selectedEmailList()) {
+                    echo " selected";
+                }
+                echo ">{$list['name']}</option>";
+            }
+    ?>
 
         <textarea cols="100" rows="24" id="mailcoach-form-content" class="large-text code" data-config-field="form.body"><?php echo
-        '<label class="label label-required" for="email">Email</label>
+            '<label class="label label-required" for="email">Email</label>
 
     <input autocomplete="email" type="email" name="email" id="email" required label="Email" />
 

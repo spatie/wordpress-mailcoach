@@ -78,4 +78,21 @@ class FormRepository
 
         return null;
     }
+
+    public function firstById(int $id): ?Form
+    {
+        global $wpdb;
+
+        $tableName = Table::forms();
+
+        $query = "SELECT * FROM {$tableName} WHERE id = '{$id}' LIMIT 1";
+
+        $result = $wpdb->get_results($query);
+
+        if ($result) {
+            return Form::fromObject($result[0]);
+        }
+
+        return null;
+    }
 }
