@@ -20,7 +20,7 @@ class Table
     {
         global $wpdb;
 
-        return "{$wpdb->prefix}_mailcoach_forms";
+        return "{$wpdb->prefix}mailcoach_forms";
     }
 
     private static function createFormsTable(): void
@@ -33,11 +33,11 @@ class Table
 
         $sql = "CREATE TABLE {$tableName} (
             id mediumint(9) NOT NULL AUTO_INCREMENT,
-            name tinytext NOT NULL,
-            shortcode varchar(55) NOT NULL,
+            name varchar(55) NOT NULL,
+            shortcode varchar(55) NOT NULL UNIQUE,
             email_list_uuid varchar(36) NOT NULL,
             content text NOT NULL,
-            PRIMARY KEY  (id)
+            PRIMARY KEY (id)
         ) {$charset_collate};";
 
         $result = $wpdb->query($sql);

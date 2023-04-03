@@ -16,9 +16,7 @@ class FormRepository
 
     public function store(StoreFormData $data): void
     {
-        $shortcode = sanitize_title($data->name);
-
-        $exists = $this->firstByShortcodeAndEmailList($shortcode, $data->emailListUuid);
+        $exists = $this->firstByShortcode($data->shortcode);
 
         if ($exists) {
             return; // No duplicates allowed
@@ -30,7 +28,7 @@ class FormRepository
             Table::formsTableName(),
             [
                 'name' => $data->name,
-                'shortcode' => $shortcode,
+                'shortcode' => $data->shortcode,
                 'email_list_uuid' => $data->emailListUuid,
                 'content' => $data->content,
             ]
@@ -59,13 +57,13 @@ class FormRepository
         }, $result);
     }
 
-    public function firstByShortcodeAndEmailList(string $shortcode, string $emailListUuid): ?Form
+    public function firstByShortcode(string $shortcode): ?Form
     {
         global $wpdb;
 
         $tableName = Table::formsTableName();
 
-        $query = "SELECT * FROM {$tableName} WHERE shortcode = {$shortcode} AND email_list_uuid = {$emailListUuid} LIMIT 1";
+        $query = "SELECT * FROM {$tableName} WHERE shortcode = '{$shortcode}' LIMIT 1";
 
         $result = $wpdb->get_results($query);
 

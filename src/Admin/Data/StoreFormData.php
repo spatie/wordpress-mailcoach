@@ -8,6 +8,7 @@ class StoreFormData
 {
     private function __construct(
         public string $name,
+        public string $shortcode,
         public string $emailListUuid,
         public string $content,
     ) {
@@ -20,7 +21,8 @@ class StoreFormData
         }
 
         return new self(
-            sanitize_text_field($_POST['name']),
+            $sanitizedName = sanitize_text_field($_POST['name']),
+            sanitize_title($sanitizedName),
             sanitize_text_field($_POST['email-list']),
             sanitize_text_field($_POST['mailcoach-form-content']),
         );
