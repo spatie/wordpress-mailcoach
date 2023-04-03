@@ -13,6 +13,13 @@ class Deactivator
 {
     public static function deactivate(): void
     {
+        // self::deleteOptions();
+
+        Table::dropTables();
+    }
+
+    private static function deleteOptions(): void
+    {
         foreach (Settings::KEYS as $key) {
             delete_option($key);
         }

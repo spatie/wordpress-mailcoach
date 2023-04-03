@@ -11,5 +11,6 @@ class Activator
 {
     public static function activate(): void
     {
+        Table::createTables();
     }
 }
