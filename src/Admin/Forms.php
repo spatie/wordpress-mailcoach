@@ -3,6 +3,7 @@
 namespace Spatie\WordPressMailcoach\Admin;
 
 use Spatie\WordPressMailcoach\Admin\Data\StoreFormData;
+use Spatie\WordPressMailcoach\Admin\Repository\FormRepository;
 use Spatie\WordPressMailcoach\Support\HasHooks;
 
 // If this file is called directly, abort.
@@ -12,13 +13,15 @@ if (! defined('ABSPATH')) {
 
 class Forms implements HasHooks
 {
-    private function __construct(private MailcoachApi $mailcoach)
-    {
+    private function __construct(
+        private MailcoachApi $mailcoach,
+        private FormRepository $formRepository,
+    ) {
     }
 
     public static function make(MailcoachApi $mailcoach): self
     {
-        return new self($mailcoach);
+        return new self($mailcoach, FormRepository::make());
     }
 
     public function initializeActionHooks(): void
@@ -62,7 +65,7 @@ class Forms implements HasHooks
     {
         $data = StoreFormData::fromRequest();
 
-        // @todo store in db: settings api?
+        $this->formRepository->store($data);
 
         wp_redirect($_SERVER['HTTP_REFERER']);
     }
