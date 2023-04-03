@@ -4,6 +4,7 @@ namespace Spatie\WordPressMailcoach\Admin;
 
 use Spatie\MailcoachSdk\Mailcoach;
 use Spatie\MailcoachSdk\Support\PaginatedResults;
+use Spatie\WordPressMailcoach\Admin\Data\CreateSubscriberData;
 use Spatie\WordPressMailcoach\Support\HasHooks;
 
 // If this file is called directly, abort.
@@ -60,30 +61,9 @@ class MailcoachApi implements HasHooks
 
     public function createSubscriberFromShortCode(): void
     {
-        if (! isset($_POST['mailcoach_subscribe_submit']) || ! isset($_POST['mailcoach_subscribe_nonce'])) {
-            return;
-        }
+        $data = CreateSubscriberData::fromShortcode();
 
-        if (! wp_verify_nonce($_POST['mailcoach_subscribe_nonce'], 'faire-don')) {
-            return;
-        }
-
-        if (! isset($_POST['email_list_uuid'])) {
-            return;
-        }
-
-        $emailListUuid = sanitize_text_field($_POST['email_list_uuid']);
-
-        $attributes = [];
-        foreach ($_POST as $key => $value) {
-            if (in_array($key, ['_wp_http_referer', 'mailcoach_subscribe_nonce', 'mailcoach_subscribe_submit', 'email_list_uuid', 'action'])) {
-                continue;
-            }
-
-            $attributes[$key] = sanitize_text_field($value);
-        }
-
-        $this->mailcoach->createSubscriber($emailListUuid, $attributes);
+        $this->mailcoach->createSubscriber($data->emailListUuid, $data->attributes);
 
         wp_redirect($_SERVER['HTTP_REFERER']);
     }

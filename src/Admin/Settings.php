@@ -2,6 +2,7 @@
 
 namespace Spatie\WordPressMailcoach\Admin;
 
+use Spatie\WordPressMailcoach\Admin\Data\StoreSettingsData;
 use Spatie\WordPressMailcoach\Support\HasHooks;
 
 // If this file is called directly, abort.
@@ -48,30 +49,30 @@ class Settings implements HasHooks
 
     public function submitSettings(): void
     {
-        if (isset($_POST['mailcoach_api_token'])) {
-            $apiToken = sanitize_text_field($_POST['mailcoach_api_token']);
+        $data = StoreSettingsData::fromRequest();
+
+        if ($data->apiToken) {
             $storedApiToken = get_option('mailcoach_api_token');
 
-            if (! empty($apiToken) && ! empty($storedApiToken)) {
+            if (! empty($data->apiToken) && ! empty($storedApiToken)) {
                 if (
-                    ! $this->lastCharsAreEqual($apiToken, $storedApiToken)
-                    && ! $this->containsAsterixSymbols($apiToken)
+                    ! $this->lastCharsAreEqual($data->apiToken, $storedApiToken)
+                    && ! $this->containsAsterixSymbols($data->apiToken)
                 ) {
-                    update_option('mailcoach_api_token', $apiToken);
+                    update_option('mailcoach_api_token', $data->apiToken);
                 }
             } else {
-                add_option('mailcoach_api_token', $apiToken);
+                add_option('mailcoach_api_token', $data->apiToken);
             }
         }
 
-        if (isset($_POST['mailcoach_api_endpoint'])) {
-            $apiEndpoint = sanitize_text_field($_POST['mailcoach_api_endpoint']);
+        if ($data->apiEndpoint) {
             $storedApiEndpoint = get_option('mailcoach_api_endpoint');
 
-            if (! empty($apiEndpoint) && ! empty($storedApiEndpoint)) {
-                update_option('mailcoach_api_endpoint', $apiEndpoint);
+            if (! empty($data->apiEndpoint) && ! empty($storedApiEndpoint)) {
+                update_option('mailcoach_api_endpoint', $data->apiEndpoint);
             } else {
-                add_option('mailcoach_api_endpoint', $apiEndpoint);
+                add_option('mailcoach_api_endpoint', $data->apiEndpoint);
             }
         }
 

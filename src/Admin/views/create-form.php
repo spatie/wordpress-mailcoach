@@ -23,7 +23,7 @@
         }
 ?>
 
-        <textarea cols="100" rows="24" class="large-text code" data-config-field="form.body"><?php echo
+        <textarea cols="100" rows="24" id="mailcoach-form-content" class="large-text code" data-config-field="form.body"><?php echo
         '<label class="label label-required" for="email">Email</label>
 
     <input autocomplete="email" type="email" name="email" id="email" required label="Email" />

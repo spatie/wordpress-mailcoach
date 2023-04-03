@@ -2,9 +2,8 @@
 
 namespace Spatie\WordPressMailcoach\Admin;
 
+use Spatie\WordPressMailcoach\Admin\Data\StoreFormData;
 use Spatie\WordPressMailcoach\Support\HasHooks;
-
-use function Sodium\add;
 
 // If this file is called directly, abort.
 if (! defined('ABSPATH')) {
@@ -61,7 +60,10 @@ class Forms implements HasHooks
 
     public function storeForm(): void
     {
-        echo 'hello world';
-//        wp_redirect($_SERVER['HTTP_REFERER']);
+        $data = StoreFormData::fromRequest();
+
+        // @todo store in db: settings api?
+
+        wp_redirect($_SERVER['HTTP_REFERER']);
     }
 }
