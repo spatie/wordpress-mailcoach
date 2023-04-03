@@ -2,6 +2,7 @@
 
 namespace Spatie\WordPressMailcoach\Admin\Data;
 
+use Spatie\WordPressMailcoach\Admin\Action\GenerateShortcode;
 use Spatie\WordPressMailcoach\Admin\Exception\InvalidData;
 
 // If this file is called directly, abort.
@@ -27,7 +28,7 @@ class StoreFormData
 
         return new self(
             $sanitizedName = sanitize_text_field($_POST['name']),
-            sanitize_title($sanitizedName),
+            (new GenerateShortcode())->execute($sanitizedName),
             sanitize_text_field($_POST['email-list']),
             sanitize_text_field($_POST['mailcoach-form-content']),
         );
