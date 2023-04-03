@@ -10,13 +10,13 @@ return [
         'version' => '1.27.0.0',
         'path' => $vendorDir . '/symfony/polyfill-mbstring/bootstrap.php',
     ],
-    '320cde22f66dd4f5d3fd621d3e88b98f' => [
-        'version' => '1.27.0.0',
-        'path' => $vendorDir . '/symfony/polyfill-ctype/bootstrap.php',
-    ],
     '6e3fae29631ef280660b3cdad06f25a8' => [
         'version' => '3.2.0.0',
         'path' => $vendorDir . '/symfony/deprecation-contracts/function.php',
+    ],
+    '320cde22f66dd4f5d3fd621d3e88b98f' => [
+        'version' => '1.27.0.0',
+        'path' => $vendorDir . '/symfony/polyfill-ctype/bootstrap.php',
     ],
     '8825ede83f2f289127722d4e842cf7e8' => [
         'version' => '1.27.0.0',
@@ -46,6 +46,10 @@ return [
         'version' => '1.27.0.0',
         'path' => $vendorDir . '/symfony/polyfill-php80/bootstrap.php',
     ],
+    '7b11c4dc42b3b3023073cb14e519683c' => [
+        'version' => '3.0.3.0',
+        'path' => $vendorDir . '/ralouphie/getallheaders/src/getallheaders.php',
+    ],
     '667aeda72477189d0494fecd327c3641' => [
         'version' => '6.2.5.0',
         'path' => $vendorDir . '/symfony/var-dumper/Resources/functions/dump.php',
@@ -53,6 +57,10 @@ return [
     '051bafe20e2674435a162870efa2d2a7' => [
         'version' => '2.6.1.0',
         'path' => $vendorDir . '/brain/monkey/inc/api.php',
+    ],
+    'c964ee0ededf28c96ebd9db5099ef910' => [
+        'version' => '1.5.2.0',
+        'path' => $vendorDir . '/guzzlehttp/promises/src/functions_include.php',
     ],
     '3074abeef0bacf5811f59e9dee6311d1' => [
         'version' => '1.36.2.0',
@@ -65,6 +73,10 @@ return [
     '7d3b315c4f303f2fc14aca642a738e50' => [
         'version' => '1.0.4.0',
         'path' => $vendorDir . '/yoast/phpunit-polyfills/phpunitpolyfills-autoload.php',
+    ],
+    '37a3dc5111fe8f707ab4c132ef1dbc62' => [
+        'version' => '7.5.0.0',
+        'path' => $vendorDir . '/guzzlehttp/guzzle/src/functions_include.php',
     ],
     'f83ed111c2f97a0449abf067f157f418' => [
         'version' => '1.22.4.0',

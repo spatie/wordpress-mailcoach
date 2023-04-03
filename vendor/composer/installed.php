@@ -5,7 +5,7 @@ return [
         'name' => 'spatie/wordpress-mailcoach',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'b1ad4eaded9391693f7fab758b3634da63f707c9',
+        'reference' => '0ea1adf76bbcc1441635e06cec4de048a2ce10b5',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => [],
@@ -149,6 +149,33 @@ return [
             'install_path' => __DIR__ . '/../friendsofphp/php-cs-fixer',
             'aliases' => [],
             'dev_requirement' => true,
+        ],
+        'guzzlehttp/guzzle' => [
+            'pretty_version' => '7.5.0',
+            'version' => '7.5.0.0',
+            'reference' => 'b50a2a1251152e43f6a37f0fa053e730a67d25ba',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../guzzlehttp/guzzle',
+            'aliases' => [],
+            'dev_requirement' => false,
+        ],
+        'guzzlehttp/promises' => [
+            'pretty_version' => '1.5.2',
+            'version' => '1.5.2.0',
+            'reference' => 'b94b2807d85443f9719887892882d0329d1e2598',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../guzzlehttp/promises',
+            'aliases' => [],
+            'dev_requirement' => false,
+        ],
+        'guzzlehttp/psr7' => [
+            'pretty_version' => '2.4.4',
+            'version' => '2.4.4.0',
+            'reference' => '3cf1b6d4f0c820a2cf8bcaec39fc698f3443b5cf',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../guzzlehttp/psr7',
+            'aliases' => [],
+            'dev_requirement' => false,
         ],
         'hamcrest/hamcrest-php' => [
             'pretty_version' => 'v2.0.1',
@@ -324,6 +351,51 @@ return [
                 0 => '1.0',
             ],
         ],
+        'psr/http-client' => [
+            'pretty_version' => '1.0.1',
+            'version' => '1.0.1.0',
+            'reference' => '2dfb5f6c5eff0e91e20e913f8c5452ed95b86621',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/http-client',
+            'aliases' => [],
+            'dev_requirement' => false,
+        ],
+        'psr/http-client-implementation' => [
+            'dev_requirement' => false,
+            'provided' => [
+                0 => '1.0',
+            ],
+        ],
+        'psr/http-factory' => [
+            'pretty_version' => '1.0.1',
+            'version' => '1.0.1.0',
+            'reference' => '12ac7fcd07e5b077433f5f2bee95b3a771bf61be',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/http-factory',
+            'aliases' => [],
+            'dev_requirement' => false,
+        ],
+        'psr/http-factory-implementation' => [
+            'dev_requirement' => false,
+            'provided' => [
+                0 => '1.0',
+            ],
+        ],
+        'psr/http-message' => [
+            'pretty_version' => '1.0.1',
+            'version' => '1.0.1.0',
+            'reference' => 'f6561bf28d520154e4b0ec72be95418abe6d9363',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/http-message',
+            'aliases' => [],
+            'dev_requirement' => false,
+        ],
+        'psr/http-message-implementation' => [
+            'dev_requirement' => false,
+            'provided' => [
+                0 => '1.0',
+            ],
+        ],
         'psr/log' => [
             'pretty_version' => '3.0.0',
             'version' => '3.0.0.0',
@@ -338,6 +410,15 @@ return [
             'provided' => [
                 0 => '1.0|2.0|3.0',
             ],
+        ],
+        'ralouphie/getallheaders' => [
+            'pretty_version' => '3.0.3',
+            'version' => '3.0.3.0',
+            'reference' => '120b605dfeb996808c31b6477290a714d356e822',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../ralouphie/getallheaders',
+            'aliases' => [],
+            'dev_requirement' => false,
         ],
         'ramsey/collection' => [
             'pretty_version' => '2.0.0',
@@ -558,7 +639,7 @@ return [
         'spatie/wordpress-mailcoach' => [
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'b1ad4eaded9391693f7fab758b3634da63f707c9',
+            'reference' => '0ea1adf76bbcc1441635e06cec4de048a2ce10b5',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => [],
@@ -598,7 +679,7 @@ return [
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/deprecation-contracts',
             'aliases' => [],
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ],
         'symfony/event-dispatcher' => [
             'pretty_version' => 'v6.2.5',
