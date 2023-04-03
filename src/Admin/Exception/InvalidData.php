@@ -4,6 +4,11 @@ namespace Spatie\WordPressMailcoach\Admin\Exception;
 
 use RuntimeException;
 
+// If this file is called directly, abort.
+if (! defined('ABSPATH')) {
+    exit;
+}
+
 class InvalidData extends RuntimeException
 {
     public static function fromRequest(): self

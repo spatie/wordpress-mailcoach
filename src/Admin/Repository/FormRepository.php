@@ -7,6 +7,11 @@ use Spatie\WordPressMailcoach\Admin\Exception\DatabaseException;
 use Spatie\WordPressMailcoach\Admin\ValueObject\Form;
 use Spatie\WordPressMailcoach\Includes\Table;
 
+// If this file is called directly, abort.
+if (! defined('ABSPATH')) {
+    exit;
+}
+
 class FormRepository
 {
     public static function make(): self

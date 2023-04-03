@@ -2,6 +2,11 @@
 
 namespace Spatie\WordPressMailcoach\Admin\Data;
 
+// If this file is called directly, abort.
+if (! defined('ABSPATH')) {
+    exit;
+}
+
 class StoreSettingsData
 {
     private function __construct(

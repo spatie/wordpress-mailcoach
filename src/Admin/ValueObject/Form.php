@@ -2,6 +2,11 @@
 
 namespace Spatie\WordPressMailcoach\Admin\ValueObject;
 
+// If this file is called directly, abort.
+if (! defined('ABSPATH')) {
+    exit;
+}
+
 class Form
 {
     private function __construct(

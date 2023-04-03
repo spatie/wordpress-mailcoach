@@ -4,6 +4,11 @@ namespace Spatie\WordPressMailcoach\Admin\Exception;
 
 use RuntimeException;
 
+// If this file is called directly, abort.
+if (! defined('ABSPATH')) {
+    exit;
+}
+
 class DatabaseException extends RuntimeException
 {
     public static function couldNotDropTable(string $name): self

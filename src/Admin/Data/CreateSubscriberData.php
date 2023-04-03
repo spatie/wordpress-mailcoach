@@ -4,6 +4,11 @@ namespace Spatie\WordPressMailcoach\Admin\Data;
 
 use Spatie\WordPressMailcoach\Admin\Exception\InvalidData;
 
+// If this file is called directly, abort.
+if (! defined('ABSPATH')) {
+    exit;
+}
+
 class CreateSubscriberData
 {
     private function __construct(
