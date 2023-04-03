@@ -3,6 +3,7 @@
 namespace Spatie\WordPressMailcoach\Admin\ValueObject;
 
 use DateTimeImmutable;
+use Spatie\MailcoachSdk\Resources\EmailList;
 
 // If this file is called directly, abort.
 if (! defined('ABSPATH')) {
@@ -18,6 +19,7 @@ class Form
         public string $emailListUuid,
         public string $content,
         public DateTimeImmutable $createdAt,
+        public ?EmailList $emailList = null,
     ) {
     }
 
@@ -33,6 +35,18 @@ class Form
         );
     }
 
+    public function createdAt(): string
+    {
+        return $this->createdAt->format(get_option('date_format'));
+    }
+
+    public function setEmailList(EmailList $emailList): self
+    {
+        $this->emailList = $emailList;
+
+        return $this;
+    }
+
     public function toArray(): array
     {
         return [
@@ -41,7 +55,7 @@ class Form
             'shortcode' => $this->shortcode,
             'email_list_uuid' => $this->emailListUuid,
             'content' => $this->content,
-            'created_at' => $this->createdAt,
+            'created_at' => $this->createdAt(),
         ];
     }
 }

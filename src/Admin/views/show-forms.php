@@ -26,14 +26,11 @@
             </thead>
             <tbody>
             <?php foreach ($forms as $form) {
-                $created = $form->createdAt->format(get_option('date_format'));
-
                 echo "<tr>";
                 echo "<td class='text-xs'>{$form->name}</td>";
                 echo "<td><input type='text' readonly='readonly' value='{$form->shortcode}' class='large-text code'></td>";
-                echo "<td>{$form->emailListUuid}</td>";
-                //echo "<td>{$form->author}</td>";
-                echo "<td>{$created}</td>";
+                echo "<td>{$form->emailList->name}</td>";
+                echo "<td>{$form->createdAt()}</td>";
                 echo "</tr>";
             } ?>
             </tbody>

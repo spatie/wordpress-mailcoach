@@ -4,6 +4,7 @@ namespace Spatie\WordPressMailcoach\Admin;
 
 use Spatie\WordPressMailcoach\Admin\Data\StoreFormData;
 use Spatie\WordPressMailcoach\Admin\Repository\FormRepository;
+use Spatie\WordPressMailcoach\Admin\ValueObject\Form;
 use Spatie\WordPressMailcoach\Support\HasHooks;
 
 // If this file is called directly, abort.
@@ -38,6 +39,17 @@ class Forms implements HasHooks
     public function showForm(): void
     {
         $forms = $this->formRepository->all();
+        $emailLists = $this->mailcoach->emailLists();
+
+        $emailLists = array_map(static function (Form $form) use ($emailLists): void {
+            foreach ($emailLists as $emailList) {
+                if ($emailList->uuid === $form->emailListUuid) {
+                    $form->setEmailList($emailList);
+
+                    continue;
+                }
+            }
+        }, $forms);
 
         include __DIR__ . '/views/show-forms.php';
     }

@@ -3,6 +3,7 @@
 namespace Spatie\WordPressMailcoach\Admin;
 
 use Spatie\MailcoachSdk\Mailcoach;
+use Spatie\MailcoachSdk\Resources\EmailList;
 use Spatie\MailcoachSdk\Support\PaginatedResults;
 use Spatie\WordPressMailcoach\Admin\Data\CreateSubscriberData;
 use Spatie\WordPressMailcoach\Support\HasHooks;
@@ -49,9 +50,9 @@ class MailcoachApi implements HasHooks
         return $this->mailcoach->emailLists();
     }
 
-    public function emailListsAsKeyValue(): array
+    public function emailList(string $uuid): EmailList
     {
-        $this->emailLists();
+        return $this->mailcoach->emailList($uuid);
     }
 
     public function showEmailLists(): void
