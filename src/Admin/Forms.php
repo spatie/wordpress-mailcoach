@@ -37,15 +37,16 @@ class Forms implements HasHooks
 
     public function showForm(): void
     {
-        // @todo make dynamic instead of hardcoded
-        $forms = [
+        /**$forms = [
             [
                 'name' => 'Subscribe to Newsletter',
                 'shortcode' => '[subscribe-form-mailcoach list=4bee592b-a9bc-465a-94ed-7ad61cf0f54b]',
                 'author' => 'Niels',
                 'created_at' => '2023-01-01',
             ],
-        ];
+        ];*/
+
+        $forms = $this->formRepository->all();
 
         include __DIR__ . '/views/show-forms.php';
     }

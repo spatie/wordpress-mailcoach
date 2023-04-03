@@ -24,14 +24,16 @@
             </thead>
             <tbody>
             <?php foreach ($forms as $form) {
-                $created = wp_date(get_option('date_format'), strtotime($form['created_at']));
+                /** @var \Spatie\WordPressMailcoach\Admin\ValueObject\Form $form */
+
+                //$created = wp_date(get_option('date_format'), strtotime($form['created_at']));
 
                 echo "<tr>";
-                echo "<td class='text-xs'>{$form['name']}</td>";
+                echo "<td class='text-xs'>{$form->name}</td>";
                 //echo "<td><input type='text' readonly='readonly' value='{$form['shortcode']}' class='large-text code'></td>";
-                echo "<td>{$form['shortcode']}</td>";
-                echo "<td>{$form['author']}</td>";
-                echo "<td>{$created}</td>";
+                echo "<td>{$form->emailListUuid}</td>";
+                //echo "<td>{$form['author']}</td>";
+                //echo "<td>{$created}</td>";
                 echo "</tr>";
             } ?>
             </tbody>
