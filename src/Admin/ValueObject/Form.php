@@ -2,6 +2,8 @@
 
 namespace Spatie\WordPressMailcoach\Admin\ValueObject;
 
+use DateTimeImmutable;
+
 // If this file is called directly, abort.
 if (! defined('ABSPATH')) {
     exit;
@@ -15,6 +17,7 @@ class Form
         public string $shortcode,
         public string $emailListUuid,
         public string $content,
+        public DateTimeImmutable $createdAt,
     ) {
     }
 
@@ -26,6 +29,7 @@ class Form
             $data->shortcode,
             $data->email_list_uuid,
             $data->content,
+            DateTimeImmutable::createFromFormat('Y-m-d H:i:s', $data->created_at),
         );
     }
 
@@ -37,6 +41,7 @@ class Form
             'shortcode' => $this->shortcode,
             'email_list_uuid' => $this->emailListUuid,
             'content' => $this->content,
+            'created_at' => $this->createdAt,
         ];
     }
 }

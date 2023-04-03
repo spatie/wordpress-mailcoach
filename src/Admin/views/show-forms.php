@@ -10,7 +10,9 @@
     </a>
 
     <?php
-    $headers = ['Name', 'Shortcode', 'Author', 'Date'];
+    $headers = ['Name', 'Shortcode', 'Email List', 'Date'];
+
+    /** @var \Spatie\WordPressMailcoach\Admin\ValueObject\Form[] $forms */
     ?>
 
     <div class="card p-0 pb-24 md:pb-0 overflow-x-auto md:overflow-visible">
@@ -24,16 +26,14 @@
             </thead>
             <tbody>
             <?php foreach ($forms as $form) {
-                /** @var \Spatie\WordPressMailcoach\Admin\ValueObject\Form $form */
-
-                //$created = wp_date(get_option('date_format'), strtotime($form['created_at']));
+                $created = $form->createdAt->format(get_option('date_format'));
 
                 echo "<tr>";
                 echo "<td class='text-xs'>{$form->name}</td>";
-                //echo "<td><input type='text' readonly='readonly' value='{$form['shortcode']}' class='large-text code'></td>";
+                echo "<td><input type='text' readonly='readonly' value='{$form->shortcode}' class='large-text code'></td>";
                 echo "<td>{$form->emailListUuid}</td>";
-                //echo "<td>{$form['author']}</td>";
-                //echo "<td>{$created}</td>";
+                //echo "<td>{$form->author}</td>";
+                echo "<td>{$created}</td>";
                 echo "</tr>";
             } ?>
             </tbody>
