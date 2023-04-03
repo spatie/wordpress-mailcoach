@@ -2,6 +2,8 @@
 
 namespace Spatie\WordPressMailcoach\Includes;
 
+use Spatie\WordPressMailcoach\Admin\Exception\DatabaseException;
+
 class Table
 {
     public static function createTables(): void
@@ -32,14 +34,17 @@ class Table
         $sql = "CREATE TABLE {$tableName} (
             id mediumint(9) NOT NULL AUTO_INCREMENT,
             name tinytext NOT NULL,
+            shortcode varchar(55) NOT NULL,
             email_list_uuid varchar(36) NOT NULL,
             content text NOT NULL,
             PRIMARY KEY  (id)
         ) {$charset_collate};";
 
-        $result = $wpdb->query($sql); // @todo verify is successfully created
+        $result = $wpdb->query($sql);
 
-        ray($result);
+        if ($result === false) {
+            throw DatabaseException::couldNotCreateTable($tableName);
+        }
     }
 
     private static function dropFormsTable(): void
@@ -53,8 +58,10 @@ class Table
     {
         global $wpdb;
 
-        $result = $wpdb->query("DROP TABLE IF EXISTS {$name};"); // @todo verify is successfully dropped
+        $result = $wpdb->query("DROP TABLE IF EXISTS {$name};");
 
-        ray($result);
+        if ($result === false) {
+            throw DatabaseException::couldNotDropTable($name);
+        }
     }
 }

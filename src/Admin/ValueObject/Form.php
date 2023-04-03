@@ -7,16 +7,18 @@ class Form
     private function __construct(
         public string $id,
         public string $name,
+        public string $shortcode,
         public string $emailListUuid,
-        public string $content
+        public string $content,
     ) {
     }
 
-    public static function fromObject($data): self
+    public static function fromObject(object $data): self
     {
         return new self(
             $data->id,
             $data->name,
+            $data->shortcode,
             $data->email_list_uuid,
             $data->content,
         );
@@ -27,6 +29,7 @@ class Form
         return [
             'id ' => $this->id,
             'name' => $this->name,
+            'shortcode' => $this->shortcode,
             'email_list_uuid' => $this->emailListUuid,
             'content' => $this->content,
         ];

@@ -10,8 +10,8 @@
         </div>
 
         <div>
-            <label for="title">Title</label>
-            <input type="text" name="title" size="30" value="" id="title" spellcheck="true" autocomplete="off">
+            <label for="name">Name</label>
+            <input type="text" name="name" size="30" value="" id="name" spellcheck="true" autocomplete="off">
         </div>
 
         <label for="email-list">Choose a list</label>

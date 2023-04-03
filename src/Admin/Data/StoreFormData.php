@@ -7,7 +7,7 @@ use Spatie\WordPressMailcoach\Admin\Exception\InvalidData;
 class StoreFormData
 {
     private function __construct(
-        public string $title,
+        public string $name,
         public string $emailListUuid,
         public string $content,
     ) {
@@ -20,7 +20,7 @@ class StoreFormData
         }
 
         return new self(
-            sanitize_text_field($_POST['title']),
+            sanitize_text_field($_POST['name']),
             sanitize_text_field($_POST['email-list']),
             sanitize_text_field($_POST['mailcoach-form-content']),
         );
