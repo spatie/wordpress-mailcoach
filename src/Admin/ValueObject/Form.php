@@ -40,6 +40,14 @@ class Form
         return $this->createdAt->format(get_option('date_format'));
     }
 
+    public function editUrl(): string
+    {
+        return add_query_arg([
+            'form' => $this->id,
+            'page' => 'mailcoach-edit-form',
+        ], admin_url('admin.php'));
+    }
+
     public function setEmailList(EmailList $emailList): self
     {
         $this->emailList = $emailList;

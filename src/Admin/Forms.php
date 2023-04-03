@@ -32,11 +32,12 @@ class Forms implements HasHooks
 
     public function initializeHooks(): void
     {
-        add_action('init', fn () => $this->showForm());
+        add_action('init', fn () => $this->indexForms());
         add_action('init', fn () => $this->createForm());
+        add_action('init', fn () => $this->editForm());
     }
 
-    public function showForm(): void
+    public function indexForms(): void
     {
         $forms = $this->formRepository->all();
         $emailLists = $this->mailcoach->emailLists();
@@ -72,5 +73,9 @@ class Forms implements HasHooks
         $this->formRepository->store($data);
 
         wp_redirect('/wp-admin/admin.php?page=mailcoach-forms');
+    }
+
+    public function editForm(): void
+    {
     }
 }

@@ -30,7 +30,7 @@ class FormRepository
         global $wpdb;
 
         $result = $wpdb->insert(
-            Table::formsTableName(),
+            Table::forms(),
             [
                 'name' => $data->name,
                 'shortcode' => $data->shortcode,
@@ -51,7 +51,7 @@ class FormRepository
     {
         global $wpdb;
 
-        $tableName = Table::formsTableName();
+        $tableName = Table::forms();
 
         $query = "SELECT * FROM {$tableName}";
 
@@ -66,7 +66,7 @@ class FormRepository
     {
         global $wpdb;
 
-        $tableName = Table::formsTableName();
+        $tableName = Table::forms();
 
         $query = "SELECT * FROM {$tableName} WHERE shortcode = '{$shortcode}' LIMIT 1";
 

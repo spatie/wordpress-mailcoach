@@ -16,7 +16,7 @@ class Table
         self::dropFormsTable();
     }
 
-    public static function formsTableName(): string
+    public static function forms(): string
     {
         global $wpdb;
 
@@ -27,7 +27,7 @@ class Table
     {
         global $wpdb;
 
-        $tableName = self::formsTableName();
+        $tableName = self::forms();
 
         $charset_collate = $wpdb->get_charset_collate();
 
@@ -50,7 +50,7 @@ class Table
 
     private static function dropFormsTable(): void
     {
-        $tableName = self::formsTableName();
+        $tableName = self::forms();
 
         self::dropTable($tableName);
     }

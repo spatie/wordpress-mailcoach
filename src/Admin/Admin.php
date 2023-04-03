@@ -80,6 +80,17 @@ class Admin implements HasHooks
             'mailcoach-add-form',
             fn () => $this->createAddFormSubPage(),
         );
+
+        // Hidden pages
+
+        add_submenu_page(
+            null,
+            __('Edit Form', 'mailcoach'),
+            __('Edit Form', 'mailcoach'),
+            'manage_options',
+            'mailcoach-edit-form',
+            fn () => $this->createEditFormSubPage(),
+        );
     }
 
     public function createHomepage(): void
@@ -98,12 +109,18 @@ class Admin implements HasHooks
     public function createFormsSubPage(): void
     {
         $this->forms->initializeHooks();
-        $this->forms->showForm();
+        $this->forms->indexForms();
     }
 
     public function createAddFormSubPage(): void
     {
         $this->forms->initializeHooks();
         $this->forms->createForm();
+    }
+
+    public function createEditFormSubPage(): void
+    {
+        $this->forms->initializeHooks();
+        $this->forms->editForm();
     }
 }
