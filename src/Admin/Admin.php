@@ -102,6 +102,8 @@ class Admin implements HasHooks
 
             $basePathUI = substr($this->settings->apiEndpoint(), 0, strpos($this->settings->apiEndpoint(), '.app') + 4);
 
+            // @todo replace with ViewModel
+
             include __DIR__ . '/views/show-email-lists.php';
         }
     }

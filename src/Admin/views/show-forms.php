@@ -12,7 +12,7 @@
     <?php
     $headers = ['Name', 'Shortcode', 'Email List', 'Date'];
 
-    /** @var \Spatie\WordPressMailcoach\Admin\ValueObject\Form[] $forms */
+    /** @var \Spatie\WordPressMailcoach\Admin\Model\Form[] $forms */
     ?>
 
     <div class="card p-0 pb-24 md:pb-0 overflow-x-auto md:overflow-visible">

@@ -4,7 +4,7 @@ namespace Spatie\WordPressMailcoach\Admin\Repository;
 
 use Spatie\WordPressMailcoach\Admin\Data\CreateOrUpdateFormData;
 use Spatie\WordPressMailcoach\Admin\Exception\DatabaseException;
-use Spatie\WordPressMailcoach\Admin\ValueObject\Form;
+use Spatie\WordPressMailcoach\Admin\Model\Form;
 use Spatie\WordPressMailcoach\Includes\Table;
 
 // If this file is called directly, abort.

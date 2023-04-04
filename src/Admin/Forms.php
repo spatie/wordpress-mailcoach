@@ -3,8 +3,8 @@
 namespace Spatie\WordPressMailcoach\Admin;
 
 use Spatie\WordPressMailcoach\Admin\Data\CreateOrUpdateFormData;
+use Spatie\WordPressMailcoach\Admin\Model\Form;
 use Spatie\WordPressMailcoach\Admin\Repository\FormRepository;
-use Spatie\WordPressMailcoach\Admin\ValueObject\Form;
 use Spatie\WordPressMailcoach\Admin\ViewModel\CreateOrUpdateForm;
 use Spatie\WordPressMailcoach\Support\HasHooks;
 
@@ -53,6 +53,8 @@ class Forms implements HasHooks
             }
         }, $forms);
 
+        // @todo replace with ViewModel
+
         include __DIR__ . '/views/show-forms.php';
     }
 
@@ -71,7 +73,7 @@ class Forms implements HasHooks
 
         $form = $this->formRepository->firstByShortcode($data->shortcode);
 
-        wp_redirect($form->editUrl());
+        wp_redirect($form?->editUrl() ?? '/wp-admin/admin.php?page=mailcoach-forms');
     }
 
     public function editForm(): void

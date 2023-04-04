@@ -38,8 +38,8 @@ class Settings implements HasHooks
     {
         add_action('admin_init', fn () => $this->initializeSettings());
 
-        add_action('admin_post_nopriv_store_settings_form', fn () => $this->submitSettings());
-        add_action('admin_post_store_settings_form', fn () => $this->submitSettings());
+        add_action('admin_post_nopriv_store_settings_form', fn () => $this->storeSettings());
+        add_action('admin_post_store_settings_form', fn () => $this->storeSettings());
     }
 
     public function initializeSettings(): void
@@ -48,7 +48,7 @@ class Settings implements HasHooks
         $this->apiEndpoint = get_option(self::API_ENDPOINT);
     }
 
-    public function submitSettings(): void
+    public function storeSettings(): void
     {
         $data = StoreSettingsData::fromRequest();
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\WordPressMailcoach\Admin\ValueObject;
+namespace Spatie\WordPressMailcoach\Admin\Model;
 
 use DateTimeImmutable;
 use Spatie\MailcoachSdk\Resources\EmailList;

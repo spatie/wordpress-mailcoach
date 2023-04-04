@@ -3,7 +3,7 @@
 namespace Spatie\WordPressMailcoach\Admin\ViewModel;
 
 use Spatie\WordPressMailcoach\Admin\MailcoachApi;
-use Spatie\WordPressMailcoach\Admin\ValueObject\Form;
+use Spatie\WordPressMailcoach\Admin\Model\Form;
 
 class CreateOrUpdateForm
 {
