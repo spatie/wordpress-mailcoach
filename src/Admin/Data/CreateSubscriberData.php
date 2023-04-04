@@ -11,6 +11,10 @@ if (! defined('ABSPATH')) {
 
 class CreateSubscriberData
 {
+    private static array $toIgnore = [
+        '_wp_http_referer', 'mailcoach_subscribe_nonce', 'mailcoach_subscribe_submit', 'email_list_uuid', 'action',
+    ];
+
     private function __construct(
         public string $emailListUuid,
         public array $attributes,
@@ -24,12 +28,12 @@ class CreateSubscriberData
         }
 
         if (! wp_verify_nonce($_POST['mailcoach_subscribe_nonce'], 'faire-don')) {
-            throw InvalidData::fromRequest();
+            throw InvalidData::fromNonce();
         }
 
         $attributes = [];
         foreach ($_POST as $key => $value) {
-            if (in_array($key, ['_wp_http_referer', 'mailcoach_subscribe_nonce', 'mailcoach_subscribe_submit', 'email_list_uuid', 'action'])) {
+            if (in_array($key, self::$toIgnore, true)) {
                 continue;
             }
 

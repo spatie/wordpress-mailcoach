@@ -15,13 +15,7 @@ class CreateOrUpdateForm
 
     public function emailLists(): array
     {
-        /** @var array{uuid: string, name: string} $emailLists */
-        $emailLists = [];
-        foreach ($this->mailcoach->emailLists()->results() as $list) {
-            $emailLists[] = ['uuid' => $list->uuid, 'name' => $list->name];
-        }
-
-        return $emailLists;
+        return $this->mailcoach->emailListOptions();
     }
 
     public function isEditMode(): bool

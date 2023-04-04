@@ -15,4 +15,9 @@ class InvalidData extends RuntimeException
     {
         return new self('Invalid data.');
     }
+
+    public static function fromNonce(): self
+    {
+        return new self('Invalid data.');
+    }
 }

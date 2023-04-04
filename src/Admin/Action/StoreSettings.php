@@ -6,7 +6,7 @@ use Spatie\WordPressMailcoach\Admin\Data\StoreSettingsData;
 
 class StoreSettings
 {
-    public function execute(StoreSettingsData $data)
+    public function execute(StoreSettingsData $data): void
     {
         if ($data->apiToken) {
             $storedApiToken = get_option('mailcoach_api_token');
@@ -41,8 +41,9 @@ class StoreSettings
 
         return substr($given, -4) === substr($original, -4);
     }
-}
+
     private function containsAsterixSymbols(string $input): bool
     {
         return str_contains($input, '*');
     }
+}

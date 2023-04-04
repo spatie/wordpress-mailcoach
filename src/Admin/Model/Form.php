@@ -4,6 +4,7 @@ namespace Spatie\WordPressMailcoach\Admin\Model;
 
 use DateTimeImmutable;
 use Spatie\MailcoachSdk\Resources\EmailList;
+use Spatie\WordPressMailcoach\Includes\Table;
 
 // If this file is called directly, abort.
 if (! defined('ABSPATH')) {
@@ -33,6 +34,11 @@ class Form
             $data->content,
             DateTimeImmutable::createFromFormat('Y-m-d H:i:s', $data->created_at),
         );
+    }
+
+    public static function tableName(): string
+    {
+        return Table::forms();
     }
 
     public function createdAt(): string

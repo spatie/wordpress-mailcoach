@@ -50,6 +50,17 @@ class MailcoachApi implements HasHooks
         return $this->mailcoach->emailLists();
     }
 
+    /** @return array{uuid: string, name: string} */
+    public function emailListOptions(): array
+    {
+        $emailLists = [];
+        foreach ($this->mailcoach->emailLists()->results() as $list) {
+            $emailLists[] = ['uuid' => $list->uuid, 'name' => $list->name];
+        }
+
+        return $emailLists;
+    }
+
     public function emailList(string $uuid): EmailList
     {
         return $this->mailcoach->emailList($uuid);

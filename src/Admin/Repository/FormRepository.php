@@ -5,7 +5,6 @@ namespace Spatie\WordPressMailcoach\Admin\Repository;
 use Spatie\WordPressMailcoach\Admin\Data\CreateOrUpdateFormData;
 use Spatie\WordPressMailcoach\Admin\Exception\DatabaseException;
 use Spatie\WordPressMailcoach\Admin\Model\Form;
-use Spatie\WordPressMailcoach\Includes\Table;
 
 // If this file is called directly, abort.
 if (! defined('ABSPATH')) {
@@ -32,7 +31,7 @@ class FormRepository
         global $wpdb;
 
         $result = $wpdb->insert(
-            Table::forms(),
+            Form::tableName(),
             [
                 'name' => $data->name,
                 'shortcode' => $data->shortcode,
@@ -55,7 +54,7 @@ class FormRepository
         global $wpdb;
 
         $result = $wpdb->update(
-            Table::forms(),
+            Form::tableName(),
             [
                 'name' => $data->name,
                 'email_list_uuid' => $data->emailListUuid,
@@ -76,7 +75,7 @@ class FormRepository
     {
         global $wpdb;
 
-        $tableName = Table::forms();
+        $tableName = Form::tableName();
 
         $query = "SELECT * FROM {$tableName}";
 
@@ -91,7 +90,7 @@ class FormRepository
     {
         global $wpdb;
 
-        $tableName = Table::forms();
+        $tableName = Form::tableName();
 
         $query = "SELECT * FROM {$tableName} WHERE shortcode = '{$shortcode}' LIMIT 1";
 
@@ -108,7 +107,7 @@ class FormRepository
     {
         global $wpdb;
 
-        $tableName = Table::forms();
+        $tableName = Form::tableName();
 
         $query = "SELECT * FROM {$tableName} WHERE id = '{$id}' LIMIT 1";
 
