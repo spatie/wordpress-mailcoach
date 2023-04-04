@@ -16,22 +16,37 @@
             <input type="text" name="name" size="30" value="<?php echo $view->formName(); ?>" id="name" spellcheck="true" autocomplete="off">
         </div>
 
+        <?php
+            if ($view->showShortcode()) {
+                ?>
+            <div>
+                <p>
+                    <label for="mailcoach-shortcode">Copy this shortcode and paste it into your post, page, or text widget content:</label>
+                    <span>
+                <input type="text" id="mailcoach-shortcode" readonly="readonly" class="large-text code" value=<?php echo $view->form->shortcode; ?>>
+            </span>
+                </p>
+            </div>
+            <?php
+            }
+    ?>
+
         <label for="email-list">Choose a list</label>
         <select name="email-list" id="email-list">
 
         <?php
-            foreach ($view->emailLists() as $list) {
-                echo "<option value='{$list['uuid']}'";
+    foreach ($view->emailLists() as $list) {
+        echo "<option value='{$list['uuid']}'";
 
-                if ($list['uuid'] === $view->selectedEmailList()) {
-                    echo " selected";
-                }
-                echo ">{$list['name']}</option>";
-            }
+        if ($list['uuid'] === $view->selectedEmailList()) {
+            echo " selected";
+        }
+        echo ">{$list['name']}</option>";
+    }
     ?>
 
         <textarea cols="100" rows="24" id="mailcoach-form-content" class="large-text code" data-config-field="form.body"><?php echo
-            '<label class="label label-required" for="email">Email</label>
+        '<label class="label label-required" for="email">Email</label>
 
     <input autocomplete="email" type="email" name="email" id="email" required label="Email" />
 

@@ -38,4 +38,9 @@ class CreateOrUpdateForm
     {
         return $this->form->emailListUuid ?? '';
     }
+
+    public function showShortcode(): bool
+    {
+        return $this->form !== null;
+    }
 }
