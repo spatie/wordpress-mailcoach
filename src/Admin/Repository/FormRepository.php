@@ -2,7 +2,7 @@
 
 namespace Spatie\WordPressMailcoach\Admin\Repository;
 
-use Spatie\WordPressMailcoach\Admin\Data\StoreFormData;
+use Spatie\WordPressMailcoach\Admin\Data\CreateOrUpdateFormData;
 use Spatie\WordPressMailcoach\Admin\Exception\DatabaseException;
 use Spatie\WordPressMailcoach\Admin\ValueObject\Form;
 use Spatie\WordPressMailcoach\Includes\Table;
@@ -19,12 +19,14 @@ class FormRepository
         return new self();
     }
 
-    public function store(StoreFormData $data): void
+    public function createOrUpdateByShortcode(CreateOrUpdateFormData $data): void
     {
         $exists = $this->firstByShortcode($data->shortcode);
 
         if ($exists) {
-            return; // No duplicates allowed
+            $this->update($data, $exists);
+
+            return;
         }
 
         global $wpdb;
@@ -37,6 +39,29 @@ class FormRepository
                 'email_list_uuid' => $data->emailListUuid,
                 'content' => $data->content,
             ]
+        );
+
+        if ($result === false) {
+            throw DatabaseException::failedToInsert();
+        }
+    }
+
+    public function update(CreateOrUpdateFormData $data, Form $form): void
+    {
+        if ($form->shortcode !== $data->shortcode) {
+            throw DatabaseException::shortcodeIsUnique();
+        }
+
+        global $wpdb;
+
+        $result = $wpdb->update(
+            Table::forms(),
+            [
+                'name' => $data->name,
+                'email_list_uuid' => $data->emailListUuid,
+                'content' => $data->content,
+            ],
+            ['id' => $form->id]
         );
 
         if ($result === false) {

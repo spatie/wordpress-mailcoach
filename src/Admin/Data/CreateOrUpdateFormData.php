@@ -10,7 +10,7 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-class StoreFormData
+class CreateOrUpdateFormData
 {
     private function __construct(
         public string $name,
@@ -28,9 +28,9 @@ class StoreFormData
 
         return new self(
             $sanitizedName = sanitize_text_field($_POST['name']),
-            (new GenerateShortcode())->execute($sanitizedName),
+            $_POST['shortcode'] ?? (new GenerateShortcode())->execute($sanitizedName),
             sanitize_text_field($_POST['email-list']),
-            sanitize_text_field($_POST['mailcoach-form-content']),
+            $_POST['content'],
         );
     }
 }

@@ -24,9 +24,14 @@ class CreateOrUpdateForm
         return $emailLists;
     }
 
+    public function isEditMode(): bool
+    {
+        return $this->form !== null;
+    }
+
     public function pageTitle(): string
     {
-        return $this->form ? 'Edit Form' : 'Create Form';
+        return $this->isEditMode() ? 'Edit Form' : 'Create Form';
     }
 
     public function formName(): string
@@ -41,6 +46,6 @@ class CreateOrUpdateForm
 
     public function showShortcode(): bool
     {
-        return $this->form !== null;
+        return $this->isEditMode();
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Spatie\WordPressMailcoach\Admin;
 
-use Spatie\WordPressMailcoach\Admin\Data\StoreFormData;
+use Spatie\WordPressMailcoach\Admin\Data\CreateOrUpdateFormData;
 use Spatie\WordPressMailcoach\Admin\Repository\FormRepository;
 use Spatie\WordPressMailcoach\Admin\ValueObject\Form;
 use Spatie\WordPressMailcoach\Admin\ViewModel\CreateOrUpdateForm;
@@ -28,7 +28,7 @@ class Forms implements HasHooks
 
     public function initializeActionHooks(): void
     {
-        add_action('admin_post_create_new_form', fn () => $this->storeForm());
+        add_action('admin_post_create_new_form', fn () => $this->createOrUpdateForm());
     }
 
     public function initializeHooks(): void
@@ -48,7 +48,7 @@ class Forms implements HasHooks
                 if ($emailList->uuid === $form->emailListUuid) {
                     $form->setEmailList($emailList);
 
-                    continue;
+                    return;
                 }
             }
         }, $forms);
@@ -63,13 +63,15 @@ class Forms implements HasHooks
         include __DIR__ . '/views/create-form.php';
     }
 
-    public function storeForm(): void
+    public function createOrUpdateForm(): void
     {
-        $data = StoreFormData::fromRequest();
+        $data = CreateOrUpdateFormData::fromRequest();
 
-        $this->formRepository->store($data);
+        $this->formRepository->createOrUpdateByShortcode($data);
 
-        wp_redirect('/wp-admin/admin.php?page=mailcoach-forms');
+        $form = $this->formRepository->firstByShortcode($data->shortcode);
+
+        wp_redirect($form->editUrl());
     }
 
     public function editForm(): void

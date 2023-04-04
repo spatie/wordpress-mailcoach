@@ -21,9 +21,9 @@
                 ?>
             <div>
                 <p>
-                    <label for="mailcoach-shortcode">Copy this shortcode and paste it into your post, page, or text widget content:</label>
+                    <label for="shortcode">Copy this shortcode and paste it into your post, page, or text widget content:</label>
                     <span>
-                <input type="text" id="mailcoach-shortcode" readonly="readonly" class="large-text code" value=<?php echo $view->form->shortcode; ?>>
+                <input type="text" id="shortcode" readonly="readonly" class="large-text code" value=<?php echo $view->form->shortcode; ?>>
             </span>
                 </p>
             </div>
@@ -45,12 +45,16 @@
     }
     ?>
 
-        <textarea cols="100" rows="24" id="mailcoach-form-content" class="large-text code" data-config-field="form.body"><?php echo
-        '<label class="label label-required" for="email">Email</label>
+        <textarea cols="100" rows="24" id="content" name="content" class="large-text code" data-config-field="form.body"><?php
+                if ($view->isEditMode()) {
+                    echo $view->form->content;
+                } else {
+                    echo '<label class="label label-required" for="email">Email</label>
 
-    <input autocomplete="email" type="email" name="email" id="email" required label="Email" />
+<input autocomplete="email" type="email" name="email" id="email" required label="Email" />
 
-    <button type="submit" name="mailcoach_subscribe_submit" id="submit">Subscribe</button>'; ?></textarea>
+<button type="submit" name="mailcoach_subscribe_submit" id="submit">Subscribe</button>';
+                }?></textarea>
 
             <button type="submit" name="submit" id="submit" class="primary-button mt-1">
                 Save
