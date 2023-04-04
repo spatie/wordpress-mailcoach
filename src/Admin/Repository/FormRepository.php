@@ -86,6 +86,21 @@ class FormRepository
         }, $result);
     }
 
+    public function allShortCodes(): array
+    {
+        global $wpdb;
+
+        $tableName = Form::tableName();
+
+        $query = "SELECT shortcode FROM {$tableName}";
+
+        $result = $wpdb->get_results($query);
+
+        return array_map(static function ($item) {
+            return $item->shortcode;
+        }, $result);
+    }
+
     public function firstByShortcode(string $shortcode): ?Form
     {
         global $wpdb;

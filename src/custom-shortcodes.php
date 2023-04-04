@@ -1,10 +1,20 @@
 <?php
 
-function subscribeLink(array $attributes)
+use Spatie\WordPressMailcoach\Admin\Exception\NotFound;
+use Spatie\WordPressMailcoach\Admin\Repository\FormRepository;
+
+function subscribeLink($attributes, $content, $tag)
 {
-    // $attributes is used in the view
+    $form = FormRepository::make()->firstByShortcode($tag);
+
+    if (! $form) {
+        throw NotFound::form($tag);
+    }
 
     return include __DIR__ . '/Front/views/subscribe.php';
 }
 
-add_shortcode('subscribe-form-mailcoach', 'subscribeLink');
+// @todo add caching
+foreach (FormRepository::make()->allShortCodes() as $shortCode) {
+    add_shortcode($shortCode, 'subscribeLink');
+}
