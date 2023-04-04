@@ -11,7 +11,7 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-class Form
+class Form implements Model
 {
     private function __construct(
         public string $id,
@@ -48,6 +48,7 @@ class Form
 
     public function editUrl(): string
     {
+        // @todo use something more global like adminUrls(): array<edit:string,..>
         return add_query_arg([
             'form' => $this->id,
             'page' => 'mailcoach-edit-form',
