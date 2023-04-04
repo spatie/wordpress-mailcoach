@@ -30,7 +30,7 @@ class CreateOrUpdateFormData
             $sanitizedName = sanitize_text_field($_POST['name']),
             $_POST['shortcode'] ?? (new GenerateShortcode())->execute($sanitizedName),
             sanitize_text_field($_POST['email-list']),
-            $_POST['content'],
+            stripslashes($_POST['content']),
         );
     }
 }
