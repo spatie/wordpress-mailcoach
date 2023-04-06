@@ -100,6 +100,8 @@ class Admin implements HasHooks
         if ($this->mailcoach->hasCredentials()) {
             $lists = $this->mailcoach->emailLists();
 
+            // @todo handle failed API calls properly
+
             $basePathUI = substr($this->settings->apiEndpoint(), 0, strpos($this->settings->apiEndpoint(), '.app') + 4);
 
             // @todo replace with ViewModel

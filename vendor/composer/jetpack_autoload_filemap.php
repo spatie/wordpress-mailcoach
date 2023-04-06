@@ -18,6 +18,14 @@ return [
         'version' => '1.27.0.0',
         'path' => $vendorDir . '/symfony/polyfill-ctype/bootstrap.php',
     ],
+    '6124b4c8570aa390c21fafd04a26c69f' => [
+        'version' => '1.11.0.0',
+        'path' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+    ],
+    'e39a8b23c42d4e1452234d762b03835a' => [
+        'version' => '4.7.3.0',
+        'path' => $vendorDir . '/ramsey/uuid/src/functions.php',
+    ],
     '8825ede83f2f289127722d4e842cf7e8' => [
         'version' => '1.27.0.0',
         'path' => $vendorDir . '/symfony/polyfill-intl-grapheme/bootstrap.php',
@@ -26,29 +34,21 @@ return [
         'version' => '1.27.0.0',
         'path' => $vendorDir . '/symfony/polyfill-intl-normalizer/bootstrap.php',
     ],
-    '6124b4c8570aa390c21fafd04a26c69f' => [
-        'version' => '1.11.0.0',
-        'path' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
-    ],
-    'b6b991a57620e2fb6b2f66f03fe9ddc2' => [
-        'version' => '6.2.5.0',
-        'path' => $vendorDir . '/symfony/string/Resources/functions.php',
+    'a4a119a56e50fbb293281d9a48007e0e' => [
+        'version' => '1.27.0.0',
+        'path' => $vendorDir . '/symfony/polyfill-php80/bootstrap.php',
     ],
     'ec07570ca5a812141189b1fa81503674' => [
         'version' => '9.6.3.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
     ],
-    'e39a8b23c42d4e1452234d762b03835a' => [
-        'version' => '4.7.3.0',
-        'path' => $vendorDir . '/ramsey/uuid/src/functions.php',
-    ],
-    'a4a119a56e50fbb293281d9a48007e0e' => [
-        'version' => '1.27.0.0',
-        'path' => $vendorDir . '/symfony/polyfill-php80/bootstrap.php',
-    ],
     '7b11c4dc42b3b3023073cb14e519683c' => [
         'version' => '3.0.3.0',
         'path' => $vendorDir . '/ralouphie/getallheaders/src/getallheaders.php',
+    ],
+    'b6b991a57620e2fb6b2f66f03fe9ddc2' => [
+        'version' => '6.2.5.0',
+        'path' => $vendorDir . '/symfony/string/Resources/functions.php',
     ],
     '667aeda72477189d0494fecd327c3641' => [
         'version' => '6.2.5.0',
@@ -77,13 +77,5 @@ return [
     '37a3dc5111fe8f707ab4c132ef1dbc62' => [
         'version' => '7.5.0.0',
         'path' => $vendorDir . '/guzzlehttp/guzzle/src/functions_include.php',
-    ],
-    'f83ed111c2f97a0449abf067f157f418' => [
-        'version' => '1.22.4.0',
-        'path' => $vendorDir . '/pestphp/pest/src/Functions.php',
-    ],
-    '7d2876738dc0328edeb8a103c76cd8e7' => [
-        'version' => '1.22.4.0',
-        'path' => $vendorDir . '/pestphp/pest/src/Pest.php',
     ],
 ];

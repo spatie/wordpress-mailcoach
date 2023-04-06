@@ -6,7 +6,6 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return [
-    'Whoops\\' => [$vendorDir . '/filp/whoops/src/Whoops'],
     'Symfony\\Polyfill\\Php81\\' => [$vendorDir . '/symfony/polyfill-php81'],
     'Symfony\\Polyfill\\Php80\\' => [$vendorDir . '/symfony/polyfill-php80'],
     'Symfony\\Polyfill\\Mbstring\\' => [$vendorDir . '/symfony/polyfill-mbstring'],
@@ -34,16 +33,13 @@ return [
     'Ramsey\\Uuid\\' => [$vendorDir . '/ramsey/uuid/src'],
     'Ramsey\\Collection\\' => [$vendorDir . '/ramsey/collection/src'],
     'Psr\\Log\\' => [$vendorDir . '/psr/log/src'],
-    'Psr\\Http\\Message\\' => [$vendorDir . '/psr/http-message/src', $vendorDir . '/psr/http-factory/src'],
+    'Psr\\Http\\Message\\' => [$vendorDir . '/psr/http-factory/src', $vendorDir . '/psr/http-message/src'],
     'Psr\\Http\\Client\\' => [$vendorDir . '/psr/http-client/src'],
     'Psr\\EventDispatcher\\' => [$vendorDir . '/psr/event-dispatcher/src'],
     'Psr\\Container\\' => [$vendorDir . '/psr/container/src'],
     'Psr\\Cache\\' => [$vendorDir . '/psr/cache/src'],
     'PhpParser\\' => [$vendorDir . '/nikic/php-parser/lib/PhpParser'],
     'PhpCsFixer\\' => [$vendorDir . '/friendsofphp/php-cs-fixer/src'],
-    'Pest\\Plugin\\' => [$vendorDir . '/pestphp/pest-plugin/src'],
-    'Pest\\' => [$vendorDir . '/pestphp/pest/src'],
-    'NunoMaduro\\Collision\\' => [$vendorDir . '/nunomaduro/collision/src'],
     'GuzzleHttp\\Psr7\\' => [$vendorDir . '/guzzlehttp/psr7/src'],
     'GuzzleHttp\\Promise\\' => [$vendorDir . '/guzzlehttp/promises/src'],
     'GuzzleHttp\\' => [$vendorDir . '/guzzlehttp/guzzle/src'],
