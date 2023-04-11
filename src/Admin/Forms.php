@@ -53,8 +53,6 @@ class Forms implements HasHooks
             }
         }, $forms);
 
-        // @todo replace with ViewModel
-
         include __DIR__ . '/views/show-forms.php';
     }
 

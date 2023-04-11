@@ -14,7 +14,7 @@ function subscribeLink($attributes, $content, $tag)
     return include __DIR__ . '/Front/views/subscribe.php';
 }
 
-// @todo add caching
+// @todo how can we optimize this?
 foreach (FormRepository::make()->allShortCodes() as $shortCode) {
     add_shortcode($shortCode, 'subscribeLink');
 }
