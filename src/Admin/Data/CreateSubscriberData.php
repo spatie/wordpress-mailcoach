@@ -23,11 +23,15 @@ class CreateSubscriberData
 
     public static function fromShortcode(): self
     {
-        if (! isset($_POST['mailcoach_subscribe_submit'], $_POST['mailcoach_subscribe_nonce'], $_POST['email_list_uuid'])) {
+        if (! isset(
+            $_POST['mailcoach_subscribe_submit'],
+            $_POST['mailcoach_subscribe_nonce'],
+            $_POST['email_list_uuid']
+        )) {
             throw InvalidData::fromRequest();
         }
 
-        if (! wp_verify_nonce($_POST['mailcoach_subscribe_nonce'], 'faire-don')) {
+        if (! wp_verify_nonce($_POST['mailcoach_subscribe_nonce'], 'mailcoach_subscribe_nonce')) {
             throw InvalidData::fromNonce();
         }
 

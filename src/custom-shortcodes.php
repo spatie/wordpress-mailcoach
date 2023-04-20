@@ -11,7 +11,11 @@ function subscribeLink($attributes, $content, $tag)
         throw NotFound::form($tag);
     }
 
-    return include __DIR__ . '/Front/views/subscribe.php';
+    ob_start();
+
+    include __DIR__ . '/Front/views/subscribe.php';
+
+    return ob_get_clean();
 }
 
 // @todo how can we optimize this?
