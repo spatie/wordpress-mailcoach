@@ -46,17 +46,17 @@
     ?>
 
         <textarea cols="100" rows="24" id="content" name="content" class="large-text code" data-config-field="form.body"><?php
-                if ($view->isEditMode()) {
-                    echo $view->form->content;
-                } else {
-                    echo '<label class="label label-required" for="email">Email</label>
+    if ($view->isEditMode()) {
+        echo $view->form->content;
+    } else {
+        echo '<label class="label label-required" for="email">Email</label>
 
 <input autocomplete="email" type="email" name="email" id="email" required label="Email" />
 
 <button type="submit" name="mailcoach_subscribe_submit" id="submit">Subscribe</button>';
-                }?></textarea>
+    }?></textarea>
 
-            <button type="submit" name="submit" id="submit" class="primary-button mt-1">
+            <button type="submit" name="submit" id="submit" class="button-primary">
                 Save
             </button>
     </section>

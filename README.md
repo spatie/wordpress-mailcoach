@@ -15,12 +15,12 @@ We invest a lot of resources into creating [best in class open source packages](
 We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
 
 
-@todo
+### To Do
 
-- Gulp, Laravel Mix or Vite for bundling, minifying, ...
-- Tests !
-- Security in WP, let a WP dev look at this plugin?
-
+- Setup testing environment (PhpUnit or Pest)
+- Add tests
+- Verify security, perhaps a WP developer can look into this?
+- Find a better solution than calling db in `custom-shortcodes.php`
 
 ### Changelog
 

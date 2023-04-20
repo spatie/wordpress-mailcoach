@@ -1,4 +1,4 @@
-<section class="flex-grow min-w-0 flex flex-col">
+<section>
     <div>
         <form class="card-grid" method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="POST">
             <fieldset class="card form-grid max-w-[50%]">
@@ -32,7 +32,7 @@
                 <input type="hidden" name="action" value="store_settings_form">
 
                 <div class="form-field mt-4">
-                    <button type="submit" name="submit" id="submit" class="primary-button mt-1">
+                    <button type="submit" name="submit" id="submit" class="primary-button">
                         Update API Key
                     </button>
                 </div>
