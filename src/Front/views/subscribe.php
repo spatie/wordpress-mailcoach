@@ -1,19 +1,33 @@
-<?php /** @var \Spatie\WordPressMailcoach\Front\ViewModel\ShowSubscribeViewModel $view */ ?>
+<?php
+
+    /** @var \Spatie\WordPressMailcoach\Front\ViewModel\ShowSubscribeViewModel $view */
+
+
+    ?>
+
 <form
     method="POST"
     action="<?php echo $view->form->actionUrl(); ?>">
 
-    <input type="hidden" name="redirect_after_subscribed" value=<?php echo"{$view->currentUrl()}?status=subscribed"; ?>>
-    <input type="hidden" name="redirect_after_subscription_pending" value=<?php echo"{$view->currentUrl()}?status=pending"; ?>>
-    <input type="hidden" name="redirect_after_already_subscribed" value=<?php echo"{$view->currentUrl()}?status=already_subscribed"; ?>>
+    <input type="hidden" name="redirect_after_subscribed" value=<?php echo $view->endpoints()['subscribed']; ?>>
+    <input type="hidden" name="redirect_after_subscription_pending" value=<?php echo $view->endpoints()['pending']; ?>>
+    <input type="hidden" name="redirect_after_already_subscribed" value=<?php echo $view->endpoints()['already_subscribed']; ?>>
 
     <input type="hidden" name="action" value="process_subscribe_form" />
 
     <?php echo $view->form->content; ?>
 
     <!-- TODO: Messages (+customizable) -->
-    <?php if (isset($_GET['status']) && $_GET['status'] === 'subscribed') { ?>
+    <?php if ($view->isSubscribed()) { ?>
         <p class="mailcoach-subscribe-success">You have been subscribed!</p>
+    <?php } ?>
+
+    <?php if ($view->isPending()) { ?>
+        <p class="mailcoach-subscribe-success">You have been subscribed. Check your email to verify!</p>
+    <?php } ?>
+
+    <?php if ($view->isAlreadySubscribed()) { ?>
+        <p class="mailcoach-subscribe-success">You have already been subscribed!</p>
     <?php } ?>
 
 </form>
