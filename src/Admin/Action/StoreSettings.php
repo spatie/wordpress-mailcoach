@@ -17,10 +17,10 @@ class StoreSettings
                     ! $this->lastCharsAreEqual($data->apiToken, $storedApiToken)
                     && ! $this->containsAsterixSymbols($data->apiToken)
                 ) {
-                    update_option('mailcoach_api_token', $data->apiToken);
+                    update_option(Settings::API_TOKEN, $data->apiToken);
                 }
             } else {
-                add_option('mailcoach_api_token', $data->apiToken);
+                add_option(Settings::API_TOKEN, $data->apiToken);
             }
         }
 
@@ -28,9 +28,9 @@ class StoreSettings
             $storedApiEndpoint = get_option(Settings::API_ENDPOINT);
 
             if (! empty($data->apiEndpoint) && ! empty($storedApiEndpoint)) {
-                update_option('mailcoach_api_endpoint', $data->apiEndpoint);
+                update_option(Settings::API_ENDPOINT, $data->apiEndpoint);
             } else {
-                add_option('mailcoach_api_endpoint', $data->apiEndpoint);
+                add_option(Settings::API_ENDPOINT, $data->apiEndpoint);
             }
         }
     }
