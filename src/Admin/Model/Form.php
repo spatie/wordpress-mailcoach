@@ -49,7 +49,7 @@ class Form implements Model
 
     public function actionUrl(): string
     {
-        return get_option(Settings::API_ENDPOINT) . "/subscribe/{$this->shortcode}";
+        return get_option(Settings::API_ENDPOINT) . "/subscribe/{$this->emailListUuid}";
     }
 
     public function editUrl(): string

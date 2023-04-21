@@ -1,22 +1,15 @@
-<?php /** @var \Spatie\WordPressMailcoach\Admin\Model\Form $form */ ?>
+<?php /** @var \Spatie\WordPressMailcoach\Front\ViewModel\ShowSubscribeViewModel $view */ ?>
 <form
     method="POST"
-    action="<?php echo $form->actionUrl(); ?>">
+    action="<?php echo $view->form->actionUrl(); ?>">
 
-    <?php
-        global $wp;
-
-$currentUrl = home_url(add_query_arg([], $wp->request));
-?>
-
-    <input type="hidden" name="redirect_after_subscribed" value=<?php echo"{$currentUrl}?status=subscribed"; ?>>
-    <input type="hidden" name="redirect_after_subscription_pending" value=<?php echo"{$currentUrl}?status=pending"; ?>>
-    <input type="hidden" name="redirect_after_already_subscribed" value=<?php echo"{$currentUrl}?status=already_subscribed"; ?>>
+    <input type="hidden" name="redirect_after_subscribed" value=<?php echo"{$view->currentUrl()}?status=subscribed"; ?>>
+    <input type="hidden" name="redirect_after_subscription_pending" value=<?php echo"{$view->currentUrl()}?status=pending"; ?>>
+    <input type="hidden" name="redirect_after_already_subscribed" value=<?php echo"{$view->currentUrl()}?status=already_subscribed"; ?>>
 
     <input type="hidden" name="action" value="process_subscribe_form" />
-    <?php wp_nonce_field('mailcoach_subscribe_nonce', 'mailcoach_subscribe_nonce'); ?>
 
-    <?php echo $form->content; ?>
+    <?php echo $view->form->content; ?>
 
     <!-- TODO: Messages (+customizable) -->
     <?php if (isset($_GET['status']) && $_GET['status'] === 'subscribed') { ?>

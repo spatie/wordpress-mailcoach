@@ -64,6 +64,6 @@ class Settings implements HasHooks
 
     public function apiEndpoint(): string
     {
-        return $this->apiEndpoint;
+        return $this->apiEndpoint . '/api';
     }
 }

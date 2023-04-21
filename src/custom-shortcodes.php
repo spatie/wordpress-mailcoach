@@ -2,6 +2,7 @@
 
 use Spatie\WordPressMailcoach\Admin\Exception\NotFound;
 use Spatie\WordPressMailcoach\Admin\Repository\FormRepository;
+use Spatie\WordPressMailcoach\Front\ViewModel\ShowSubscribeViewModel;
 
 function subscribeLink($attributes, $content, $tag)
 {
@@ -10,6 +11,8 @@ function subscribeLink($attributes, $content, $tag)
     if (! $form) {
         throw NotFound::form($tag);
     }
+
+    $view = new ShowSubscribeViewModel($form);
 
     ob_start();
 

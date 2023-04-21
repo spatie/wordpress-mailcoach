@@ -19,7 +19,14 @@ class StoreSettingsData
     {
         return new self(
             isset($_POST['mailcoach_api_token']) ? sanitize_text_field($_POST['mailcoach_api_token']) : null,
-            isset($_POST['mailcoach_api_endpoint']) ? sanitize_text_field($_POST['mailcoach_api_endpoint']) : null,
+            isset($_POST['mailcoach_api_endpoint']) ? self::getDomain(sanitize_text_field($_POST['mailcoach_api_endpoint'])) : null,
         );
+    }
+
+    private static function getDomain(string $url): string
+    {
+        $url = parse_url($url);
+
+        return ($url['scheme'] . '://' . $url['host']) ?? '';
     }
 }
