@@ -5,15 +5,13 @@ namespace Spatie\WordPressMailcoach\Admin;
 use Spatie\MailcoachSdk\Mailcoach;
 use Spatie\MailcoachSdk\Resources\EmailList;
 use Spatie\MailcoachSdk\Support\PaginatedResults;
-use Spatie\WordPressMailcoach\Admin\Data\CreateSubscriberData;
-use Spatie\WordPressMailcoach\Support\HasHooks;
 
 // If this file is called directly, abort.
 if (! defined('ABSPATH')) {
     exit;
 }
 
-class MailcoachApi implements HasHooks
+class MailcoachApi
 {
     private Mailcoach $mailcoach;
 
@@ -30,12 +28,6 @@ class MailcoachApi implements HasHooks
     public static function fromSettings(Settings $settings): MailcoachApi
     {
         return new self($settings->apiToken(), $settings->apiEndpoint());
-    }
-
-    public function initializeHooks(): void
-    {
-        add_action('admin_post_nopriv_process_subscribe_form', fn () => $this->createSubscriberFromShortCode());
-        add_action('admin_post_process_subscribe_form', fn () => $this->createSubscriberFromShortCode());
     }
 
     public function hasCredentials(): bool
@@ -64,19 +56,5 @@ class MailcoachApi implements HasHooks
     public function emailList(string $uuid): EmailList
     {
         return $this->mailcoach->emailList($uuid);
-    }
-
-    public function showEmailLists(): void
-    {
-        include __DIR__ . '/views/show-email-lists.php';
-    }
-
-    public function createSubscriberFromShortCode(): void
-    {
-        $data = CreateSubscriberData::fromShortcode();
-
-        $this->mailcoach->createSubscriber($data->emailListUuid, $data->attributes);
-
-        wp_redirect($_SERVER['HTTP_REFERER']);
     }
 }

@@ -32,7 +32,6 @@ class Admin implements HasHooks
     public function initializeHooks(): void
     {
         $this->settings->initializeHooks();
-        $this->mailcoach->initializeHooks();
         $this->forms->initializeActionHooks();
 
         add_action('admin_init', fn () => $this->loadScripts());
