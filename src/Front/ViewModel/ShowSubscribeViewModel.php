@@ -43,7 +43,7 @@ class ShowSubscribeViewModel
     }
 
     /**
-     * @return array{subscribed: string, pending: string, already_subscribed: string
+     * @return array{subscribed: string, pending: string, already_subscribed: string}
      */
     public function endpoints(): array
     {

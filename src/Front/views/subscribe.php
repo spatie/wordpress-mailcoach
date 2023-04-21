@@ -1,9 +1,4 @@
-<?php
-
-    /** @var \Spatie\WordPressMailcoach\Front\ViewModel\ShowSubscribeViewModel $view */
-
-
-    ?>
+<?php /** @var \Spatie\WordPressMailcoach\Front\ViewModel\ShowSubscribeViewModel $view */ ?>
 
 <form
     method="POST"
@@ -15,7 +10,11 @@
 
     <input type="hidden" name="action" value="process_subscribe_form" />
 
-    <?php echo $view->form->content; ?>
+    <input type="text" name="mailcoach-unique-name-827" style="display: none; tab-index: -1;" />
+
+    <?php if (! $view->isProcessed()) {
+        echo $view->form->content;
+    } ?>
 
     <!-- TODO: Messages (+customizable) -->
     <?php if ($view->isSubscribed()) { ?>
