@@ -21,9 +21,9 @@
                 ?>
             <div>
                 <p>
-                    <label for="shortcode">Copy this shortcode and paste it into your post, page, or text widget content:</label>
+                    <label for="shortcode">Copy this shortcode and paste it into your post, page, or text widget content</label>
                     <span>
-                <input type="text" id="shortcode" readonly="readonly" class="large-text code" value=<?php echo $view->form->shortcode; ?>>
+                <input type="text" id="shortcode" readonly="readonly" class="large-text code" value="[<?php echo $view->form->shortcode; ?>]">
             </span>
                 </p>
             </div>
