@@ -10,7 +10,7 @@
     }
 
     if (! empty($lists->results())) {
-        $headers = ['Name', 'ID', 'Subscribers', 'Created At'];
+        $headers = ['Name', 'Subscribers'];
         ?>
 
         <table class="wp-list-table widefat fixed striped table-view-list postso">
@@ -23,14 +23,12 @@
             </thead>
             <tbody>
             <?php foreach ($lists->results() as $list) {
-                $created = wp_date(get_option('date_format'), strtotime($list->attributes['created_at']));
+                //$created = wp_date(get_option('date_format'), strtotime($list->attributes['created_at']));
                 $linkToMailcoach = $basePathUI . '/email-lists/' . $list->attributes['uuid'] . '/summary';
 
                 echo "<tr>";
                 echo "<td><a href='{$linkToMailcoach}' target='_blank'>{$list->attributes['name']}</a></td>";
-                echo "<td class='text-xs'>{$list->attributes['uuid']}</td>";
                 echo "<td>{$list->attributes['active_subscribers_count']}</td>";
-                echo "<td>{$created}</td>";
                 echo "</tr>";
             } ?>
             </tbody>
