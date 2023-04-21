@@ -3,13 +3,14 @@
 namespace Spatie\WordPressMailcoach\Admin\Action;
 
 use Spatie\WordPressMailcoach\Admin\Data\StoreSettingsData;
+use Spatie\WordPressMailcoach\Admin\Settings;
 
 class StoreSettings
 {
     public function execute(StoreSettingsData $data): void
     {
         if ($data->apiToken) {
-            $storedApiToken = get_option('mailcoach_api_token');
+            $storedApiToken = get_option(Settings::API_TOKEN);
 
             if (! empty($data->apiToken) && ! empty($storedApiToken)) {
                 if (
@@ -24,7 +25,7 @@ class StoreSettings
         }
 
         if ($data->apiEndpoint) {
-            $storedApiEndpoint = get_option('mailcoach_api_endpoint');
+            $storedApiEndpoint = get_option(Settings::API_ENDPOINT);
 
             if (! empty($data->apiEndpoint) && ! empty($storedApiEndpoint)) {
                 update_option('mailcoach_api_endpoint', $data->apiEndpoint);

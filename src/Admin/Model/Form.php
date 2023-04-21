@@ -4,6 +4,7 @@ namespace Spatie\WordPressMailcoach\Admin\Model;
 
 use DateTimeImmutable;
 use Spatie\MailcoachSdk\Resources\EmailList;
+use Spatie\WordPressMailcoach\Admin\Settings;
 use Spatie\WordPressMailcoach\Includes\Table;
 
 // If this file is called directly, abort.
@@ -27,12 +28,12 @@ class Form implements Model
     public static function fromObject(object $data): self
     {
         return new self(
-            $data->id,
-            $data->name,
-            $data->shortcode,
-            $data->email_list_uuid,
-            $data->content,
-            DateTimeImmutable::createFromFormat('Y-m-d H:i:s', $data->created_at),
+            id: $data->id,
+            name: $data->name,
+            shortcode: $data->shortcode,
+            emailListUuid: $data->email_list_uuid,
+            content: $data->content,
+            createdAt: DateTimeImmutable::createFromFormat('Y-m-d H:i:s', $data->created_at),
         );
     }
 
@@ -44,6 +45,11 @@ class Form implements Model
     public function createdAt(): string
     {
         return $this->createdAt->format(get_option('date_format'));
+    }
+
+    public function actionUrl(): string
+    {
+        return get_option(Settings::API_ENDPOINT) . "/subscribe/{$this->shortcode}";
     }
 
     public function editUrl(): string
