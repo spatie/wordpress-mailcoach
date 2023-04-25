@@ -42,11 +42,13 @@ class MailcoachApi
         return $this->mailcoach->emailLists();
     }
 
-    /** @return array{uuid: string, name: string} */
+    /** @return EmailList[] */
     public function emailListOptions(): array
     {
-        $emailLists = [];
+        return $this->mailcoach->emailLists()->results();
+
         foreach ($this->mailcoach->emailLists()->results() as $list) {
+            ray($list);
             $emailLists[] = ['uuid' => $list->uuid, 'name' => $list->name];
         }
 

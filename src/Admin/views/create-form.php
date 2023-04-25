@@ -31,19 +31,65 @@
             }
     ?>
 
+        <p id="mailcoach-external-form-subscriptions-warning"></p>
+
         <label for="email-list">Choose a list</label>
         <select name="email-list" id="email-list">
 
         <?php
+    /** @var \Spatie\MailcoachSdk\Resources\EmailList $list */
     foreach ($view->emailLists() as $list) {
-        echo "<option value='{$list['uuid']}'";
+        echo "<option value='{$list->uuid}'";
 
-        if ($list['uuid'] === $view->selectedEmailList()) {
+        if ($list->uuid === $view->selectedEmailList()) {
             echo " selected";
         }
-        echo ">{$list['name']}</option>";
+        echo ">{$list->name}</option>";
     }
     ?>
+
+            <script>
+                if (verifyIfSelectedOptionsHasExternalFormSubscriptionsEnabled()) {
+                    addWarning();
+                } else {
+                    removeWarning();
+                }
+
+                document.getElementById("email-list").addEventListener("change", function() {
+                    if (verifyIfSelectedOptionsHasExternalFormSubscriptionsEnabled()) {
+                        addWarning();
+                    } else {
+                        removeWarning();
+                    }
+                });
+
+                function getSelectedOption() {
+                    const emailList = document.getElementById("email-list");
+                    const selectedOption = emailList.options[emailList.selectedIndex];
+
+                    return selectedOption.text;
+                }
+
+                function verifyIfSelectedOptionsHasExternalFormSubscriptionsEnabled() {
+                    let enabledLists = <?php echo json_encode($view->enabledEmailListNames(), true); ?>;
+
+                    const selectedOptionText = getSelectedOption();
+
+                    return ! enabledLists.includes(selectedOptionText);
+                }
+
+                function addWarning() {
+                    let warning = document.getElementById('mailcoach-external-form-subscriptions-warning');
+
+                    warning.innerHTML = 'External form subscriptions are not enabled for this list. Please enable them in the Mailcoach dashboard.'
+                }
+
+                function removeWarning() {
+                    let warning = document.getElementById('mailcoach-external-form-subscriptions-warning');
+
+                    warning.innerHTML = '';
+                }
+            </script>
 
         <textarea cols="100" rows="24" id="content" name="content" class="large-text code" data-config-field="form.body"><?php
     if ($view->isEditMode()) {

@@ -16,7 +16,7 @@
         echo $view->form->content;
     } ?>
 
-    <!-- TODO: Messages (+customizable) -->
+    <!-- TODO: Customizable messages -->
     <?php if ($view->isSubscribed()) { ?>
         <p class="mailcoach-subscribe-success">You have been subscribed!</p>
     <?php } ?>
