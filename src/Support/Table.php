@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\WordPressMailcoach\Includes;
+namespace Spatie\WordPressMailcoach\Support;
 
 use Spatie\WordPressMailcoach\Admin\Exception\DatabaseException;
 

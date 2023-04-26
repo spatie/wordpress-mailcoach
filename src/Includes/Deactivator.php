@@ -4,6 +4,7 @@ namespace Spatie\WordPressMailcoach\Includes;
 
 // If this file is called directly, abort.
 use Spatie\WordPressMailcoach\Admin\ValueObject\Settings;
+use Spatie\WordPressMailcoach\Support\Table;
 
 if (! defined('ABSPATH')) {
     exit;

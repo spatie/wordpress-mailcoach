@@ -6,7 +6,7 @@ use DateTimeImmutable;
 use Spatie\MailcoachSdk\Resources\EmailList;
 use Spatie\WordPressMailcoach\Admin\ValueObject\Messages;
 use Spatie\WordPressMailcoach\Admin\ValueObject\Settings;
-use Spatie\WordPressMailcoach\Includes\Table;
+use Spatie\WordPressMailcoach\Support\Table;
 
 // If this file is called directly, abort.
 if (! defined('ABSPATH')) {
