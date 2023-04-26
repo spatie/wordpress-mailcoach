@@ -286,6 +286,10 @@ return [
         'version' => '2.0.1.0',
         'path' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
     ],
+    'JsonException' => [
+        'version' => '1.27.0.0',
+        'path' => $vendorDir . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+    ],
     'Mockery' => [
         'version' => '1.5.1.0',
         'path' => $vendorDir . '/mockery/mockery/library/Mockery.php',

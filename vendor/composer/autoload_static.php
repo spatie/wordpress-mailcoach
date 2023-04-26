@@ -15,6 +15,7 @@ class ComposerStaticInite62b809dd1cd8002d3c4ad852630d1ff
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
+        '9b38cf48e83f5d8f60375221cd213eee' => __DIR__ . '/..' . '/phpstan/phpstan/bootstrap.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
@@ -22,6 +23,7 @@ class ComposerStaticInite62b809dd1cd8002d3c4ad852630d1ff
         '051bafe20e2674435a162870efa2d2a7' => __DIR__ . '/..' . '/brain/monkey/inc/api.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '3074abeef0bacf5811f59e9dee6311d1' => __DIR__ . '/..' . '/spatie/ray/src/helpers.php',
+        '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
         '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
         '7d3b315c4f303f2fc14aca642a738e50' => __DIR__ . '/..' . '/yoast/phpunit-polyfills/phpunitpolyfills-autoload.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
@@ -30,8 +32,10 @@ class ComposerStaticInite62b809dd1cd8002d3c4ad852630d1ff
     public static $prefixLengthsPsr4 = [
         'S' =>
         [
+            'SzepeViktor\\PHPStan\\WordPress\\' => 30,
             'Symfony\\Polyfill\\Php81\\' => 23,
             'Symfony\\Polyfill\\Php80\\' => 23,
+            'Symfony\\Polyfill\\Php73\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Intl\\Normalizer\\' => 33,
             'Symfony\\Polyfill\\Intl\\Grapheme\\' => 31,
@@ -70,6 +74,7 @@ class ComposerStaticInite62b809dd1cd8002d3c4ad852630d1ff
             'Psr\\Cache\\' => 10,
             'PhpParser\\' => 10,
             'PhpCsFixer\\' => 11,
+            'PHPStan\\ExtensionInstaller\\' => 27,
         ],
         'G' =>
         [
@@ -104,6 +109,10 @@ class ComposerStaticInite62b809dd1cd8002d3c4ad852630d1ff
     ];
 
     public static $prefixDirsPsr4 = [
+        'SzepeViktor\\PHPStan\\WordPress\\' =>
+        [
+            0 => __DIR__ . '/..' . '/szepeviktor/phpstan-wordpress/src',
+        ],
         'Symfony\\Polyfill\\Php81\\' =>
         [
             0 => __DIR__ . '/..' . '/symfony/polyfill-php81',
@@ -111,6 +120,10 @@ class ComposerStaticInite62b809dd1cd8002d3c4ad852630d1ff
         'Symfony\\Polyfill\\Php80\\' =>
         [
             0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
+        ],
+        'Symfony\\Polyfill\\Php73\\' =>
+        [
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php73',
         ],
         'Symfony\\Polyfill\\Mbstring\\' =>
         [
@@ -240,6 +253,10 @@ class ComposerStaticInite62b809dd1cd8002d3c4ad852630d1ff
         'PhpCsFixer\\' =>
         [
             0 => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src',
+        ],
+        'PHPStan\\ExtensionInstaller\\' =>
+        [
+            0 => __DIR__ . '/..' . '/phpstan/extension-installer/src',
         ],
         'GuzzleHttp\\Psr7\\' =>
         [
@@ -385,6 +402,7 @@ class ComposerStaticInite62b809dd1cd8002d3c4ad852630d1ff
         'Hamcrest\\Type\\IsString' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Type/IsString.php',
         'Hamcrest\\Util' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
+        'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
         'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
         'PHPUnit\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit\\Framework\\ActualValueIsNotAnObjectException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Exception/ActualValueIsNotAnObjectException.php',

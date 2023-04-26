@@ -6,8 +6,10 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return [
+    'SzepeViktor\\PHPStan\\WordPress\\' => [$vendorDir . '/szepeviktor/phpstan-wordpress/src'],
     'Symfony\\Polyfill\\Php81\\' => [$vendorDir . '/symfony/polyfill-php81'],
     'Symfony\\Polyfill\\Php80\\' => [$vendorDir . '/symfony/polyfill-php80'],
+    'Symfony\\Polyfill\\Php73\\' => [$vendorDir . '/symfony/polyfill-php73'],
     'Symfony\\Polyfill\\Mbstring\\' => [$vendorDir . '/symfony/polyfill-mbstring'],
     'Symfony\\Polyfill\\Intl\\Normalizer\\' => [$vendorDir . '/symfony/polyfill-intl-normalizer'],
     'Symfony\\Polyfill\\Intl\\Grapheme\\' => [$vendorDir . '/symfony/polyfill-intl-grapheme'],
@@ -40,6 +42,7 @@ return [
     'Psr\\Cache\\' => [$vendorDir . '/psr/cache/src'],
     'PhpParser\\' => [$vendorDir . '/nikic/php-parser/lib/PhpParser'],
     'PhpCsFixer\\' => [$vendorDir . '/friendsofphp/php-cs-fixer/src'],
+    'PHPStan\\ExtensionInstaller\\' => [$vendorDir . '/phpstan/extension-installer/src'],
     'GuzzleHttp\\Psr7\\' => [$vendorDir . '/guzzlehttp/psr7/src'],
     'GuzzleHttp\\Promise\\' => [$vendorDir . '/guzzlehttp/promises/src'],
     'GuzzleHttp\\' => [$vendorDir . '/guzzlehttp/guzzle/src'],

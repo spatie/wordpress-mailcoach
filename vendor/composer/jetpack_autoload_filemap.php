@@ -38,6 +38,10 @@ return [
         'version' => '1.27.0.0',
         'path' => $vendorDir . '/symfony/polyfill-php80/bootstrap.php',
     ],
+    '9b38cf48e83f5d8f60375221cd213eee' => [
+        'version' => '1.10.14.0',
+        'path' => $vendorDir . '/phpstan/phpstan/bootstrap.php',
+    ],
     'ec07570ca5a812141189b1fa81503674' => [
         'version' => '9.6.3.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
@@ -65,6 +69,10 @@ return [
     '3074abeef0bacf5811f59e9dee6311d1' => [
         'version' => '1.36.2.0',
         'path' => $vendorDir . '/spatie/ray/src/helpers.php',
+    ],
+    '0d59ee240a4cd96ddbb4ff164fccea4d' => [
+        'version' => '1.27.0.0',
+        'path' => $vendorDir . '/symfony/polyfill-php73/bootstrap.php',
     ],
     '23c18046f52bef3eea034657bafda50f' => [
         'version' => '1.27.0.0',
