@@ -1,10 +1,11 @@
 <?php
 
-namespace Spatie\WordPressMailcoach\Admin;
+namespace Spatie\WordPressMailcoach\Includes\Api;
 
 use Spatie\MailcoachSdk\Mailcoach;
 use Spatie\MailcoachSdk\Resources\EmailList;
 use Spatie\MailcoachSdk\Support\PaginatedResults;
+use Spatie\WordPressMailcoach\Admin\ValueObject\Settings;
 
 // If this file is called directly, abort.
 if (! defined('ABSPATH')) {
@@ -46,13 +47,6 @@ class MailcoachApi
     public function emailListOptions(): array
     {
         return $this->mailcoach->emailLists()->results();
-
-        foreach ($this->mailcoach->emailLists()->results() as $list) {
-            ray($list);
-            $emailLists[] = ['uuid' => $list->uuid, 'name' => $list->name];
-        }
-
-        return $emailLists;
     }
 
     public function emailList(string $uuid): EmailList

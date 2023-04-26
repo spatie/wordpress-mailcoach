@@ -2,8 +2,8 @@
 
 namespace Spatie\WordPressMailcoach\Includes;
 
-use Spatie\WordPressMailcoach\Admin\Admin;
-use Spatie\WordPressMailcoach\Admin\Settings;
+use Spatie\WordPressMailcoach\Admin\AdminMenu;
+use Spatie\WordPressMailcoach\Admin\ValueObject\Settings;
 
 // If this file is called directly, abort.
 if (! defined('ABSPATH')) {
@@ -20,9 +20,7 @@ class Main
     private function defineAdminHooks(): void
     {
         if (is_admin()) {
-            $settings = Settings::make();
-
-            $admin = Admin::fromSettings($settings);
+            $admin = AdminMenu::make(Settings::initialise());
             $admin->initializeHooks();
         }
 

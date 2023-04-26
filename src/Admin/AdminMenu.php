@@ -2,6 +2,8 @@
 
 namespace Spatie\WordPressMailcoach\Admin;
 
+use Spatie\WordPressMailcoach\Admin\ValueObject\Settings;
+use Spatie\WordPressMailcoach\Includes\Api\MailcoachApi;
 use Spatie\WordPressMailcoach\Support\HasHooks;
 
 // If this file is called directly, abort.
@@ -9,30 +11,30 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-class Admin implements HasHooks
+class AdminMenu implements HasHooks
 {
-    private Settings $settings;
+    private SettingsController $settingsController;
+
+    private FormsController $formsController;
 
     private MailcoachApi $mailcoach;
 
-    private Forms $forms;
-
-    private function __construct(Settings $settings)
+    private function __construct(private Settings $settings)
     {
-        $this->settings = $settings;
+        $this->settingsController = SettingsController::make($settings);
         $this->mailcoach = MailcoachApi::fromSettings($settings);
-        $this->forms = Forms::make($this->mailcoach);
+        $this->formsController = FormsController::make($this->mailcoach);
     }
 
-    public static function fromSettings(Settings $settings): Admin
+    public static function make(Settings $settings): self
     {
         return new self($settings);
     }
 
     public function initializeHooks(): void
     {
-        $this->settings->initializeHooks();
-        $this->forms->initializeActionHooks();
+        $this->settingsController->initializeHooks();
+        $this->formsController->initializeActionHooks();
 
         add_action('admin_init', fn () => $this->loadScripts());
         add_action('wp_enqueue_scripts', fn () => $this->loadScripts(), 999);
@@ -99,7 +101,7 @@ class Admin implements HasHooks
         if ($this->mailcoach->hasCredentials()) {
             $lists = $this->mailcoach->emailLists();
 
-            $basePathUI = substr($this->settings->apiEndpoint(), 0, strpos($this->settings->apiEndpoint(), '.app') + 4);
+            $basePathUI = mailcoachTenantUrl($this->settings);
 
             include __DIR__ . '/views/show-email-lists.php';
         }
@@ -107,19 +109,19 @@ class Admin implements HasHooks
 
     public function createFormsSubPage(): void
     {
-        $this->forms->initializeHooks();
-        $this->forms->indexForms();
+        $this->formsController->initializeHooks();
+        $this->formsController->indexForms();
     }
 
     public function createAddFormSubPage(): void
     {
-        $this->forms->initializeHooks();
-        $this->forms->createForm();
+        $this->formsController->initializeHooks();
+        $this->formsController->createForm();
     }
 
     public function createEditFormSubPage(): void
     {
-        $this->forms->initializeHooks();
-        $this->forms->editForm();
+        $this->formsController->initializeHooks();
+        $this->formsController->editForm();
     }
 }

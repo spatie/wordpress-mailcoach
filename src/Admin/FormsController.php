@@ -6,6 +6,7 @@ use Spatie\WordPressMailcoach\Admin\Data\CreateOrUpdateFormData;
 use Spatie\WordPressMailcoach\Admin\Model\Form;
 use Spatie\WordPressMailcoach\Admin\Repository\FormRepository;
 use Spatie\WordPressMailcoach\Admin\ViewModel\CreateOrUpdateFormViewModel;
+use Spatie\WordPressMailcoach\Includes\Api\MailcoachApi;
 use Spatie\WordPressMailcoach\Support\HasHooks;
 
 // If this file is called directly, abort.
@@ -13,7 +14,7 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-class Forms implements HasHooks
+class FormsController implements HasHooks
 {
     private function __construct(
         private MailcoachApi $mailcoach,

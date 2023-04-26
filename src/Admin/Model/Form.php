@@ -4,8 +4,8 @@ namespace Spatie\WordPressMailcoach\Admin\Model;
 
 use DateTimeImmutable;
 use Spatie\MailcoachSdk\Resources\EmailList;
-use Spatie\WordPressMailcoach\Admin\Settings;
 use Spatie\WordPressMailcoach\Admin\ValueObject\Messages;
+use Spatie\WordPressMailcoach\Admin\ValueObject\Settings;
 use Spatie\WordPressMailcoach\Includes\Table;
 
 // If this file is called directly, abort.
@@ -29,8 +29,6 @@ class Form implements Model
 
     public static function fromObject(object $data): self
     {
-        ray($data);
-
         return new self(
             id: $data->id,
             name: $data->name,
@@ -54,7 +52,7 @@ class Form implements Model
 
     public function actionUrl(): string
     {
-        return get_option(Settings::API_ENDPOINT) . "/subscribe/{$this->emailListUuid}";
+        return get_option(Settings::KEY_API_ENDPOINT) . "/subscribe/{$this->emailListUuid}";
     }
 
     public function editUrl(): string

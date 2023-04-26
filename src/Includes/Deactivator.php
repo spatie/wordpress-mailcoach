@@ -3,7 +3,7 @@
 namespace Spatie\WordPressMailcoach\Includes;
 
 // If this file is called directly, abort.
-use Spatie\WordPressMailcoach\Admin\Settings;
+use Spatie\WordPressMailcoach\Admin\ValueObject\Settings;
 
 if (! defined('ABSPATH')) {
     exit;
@@ -20,7 +20,7 @@ class Deactivator
 
     private static function deleteOptions(): void
     {
-        foreach (Settings::KEYS as $key) {
+        foreach (Settings::keys() as $key) {
             delete_option($key);
         }
     }

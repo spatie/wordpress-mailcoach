@@ -3,34 +3,34 @@
 namespace Spatie\WordPressMailcoach\Admin\Action;
 
 use Spatie\WordPressMailcoach\Admin\Data\StoreSettingsData;
-use Spatie\WordPressMailcoach\Admin\Settings;
+use Spatie\WordPressMailcoach\Admin\ValueObject\Settings;
 
 class StoreSettings
 {
     public function execute(StoreSettingsData $data): void
     {
         if ($data->apiToken) {
-            $storedApiToken = get_option(Settings::API_TOKEN);
+            $storedApiToken = get_option(Settings::KEY_API_TOKEN);
 
             if (! empty($data->apiToken) && ! empty($storedApiToken)) {
                 if (
                     ! $this->lastCharsAreEqual($data->apiToken, $storedApiToken)
                     && ! $this->containsAsterixSymbols($data->apiToken)
                 ) {
-                    update_option(Settings::API_TOKEN, $data->apiToken);
+                    update_option(Settings::KEY_API_TOKEN, $data->apiToken);
                 }
             } else {
-                add_option(Settings::API_TOKEN, $data->apiToken);
+                add_option(Settings::KEY_API_TOKEN, $data->apiToken);
             }
         }
 
         if ($data->apiEndpoint) {
-            $storedApiEndpoint = get_option(Settings::API_ENDPOINT);
+            $storedApiEndpoint = get_option(Settings::KEY_API_ENDPOINT);
 
             if (! empty($data->apiEndpoint) && ! empty($storedApiEndpoint)) {
-                update_option(Settings::API_ENDPOINT, $data->apiEndpoint);
+                update_option(Settings::KEY_API_ENDPOINT, $data->apiEndpoint);
             } else {
-                add_option(Settings::API_ENDPOINT, $data->apiEndpoint);
+                add_option(Settings::KEY_API_ENDPOINT, $data->apiEndpoint);
             }
         }
     }

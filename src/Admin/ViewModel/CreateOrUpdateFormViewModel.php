@@ -3,9 +3,9 @@
 namespace Spatie\WordPressMailcoach\Admin\ViewModel;
 
 use Spatie\MailcoachSdk\Resources\EmailList;
-use Spatie\WordPressMailcoach\Admin\MailcoachApi;
 use Spatie\WordPressMailcoach\Admin\Model\Form;
 use Spatie\WordPressMailcoach\Admin\ValueObject\Messages;
+use Spatie\WordPressMailcoach\Includes\Api\MailcoachApi;
 
 class CreateOrUpdateFormViewModel
 {
@@ -25,15 +25,6 @@ class CreateOrUpdateFormViewModel
         $lists = array_filter($this->emailLists(), static function (EmailList $emailList) {
             return $emailList->allowFormSubscriptions;
         });
-
-        ray(array_values(
-            array_map(
-                static function (EmailList $emailList) {
-                    return $emailList->name;
-                },
-                $lists
-            )
-        ));
 
         return array_values(
             array_map(
