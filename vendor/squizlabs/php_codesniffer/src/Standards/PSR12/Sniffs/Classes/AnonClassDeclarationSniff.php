@@ -17,21 +17,19 @@ use PHP_CodeSniffer\Util\Tokens;
 
 class AnonClassDeclarationSniff extends ClassDeclarationSniff
 {
-
     /**
      * The PSR2 MultiLineFunctionDeclarations sniff.
      *
-     * @var MultiLineFunctionDeclarationSniff
+     * @var \PHP_CodeSniffer\Standards\Squiz\Sniffs\Functions\MultiLineFunctionDeclarationSniff
      */
     private $multiLineSniff = null;
 
     /**
      * The Generic FunctionCallArgumentSpacing sniff.
      *
-     * @var FunctionCallArgumentSpacingSniff
+     * @var \PHP_CodeSniffer\Standards\Generic\Sniffs\Functions\FunctionCallArgumentSpacingSniff
      */
     private $functionCallSniff = null;
-
 
     /**
      * Returns an array of tokens this test wants to listen for.
@@ -44,7 +42,6 @@ class AnonClassDeclarationSniff extends ClassDeclarationSniff
 
     }//end register()
 
-
     /**
      * Processes this test, when one of its tokens is encountered.
      *
@@ -54,14 +51,14 @@ class AnonClassDeclarationSniff extends ClassDeclarationSniff
      *
      * @return void
      */
-    public function process(File $phpcsFile, $stackPtr)
+    public function process(File $phpcsFile, $stackPtr): void
     {
         $tokens = $phpcsFile->getTokens();
         if (isset($tokens[$stackPtr]['scope_opener']) === false) {
             return;
         }
 
-        $this->multiLineSniff    = new MultiLineFunctionDeclarationSniff();
+        $this->multiLineSniff = new MultiLineFunctionDeclarationSniff();
         $this->functionCallSniff = new FunctionCallArgumentSpacingSniff();
 
         $this->processOpen($phpcsFile, $stackPtr);
@@ -92,9 +89,9 @@ class AnonClassDeclarationSniff extends ClassDeclarationSniff
         ) {
             // Opening brace must be on a new line as implements list wraps.
             $error = 'Opening brace must be on the line after the last implemented interface';
-            $fix   = $phpcsFile->addFixableError($error, $opener, 'OpenBraceSameLine');
+            $fix = $phpcsFile->addFixableError($error, $opener, 'OpenBraceSameLine');
             if ($fix === true) {
-                $first  = $phpcsFile->findFirstOnLine(T_WHITESPACE, $stackPtr, true);
+                $first = $phpcsFile->findFirstOnLine(T_WHITESPACE, $stackPtr, true);
                 $indent = str_repeat(' ', ($tokens[$first]['column'] - 1));
                 $phpcsFile->fixer->beginChangeset();
                 $phpcsFile->fixer->replaceToken(($prev + 1), '');
@@ -107,7 +104,7 @@ class AnonClassDeclarationSniff extends ClassDeclarationSniff
         if ($tokens[$opener]['line'] > ($tokens[$prev]['line'] + 1)) {
             // Opening brace is on a new line, so there must be no blank line before it.
             $error = 'Opening brace must not be preceded by a blank line';
-            $fix   = $phpcsFile->addFixableError($error, $opener, 'OpenBraceLine');
+            $fix = $phpcsFile->addFixableError($error, $opener, 'OpenBraceLine');
             if ($fix === true) {
                 $phpcsFile->fixer->beginChangeset();
                 for ($x = ($prev + 1); $x < $opener; $x++) {
@@ -130,7 +127,6 @@ class AnonClassDeclarationSniff extends ClassDeclarationSniff
 
     }//end process()
 
-
     /**
      * Processes this test, when one of its tokens is encountered.
      *
@@ -140,11 +136,11 @@ class AnonClassDeclarationSniff extends ClassDeclarationSniff
      *
      * @return void
      */
-    public function processSingleLineArgumentList(File $phpcsFile, $stackPtr)
+    public function processSingleLineArgumentList(File $phpcsFile, $stackPtr): void
     {
         $tokens = $phpcsFile->getTokens();
 
-        $openBracket  = $tokens[$stackPtr]['parenthesis_opener'];
+        $openBracket = $tokens[$stackPtr]['parenthesis_opener'];
         $closeBracket = $tokens[$openBracket]['parenthesis_closer'];
         if ($openBracket === ($closeBracket - 1)) {
             return;
@@ -152,7 +148,7 @@ class AnonClassDeclarationSniff extends ClassDeclarationSniff
 
         if ($tokens[($openBracket + 1)]['code'] === T_WHITESPACE) {
             $error = 'Space after opening parenthesis of single-line argument list prohibited';
-            $fix   = $phpcsFile->addFixableError($error, $stackPtr, 'SpaceAfterOpenBracket');
+            $fix = $phpcsFile->addFixableError($error, $stackPtr, 'SpaceAfterOpenBracket');
             if ($fix === true) {
                 $phpcsFile->fixer->replaceToken(($openBracket + 1), '');
             }
@@ -167,13 +163,13 @@ class AnonClassDeclarationSniff extends ClassDeclarationSniff
 
         if ($tokens[$prev]['line'] !== $tokens[$closeBracket]['line']) {
             $spaceBeforeClose = 'newline';
-        } else if ($tokens[($closeBracket - 1)]['code'] === T_WHITESPACE) {
+        } elseif ($tokens[($closeBracket - 1)]['code'] === T_WHITESPACE) {
             $spaceBeforeClose = $tokens[($closeBracket - 1)]['length'];
         }
 
         if ($spaceBeforeClose !== 0) {
             $error = 'Space before closing parenthesis of single-line argument list prohibited';
-            $fix   = $phpcsFile->addFixableError($error, $stackPtr, 'SpaceBeforeCloseBracket');
+            $fix = $phpcsFile->addFixableError($error, $stackPtr, 'SpaceBeforeCloseBracket');
             if ($fix === true) {
                 if ($spaceBeforeClose === 'newline') {
                     $phpcsFile->fixer->beginChangeset();
@@ -217,7 +213,6 @@ class AnonClassDeclarationSniff extends ClassDeclarationSniff
 
     }//end processSingleLineArgumentList()
 
-
     /**
      * Processes this test, when one of its tokens is encountered.
      *
@@ -227,7 +222,7 @@ class AnonClassDeclarationSniff extends ClassDeclarationSniff
      *
      * @return void
      */
-    public function processMultiLineArgumentList(File $phpcsFile, $stackPtr)
+    public function processMultiLineArgumentList(File $phpcsFile, $stackPtr): void
     {
         $tokens = $phpcsFile->getTokens();
 

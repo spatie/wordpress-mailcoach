@@ -14,7 +14,6 @@ use PHP_CodeSniffer\Sniffs\Sniff;
 
 class DisallowTabIndentSniff implements Sniff
 {
-
     /**
      * A list of tokenizers this sniff supports.
      *
@@ -29,10 +28,9 @@ class DisallowTabIndentSniff implements Sniff
     /**
      * The --tab-width CLI value that is being used.
      *
-     * @var integer
+     * @var int
      */
     private $tabWidth = null;
-
 
     /**
      * Returns an array of tokens this test wants to listen for.
@@ -47,7 +45,6 @@ class DisallowTabIndentSniff implements Sniff
         ];
 
     }//end register()
-
 
     /**
      * Processes this test, when one of its tokens is encountered.
@@ -69,13 +66,15 @@ class DisallowTabIndentSniff implements Sniff
             }
         }
 
-        $tokens      = $phpcsFile->getTokens();
+        $tokens = $phpcsFile->getTokens();
         $checkTokens = [
-            T_WHITESPACE             => true,
-            T_INLINE_HTML            => true,
+            T_WHITESPACE => true,
+            T_INLINE_HTML => true,
             T_DOC_COMMENT_WHITESPACE => true,
-            T_DOC_COMMENT_STRING     => true,
-            T_COMMENT                => true,
+            T_DOC_COMMENT_STRING => true,
+            T_COMMENT => true,
+            T_END_HEREDOC => true,
+            T_END_NOWDOC => true,
         ];
 
         for ($i = 0; $i < $phpcsFile->numTokens; $i++) {
@@ -126,19 +125,19 @@ class DisallowTabIndentSniff implements Sniff
 
             $foundTabs = substr_count($content, "\t");
 
-            $error     = 'Spaces must be used to indent lines; tabs are not allowed';
+            $error = 'Spaces must be used to indent lines; tabs are not allowed';
             $errorCode = 'TabsUsed';
             if ($tokens[$i]['column'] === 1) {
                 if ($recordMetrics === true) {
                     $foundIndentSpaces = substr_count($indentation, ' ');
-                    $foundIndentTabs   = substr_count($indentation, "\t");
+                    $foundIndentTabs = substr_count($indentation, "\t");
 
                     if ($foundIndentTabs > 0 && $foundIndentSpaces === 0) {
                         $phpcsFile->recordMetric($i, 'Line indent', 'tabs');
-                    } else if ($foundIndentTabs === 0 && $foundIndentSpaces > 0) {
+                    } elseif ($foundIndentTabs === 0 && $foundIndentSpaces > 0) {
                         $phpcsFile->recordMetric($i, 'Line indent', 'spaces');
-                    } else if ($foundIndentTabs > 0 && $foundIndentSpaces > 0) {
-                        $spacePosition  = strpos($indentation, ' ');
+                    } elseif ($foundIndentTabs > 0 && $foundIndentSpaces > 0) {
+                        $spacePosition = strpos($indentation, ' ');
                         $tabAfterSpaces = strpos($indentation, "\t", $spacePosition);
                         if ($tabAfterSpaces !== false) {
                             $phpcsFile->recordMetric($i, 'Line indent', 'mixed');
@@ -158,7 +157,7 @@ class DisallowTabIndentSniff implements Sniff
                 // record any metrics about them because they aren't
                 // line indent tokens.
                 if ($foundTabs > 0) {
-                    $error     = 'Spaces must be used for alignment; tabs are not allowed';
+                    $error = 'Spaces must be used for alignment; tabs are not allowed';
                     $errorCode = 'NonIndentTabsUsed';
                 }
             }//end if

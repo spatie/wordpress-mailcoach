@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of PHPUnit.
  *
@@ -7,29 +9,37 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace PHPUnit\Util\TestDox;
 
-use const PHP_EOL;
 use function array_map;
 use function ceil;
 use function count;
 use function explode;
 use function get_class;
 use function implode;
-use function preg_match;
-use function sprintf;
-use function strlen;
-use function strpos;
-use function trim;
+
+use const PHP_EOL;
+
 use PHPUnit\Framework\Test;
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\TestResult;
 use PHPUnit\Runner\BaseTestRunner;
 use PHPUnit\Runner\PhptTestCase;
 use PHPUnit\Util\Color;
+
+use function preg_match;
+
 use SebastianBergmann\Timer\ResourceUsageFormatter;
 use SebastianBergmann\Timer\Timer;
+
+use function sprintf;
+use function strlen;
+use function strpos;
+
 use Throwable;
+
+use function trim;
 
 /**
  * @internal This class is not covered by the backward compatibility promise for PHPUnit
@@ -41,11 +51,11 @@ class CliTestDoxPrinter extends TestDoxPrinter
      */
     private const PREFIX_SIMPLE = [
         'default' => '│',
-        'start'   => '│',
+        'start' => '│',
         'message' => '│',
-        'diff'    => '│',
-        'trace'   => '│',
-        'last'    => '│',
+        'diff' => '│',
+        'trace' => '│',
+        'last' => '│',
     ];
 
     /**
@@ -53,11 +63,11 @@ class CliTestDoxPrinter extends TestDoxPrinter
      */
     private const PREFIX_DECORATED = [
         'default' => '│',
-        'start'   => '┐',
+        'start' => '┐',
         'message' => '├',
-        'diff'    => '┊',
-        'trace'   => '╵',
-        'last'    => '┴',
+        'diff' => '┊',
+        'trace' => '╵',
+        'last' => '┴',
     ];
 
     private const SPINNER_ICONS = [
@@ -66,45 +76,44 @@ class CliTestDoxPrinter extends TestDoxPrinter
         " \e[36m◑\e[0m running tests",
         " \e[36m◒\e[0m running tests",
     ];
-
     private const STATUS_STYLES = [
         BaseTestRunner::STATUS_PASSED => [
             'symbol' => '✔',
-            'color'  => 'fg-green',
+            'color' => 'fg-green',
         ],
         BaseTestRunner::STATUS_ERROR => [
-            'symbol'  => '✘',
-            'color'   => 'fg-yellow',
+            'symbol' => '✘',
+            'color' => 'fg-yellow',
             'message' => 'bg-yellow,fg-black',
         ],
         BaseTestRunner::STATUS_FAILURE => [
-            'symbol'  => '✘',
-            'color'   => 'fg-red',
+            'symbol' => '✘',
+            'color' => 'fg-red',
             'message' => 'bg-red,fg-white',
         ],
         BaseTestRunner::STATUS_SKIPPED => [
-            'symbol'  => '↩',
-            'color'   => 'fg-cyan',
+            'symbol' => '↩',
+            'color' => 'fg-cyan',
             'message' => 'fg-cyan',
         ],
         BaseTestRunner::STATUS_RISKY => [
-            'symbol'  => '☢',
-            'color'   => 'fg-yellow',
+            'symbol' => '☢',
+            'color' => 'fg-yellow',
             'message' => 'fg-yellow',
         ],
         BaseTestRunner::STATUS_INCOMPLETE => [
-            'symbol'  => '∅',
-            'color'   => 'fg-yellow',
+            'symbol' => '∅',
+            'color' => 'fg-yellow',
             'message' => 'fg-yellow',
         ],
         BaseTestRunner::STATUS_WARNING => [
-            'symbol'  => '⚠',
-            'color'   => 'fg-yellow',
+            'symbol' => '⚠',
+            'color' => 'fg-yellow',
             'message' => 'fg-yellow',
         ],
         BaseTestRunner::STATUS_UNKNOWN => [
-            'symbol'  => '?',
-            'color'   => 'fg-blue',
+            'symbol' => '?',
+            'color' => 'fg-blue',
             'message' => 'fg-white,bg-blue',
         ],
     ];
@@ -129,7 +138,7 @@ class CliTestDoxPrinter extends TestDoxPrinter
     {
         parent::__construct($out, $verbose, $colors, $debug, $numberOfColumns, $reverse);
 
-        $this->timer = new Timer;
+        $this->timer = new Timer();
 
         $this->timer->start();
     }
@@ -145,7 +154,7 @@ class CliTestDoxPrinter extends TestDoxPrinter
 
     protected function printHeader(TestResult $result): void
     {
-        $this->write("\n" . (new ResourceUsageFormatter)->resourceUsage($this->timer->stop()) . "\n\n");
+        $this->write("\n" . (new ResourceUsageFormatter())->resourceUsage($this->timer->stop()) . "\n\n");
     }
 
     protected function formatClassName(Test $test): string
@@ -185,7 +194,7 @@ class CliTestDoxPrinter extends TestDoxPrinter
     {
         // spacer line for new suite headers and after verbose messages
         if ($prevResult['testName'] !== '' &&
-            (!empty($prevResult['message']) || $prevResult['className'] !== $result['className'])) {
+            (! empty($prevResult['message']) || $prevResult['className'] !== $result['className'])) {
             $this->write(PHP_EOL);
         }
 
@@ -202,7 +211,7 @@ class CliTestDoxPrinter extends TestDoxPrinter
         }
 
         $style = self::STATUS_STYLES[$result['status']];
-        $line  = sprintf(
+        $line = sprintf(
             ' %s %s%s' . PHP_EOL,
             $this->colorizeTextBox($style['color'], $style['symbol']),
             $testName,
@@ -222,9 +231,9 @@ class CliTestDoxPrinter extends TestDoxPrinter
 
     protected function colorizeMessageAndDiff(string $style, string $buffer): array
     {
-        $lines      = $buffer ? array_map('\rtrim', explode(PHP_EOL, $buffer)) : [];
-        $message    = [];
-        $diff       = [];
+        $lines = $buffer ? array_map('\rtrim', explode(PHP_EOL, $buffer)) : [];
+        $message = [];
+        $diff = [];
         $insideDiff = false;
 
         foreach ($lines as $line) {
@@ -232,7 +241,7 @@ class CliTestDoxPrinter extends TestDoxPrinter
                 $insideDiff = true;
             }
 
-            if (!$insideDiff) {
+            if (! $insideDiff) {
                 $message[] = $line;
             } else {
                 if (strpos($line, '-') === 0) {
@@ -247,7 +256,7 @@ class CliTestDoxPrinter extends TestDoxPrinter
         }
         $diff = implode(PHP_EOL, $diff);
 
-        if (!empty($message)) {
+        if (! empty($message)) {
             $message = $this->colorizeTextBox($style, implode(PHP_EOL, $message));
         }
 
@@ -258,11 +267,11 @@ class CliTestDoxPrinter extends TestDoxPrinter
     {
         $trace = \PHPUnit\Util\Filter::getFilteredStacktrace($t);
 
-        if (!$this->colors) {
+        if (! $this->colors) {
             return $trace;
         }
 
-        $lines    = [];
+        $lines = [];
         $prevPath = '';
 
         foreach (explode(PHP_EOL, $trace) as $line) {
@@ -273,7 +282,7 @@ class CliTestDoxPrinter extends TestDoxPrinter
                     "\n";
                 $prevPath = $matches[1];
             } else {
-                $lines[]  = $line;
+                $lines[] = $line;
                 $prevPath = '';
             }
         }
@@ -284,31 +293,30 @@ class CliTestDoxPrinter extends TestDoxPrinter
     protected function formatTestResultMessage(Throwable $t, array $result, ?string $prefix = null): string
     {
         $message = $this->formatThrowable($t, $result['status']);
-        $diff    = '';
+        $diff = '';
 
-        if (!($this->verbose || $result['verbose'])) {
+        if (! ($this->verbose || $result['verbose'])) {
             return '';
         }
 
         if ($message && $this->colors) {
-            $style            = self::STATUS_STYLES[$result['status']]['message'] ?? '';
+            $style = self::STATUS_STYLES[$result['status']]['message'] ?? '';
             [$message, $diff] = $this->colorizeMessageAndDiff($style, $message);
         }
 
-        if ($prefix === null || !$this->colors) {
+        if ($prefix === null || ! $this->colors) {
             $prefix = self::PREFIX_SIMPLE;
         }
 
         if ($this->colors) {
-            $color  = self::STATUS_STYLES[$result['status']]['color'] ?? '';
-            $prefix = array_map(static function ($p) use ($color)
-            {
+            $color = self::STATUS_STYLES[$result['status']]['color'] ?? '';
+            $prefix = array_map(static function ($p) use ($color) {
                 return Color::colorize($color, $p);
             }, self::PREFIX_DECORATED);
         }
 
         $trace = $this->formatStacktrace($t);
-        $out   = $this->prefixLines($prefix['start'], PHP_EOL) . PHP_EOL;
+        $out = $this->prefixLines($prefix['start'], PHP_EOL) . PHP_EOL;
 
         if ($message) {
             $out .= $this->prefixLines($prefix['message'], $message . PHP_EOL) . PHP_EOL;
@@ -347,7 +355,7 @@ class CliTestDoxPrinter extends TestDoxPrinter
 
     private function formatRuntime(float $time, string $color = ''): string
     {
-        if (!$this->colors) {
+        if (! $this->colors) {
             return sprintf('[%.2f ms]', $time * 1000);
         }
 

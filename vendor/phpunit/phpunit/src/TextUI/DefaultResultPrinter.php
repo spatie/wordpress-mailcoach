@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of PHPUnit.
  *
@@ -7,9 +9,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace PHPUnit\TextUI;
 
-use const PHP_EOL;
 use function array_map;
 use function array_reverse;
 use function count;
@@ -18,13 +20,9 @@ use function implode;
 use function in_array;
 use function is_int;
 use function max;
-use function preg_split;
-use function sprintf;
-use function str_pad;
-use function str_repeat;
-use function strlen;
-use function trim;
-use function vsprintf;
+
+use const PHP_EOL;
+
 use PHPUnit\Framework\AssertionFailedError;
 use PHPUnit\Framework\Exception;
 use PHPUnit\Framework\InvalidArgumentException;
@@ -37,10 +35,22 @@ use PHPUnit\Framework\Warning;
 use PHPUnit\Runner\PhptTestCase;
 use PHPUnit\Util\Color;
 use PHPUnit\Util\Printer;
+
+use function preg_split;
+
 use SebastianBergmann\Environment\Console;
 use SebastianBergmann\Timer\ResourceUsageFormatter;
 use SebastianBergmann\Timer\Timer;
+
+use function sprintf;
+use function str_pad;
+use function str_repeat;
+use function strlen;
+
 use Throwable;
+
+use function trim;
+use function vsprintf;
 
 /**
  * @internal This class is not covered by the backward compatibility promise for PHPUnit
@@ -48,21 +58,13 @@ use Throwable;
 class DefaultResultPrinter extends Printer implements ResultPrinter
 {
     public const EVENT_TEST_START = 0;
-
     public const EVENT_TEST_END = 1;
-
     public const EVENT_TESTSUITE_START = 2;
-
     public const EVENT_TESTSUITE_END = 3;
-
     public const COLOR_NEVER = 'never';
-
     public const COLOR_AUTO = 'auto';
-
     public const COLOR_ALWAYS = 'always';
-
     public const COLOR_DEFAULT = self::COLOR_NEVER;
-
     private const AVAILABLE_COLORS = [self::COLOR_NEVER, self::COLOR_AUTO, self::COLOR_ALWAYS];
 
     /**
@@ -147,18 +149,18 @@ class DefaultResultPrinter extends Printer implements ResultPrinter
     {
         parent::__construct($out);
 
-        if (!in_array($colors, self::AVAILABLE_COLORS, true)) {
+        if (! in_array($colors, self::AVAILABLE_COLORS, true)) {
             throw InvalidArgumentException::create(
                 3,
                 vsprintf('value from "%s", "%s" or "%s"', self::AVAILABLE_COLORS)
             );
         }
 
-        if (!is_int($numberOfColumns) && $numberOfColumns !== 'max') {
+        if (! is_int($numberOfColumns) && $numberOfColumns !== 'max') {
             throw InvalidArgumentException::create(5, 'integer or "max"');
         }
 
-        $console            = new Console;
+        $console = new Console();
         $maxNumberOfColumns = $console->getNumberOfColumns();
 
         if ($numberOfColumns === 'max' || ($numberOfColumns !== 80 && $numberOfColumns > $maxNumberOfColumns)) {
@@ -166,9 +168,9 @@ class DefaultResultPrinter extends Printer implements ResultPrinter
         }
 
         $this->numberOfColumns = $numberOfColumns;
-        $this->verbose         = $verbose;
-        $this->debug           = $debug;
-        $this->reverse         = $reverse;
+        $this->verbose = $verbose;
+        $this->debug = $debug;
+        $this->reverse = $reverse;
 
         if ($colors === self::COLOR_AUTO && $console->hasColorSupport()) {
             $this->colors = true;
@@ -176,7 +178,7 @@ class DefaultResultPrinter extends Printer implements ResultPrinter
             $this->colors = (self::COLOR_ALWAYS === $colors);
         }
 
-        $this->timer = new Timer;
+        $this->timer = new Timer();
 
         $this->timer->start();
     }
@@ -257,9 +259,9 @@ class DefaultResultPrinter extends Printer implements ResultPrinter
     public function startTestSuite(TestSuite $suite): void
     {
         if ($this->numTests == -1) {
-            $this->numTests      = count($suite);
+            $this->numTests = count($suite);
             $this->numTestsWidth = strlen((string) $this->numTests);
-            $this->maxColumn     = $this->numberOfColumns - strlen('  /  (XXX%)') - (2 * $this->numTestsWidth);
+            $this->maxColumn = $this->numberOfColumns - strlen('  /  (XXX%)') - (2 * $this->numTestsWidth);
         }
     }
 
@@ -299,7 +301,7 @@ class DefaultResultPrinter extends Printer implements ResultPrinter
             );
         }
 
-        if (!$this->lastTestFailed) {
+        if (! $this->lastTestFailed) {
             $this->writeProgress('.');
         }
 
@@ -311,7 +313,7 @@ class DefaultResultPrinter extends Printer implements ResultPrinter
 
         $this->lastTestFailed = false;
 
-        if ($test instanceof TestCase && !$test->hasExpectationOnOutput()) {
+        if ($test instanceof TestCase && ! $test->hasExpectationOnOutput()) {
             $this->write($test->getActualOutput());
         }
     }
@@ -412,7 +414,7 @@ class DefaultResultPrinter extends Printer implements ResultPrinter
     protected function printHeader(TestResult $result): void
     {
         if (count($result) > 0) {
-            $this->write(PHP_EOL . PHP_EOL . (new ResourceUsageFormatter)->resourceUsage($this->timer->stop()) . PHP_EOL . PHP_EOL);
+            $this->write(PHP_EOL . PHP_EOL . (new ResourceUsageFormatter())->resourceUsage($this->timer->stop()) . PHP_EOL . PHP_EOL);
         }
     }
 
@@ -445,7 +447,7 @@ class DefaultResultPrinter extends Printer implements ResultPrinter
         $color = 'fg-black, bg-yellow';
 
         if ($result->wasSuccessful()) {
-            if ($this->verbose || !$result->allHarmless()) {
+            if ($this->verbose || ! $result->allHarmless()) {
                 $this->write("\n");
             }
 
@@ -534,11 +536,11 @@ class DefaultResultPrinter extends Printer implements ResultPrinter
      */
     protected function colorizeTextBox(string $color, string $buffer): string
     {
-        if (!$this->colors) {
+        if (! $this->colors) {
             return $buffer;
         }
 
-        $lines   = preg_split('/\r\n|\r|\n/', $buffer);
+        $lines = preg_split('/\r\n|\r|\n/', $buffer);
         $padding = max(array_map('\strlen', $lines));
 
         $styledLines = [];
@@ -580,7 +582,7 @@ class DefaultResultPrinter extends Printer implements ResultPrinter
                 $color,
                 sprintf(
                     '%s%s: %d',
-                    !$first ? ', ' : '',
+                    ! $first ? ', ' : '',
                     $name,
                     $count
                 ),

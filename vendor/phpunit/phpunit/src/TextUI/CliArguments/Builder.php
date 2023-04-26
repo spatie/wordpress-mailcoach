@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of PHPUnit.
  *
@@ -7,6 +9,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace PHPUnit\TextUI\CliArguments;
 
 use function array_map;
@@ -14,7 +17,7 @@ use function array_merge;
 use function class_exists;
 use function explode;
 use function is_numeric;
-use function str_replace;
+
 use PHPUnit\Runner\TestSuiteSorter;
 use PHPUnit\TextUI\DefaultResultPrinter;
 use PHPUnit\TextUI\XmlConfiguration\Extension;
@@ -22,6 +25,8 @@ use PHPUnit\Util\Log\TeamCity;
 use PHPUnit\Util\TestDox\CliTestDoxPrinter;
 use SebastianBergmann\CliParser\Exception as CliParserException;
 use SebastianBergmann\CliParser\Parser as CliParser;
+
+use function str_replace;
 
 /**
  * @internal This class is not covered by the backward compatibility promise for PHPUnit
@@ -121,13 +126,12 @@ final class Builder
         'whitelist=',
         'dump-xdebug-filter=',
     ];
-
     private const SHORT_OPTIONS = 'd:c:hv';
 
     public function fromParameters(array $parameters, array $additionalLongOptions): Configuration
     {
         try {
-            $options = (new CliParser)->parse(
+            $options = (new CliParser())->parse(
                 $parameters,
                 self::SHORT_OPTIONS,
                 array_merge(self::LONG_OPTIONS, $additionalLongOptions)
@@ -140,97 +144,97 @@ final class Builder
             );
         }
 
-        $argument                                   = null;
-        $atLeastVersion                             = null;
-        $backupGlobals                              = null;
-        $backupStaticAttributes                     = null;
-        $beStrictAboutChangesToGlobalState          = null;
+        $argument = null;
+        $atLeastVersion = null;
+        $backupGlobals = null;
+        $backupStaticAttributes = null;
+        $beStrictAboutChangesToGlobalState = null;
         $beStrictAboutResourceUsageDuringSmallTests = null;
-        $bootstrap                                  = null;
-        $cacheResult                                = null;
-        $cacheResultFile                            = null;
-        $checkVersion                               = null;
-        $colors                                     = null;
-        $columns                                    = null;
-        $configuration                              = null;
-        $coverageCacheDirectory                     = null;
-        $warmCoverageCache                          = null;
-        $coverageFilter                             = null;
-        $coverageClover                             = null;
-        $coverageCobertura                          = null;
-        $coverageCrap4J                             = null;
-        $coverageHtml                               = null;
-        $coveragePhp                                = null;
-        $coverageText                               = null;
-        $coverageTextShowUncoveredFiles             = null;
-        $coverageTextShowOnlySummary                = null;
-        $coverageXml                                = null;
-        $pathCoverage                               = null;
-        $debug                                      = null;
-        $defaultTimeLimit                           = null;
-        $disableCodeCoverageIgnore                  = null;
-        $disallowTestOutput                         = null;
-        $disallowTodoAnnotatedTests                 = null;
-        $enforceTimeLimit                           = null;
-        $excludeGroups                              = null;
-        $executionOrder                             = null;
-        $executionOrderDefects                      = null;
-        $extensions                                 = [];
-        $unavailableExtensions                      = [];
-        $failOnEmptyTestSuite                       = null;
-        $failOnIncomplete                           = null;
-        $failOnRisky                                = null;
-        $failOnSkipped                              = null;
-        $failOnWarning                              = null;
-        $filter                                     = null;
-        $generateConfiguration                      = null;
-        $migrateConfiguration                       = null;
-        $groups                                     = null;
-        $testsCovering                              = null;
-        $testsUsing                                 = null;
-        $help                                       = null;
-        $includePath                                = null;
-        $iniSettings                                = [];
-        $junitLogfile                               = null;
-        $listGroups                                 = null;
-        $listSuites                                 = null;
-        $listTests                                  = null;
-        $listTestsXml                               = null;
-        $loader                                     = null;
-        $noCoverage                                 = null;
-        $noExtensions                               = null;
-        $noInteraction                              = null;
-        $noLogging                                  = null;
-        $printer                                    = null;
-        $processIsolation                           = null;
-        $randomOrderSeed                            = null;
-        $repeat                                     = null;
-        $reportUselessTests                         = null;
-        $resolveDependencies                        = null;
-        $reverseList                                = null;
-        $stderr                                     = null;
-        $strictCoverage                             = null;
-        $stopOnDefect                               = null;
-        $stopOnError                                = null;
-        $stopOnFailure                              = null;
-        $stopOnIncomplete                           = null;
-        $stopOnRisky                                = null;
-        $stopOnSkipped                              = null;
-        $stopOnWarning                              = null;
-        $teamcityLogfile                            = null;
-        $testdoxExcludeGroups                       = null;
-        $testdoxGroups                              = null;
-        $testdoxHtmlFile                            = null;
-        $testdoxTextFile                            = null;
-        $testdoxXmlFile                             = null;
-        $testSuffixes                               = null;
-        $testSuite                                  = null;
-        $unrecognizedOptions                        = [];
-        $unrecognizedOrderBy                        = null;
-        $useDefaultConfiguration                    = null;
-        $verbose                                    = null;
-        $version                                    = null;
-        $xdebugFilterFile                           = null;
+        $bootstrap = null;
+        $cacheResult = null;
+        $cacheResultFile = null;
+        $checkVersion = null;
+        $colors = null;
+        $columns = null;
+        $configuration = null;
+        $coverageCacheDirectory = null;
+        $warmCoverageCache = null;
+        $coverageFilter = null;
+        $coverageClover = null;
+        $coverageCobertura = null;
+        $coverageCrap4J = null;
+        $coverageHtml = null;
+        $coveragePhp = null;
+        $coverageText = null;
+        $coverageTextShowUncoveredFiles = null;
+        $coverageTextShowOnlySummary = null;
+        $coverageXml = null;
+        $pathCoverage = null;
+        $debug = null;
+        $defaultTimeLimit = null;
+        $disableCodeCoverageIgnore = null;
+        $disallowTestOutput = null;
+        $disallowTodoAnnotatedTests = null;
+        $enforceTimeLimit = null;
+        $excludeGroups = null;
+        $executionOrder = null;
+        $executionOrderDefects = null;
+        $extensions = [];
+        $unavailableExtensions = [];
+        $failOnEmptyTestSuite = null;
+        $failOnIncomplete = null;
+        $failOnRisky = null;
+        $failOnSkipped = null;
+        $failOnWarning = null;
+        $filter = null;
+        $generateConfiguration = null;
+        $migrateConfiguration = null;
+        $groups = null;
+        $testsCovering = null;
+        $testsUsing = null;
+        $help = null;
+        $includePath = null;
+        $iniSettings = [];
+        $junitLogfile = null;
+        $listGroups = null;
+        $listSuites = null;
+        $listTests = null;
+        $listTestsXml = null;
+        $loader = null;
+        $noCoverage = null;
+        $noExtensions = null;
+        $noInteraction = null;
+        $noLogging = null;
+        $printer = null;
+        $processIsolation = null;
+        $randomOrderSeed = null;
+        $repeat = null;
+        $reportUselessTests = null;
+        $resolveDependencies = null;
+        $reverseList = null;
+        $stderr = null;
+        $strictCoverage = null;
+        $stopOnDefect = null;
+        $stopOnError = null;
+        $stopOnFailure = null;
+        $stopOnIncomplete = null;
+        $stopOnRisky = null;
+        $stopOnSkipped = null;
+        $stopOnWarning = null;
+        $teamcityLogfile = null;
+        $testdoxExcludeGroups = null;
+        $testdoxGroups = null;
+        $testdoxHtmlFile = null;
+        $testdoxTextFile = null;
+        $testdoxXmlFile = null;
+        $testSuffixes = null;
+        $testSuite = null;
+        $unrecognizedOptions = [];
+        $unrecognizedOrderBy = null;
+        $useDefaultConfiguration = null;
+        $verbose = null;
+        $version = null;
+        $xdebugFilterFile = null;
 
         if (isset($options[1][0])) {
             $argument = $options[1][0];
@@ -318,9 +322,9 @@ final class Builder
                         $option[1] = 'php://stdout';
                     }
 
-                    $coverageText                   = $option[1];
+                    $coverageText = $option[1];
                     $coverageTextShowUncoveredFiles = false;
-                    $coverageTextShowOnlySummary    = false;
+                    $coverageTextShowOnlySummary = false;
 
                     break;
 
@@ -452,9 +456,9 @@ final class Builder
                     foreach (explode(',', $option[1]) as $order) {
                         switch ($order) {
                             case 'default':
-                                $executionOrder        = TestSuiteSorter::ORDER_DEFAULT;
+                                $executionOrder = TestSuiteSorter::ORDER_DEFAULT;
                                 $executionOrderDefects = TestSuiteSorter::ORDER_DEFAULT;
-                                $resolveDependencies   = true;
+                                $resolveDependencies = true;
 
                                 break;
 
@@ -617,7 +621,7 @@ final class Builder
 
                 case '--extensions':
                     foreach (explode(',', $option[1]) as $extensionClass) {
-                        if (!class_exists($extensionClass)) {
+                        if (! class_exists($extensionClass)) {
                             $unavailableExtensions[] = $extensionClass;
 
                             continue;

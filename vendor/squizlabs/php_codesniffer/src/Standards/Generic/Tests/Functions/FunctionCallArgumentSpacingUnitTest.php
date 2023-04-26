@@ -13,8 +13,6 @@ use PHP_CodeSniffer\Tests\Standards\AbstractSniffUnitTest;
 
 class FunctionCallArgumentSpacingUnitTest extends AbstractSniffUnitTest
 {
-
-
     /**
      * Returns the lines where errors should occur.
      *
@@ -26,20 +24,20 @@ class FunctionCallArgumentSpacingUnitTest extends AbstractSniffUnitTest
     public function getErrorList()
     {
         return [
-            5   => 1,
-            6   => 1,
-            7   => 2,
-            8   => 1,
-            11  => 1,
-            12  => 1,
-            13  => 1,
-            42  => 3,
-            43  => 3,
-            45  => 1,
-            46  => 2,
-            79  => 1,
-            82  => 1,
-            93  => 1,
+            5 => 1,
+            6 => 1,
+            7 => 2,
+            8 => 1,
+            11 => 1,
+            12 => 1,
+            13 => 1,
+            42 => 3,
+            43 => 3,
+            45 => 1,
+            46 => 2,
+            79 => 1,
+            82 => 1,
+            93 => 1,
             105 => 1,
             107 => 1,
             108 => 2,
@@ -54,10 +52,10 @@ class FunctionCallArgumentSpacingUnitTest extends AbstractSniffUnitTest
             134 => 1,
             154 => 2,
             155 => 1,
+            162 => 2,
         ];
 
     }//end getErrorList()
-
 
     /**
      * Returns the lines where warnings should occur.

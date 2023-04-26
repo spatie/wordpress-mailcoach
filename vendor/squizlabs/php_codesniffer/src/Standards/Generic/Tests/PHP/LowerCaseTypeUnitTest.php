@@ -13,8 +13,6 @@ use PHP_CodeSniffer\Tests\Standards\AbstractSniffUnitTest;
 
 class LowerCaseTypeUnitTest extends AbstractSniffUnitTest
 {
-
-
     /**
      * Returns the lines where errors should occur.
      *
@@ -66,10 +64,10 @@ class LowerCaseTypeUnitTest extends AbstractSniffUnitTest
             78 => 3,
             82 => 2,
             85 => 1,
+            94 => 5,
         ];
 
     }//end getErrorList()
-
 
     /**
      * Returns the lines where warnings should occur.

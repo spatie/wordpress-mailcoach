@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of PHPUnit.
  *
@@ -7,10 +9,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace PHPUnit\Util\Annotation;
 
-use const JSON_ERROR_NONE;
-use const PREG_OFFSET_CAPTURE;
 use function array_filter;
 use function array_key_exists;
 use function array_map;
@@ -25,13 +26,34 @@ use function implode;
 use function is_array;
 use function is_int;
 use function json_decode;
+
+use const JSON_ERROR_NONE;
+
 use function json_last_error;
 use function json_last_error_msg;
+
+use PharIo\Version\VersionConstraintParser;
+use PHPUnit\Framework\InvalidDataProviderException;
+use PHPUnit\Framework\SkippedTestError;
+use PHPUnit\Framework\Warning;
+use PHPUnit\Util\Exception;
+use PHPUnit\Util\InvalidDataSetException;
+
 use function preg_match;
 use function preg_match_all;
+
+use const PREG_OFFSET_CAPTURE;
+
 use function preg_replace;
 use function preg_split;
 use function realpath;
+
+use ReflectionClass;
+use ReflectionException;
+use ReflectionFunctionAbstract;
+use ReflectionMethod;
+use Reflector;
+
 use function rtrim;
 use function sprintf;
 use function str_replace;
@@ -39,19 +61,10 @@ use function strlen;
 use function strpos;
 use function strtolower;
 use function substr;
-use function trim;
-use PharIo\Version\VersionConstraintParser;
-use PHPUnit\Framework\InvalidDataProviderException;
-use PHPUnit\Framework\SkippedTestError;
-use PHPUnit\Framework\Warning;
-use PHPUnit\Util\Exception;
-use PHPUnit\Util\InvalidDataSetException;
-use ReflectionClass;
-use ReflectionException;
-use ReflectionFunctionAbstract;
-use ReflectionMethod;
-use Reflector;
+
 use Traversable;
+
+use function trim;
 
 /**
  * This is an abstraction around a PHPUnit-specific docBlock,
@@ -68,15 +81,10 @@ final class DocBlock
     public const REGEX_DATA_PROVIDER = '/@dataProvider\s+([a-zA-Z0-9._:-\\\\x7f-\xff]+)/';
 
     private const REGEX_REQUIRES_VERSION = '/@requires\s+(?P<name>PHP(?:Unit)?)\s+(?P<operator>[<>=!]{0,2})\s*(?P<version>[\d\.-]+(dev|(RC|alpha|beta)[\d\.])?)[ \t]*\r?$/m';
-
     private const REGEX_REQUIRES_VERSION_CONSTRAINT = '/@requires\s+(?P<name>PHP(?:Unit)?)\s+(?P<constraint>[\d\t \-.|~^]+)[ \t]*\r?$/m';
-
     private const REGEX_REQUIRES_OS = '/@requires\s+(?P<name>OS(?:FAMILY)?)\s+(?P<value>.+?)[ \t]*\r?$/m';
-
     private const REGEX_REQUIRES_SETTING = '/@requires\s+(?P<name>setting)\s+(?P<setting>([^ ]+?))\s*(?P<value>[\w\.-]+[\w\.]?)?[ \t]*\r?$/m';
-
     private const REGEX_REQUIRES = '/@requires\s+(?P<name>function|extension)\s+(?P<value>([^\s<>=!]+))\s*(?P<operator>[<>=!]{0,2})\s*(?P<version>[\d\.-]+[\d\.]?)?[ \t]*\r?$/m';
-
     private const REGEX_TEST_WITH = '/@testWith\s+/';
 
     /** @var string */
@@ -163,14 +171,14 @@ final class DocBlock
      */
     private function __construct(string $docComment, bool $isMethod, array $symbolAnnotations, int $startLine, int $endLine, string $fileName, string $name, string $className)
     {
-        $this->docComment        = $docComment;
-        $this->isMethod          = $isMethod;
+        $this->docComment = $docComment;
+        $this->isMethod = $isMethod;
         $this->symbolAnnotations = $symbolAnnotations;
-        $this->startLine         = $startLine;
-        $this->endLine           = $endLine;
-        $this->fileName          = $fileName;
-        $this->name              = $name;
-        $this->className         = $className;
+        $this->startLine = $startLine;
+        $this->endLine = $endLine;
+        $this->fileName = $fileName;
+        $this->name = $name;
+        $this->className = $className;
     }
 
     /**
@@ -191,11 +199,11 @@ final class DocBlock
             return $this->parsedRequirements;
         }
 
-        $offset            = $this->startLine;
-        $requires          = [];
-        $recordedSettings  = [];
+        $offset = $this->startLine;
+        $requires = [];
+        $recordedSettings = [];
         $extensionVersions = [];
-        $recordedOffsets   = [
+        $recordedOffsets = [
             '__FILE' => realpath($this->fileName),
         ];
 
@@ -205,27 +213,27 @@ final class DocBlock
 
         foreach ($lines as $line) {
             if (preg_match(self::REGEX_REQUIRES_OS, $line, $matches)) {
-                $requires[$matches['name']]        = $matches['value'];
+                $requires[$matches['name']] = $matches['value'];
                 $recordedOffsets[$matches['name']] = $offset;
             }
 
             if (preg_match(self::REGEX_REQUIRES_VERSION, $line, $matches)) {
                 $requires[$matches['name']] = [
-                    'version'  => $matches['version'],
+                    'version' => $matches['version'],
                     'operator' => $matches['operator'],
                 ];
                 $recordedOffsets[$matches['name']] = $offset;
             }
 
             if (preg_match(self::REGEX_REQUIRES_VERSION_CONSTRAINT, $line, $matches)) {
-                if (!empty($requires[$matches['name']])) {
+                if (! empty($requires[$matches['name']])) {
                     $offset++;
 
                     continue;
                 }
 
                 try {
-                    $versionConstraintParser = new VersionConstraintParser;
+                    $versionConstraintParser = new VersionConstraintParser();
 
                     $requires[$matches['name'] . '_constraint'] = [
                         'constraint' => $versionConstraintParser->parse(trim($matches['constraint'])),
@@ -237,23 +245,23 @@ final class DocBlock
             }
 
             if (preg_match(self::REGEX_REQUIRES_SETTING, $line, $matches)) {
-                $recordedSettings[$matches['setting']]               = $matches['value'];
+                $recordedSettings[$matches['setting']] = $matches['value'];
                 $recordedOffsets['__SETTING_' . $matches['setting']] = $offset;
             }
 
             if (preg_match(self::REGEX_REQUIRES, $line, $matches)) {
                 $name = $matches['name'] . 's';
 
-                if (!isset($requires[$name])) {
+                if (! isset($requires[$name])) {
                     $requires[$name] = [];
                 }
 
-                $requires[$name][]                                           = $matches['value'];
+                $requires[$name][] = $matches['value'];
                 $recordedOffsets[$matches['name'] . '_' . $matches['value']] = $offset;
 
-                if ($name === 'extensions' && !empty($matches['version'])) {
+                if ($name === 'extensions' && ! empty($matches['version'])) {
                     $extensionVersions[$matches['value']] = [
-                        'version'  => $matches['version'],
+                        'version' => $matches['version'],
                         'operator' => $matches['operator'],
                     ];
                 }
@@ -266,7 +274,7 @@ final class DocBlock
             $requires,
             ['__OFFSET' => $recordedOffsets],
             array_filter([
-                'setting'            => $recordedSettings,
+                'setting' => $recordedSettings,
                 'extension_versions' => $extensionVersions,
             ])
         );
@@ -287,11 +295,11 @@ final class DocBlock
         }
 
         if ($data === []) {
-            throw new SkippedTestError;
+            throw new SkippedTestError();
         }
 
         foreach ($data as $key => $value) {
-            if (!is_array($value)) {
+            if (! is_array($value)) {
                 throw new InvalidDataSetException(
                     sprintf(
                         'Data set %s is invalid.',
@@ -309,17 +317,17 @@ final class DocBlock
      */
     public function getInlineAnnotations(): array
     {
-        $code        = file($this->fileName);
-        $lineNumber  = $this->startLine;
-        $startLine   = $this->startLine - 1;
-        $endLine     = $this->endLine - 1;
-        $codeLines   = array_slice($code, $startLine, $endLine - $startLine + 1);
+        $code = file($this->fileName);
+        $lineNumber = $this->startLine;
+        $startLine = $this->startLine - 1;
+        $endLine = $this->endLine - 1;
+        $codeLines = array_slice($code, $startLine, $endLine - $startLine + 1);
         $annotations = [];
 
         foreach ($codeLines as $line) {
             if (preg_match('#/\*\*?\s*@(?P<name>[A-Za-z_-]+)(?:[ \t]+(?P<value>.*?))?[ \t]*\r?\*/$#m', $line, $matches)) {
                 $annotations[strtolower($matches['name'])] = [
-                    'line'  => $lineNumber,
+                    'line' => $lineNumber,
                     'value' => $matches['value'],
                 ];
             }
@@ -370,13 +378,13 @@ final class DocBlock
     private function getDataFromDataProviderAnnotation(string $docComment): ?array
     {
         $methodName = null;
-        $className  = $this->className;
+        $className = $this->className;
 
         if ($this->isMethod) {
             $methodName = $this->name;
         }
 
-        if (!preg_match_all(self::REGEX_DATA_PROVIDER, $docComment, $matches)) {
+        if (! preg_match_all(self::REGEX_DATA_PROVIDER, $docComment, $matches)) {
             return null;
         }
 
@@ -384,8 +392,8 @@ final class DocBlock
 
         foreach ($matches[1] as $match) {
             $dataProviderMethodNameNamespace = explode('\\', $match);
-            $leaf                            = explode('::', array_pop($dataProviderMethodNameNamespace));
-            $dataProviderMethodName          = array_pop($leaf);
+            $leaf = explode('::', array_pop($dataProviderMethodNameNamespace));
+            $dataProviderMethodName = array_pop($leaf);
 
             if (empty($dataProviderMethodNameNamespace)) {
                 $dataProviderMethodNameNamespace = '';
@@ -430,7 +438,7 @@ final class DocBlock
 
             if ($data instanceof Traversable) {
                 $origData = $data;
-                $data     = [];
+                $data = [];
 
                 foreach ($origData as $key => $value) {
                     if (is_int($key)) {
@@ -464,13 +472,13 @@ final class DocBlock
     {
         $docComment = $this->cleanUpMultiLineAnnotation($docComment);
 
-        if (!preg_match(self::REGEX_TEST_WITH, $docComment, $matches, PREG_OFFSET_CAPTURE)) {
+        if (! preg_match(self::REGEX_TEST_WITH, $docComment, $matches, PREG_OFFSET_CAPTURE)) {
             return null;
         }
 
-        $offset            = strlen($matches[0][0]) + $matches[0][1];
+        $offset = strlen($matches[0][0]) + $matches[0][1];
         $annotationContent = substr($docComment, $offset);
-        $data              = [];
+        $data = [];
 
         foreach (explode("\n", $annotationContent) as $candidateRow) {
             $candidateRow = trim($candidateRow);
@@ -490,7 +498,7 @@ final class DocBlock
             $data[] = $dataSet;
         }
 
-        if (!$data) {
+        if (! $data) {
             throw new Exception('The data set for the @testWith annotation cannot be parsed.');
         }
 
@@ -511,7 +519,7 @@ final class DocBlock
     private static function parseDocBlock(string $docBlock): array
     {
         // Strip away the docblock header and footer to ease parsing of one line annotations
-        $docBlock    = (string) substr($docBlock, 3, -2);
+        $docBlock = (string) substr($docBlock, 3, -2);
         $annotations = [];
 
         if (preg_match_all('/@(?P<name>[A-Za-z_-]+)(?:[ \t]+(?P<value>.*?))?[ \t]*\r?$/m', $docBlock, $matches)) {
@@ -534,8 +542,7 @@ final class DocBlock
             $annotations = array_merge(
                 $annotations,
                 ...array_map(
-                    static function (ReflectionClass $trait): array
-                    {
+                    static function (ReflectionClass $trait): array {
                         return self::parseDocBlock((string) $trait->getDocComment());
                     },
                     array_values($reflector->getTraits())

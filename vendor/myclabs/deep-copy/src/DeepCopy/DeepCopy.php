@@ -7,6 +7,7 @@ use DateInterval;
 use DateTimeInterface;
 use DateTimeZone;
 use DeepCopy\Exception\CloneException;
+use DeepCopy\Filter\ChainableFilter;
 use DeepCopy\Filter\Filter;
 use DeepCopy\Matcher\Matcher;
 use DeepCopy\Reflection\ReflectionHelper;
@@ -94,27 +95,27 @@ class DeepCopy
         return $this->recursiveCopy($object);
     }
 
-    public function addFilter(Filter $filter, Matcher $matcher)
+    public function addFilter(Filter $filter, Matcher $matcher): void
     {
         $this->filters[] = [
             'matcher' => $matcher,
-            'filter'  => $filter,
+            'filter' => $filter,
         ];
     }
 
-    public function prependFilter(Filter $filter, Matcher $matcher)
+    public function prependFilter(Filter $filter, Matcher $matcher): void
     {
         array_unshift($this->filters, [
             'matcher' => $matcher,
-            'filter'  => $filter,
+            'filter' => $filter,
         ]);
     }
 
-    public function addTypeFilter(TypeFilter $filter, TypeMatcher $matcher)
+    public function addTypeFilter(TypeFilter $filter, TypeMatcher $matcher): void
     {
         $this->typeFilters[] = [
             'matcher' => $matcher,
-            'filter'  => $filter,
+            'filter' => $filter,
         ];
     }
 
@@ -216,7 +217,7 @@ class DeepCopy
         return $newObject;
     }
 
-    private function copyObjectProperty($object, ReflectionProperty $property)
+    private function copyObjectProperty($object, ReflectionProperty $property): void
     {
         // Ignore static properties
         if ($property->isStatic()) {
@@ -239,6 +240,10 @@ class DeepCopy
                     }
                 );
 
+                if ($filter instanceof ChainableFilter) {
+                    continue;
+                }
+
                 // If a filter matches, we stop processing this property
                 return;
             }
@@ -247,7 +252,7 @@ class DeepCopy
         $property->setAccessible(true);
 
         // Ignore uninitialized properties (for PHP >7.4)
-        if (method_exists($property, 'isInitialized') && !$property->isInitialized($object)) {
+        if (method_exists($property, 'isInitialized') && ! $property->isInitialized($object)) {
             return;
         }
 

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of PHPUnit.
  *
@@ -7,10 +9,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace PHPUnit\Util\TestDox;
 
-use function sprintf;
 use PHPUnit\Framework\TestResult;
+
+use function sprintf;
 
 /**
  * @internal This class is not covered by the backward compatibility promise for PHPUnit
@@ -29,26 +33,47 @@ final class HtmlResultPrinter extends ResultPrinter
         <style>
             body {
                 text-rendering: optimizeLegibility;
+                font-family: Source SansSerif Pro, Arial, sans-serif;
                 font-variant-ligatures: common-ligatures;
                 font-kerning: normal;
-                margin-left: 2em;
-                background-color: #ffffff;
-                color: #000000;
+                margin-left: 2rem;
+                background-color: #fff;
+                color: #000;
             }
 
             body > ul > li {
-                font-family: Source Serif Pro, PT Sans, Trebuchet MS, Helvetica, Arial;
-                font-size: 2em;
+                font-size: larger;
             }
 
             h2 {
-                font-family: Tahoma, Helvetica, Arial;
-                font-size: 3em;
+                font-size: larger;
+                text-decoration-line: underline;
+                text-decoration-thickness: 2px;
+                margin: 0;
+                padding: 0.5rem 0;
             }
 
             ul {
                 list-style: none;
-                margin-bottom: 1em;
+                margin: 0 0 2rem;
+                padding: 0 0 0 1rem;
+                text-indent: -1rem;
+            }
+
+            .success:before {
+                color: #4e9a06;
+                content: '✓';
+                padding-right: 0.5rem;
+            }
+
+            .defect {
+                color: #a40000;
+            }
+
+            .defect:before {
+                color: #a40000;
+                content: '✗';
+                padding-right: 0.5rem;
             }
         </style>
     </head>
@@ -60,7 +85,7 @@ EOT;
      */
     private const CLASS_HEADER = <<<'EOT'
 
-        <h2 id="%s">%s</h2>
+        <h2>%s</h2>
         <ul>
 
 EOT;
@@ -101,7 +126,6 @@ EOT;
         $this->write(
             sprintf(
                 self::CLASS_HEADER,
-                $name,
                 $this->currentTestClassPrettified
             )
         );
@@ -114,9 +138,8 @@ EOT;
     {
         $this->write(
             sprintf(
-                "            <li style=\"color: %s;\">%s %s</li>\n",
-                $success ? '#555753' : '#ef2929',
-                $success ? '✓' : '❌',
+                "            <li class=\"%s\">%s</li>\n",
+                $success ? 'success' : 'defect',
                 $name
             )
         );

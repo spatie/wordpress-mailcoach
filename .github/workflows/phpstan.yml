@@ -21,7 +21,7 @@ jobs:
           coverage: none
 
       - name: Install composer dependencies
-        run: composer update --prefer-dist --no-progress --no-suggest
+        run: composer update -W --prefer-dist --no-progress --no-suggest
 
       - name: Run PHPStan
         run: ./vendor/bin/phpstan --error-format=github

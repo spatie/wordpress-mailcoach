@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of phpunit/php-code-coverage.
  *
@@ -7,12 +9,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace SebastianBergmann\CodeCoverage\StaticAnalysis;
 
 use function assert;
 use function implode;
-use function rtrim;
-use function trim;
+
 use PhpParser\Node;
 use PhpParser\Node\ComplexType;
 use PhpParser\Node\Identifier;
@@ -26,9 +28,15 @@ use PhpParser\Node\Stmt\Function_;
 use PhpParser\Node\Stmt\Interface_;
 use PhpParser\Node\Stmt\Trait_;
 use PhpParser\Node\UnionType;
+use PhpParser\NodeAbstract;
 use PhpParser\NodeTraverser;
 use PhpParser\NodeVisitorAbstract;
+
+use function rtrim;
+
 use SebastianBergmann\Complexity\CyclomaticComplexityCalculatingVisitor;
+
+use function trim;
 
 /**
  * @internal This class is not covered by the backward compatibility promise for phpunit/php-code-coverage
@@ -64,7 +72,7 @@ final class CodeUnitFindingVisitor extends NodeVisitorAbstract
             $this->processTrait($node);
         }
 
-        if (!$node instanceof ClassMethod && !$node instanceof Function_) {
+        if (! $node instanceof ClassMethod && ! $node instanceof Function_) {
             return;
         }
 
@@ -120,9 +128,9 @@ final class CodeUnitFindingVisitor extends NodeVisitorAbstract
             return 0;
         }
 
-        $traverser = new NodeTraverser;
+        $traverser = new NodeTraverser();
 
-        $cyclomaticComplexityCalculatingVisitor = new CyclomaticComplexityCalculatingVisitor;
+        $cyclomaticComplexityCalculatingVisitor = new CyclomaticComplexityCalculatingVisitor();
 
         $traverser->addVisitor($cyclomaticComplexityCalculatingVisitor);
 
@@ -139,7 +147,7 @@ final class CodeUnitFindingVisitor extends NodeVisitorAbstract
     {
         assert($node instanceof ClassMethod || $node instanceof Function_);
 
-        $signature  = ($node->returnsByRef() ? '&' : '') . $node->name->toString() . '(';
+        $signature = ($node->returnsByRef() ? '&' : '') . $node->name->toString() . '(';
         $parameters = [];
 
         foreach ($node->getParams() as $parameter) {
@@ -180,8 +188,12 @@ final class CodeUnitFindingVisitor extends NodeVisitorAbstract
             return '?' . $type->type;
         }
 
-        if ($type instanceof UnionType || $type instanceof IntersectionType) {
-            return $this->unionOrIntersectionAsString($type);
+        if ($type instanceof UnionType) {
+            return $this->unionTypeAsString($type);
+        }
+
+        if ($type instanceof IntersectionType) {
+            return $this->intersectionTypeAsString($type);
         }
 
         return $type->toString();
@@ -202,31 +214,31 @@ final class CodeUnitFindingVisitor extends NodeVisitorAbstract
 
     private function processClass(Class_ $node): void
     {
-        $name           = $node->name->toString();
+        $name = $node->name->toString();
         $namespacedName = $node->namespacedName->toString();
 
         $this->classes[$namespacedName] = [
-            'name'           => $name,
+            'name' => $name,
             'namespacedName' => $namespacedName,
-            'namespace'      => $this->namespace($namespacedName, $name),
-            'startLine'      => $node->getStartLine(),
-            'endLine'        => $node->getEndLine(),
-            'methods'        => [],
+            'namespace' => $this->namespace($namespacedName, $name),
+            'startLine' => $node->getStartLine(),
+            'endLine' => $node->getEndLine(),
+            'methods' => [],
         ];
     }
 
     private function processTrait(Trait_ $node): void
     {
-        $name           = $node->name->toString();
+        $name = $node->name->toString();
         $namespacedName = $node->namespacedName->toString();
 
         $this->traits[$namespacedName] = [
-            'name'           => $name,
+            'name' => $name,
             'namespacedName' => $namespacedName,
-            'namespace'      => $this->namespace($namespacedName, $name),
-            'startLine'      => $node->getStartLine(),
-            'endLine'        => $node->getEndLine(),
-            'methods'        => [],
+            'namespace' => $this->namespace($namespacedName, $name),
+            'startLine' => $node->getStartLine(),
+            'endLine' => $node->getEndLine(),
+            'methods' => [],
         ];
     }
 
@@ -243,7 +255,7 @@ final class CodeUnitFindingVisitor extends NodeVisitorAbstract
         assert(isset($parentNode->namespacedName));
         assert($parentNode->namespacedName instanceof Name);
 
-        $parentName           = $parentNode->name->toString();
+        $parentName = $parentNode->name->toString();
         $parentNamespacedName = $parentNode->namespacedName->toString();
 
         if ($parentNode instanceof Class_) {
@@ -252,24 +264,24 @@ final class CodeUnitFindingVisitor extends NodeVisitorAbstract
             $storage = &$this->traits;
         }
 
-        if (!isset($storage[$parentNamespacedName])) {
+        if (! isset($storage[$parentNamespacedName])) {
             $storage[$parentNamespacedName] = [
-                'name'           => $parentName,
+                'name' => $parentName,
                 'namespacedName' => $parentNamespacedName,
-                'namespace'      => $this->namespace($parentNamespacedName, $parentName),
-                'startLine'      => $parentNode->getStartLine(),
-                'endLine'        => $parentNode->getEndLine(),
-                'methods'        => [],
+                'namespace' => $this->namespace($parentNamespacedName, $parentName),
+                'startLine' => $parentNode->getStartLine(),
+                'endLine' => $parentNode->getEndLine(),
+                'methods' => [],
             ];
         }
 
         $storage[$parentNamespacedName]['methods'][$node->name->toString()] = [
             'methodName' => $node->name->toString(),
-            'signature'  => $this->signature($node),
+            'signature' => $this->signature($node),
             'visibility' => $this->visibility($node),
-            'startLine'  => $node->getStartLine(),
-            'endLine'    => $node->getEndLine(),
-            'ccn'        => $this->cyclomaticComplexity($node),
+            'startLine' => $node->getStartLine(),
+            'endLine' => $node->getEndLine(),
+            'ccn' => $this->cyclomaticComplexity($node),
         ];
     }
 
@@ -279,17 +291,17 @@ final class CodeUnitFindingVisitor extends NodeVisitorAbstract
         assert(isset($node->namespacedName));
         assert($node->namespacedName instanceof Name);
 
-        $name           = $node->name->toString();
+        $name = $node->name->toString();
         $namespacedName = $node->namespacedName->toString();
 
         $this->functions[$namespacedName] = [
-            'name'           => $name,
+            'name' => $name,
             'namespacedName' => $namespacedName,
-            'namespace'      => $this->namespace($namespacedName, $name),
-            'signature'      => $this->signature($node),
-            'startLine'      => $node->getStartLine(),
-            'endLine'        => $node->getEndLine(),
-            'ccn'            => $this->cyclomaticComplexity($node),
+            'namespace' => $this->namespace($namespacedName, $name),
+            'signature' => $this->signature($node),
+            'startLine' => $node->getStartLine(),
+            'endLine' => $node->getEndLine(),
+            'ccn' => $this->cyclomaticComplexity($node),
         ];
     }
 
@@ -298,29 +310,43 @@ final class CodeUnitFindingVisitor extends NodeVisitorAbstract
         return trim(rtrim($namespacedName, $name), '\\');
     }
 
-    /**
-     * @psalm-param UnionType|IntersectionType $type
-     */
-    private function unionOrIntersectionAsString(ComplexType $type): string
+    private function unionTypeAsString(UnionType $node): string
     {
-        if ($type instanceof UnionType) {
-            $separator = '|';
-        } else {
-            $separator = '&';
-        }
-
         $types = [];
 
-        foreach ($type->types as $_type) {
-            if ($_type instanceof Name) {
-                $types[] = $_type->toCodeString();
-            } else {
-                assert($_type instanceof Identifier);
+        foreach ($node->types as $type) {
+            if ($type instanceof IntersectionType) {
+                $types[] = '(' . $this->intersectionTypeAsString($type) . ')';
 
-                $types[] = $_type->toString();
+                continue;
             }
+
+            $types[] = $this->typeAsString($type);
         }
 
-        return implode($separator, $types);
+        return implode('|', $types);
+    }
+
+    private function intersectionTypeAsString(IntersectionType $node): string
+    {
+        $types = [];
+
+        foreach ($node->types as $type) {
+            $types[] = $this->typeAsString($type);
+        }
+
+        return implode('&', $types);
+    }
+
+    /**
+     * @psalm-param Identifier|Name $node $node
+     */
+    private function typeAsString(NodeAbstract $node): string
+    {
+        if ($node instanceof Name) {
+            return $node->toCodeString();
+        }
+
+        return $node->toString();
     }
 }

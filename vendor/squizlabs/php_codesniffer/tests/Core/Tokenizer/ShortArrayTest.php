@@ -13,8 +13,6 @@ use PHP_CodeSniffer\Tests\Core\AbstractMethodUnitTest;
 
 class ShortArrayTest extends AbstractMethodUnitTest
 {
-
-
     /**
      * Test that real square brackets are still tokenized as square brackets.
      *
@@ -25,7 +23,7 @@ class ShortArrayTest extends AbstractMethodUnitTest
      *
      * @return void
      */
-    public function testSquareBrackets($testMarker)
+    public function testSquareBrackets($testMarker): void
     {
         $tokens = self::$phpcsFile->getTokens();
 
@@ -41,7 +39,6 @@ class ShortArrayTest extends AbstractMethodUnitTest
 
     }//end testSquareBrackets()
 
-
     /**
      * Data provider.
      *
@@ -52,33 +49,32 @@ class ShortArrayTest extends AbstractMethodUnitTest
     public function dataSquareBrackets()
     {
         return [
-            ['/* testArrayAccess1 */'],
-            ['/* testArrayAccess2 */'],
-            ['/* testArrayAssignment */'],
-            ['/* testFunctionCallDereferencing */'],
-            ['/* testMethodCallDereferencing */'],
-            ['/* testStaticMethodCallDereferencing */'],
-            ['/* testPropertyDereferencing */'],
-            ['/* testPropertyDereferencingWithInaccessibleName */'],
-            ['/* testStaticPropertyDereferencing */'],
-            ['/* testStringDereferencing */'],
-            ['/* testStringDereferencingDoubleQuoted */'],
-            ['/* testConstantDereferencing */'],
-            ['/* testClassConstantDereferencing */'],
-            ['/* testMagicConstantDereferencing */'],
-            ['/* testArrayAccessCurlyBraces */'],
-            ['/* testArrayLiteralDereferencing */'],
-            ['/* testShortArrayLiteralDereferencing */'],
-            ['/* testClassMemberDereferencingOnInstantiation1 */'],
-            ['/* testClassMemberDereferencingOnInstantiation2 */'],
-            ['/* testClassMemberDereferencingOnClone */'],
-            ['/* testNullsafeMethodCallDereferencing */'],
-            ['/* testInterpolatedStringDereferencing */'],
-            ['/* testLiveCoding */'],
+            'array access 1' => ['/* testArrayAccess1 */'],
+            'array access 2' => ['/* testArrayAccess2 */'],
+            'array assignment' => ['/* testArrayAssignment */'],
+            'function call dereferencing' => ['/* testFunctionCallDereferencing */'],
+            'method call dereferencing' => ['/* testMethodCallDereferencing */'],
+            'static method call dereferencing' => ['/* testStaticMethodCallDereferencing */'],
+            'property dereferencing' => ['/* testPropertyDereferencing */'],
+            'property dereferencing with inaccessable name' => ['/* testPropertyDereferencingWithInaccessibleName */'],
+            'static property dereferencing' => ['/* testStaticPropertyDereferencing */'],
+            'string dereferencing single quotes' => ['/* testStringDereferencing */'],
+            'string dereferencing double quotes' => ['/* testStringDereferencingDoubleQuoted */'],
+            'global constant dereferencing' => ['/* testConstantDereferencing */'],
+            'class constant dereferencing' => ['/* testClassConstantDereferencing */'],
+            'magic constant dereferencing' => ['/* testMagicConstantDereferencing */'],
+            'array access with curly braces' => ['/* testArrayAccessCurlyBraces */'],
+            'array literal dereferencing' => ['/* testArrayLiteralDereferencing */'],
+            'short array literal dereferencing' => ['/* testShortArrayLiteralDereferencing */'],
+            'class member dereferencing on instantiation 1' => ['/* testClassMemberDereferencingOnInstantiation1 */'],
+            'class member dereferencing on instantiation 2' => ['/* testClassMemberDereferencingOnInstantiation2 */'],
+            'class member dereferencing on clone' => ['/* testClassMemberDereferencingOnClone */'],
+            'nullsafe method call dereferencing' => ['/* testNullsafeMethodCallDereferencing */'],
+            'interpolated string dereferencing' => ['/* testInterpolatedStringDereferencing */'],
+            'live coding' => ['/* testLiveCoding */'],
         ];
 
     }//end dataSquareBrackets()
-
 
     /**
      * Test that short arrays and short lists are still tokenized as short arrays.
@@ -90,7 +86,7 @@ class ShortArrayTest extends AbstractMethodUnitTest
      *
      * @return void
      */
-    public function testShortArrays($testMarker)
+    public function testShortArrays($testMarker): void
     {
         $tokens = self::$phpcsFile->getTokens();
 
@@ -106,7 +102,6 @@ class ShortArrayTest extends AbstractMethodUnitTest
 
     }//end testShortArrays()
 
-
     /**
      * Data provider.
      *
@@ -117,13 +112,16 @@ class ShortArrayTest extends AbstractMethodUnitTest
     public function dataShortArrays()
     {
         return [
-            ['/* testShortArrayDeclarationEmpty */'],
-            ['/* testShortArrayDeclarationWithOneValue */'],
-            ['/* testShortArrayDeclarationWithMultipleValues */'],
-            ['/* testShortArrayDeclarationWithDereferencing */'],
-            ['/* testShortListDeclaration */'],
-            ['/* testNestedListDeclaration */'],
-            ['/* testArrayWithinFunctionCall */'],
+            'short array empty' => ['/* testShortArrayDeclarationEmpty */'],
+            'short array with value' => ['/* testShortArrayDeclarationWithOneValue */'],
+            'short array with values' => ['/* testShortArrayDeclarationWithMultipleValues */'],
+            'short array with dereferencing' => ['/* testShortArrayDeclarationWithDereferencing */'],
+            'short list' => ['/* testShortListDeclaration */'],
+            'short list nested' => ['/* testNestedListDeclaration */'],
+            'short array within function call' => ['/* testArrayWithinFunctionCall */'],
+            'short list after braced control structure' => ['/* testShortListDeclarationAfterBracedControlStructure */'],
+            'short list after non-braced control structure' => ['/* testShortListDeclarationAfterNonBracedControlStructure */'],
+            'short list after alternative control structure' => ['/* testShortListDeclarationAfterAlternativeControlStructure */'],
         ];
 
     }//end dataShortArrays()

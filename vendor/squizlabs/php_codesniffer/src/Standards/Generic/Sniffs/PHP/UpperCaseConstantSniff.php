@@ -10,13 +10,9 @@
 namespace PHP_CodeSniffer\Standards\Generic\Sniffs\PHP;
 
 use PHP_CodeSniffer\Files\File;
-use PHP_CodeSniffer\Sniffs\Sniff;
-use PHP_CodeSniffer\Util\Tokens;
 
 class UpperCaseConstantSniff extends LowerCaseConstantSniff
 {
-
-
     /**
      * Processes a non-type declaration constant.
      *
@@ -26,10 +22,10 @@ class UpperCaseConstantSniff extends LowerCaseConstantSniff
      *
      * @return void
      */
-    protected function processConstant(File $phpcsFile, $stackPtr)
+    protected function processConstant(File $phpcsFile, $stackPtr): void
     {
-        $tokens   = $phpcsFile->getTokens();
-        $keyword  = $tokens[$stackPtr]['content'];
+        $tokens = $phpcsFile->getTokens();
+        $keyword = $tokens[$stackPtr]['content'];
         $expected = strtoupper($keyword);
 
         if ($keyword !== $expected) {
@@ -40,7 +36,7 @@ class UpperCaseConstantSniff extends LowerCaseConstantSniff
             }
 
             $error = 'TRUE, FALSE and NULL must be uppercase; expected "%s" but found "%s"';
-            $data  = [
+            $data = [
                 $expected,
                 $keyword,
             ];

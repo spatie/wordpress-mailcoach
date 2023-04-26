@@ -10,12 +10,9 @@
 namespace PHP_CodeSniffer\Tests\Core\Tokenizer;
 
 use PHP_CodeSniffer\Tests\Core\AbstractMethodUnitTest;
-use PHP_CodeSniffer\Util\Tokens;
 
 class AttributesTest extends AbstractMethodUnitTest
 {
-
-
     /**
      * Test that attributes are parsed correctly.
      *
@@ -30,7 +27,7 @@ class AttributesTest extends AbstractMethodUnitTest
      *
      * @return void
      */
-    public function testAttribute($testMarker, $length, $tokenCodes)
+    public function testAttribute($testMarker, $length, $tokenCodes): void
     {
         $tokens = self::$phpcsFile->getTokens();
 
@@ -58,7 +55,6 @@ class AttributesTest extends AbstractMethodUnitTest
         $this->assertSame($tokenCodes, $map);
 
     }//end testAttribute()
-
 
     /**
      * Data provider.
@@ -240,7 +236,6 @@ class AttributesTest extends AbstractMethodUnitTest
 
     }//end dataAttribute()
 
-
     /**
      * Test that multiple attributes on the same line are parsed correctly.
      *
@@ -250,7 +245,7 @@ class AttributesTest extends AbstractMethodUnitTest
      *
      * @return void
      */
-    public function testTwoAttributesOnTheSameLine()
+    public function testTwoAttributesOnTheSameLine(): void
     {
         $tokens = self::$phpcsFile->getTokens();
 
@@ -264,7 +259,6 @@ class AttributesTest extends AbstractMethodUnitTest
 
     }//end testTwoAttributesOnTheSameLine()
 
-
     /**
      * Test that attribute followed by a line comment is parsed correctly.
      *
@@ -274,7 +268,7 @@ class AttributesTest extends AbstractMethodUnitTest
      *
      * @return void
      */
-    public function testAttributeAndLineComment()
+    public function testAttributeAndLineComment(): void
     {
         $tokens = self::$phpcsFile->getTokens();
 
@@ -287,9 +281,8 @@ class AttributesTest extends AbstractMethodUnitTest
 
     }//end testAttributeAndLineComment()
 
-
     /**
-     * Test that attribute followed by a line comment is parsed correctly.
+     * Test that attributes on function declaration parameters are parsed correctly.
      *
      * @param string $testMarker The comment which prefaces the target token in the test file.
      * @param int    $position   The token position (starting from T_FUNCTION) of T_ATTRIBUTE token.
@@ -304,11 +297,11 @@ class AttributesTest extends AbstractMethodUnitTest
      *
      * @return void
      */
-    public function testAttributeOnParameters($testMarker, $position, $length, array $tokenCodes)
+    public function testAttributeOnParameters($testMarker, $position, $length, array $tokenCodes): void
     {
         $tokens = self::$phpcsFile->getTokens();
 
-        $function  = $this->getTargetToken($testMarker, T_FUNCTION);
+        $function = $this->getTargetToken($testMarker, T_FUNCTION);
         $attribute = ($function + $position);
 
         $this->assertSame(T_ATTRIBUTE, $tokens[$attribute]['code']);
@@ -337,7 +330,6 @@ class AttributesTest extends AbstractMethodUnitTest
         $this->assertSame($tokenCodes, $map);
 
     }//end testAttributeOnParameters()
-
 
     /**
      * Data provider.
@@ -394,7 +386,6 @@ class AttributesTest extends AbstractMethodUnitTest
 
     }//end dataAttributeOnParameters()
 
-
     /**
      * Test that an attribute containing text which looks like a PHP close tag is tokenized correctly.
      *
@@ -409,7 +400,7 @@ class AttributesTest extends AbstractMethodUnitTest
      *
      * @return void
      */
-    public function testAttributeContainingTextLookingLikeCloseTag($testMarker, $length, array $expectedTokensAttribute, array $expectedTokensAfter)
+    public function testAttributeContainingTextLookingLikeCloseTag($testMarker, $length, array $expectedTokensAttribute, array $expectedTokensAfter): void
     {
         $tokens = self::$phpcsFile->getTokens();
 
@@ -443,7 +434,6 @@ class AttributesTest extends AbstractMethodUnitTest
         }
 
     }//end testAttributeContainingTextLookingLikeCloseTag()
-
 
     /**
      * Data provider.
@@ -545,7 +535,6 @@ class AttributesTest extends AbstractMethodUnitTest
 
     }//end dataAttributeOnTextLookingLikeCloseTag()
 
-
     /**
      * Test that invalid attribute (or comment starting with #[ and without ]) are parsed correctly.
      *
@@ -555,7 +544,7 @@ class AttributesTest extends AbstractMethodUnitTest
      *
      * @return void
      */
-    public function testInvalidAttribute()
+    public function testInvalidAttribute(): void
     {
         $tokens = self::$phpcsFile->getTokens();
 
@@ -566,7 +555,6 @@ class AttributesTest extends AbstractMethodUnitTest
 
     }//end testInvalidAttribute()
 
-
     /**
      * Test that nested attributes are parsed correctly.
      *
@@ -576,9 +564,9 @@ class AttributesTest extends AbstractMethodUnitTest
      *
      * @return void
      */
-    public function testNestedAttributes()
+    public function testNestedAttributes(): void
     {
-        $tokens     = self::$phpcsFile->getTokens();
+        $tokens = self::$phpcsFile->getTokens();
         $tokenCodes = [
             T_STRING,
             T_NS_SEPARATOR,
@@ -620,7 +608,7 @@ class AttributesTest extends AbstractMethodUnitTest
         $this->assertArrayHasKey('nested_attributes', $tokens[($attribute + 8)]);
         $this->assertSame([$attribute => ($attribute + 24)], $tokens[($attribute + 8)]['nested_attributes']);
 
-        $test = function (array $tokens, $length, $nestedMap) use ($attribute) {
+        $test = function (array $tokens, $length, $nestedMap) use ($attribute): void {
             foreach ($tokens as $token) {
                 $this->assertArrayHasKey('attribute_closer', $token);
                 $this->assertSame(($attribute + $length), $token['attribute_closer']);
@@ -636,7 +624,7 @@ class AttributesTest extends AbstractMethodUnitTest
             array_slice($tokens, ($attribute + 9), 4),
             8 + 5,
             [
-                $attribute     => $attribute + 24,
+                $attribute => $attribute + 24,
                 $attribute + 8 => $attribute + 13,
             ]
         );

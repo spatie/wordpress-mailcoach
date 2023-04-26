@@ -13,882 +13,841 @@ use PHP_CodeSniffer\Tests\Core\AbstractMethodUnitTest;
 
 class GetMethodPropertiesTest extends AbstractMethodUnitTest
 {
-
-
     /**
      * Test a basic function.
      *
      * @return void
      */
-    public function testBasicFunction()
+    public function testBasicFunction(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => '',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => '',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testBasicFunction()
 
-
     /**
      * Test a function with a return type.
      *
      * @return void
      */
-    public function testReturnFunction()
+    public function testReturnFunction(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => 'array',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => 'array',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testReturnFunction()
 
-
     /**
      * Test a closure used as a function argument.
      *
      * @return void
      */
-    public function testNestedClosure()
+    public function testNestedClosure(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => 'int',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => 'int',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testNestedClosure()
 
-
     /**
      * Test a basic method.
      *
      * @return void
      */
-    public function testBasicMethod()
+    public function testBasicMethod(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => '',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => '',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testBasicMethod()
 
-
     /**
      * Test a private static method.
      *
      * @return void
      */
-    public function testPrivateStaticMethod()
+    public function testPrivateStaticMethod(): void
     {
         $expected = [
-            'scope'                => 'private',
-            'scope_specified'      => true,
-            'return_type'          => '',
+            'scope' => 'private',
+            'scope_specified' => true,
+            'return_type' => '',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => true,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => true,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testPrivateStaticMethod()
 
-
     /**
      * Test a basic final method.
      *
      * @return void
      */
-    public function testFinalMethod()
+    public function testFinalMethod(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => true,
-            'return_type'          => '',
+            'scope' => 'public',
+            'scope_specified' => true,
+            'return_type' => '',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => true,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => true,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testFinalMethod()
 
-
     /**
      * Test a protected method with a return type.
      *
      * @return void
      */
-    public function testProtectedReturnMethod()
+    public function testProtectedReturnMethod(): void
     {
         $expected = [
-            'scope'                => 'protected',
-            'scope_specified'      => true,
-            'return_type'          => 'int',
+            'scope' => 'protected',
+            'scope_specified' => true,
+            'return_type' => 'int',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testProtectedReturnMethod()
 
-
     /**
      * Test a public method with a return type.
      *
      * @return void
      */
-    public function testPublicReturnMethod()
+    public function testPublicReturnMethod(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => true,
-            'return_type'          => 'array',
+            'scope' => 'public',
+            'scope_specified' => true,
+            'return_type' => 'array',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testPublicReturnMethod()
 
-
     /**
      * Test a public method with a nullable return type.
      *
      * @return void
      */
-    public function testNullableReturnMethod()
+    public function testNullableReturnMethod(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => true,
-            'return_type'          => '?array',
+            'scope' => 'public',
+            'scope_specified' => true,
+            'return_type' => '?array',
             'nullable_return_type' => true,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testNullableReturnMethod()
 
-
     /**
      * Test a public method with a nullable return type.
      *
      * @return void
      */
-    public function testMessyNullableReturnMethod()
+    public function testMessyNullableReturnMethod(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => true,
-            'return_type'          => '?array',
+            'scope' => 'public',
+            'scope_specified' => true,
+            'return_type' => '?array',
             'nullable_return_type' => true,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testMessyNullableReturnMethod()
 
-
     /**
      * Test a method with a namespaced return type.
      *
      * @return void
      */
-    public function testReturnNamespace()
+    public function testReturnNamespace(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => '\MyNamespace\MyClass',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => '\MyNamespace\MyClass',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testReturnNamespace()
 
-
     /**
      * Test a method with a messy namespaces return type.
      *
      * @return void
      */
-    public function testReturnMultilineNamespace()
+    public function testReturnMultilineNamespace(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => '\MyNamespace\MyClass\Foo',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => '\MyNamespace\MyClass\Foo',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testReturnMultilineNamespace()
 
-
     /**
      * Test a basic abstract method.
      *
      * @return void
      */
-    public function testAbstractMethod()
+    public function testAbstractMethod(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => '',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => '',
             'nullable_return_type' => false,
-            'is_abstract'          => true,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => false,
+            'is_abstract' => true,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => false,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testAbstractMethod()
 
-
     /**
      * Test an abstract method with a return type.
      *
      * @return void
      */
-    public function testAbstractReturnMethod()
+    public function testAbstractReturnMethod(): void
     {
         $expected = [
-            'scope'                => 'protected',
-            'scope_specified'      => true,
-            'return_type'          => 'bool',
+            'scope' => 'protected',
+            'scope_specified' => true,
+            'return_type' => 'bool',
             'nullable_return_type' => false,
-            'is_abstract'          => true,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => false,
+            'is_abstract' => true,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => false,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testAbstractReturnMethod()
 
-
     /**
      * Test a basic interface method.
      *
      * @return void
      */
-    public function testInterfaceMethod()
+    public function testInterfaceMethod(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => '',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => '',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => false,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => false,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testInterfaceMethod()
 
-
     /**
      * Test a static arrow function.
      *
      * @return void
      */
-    public function testArrowFunction()
+    public function testArrowFunction(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => 'int',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => 'int',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => true,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => true,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testArrowFunction()
 
-
     /**
      * Test a function with return type "static".
      *
      * @return void
      */
-    public function testReturnTypeStatic()
+    public function testReturnTypeStatic(): void
     {
         $expected = [
-            'scope'                => 'private',
-            'scope_specified'      => true,
-            'return_type'          => 'static',
+            'scope' => 'private',
+            'scope_specified' => true,
+            'return_type' => 'static',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testReturnTypeStatic()
 
-
     /**
      * Test a function with return type "mixed".
      *
      * @return void
      */
-    public function testPHP8MixedTypeHint()
+    public function testPHP8MixedTypeHint(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => 'mixed',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => 'mixed',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testPHP8MixedTypeHint()
 
-
     /**
      * Test a function with return type "mixed" and nullability.
      *
      * @return void
      */
-    public function testPHP8MixedTypeHintNullable()
+    public function testPHP8MixedTypeHintNullable(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => '?mixed',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => '?mixed',
             'nullable_return_type' => true,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testPHP8MixedTypeHintNullable()
 
-
     /**
      * Test a function with return type using the namespace operator.
      *
      * @return void
      */
-    public function testNamespaceOperatorTypeHint()
+    public function testNamespaceOperatorTypeHint(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => '?namespace\Name',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => '?namespace\Name',
             'nullable_return_type' => true,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testNamespaceOperatorTypeHint()
 
-
     /**
      * Verify recognition of PHP8 union type declaration.
      *
      * @return void
      */
-    public function testPHP8UnionTypesSimple()
+    public function testPHP8UnionTypesSimple(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => 'int|float',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => 'int|float',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testPHP8UnionTypesSimple()
 
-
     /**
      * Verify recognition of PHP8 union type declaration with two classes.
      *
      * @return void
      */
-    public function testPHP8UnionTypesTwoClasses()
+    public function testPHP8UnionTypesTwoClasses(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => 'MyClassA|\Package\MyClassB',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => 'MyClassA|\Package\MyClassB',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testPHP8UnionTypesTwoClasses()
 
-
     /**
      * Verify recognition of PHP8 union type declaration with all base types.
      *
      * @return void
      */
-    public function testPHP8UnionTypesAllBaseTypes()
+    public function testPHP8UnionTypesAllBaseTypes(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => 'array|bool|callable|int|float|null|Object|string',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => 'array|bool|callable|int|float|null|Object|string',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testPHP8UnionTypesAllBaseTypes()
 
-
     /**
      * Verify recognition of PHP8 union type declaration with all pseudo types.
      *
      * @return void
      */
-    public function testPHP8UnionTypesAllPseudoTypes()
+    public function testPHP8UnionTypesAllPseudoTypes(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => 'false|MIXED|self|parent|static|iterable|Resource|void',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => 'false|MIXED|self|parent|static|iterable|Resource|void',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testPHP8UnionTypesAllPseudoTypes()
 
-
     /**
      * Verify recognition of PHP8 union type declaration with (illegal) nullability.
      *
      * @return void
      */
-    public function testPHP8UnionTypesNullable()
+    public function testPHP8UnionTypesNullable(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => '?int|float',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => '?int|float',
             'nullable_return_type' => true,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testPHP8UnionTypesNullable()
 
-
     /**
      * Verify recognition of PHP8 type declaration with (illegal) single type null.
      *
      * @return void
      */
-    public function testPHP8PseudoTypeNull()
+    public function testPHP8PseudoTypeNull(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => 'null',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => 'null',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testPHP8PseudoTypeNull()
 
-
     /**
      * Verify recognition of PHP8 type declaration with (illegal) single type false.
      *
      * @return void
      */
-    public function testPHP8PseudoTypeFalse()
+    public function testPHP8PseudoTypeFalse(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => 'false',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => 'false',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testPHP8PseudoTypeFalse()
 
-
     /**
      * Verify recognition of PHP8 type declaration with (illegal) type false combined with type bool.
      *
      * @return void
      */
-    public function testPHP8PseudoTypeFalseAndBool()
+    public function testPHP8PseudoTypeFalseAndBool(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => 'bool|false',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => 'bool|false',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testPHP8PseudoTypeFalseAndBool()
 
-
     /**
      * Verify recognition of PHP8 type declaration with (illegal) type object combined with a class name.
      *
      * @return void
      */
-    public function testPHP8ObjectAndClass()
+    public function testPHP8ObjectAndClass(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => 'object|ClassName',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => 'object|ClassName',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testPHP8ObjectAndClass()
 
-
     /**
      * Verify recognition of PHP8 type declaration with (illegal) type iterable combined with array/Traversable.
      *
      * @return void
      */
-    public function testPHP8PseudoTypeIterableAndArray()
+    public function testPHP8PseudoTypeIterableAndArray(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => true,
-            'return_type'          => 'iterable|array|Traversable',
+            'scope' => 'public',
+            'scope_specified' => true,
+            'return_type' => 'iterable|array|Traversable',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => false,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => false,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testPHP8PseudoTypeIterableAndArray()
 
-
     /**
      * Verify recognition of PHP8 type declaration with (illegal) duplicate types.
      *
      * @return void
      */
-    public function testPHP8DuplicateTypeInUnionWhitespaceAndComment()
+    public function testPHP8DuplicateTypeInUnionWhitespaceAndComment(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => 'int|string|INT',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => 'int|string|INT',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testPHP8DuplicateTypeInUnionWhitespaceAndComment()
 
-
     /**
      * Verify recognition of PHP8.1 type "never".
      *
      * @return void
      */
-    public function testPHP81NeverType()
+    public function testPHP81NeverType(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => 'never',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => 'never',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testPHP81NeverType()
 
-
     /**
      * Verify recognition of PHP8.1 type "never"  with (illegal) nullability.
      *
      * @return void
      */
-    public function testPHP81NullableNeverType()
+    public function testPHP81NullableNeverType(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => '?never',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => '?never',
             'nullable_return_type' => true,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testPHP81NullableNeverType()
 
-
-    /**
     /**
      * Verify recognition of PHP8.1 intersection type declaration.
      *
      * @return void
      */
-    public function testPHP8IntersectionTypes()
+    public function testPHP8IntersectionTypes(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => 'Foo&Bar',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => 'Foo&Bar',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testPHP8IntersectionTypes()
 
-
     /**
      * Verify recognition of PHP8.1 intersection type declaration with more types.
      *
      * @return void
      */
-    public function testPHP81MoreIntersectionTypes()
+    public function testPHP81MoreIntersectionTypes(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => 'MyClassA&\Package\MyClassB&\Package\MyClassC',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => 'MyClassA&\Package\MyClassB&\Package\MyClassC',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testPHP81MoreIntersectionTypes()
 
-
     /**
      * Verify recognition of PHP8.1 intersection type declaration in arrow function.
      *
      * @return void
      */
-    public function testPHP81IntersectionArrowFunction()
+    public function testPHP81IntersectionArrowFunction(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => 'MyClassA&\Package\MyClassB',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => 'MyClassA&\Package\MyClassB',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testPHP81IntersectionArrowFunction()
 
-
     /**
      * Verify recognition of PHP8.1 intersection type declaration with illegal simple types.
      *
      * @return void
      */
-    public function testPHP81IllegalIntersectionTypes()
+    public function testPHP81IllegalIntersectionTypes(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => 'string&int',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => 'string&int',
             'nullable_return_type' => false,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testPHP81IllegalIntersectionTypes()
 
-
     /**
      * Verify recognition of PHP8.1 intersection type declaration with (illegal) nullability.
      *
      * @return void
      */
-    public function testPHP81NullableIntersectionTypes()
+    public function testPHP81NullableIntersectionTypes(): void
     {
         $expected = [
-            'scope'                => 'public',
-            'scope_specified'      => false,
-            'return_type'          => '?Foo&Bar',
+            'scope' => 'public',
+            'scope_specified' => false,
+            'return_type' => '?Foo&Bar',
             'nullable_return_type' => true,
-            'is_abstract'          => false,
-            'is_final'             => false,
-            'is_static'            => false,
-            'has_body'             => true,
+            'is_abstract' => false,
+            'is_final' => false,
+            'is_static' => false,
+            'has_body' => true,
         ];
 
         $this->getMethodPropertiesTestHelper('/* '.__FUNCTION__.' */', $expected);
 
     }//end testPHP81NullableIntersectionTypes()
-
 
     /**
      * Test helper.
@@ -898,10 +857,10 @@ class GetMethodPropertiesTest extends AbstractMethodUnitTest
      *
      * @return void
      */
-    private function getMethodPropertiesTestHelper($commentString, $expected)
+    private function getMethodPropertiesTestHelper($commentString, $expected): void
     {
         $function = $this->getTargetToken($commentString, [T_FUNCTION, T_CLOSURE, T_FN]);
-        $found    = self::$phpcsFile->getMethodProperties($function);
+        $found = self::$phpcsFile->getMethodProperties($function);
 
         $this->assertArraySubset($expected, $found, true);
 

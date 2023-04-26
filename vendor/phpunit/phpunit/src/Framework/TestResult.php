@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of PHPUnit.
  *
@@ -7,22 +9,23 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace PHPUnit\Framework;
 
-use const PHP_EOL;
+use AssertionError;
+
 use function class_exists;
 use function count;
+
+use Countable;
+use Error;
+
 use function extension_loaded;
 use function function_exists;
 use function get_class;
-use function sprintf;
-use function xdebug_get_monitored_functions;
-use function xdebug_is_debugger_active;
-use function xdebug_start_function_monitor;
-use function xdebug_stop_function_monitor;
-use AssertionError;
-use Countable;
-use Error;
+
+use const PHP_EOL;
+
 use PHPUnit\Util\ErrorHandler;
 use PHPUnit\Util\ExcludeList;
 use PHPUnit\Util\Printer;
@@ -36,7 +39,15 @@ use SebastianBergmann\Invoker\Invoker;
 use SebastianBergmann\Invoker\TimeoutException;
 use SebastianBergmann\ResourceOperations\ResourceOperations;
 use SebastianBergmann\Timer\Timer;
+
+use function sprintf;
+
 use Throwable;
+
+use function xdebug_get_monitored_functions;
+use function xdebug_is_debugger_active;
+use function xdebug_start_function_monitor;
+use function xdebug_stop_function_monitor;
 
 /**
  * @internal This class is not covered by the backward compatibility promise for PHPUnit
@@ -387,7 +398,7 @@ final class TestResult implements Countable
             }
         } else {
             $this->failures[] = new TestFailure($test, $e);
-            $notifyMethod     = 'addFailure';
+            $notifyMethod = 'addFailure';
 
             if ($this->stopOnFailure || $this->stopOnDefect) {
                 $this->stop();
@@ -419,7 +430,7 @@ final class TestResult implements Countable
      */
     public function endTestSuite(TestSuite $suite): void
     {
-        if (!$this->currentTestSuiteFailed) {
+        if (! $this->currentTestSuiteFailed) {
             $this->passedTestClasses[] = $suite->getName();
         }
 
@@ -452,13 +463,13 @@ final class TestResult implements Countable
             $listener->endTest($test, $time);
         }
 
-        if (!$this->lastTestFailed && $test instanceof TestCase) {
+        if (! $this->lastTestFailed && $test instanceof TestCase) {
             $class = get_class($test);
-            $key   = $class . '::' . $test->getName();
+            $key = $class . '::' . $test->getName();
 
             $this->passed[$key] = [
                 'result' => $test->getResult(),
-                'size'   => TestUtil::getSize(
+                'size' => TestUtil::getSize(
                     $class,
                     $test->getName(false)
                 ),
@@ -650,15 +661,15 @@ final class TestResult implements Countable
             );
 
             $isAnyCoverageRequired = TestUtil::requiresCodeCoverageDataCollection($test);
-            $size                  = $test->getSize();
+            $size = $test->getSize();
         }
 
-        $error      = false;
-        $failure    = false;
-        $warning    = false;
+        $error = false;
+        $failure = false;
+        $warning = false;
         $incomplete = false;
-        $risky      = false;
-        $skipped    = false;
+        $risky = false;
+        $skipped = false;
 
         $this->startTest($test);
 
@@ -674,8 +685,8 @@ final class TestResult implements Countable
         }
 
         $collectCodeCoverage = $this->codeCoverage !== null &&
-                               !$test instanceof ErrorTestCase &&
-                               !$test instanceof WarningTestCase &&
+                               ! $test instanceof ErrorTestCase &&
+                               ! $test instanceof WarningTestCase &&
                                $isAnyCoverageRequired;
 
         if ($collectCodeCoverage) {
@@ -683,8 +694,8 @@ final class TestResult implements Countable
         }
 
         $monitorFunctions = $this->beStrictAboutResourceUsageDuringSmallTests &&
-                            !$test instanceof ErrorTestCase &&
-                            !$test instanceof WarningTestCase &&
+                            ! $test instanceof ErrorTestCase &&
+                            ! $test instanceof WarningTestCase &&
                             $size === TestUtil::SMALL &&
                             function_exists('xdebug_start_function_monitor');
 
@@ -693,14 +704,14 @@ final class TestResult implements Countable
             xdebug_start_function_monitor(ResourceOperations::getFunctions());
         }
 
-        $timer = new Timer;
+        $timer = new Timer();
         $timer->start();
 
         try {
-            $invoker = new Invoker;
+            $invoker = new Invoker();
 
-            if (!$test instanceof ErrorTestCase &&
-                !$test instanceof WarningTestCase &&
+            if (! $test instanceof ErrorTestCase &&
+                ! $test instanceof WarningTestCase &&
                 $this->shouldTimeLimitBeEnforced($size) &&
                 $invoker->canInvokeWithTimeout()) {
                 switch ($size) {
@@ -751,7 +762,7 @@ final class TestResult implements Countable
             $test->addToAssertionCount(1);
 
             $failure = true;
-            $frame   = $e->getTrace()[0];
+            $frame = $e->getTrace()[0];
 
             $e = new AssertionFailedError(
                 sprintf(
@@ -768,7 +779,7 @@ final class TestResult implements Countable
         } catch (Exception $e) {
             $error = true;
         } catch (Throwable $e) {
-            $e     = new ExceptionWrapper($e);
+            $e = new ExceptionWrapper($e);
             $error = true;
         }
 
@@ -777,7 +788,7 @@ final class TestResult implements Countable
         $test->addToAssertionCount(Assert::getCount());
 
         if ($monitorFunctions) {
-            $excludeList = new ExcludeList;
+            $excludeList = new ExcludeList();
 
             /** @noinspection ForgottenDebugOutputInspection */
             $functions = xdebug_get_monitored_functions();
@@ -786,7 +797,7 @@ final class TestResult implements Countable
             xdebug_stop_function_monitor();
 
             foreach ($functions as $function) {
-                if (!$excludeList->isExcluded($function['filename'])) {
+                if (! $excludeList->isExcluded($function['filename'])) {
                     $this->addFailure(
                         $test,
                         new RiskyTestError(
@@ -804,20 +815,21 @@ final class TestResult implements Countable
         }
 
         if ($this->beStrictAboutTestsThatDoNotTestAnything &&
+            ! $test->doesNotPerformAssertions() &&
             $test->getNumAssertions() === 0) {
             $risky = true;
         }
 
-        if ($this->forceCoversAnnotation && !$error && !$failure && !$warning && !$incomplete && !$skipped && !$risky) {
+        if ($this->forceCoversAnnotation && ! $error && ! $failure && ! $warning && ! $incomplete && ! $skipped && ! $risky) {
             $annotations = TestUtil::parseTestMethodAnnotations(
                 get_class($test),
                 $test->getName(false)
             );
 
-            if (!isset($annotations['class']['covers']) &&
-                !isset($annotations['method']['covers']) &&
-                !isset($annotations['class']['coversNothing']) &&
-                !isset($annotations['method']['coversNothing'])) {
+            if (! isset($annotations['class']['covers']) &&
+                ! isset($annotations['method']['covers']) &&
+                ! isset($annotations['class']['coversNothing']) &&
+                ! isset($annotations['method']['coversNothing'])) {
                 $this->addFailure(
                     $test,
                     new MissingCoversAnnotationException(
@@ -831,9 +843,9 @@ final class TestResult implements Countable
         }
 
         if ($collectCodeCoverage) {
-            $append           = !$risky && !$incomplete && !$skipped;
+            $append = ! $risky && ! $incomplete && ! $skipped;
             $linesToBeCovered = [];
-            $linesToBeUsed    = [];
+            $linesToBeUsed = [];
 
             if ($append && $test instanceof TestCase) {
                 try {
@@ -894,7 +906,7 @@ final class TestResult implements Countable
                 $time
             );
         } elseif ($this->beStrictAboutTestsThatDoNotTestAnything &&
-            !$test->doesNotPerformAssertions() &&
+            ! $test->doesNotPerformAssertions() &&
             $test->getNumAssertions() === 0) {
             try {
                 $reflected = new ReflectionClass($test);
@@ -1297,19 +1309,19 @@ final class TestResult implements Countable
 
     private function shouldTimeLimitBeEnforced(int $size): bool
     {
-        if (!$this->enforceTimeLimit) {
+        if (! $this->enforceTimeLimit) {
             return false;
         }
 
-        if (!(($this->defaultTimeLimit || $size !== TestUtil::UNKNOWN))) {
+        if (! (($this->defaultTimeLimit || $size !== TestUtil::UNKNOWN))) {
             return false;
         }
 
-        if (!extension_loaded('pcntl')) {
+        if (! extension_loaded('pcntl')) {
             return false;
         }
 
-        if (!class_exists(Invoker::class)) {
+        if (! class_exists(Invoker::class)) {
             return false;
         }
 

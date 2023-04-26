@@ -11,7 +11,7 @@ return [
         'path' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
     ],
     'Automattic\\Jetpack\\Autoloader\\AutoloadGenerator' => [
-        'version' => '2.11.15.0',
+        'version' => '2.11.19.0',
         'path' => $vendorDir . '/automattic/jetpack-autoloader/src/AutoloadGenerator.php',
     ],
     'Hamcrest\\Arrays\\IsArray' => [
@@ -643,1395 +643,1395 @@ return [
         'path' => $vendorDir . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
     ],
     'PHPUnit\\Exception' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Exception.php',
     ],
     'PHPUnit\\Framework\\ActualValueIsNotAnObjectException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/ActualValueIsNotAnObjectException.php',
     ],
     'PHPUnit\\Framework\\Assert' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Assert.php',
     ],
     'PHPUnit\\Framework\\AssertionFailedError' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/AssertionFailedError.php',
     ],
     'PHPUnit\\Framework\\CodeCoverageException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/CodeCoverageException.php',
     ],
     'PHPUnit\\Framework\\ComparisonMethodDoesNotAcceptParameterTypeException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/ComparisonMethodDoesNotAcceptParameterTypeException.php',
     ],
     'PHPUnit\\Framework\\ComparisonMethodDoesNotDeclareBoolReturnTypeException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/ComparisonMethodDoesNotDeclareBoolReturnTypeException.php',
     ],
     'PHPUnit\\Framework\\ComparisonMethodDoesNotDeclareExactlyOneParameterException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/ComparisonMethodDoesNotDeclareExactlyOneParameterException.php',
     ],
     'PHPUnit\\Framework\\ComparisonMethodDoesNotDeclareParameterTypeException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/ComparisonMethodDoesNotDeclareParameterTypeException.php',
     ],
     'PHPUnit\\Framework\\ComparisonMethodDoesNotExistException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/ComparisonMethodDoesNotExistException.php',
     ],
     'PHPUnit\\Framework\\Constraint\\ArrayHasKey' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Traversable/ArrayHasKey.php',
     ],
     'PHPUnit\\Framework\\Constraint\\BinaryOperator' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Operator/BinaryOperator.php',
     ],
     'PHPUnit\\Framework\\Constraint\\Callback' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Callback.php',
     ],
     'PHPUnit\\Framework\\Constraint\\ClassHasAttribute' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Object/ClassHasAttribute.php',
     ],
     'PHPUnit\\Framework\\Constraint\\ClassHasStaticAttribute' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Object/ClassHasStaticAttribute.php',
     ],
     'PHPUnit\\Framework\\Constraint\\Constraint' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Constraint.php',
     ],
     'PHPUnit\\Framework\\Constraint\\Count' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Cardinality/Count.php',
     ],
     'PHPUnit\\Framework\\Constraint\\DirectoryExists' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Filesystem/DirectoryExists.php',
     ],
     'PHPUnit\\Framework\\Constraint\\Exception' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Exception/Exception.php',
     ],
     'PHPUnit\\Framework\\Constraint\\ExceptionCode' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Exception/ExceptionCode.php',
     ],
     'PHPUnit\\Framework\\Constraint\\ExceptionMessage' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Exception/ExceptionMessage.php',
     ],
     'PHPUnit\\Framework\\Constraint\\ExceptionMessageRegularExpression' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Exception/ExceptionMessageRegularExpression.php',
     ],
     'PHPUnit\\Framework\\Constraint\\FileExists' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Filesystem/FileExists.php',
     ],
     'PHPUnit\\Framework\\Constraint\\GreaterThan' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Cardinality/GreaterThan.php',
     ],
     'PHPUnit\\Framework\\Constraint\\IsAnything' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/IsAnything.php',
     ],
     'PHPUnit\\Framework\\Constraint\\IsEmpty' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Cardinality/IsEmpty.php',
     ],
     'PHPUnit\\Framework\\Constraint\\IsEqual' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Equality/IsEqual.php',
     ],
     'PHPUnit\\Framework\\Constraint\\IsEqualCanonicalizing' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Equality/IsEqualCanonicalizing.php',
     ],
     'PHPUnit\\Framework\\Constraint\\IsEqualIgnoringCase' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Equality/IsEqualIgnoringCase.php',
     ],
     'PHPUnit\\Framework\\Constraint\\IsEqualWithDelta' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Equality/IsEqualWithDelta.php',
     ],
     'PHPUnit\\Framework\\Constraint\\IsFalse' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Boolean/IsFalse.php',
     ],
     'PHPUnit\\Framework\\Constraint\\IsFinite' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Math/IsFinite.php',
     ],
     'PHPUnit\\Framework\\Constraint\\IsIdentical' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/IsIdentical.php',
     ],
     'PHPUnit\\Framework\\Constraint\\IsInfinite' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Math/IsInfinite.php',
     ],
     'PHPUnit\\Framework\\Constraint\\IsInstanceOf' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Type/IsInstanceOf.php',
     ],
     'PHPUnit\\Framework\\Constraint\\IsJson' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/String/IsJson.php',
     ],
     'PHPUnit\\Framework\\Constraint\\IsNan' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Math/IsNan.php',
     ],
     'PHPUnit\\Framework\\Constraint\\IsNull' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Type/IsNull.php',
     ],
     'PHPUnit\\Framework\\Constraint\\IsReadable' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsReadable.php',
     ],
     'PHPUnit\\Framework\\Constraint\\IsTrue' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Boolean/IsTrue.php',
     ],
     'PHPUnit\\Framework\\Constraint\\IsType' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Type/IsType.php',
     ],
     'PHPUnit\\Framework\\Constraint\\IsWritable' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Filesystem/IsWritable.php',
     ],
     'PHPUnit\\Framework\\Constraint\\JsonMatches' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/JsonMatches.php',
     ],
     'PHPUnit\\Framework\\Constraint\\JsonMatchesErrorMessageProvider' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/JsonMatchesErrorMessageProvider.php',
     ],
     'PHPUnit\\Framework\\Constraint\\LessThan' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Cardinality/LessThan.php',
     ],
     'PHPUnit\\Framework\\Constraint\\LogicalAnd' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Operator/LogicalAnd.php',
     ],
     'PHPUnit\\Framework\\Constraint\\LogicalNot' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Operator/LogicalNot.php',
     ],
     'PHPUnit\\Framework\\Constraint\\LogicalOr' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Operator/LogicalOr.php',
     ],
     'PHPUnit\\Framework\\Constraint\\LogicalXor' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Operator/LogicalXor.php',
     ],
     'PHPUnit\\Framework\\Constraint\\ObjectEquals' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Object/ObjectEquals.php',
     ],
     'PHPUnit\\Framework\\Constraint\\ObjectHasAttribute' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Object/ObjectHasAttribute.php',
     ],
     'PHPUnit\\Framework\\Constraint\\Operator' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Operator/Operator.php',
     ],
     'PHPUnit\\Framework\\Constraint\\RegularExpression' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/String/RegularExpression.php',
     ],
     'PHPUnit\\Framework\\Constraint\\SameSize' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Cardinality/SameSize.php',
     ],
     'PHPUnit\\Framework\\Constraint\\StringContains' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/String/StringContains.php',
     ],
     'PHPUnit\\Framework\\Constraint\\StringEndsWith' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/String/StringEndsWith.php',
     ],
     'PHPUnit\\Framework\\Constraint\\StringMatchesFormatDescription' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/String/StringMatchesFormatDescription.php',
     ],
     'PHPUnit\\Framework\\Constraint\\StringStartsWith' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/String/StringStartsWith.php',
     ],
     'PHPUnit\\Framework\\Constraint\\TraversableContains' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Traversable/TraversableContains.php',
     ],
     'PHPUnit\\Framework\\Constraint\\TraversableContainsEqual' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Traversable/TraversableContainsEqual.php',
     ],
     'PHPUnit\\Framework\\Constraint\\TraversableContainsIdentical' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Traversable/TraversableContainsIdentical.php',
     ],
     'PHPUnit\\Framework\\Constraint\\TraversableContainsOnly' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Traversable/TraversableContainsOnly.php',
     ],
     'PHPUnit\\Framework\\Constraint\\UnaryOperator' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Constraint/Operator/UnaryOperator.php',
     ],
     'PHPUnit\\Framework\\CoveredCodeNotExecutedException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/CoveredCodeNotExecutedException.php',
     ],
     'PHPUnit\\Framework\\DataProviderTestSuite' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/DataProviderTestSuite.php',
     ],
     'PHPUnit\\Framework\\Error' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/Error.php',
     ],
     'PHPUnit\\Framework\\ErrorTestCase' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/ErrorTestCase.php',
     ],
     'PHPUnit\\Framework\\Error\\Deprecated' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Error/Deprecated.php',
     ],
     'PHPUnit\\Framework\\Error\\Error' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Error/Error.php',
     ],
     'PHPUnit\\Framework\\Error\\Notice' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Error/Notice.php',
     ],
     'PHPUnit\\Framework\\Error\\Warning' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Error/Warning.php',
     ],
     'PHPUnit\\Framework\\Exception' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/Exception.php',
     ],
     'PHPUnit\\Framework\\ExceptionWrapper' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/ExceptionWrapper.php',
     ],
     'PHPUnit\\Framework\\ExecutionOrderDependency' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/ExecutionOrderDependency.php',
     ],
     'PHPUnit\\Framework\\ExpectationFailedException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/ExpectationFailedException.php',
     ],
     'PHPUnit\\Framework\\IncompleteTest' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/IncompleteTest.php',
     ],
     'PHPUnit\\Framework\\IncompleteTestCase' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/IncompleteTestCase.php',
     ],
     'PHPUnit\\Framework\\IncompleteTestError' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/IncompleteTestError.php',
     ],
     'PHPUnit\\Framework\\InvalidArgumentException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/InvalidArgumentException.php',
     ],
     'PHPUnit\\Framework\\InvalidCoversTargetException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/InvalidCoversTargetException.php',
     ],
     'PHPUnit\\Framework\\InvalidDataProviderException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/InvalidDataProviderException.php',
     ],
     'PHPUnit\\Framework\\InvalidParameterGroupException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/InvalidParameterGroupException.php',
     ],
     'PHPUnit\\Framework\\MissingCoversAnnotationException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/MissingCoversAnnotationException.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Api' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Api/Api.php',
     ],
     'PHPUnit\\Framework\\MockObject\\BadMethodCallException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/BadMethodCallException.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Builder\\Identity' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Builder/Identity.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Builder\\InvocationMocker' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Builder/InvocationMocker.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Builder\\InvocationStubber' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Builder/InvocationStubber.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Builder\\MethodNameMatch' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Builder/MethodNameMatch.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Builder\\ParametersMatch' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Builder/ParametersMatch.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Builder\\Stub' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Builder/Stub.php',
     ],
     'PHPUnit\\Framework\\MockObject\\CannotUseAddMethodsException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/CannotUseAddMethodsException.php',
     ],
     'PHPUnit\\Framework\\MockObject\\CannotUseOnlyMethodsException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/CannotUseOnlyMethodsException.php',
     ],
     'PHPUnit\\Framework\\MockObject\\ClassAlreadyExistsException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/ClassAlreadyExistsException.php',
     ],
     'PHPUnit\\Framework\\MockObject\\ClassIsFinalException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/ClassIsFinalException.php',
     ],
     'PHPUnit\\Framework\\MockObject\\ClassIsReadonlyException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/ClassIsReadonlyException.php',
     ],
     'PHPUnit\\Framework\\MockObject\\ConfigurableMethod' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/ConfigurableMethod.php',
     ],
     'PHPUnit\\Framework\\MockObject\\ConfigurableMethodsAlreadyInitializedException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/ConfigurableMethodsAlreadyInitializedException.php',
     ],
     'PHPUnit\\Framework\\MockObject\\DuplicateMethodException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/DuplicateMethodException.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Exception' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/Exception.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Generator' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Generator.php',
     ],
     'PHPUnit\\Framework\\MockObject\\IncompatibleReturnValueException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/IncompatibleReturnValueException.php',
     ],
     'PHPUnit\\Framework\\MockObject\\InvalidMethodNameException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/InvalidMethodNameException.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Invocation' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Invocation.php',
     ],
     'PHPUnit\\Framework\\MockObject\\InvocationHandler' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/InvocationHandler.php',
     ],
     'PHPUnit\\Framework\\MockObject\\MatchBuilderNotFoundException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/MatchBuilderNotFoundException.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Matcher' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Matcher.php',
     ],
     'PHPUnit\\Framework\\MockObject\\MatcherAlreadyRegisteredException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/MatcherAlreadyRegisteredException.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Method' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Api/Method.php',
     ],
     'PHPUnit\\Framework\\MockObject\\MethodCannotBeConfiguredException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/MethodCannotBeConfiguredException.php',
     ],
     'PHPUnit\\Framework\\MockObject\\MethodNameAlreadyConfiguredException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/MethodNameAlreadyConfiguredException.php',
     ],
     'PHPUnit\\Framework\\MockObject\\MethodNameConstraint' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/MethodNameConstraint.php',
     ],
     'PHPUnit\\Framework\\MockObject\\MethodNameNotConfiguredException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/MethodNameNotConfiguredException.php',
     ],
     'PHPUnit\\Framework\\MockObject\\MethodParametersAlreadyConfiguredException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/MethodParametersAlreadyConfiguredException.php',
     ],
     'PHPUnit\\Framework\\MockObject\\MockBuilder' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/MockBuilder.php',
     ],
     'PHPUnit\\Framework\\MockObject\\MockClass' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/MockClass.php',
     ],
     'PHPUnit\\Framework\\MockObject\\MockMethod' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/MockMethod.php',
     ],
     'PHPUnit\\Framework\\MockObject\\MockMethodSet' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/MockMethodSet.php',
     ],
     'PHPUnit\\Framework\\MockObject\\MockObject' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/MockObject.php',
     ],
     'PHPUnit\\Framework\\MockObject\\MockTrait' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/MockTrait.php',
     ],
     'PHPUnit\\Framework\\MockObject\\MockType' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/MockType.php',
     ],
     'PHPUnit\\Framework\\MockObject\\OriginalConstructorInvocationRequiredException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/OriginalConstructorInvocationRequiredException.php',
     ],
     'PHPUnit\\Framework\\MockObject\\ReflectionException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/ReflectionException.php',
     ],
     'PHPUnit\\Framework\\MockObject\\ReturnValueNotConfiguredException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/ReturnValueNotConfiguredException.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Rule\\AnyInvokedCount' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Rule/AnyInvokedCount.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Rule\\AnyParameters' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Rule/AnyParameters.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Rule\\ConsecutiveParameters' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Rule/ConsecutiveParameters.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Rule\\InvocationOrder' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Rule/InvocationOrder.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Rule\\InvokedAtIndex' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Rule/InvokedAtIndex.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Rule\\InvokedAtLeastCount' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Rule/InvokedAtLeastCount.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Rule\\InvokedAtLeastOnce' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Rule/InvokedAtLeastOnce.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Rule\\InvokedAtMostCount' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Rule/InvokedAtMostCount.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Rule\\InvokedCount' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Rule/InvokedCount.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Rule\\MethodName' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Rule/MethodName.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Rule\\Parameters' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Rule/Parameters.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Rule\\ParametersRule' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Rule/ParametersRule.php',
     ],
     'PHPUnit\\Framework\\MockObject\\RuntimeException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/RuntimeException.php',
     ],
     'PHPUnit\\Framework\\MockObject\\SoapExtensionNotAvailableException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/SoapExtensionNotAvailableException.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Stub' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Stub.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Stub\\ConsecutiveCalls' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Stub/ConsecutiveCalls.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Stub\\Exception' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Stub/Exception.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Stub\\ReturnArgument' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Stub/ReturnArgument.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Stub\\ReturnCallback' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Stub/ReturnCallback.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Stub\\ReturnReference' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Stub/ReturnReference.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Stub\\ReturnSelf' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Stub/ReturnSelf.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Stub\\ReturnStub' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Stub/ReturnStub.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Stub\\ReturnValueMap' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Stub/ReturnValueMap.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Stub\\Stub' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Stub/Stub.php',
     ],
     'PHPUnit\\Framework\\MockObject\\UnknownClassException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/UnknownClassException.php',
     ],
     'PHPUnit\\Framework\\MockObject\\UnknownTraitException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/UnknownTraitException.php',
     ],
     'PHPUnit\\Framework\\MockObject\\UnknownTypeException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/UnknownTypeException.php',
     ],
     'PHPUnit\\Framework\\MockObject\\Verifiable' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Verifiable.php',
     ],
     'PHPUnit\\Framework\\NoChildTestSuiteException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/NoChildTestSuiteException.php',
     ],
     'PHPUnit\\Framework\\OutputError' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/OutputError.php',
     ],
     'PHPUnit\\Framework\\PHPTAssertionFailedError' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/PHPTAssertionFailedError.php',
     ],
     'PHPUnit\\Framework\\Reorderable' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Reorderable.php',
     ],
     'PHPUnit\\Framework\\RiskyTestError' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/RiskyTestError.php',
     ],
     'PHPUnit\\Framework\\SelfDescribing' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/SelfDescribing.php',
     ],
     'PHPUnit\\Framework\\SkippedTest' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/SkippedTest.php',
     ],
     'PHPUnit\\Framework\\SkippedTestCase' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/SkippedTestCase.php',
     ],
     'PHPUnit\\Framework\\SkippedTestError' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/SkippedTestError.php',
     ],
     'PHPUnit\\Framework\\SkippedTestSuiteError' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/SkippedTestSuiteError.php',
     ],
     'PHPUnit\\Framework\\SyntheticError' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/SyntheticError.php',
     ],
     'PHPUnit\\Framework\\SyntheticSkippedError' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/SyntheticSkippedError.php',
     ],
     'PHPUnit\\Framework\\Test' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Test.php',
     ],
     'PHPUnit\\Framework\\TestBuilder' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/TestBuilder.php',
     ],
     'PHPUnit\\Framework\\TestCase' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/TestCase.php',
     ],
     'PHPUnit\\Framework\\TestFailure' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/TestFailure.php',
     ],
     'PHPUnit\\Framework\\TestListener' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/TestListener.php',
     ],
     'PHPUnit\\Framework\\TestListenerDefaultImplementation' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/TestListenerDefaultImplementation.php',
     ],
     'PHPUnit\\Framework\\TestResult' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/TestResult.php',
     ],
     'PHPUnit\\Framework\\TestSuite' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/TestSuite.php',
     ],
     'PHPUnit\\Framework\\TestSuiteIterator' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/TestSuiteIterator.php',
     ],
     'PHPUnit\\Framework\\UnintentionallyCoveredCodeError' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/UnintentionallyCoveredCodeError.php',
     ],
     'PHPUnit\\Framework\\Warning' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/Warning.php',
     ],
     'PHPUnit\\Framework\\WarningTestCase' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/WarningTestCase.php',
     ],
     'PHPUnit\\Runner\\AfterIncompleteTestHook' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/Hook/AfterIncompleteTestHook.php',
     ],
     'PHPUnit\\Runner\\AfterLastTestHook' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/Hook/AfterLastTestHook.php',
     ],
     'PHPUnit\\Runner\\AfterRiskyTestHook' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/Hook/AfterRiskyTestHook.php',
     ],
     'PHPUnit\\Runner\\AfterSkippedTestHook' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/Hook/AfterSkippedTestHook.php',
     ],
     'PHPUnit\\Runner\\AfterSuccessfulTestHook' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/Hook/AfterSuccessfulTestHook.php',
     ],
     'PHPUnit\\Runner\\AfterTestErrorHook' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/Hook/AfterTestErrorHook.php',
     ],
     'PHPUnit\\Runner\\AfterTestFailureHook' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/Hook/AfterTestFailureHook.php',
     ],
     'PHPUnit\\Runner\\AfterTestHook' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/Hook/AfterTestHook.php',
     ],
     'PHPUnit\\Runner\\AfterTestWarningHook' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/Hook/AfterTestWarningHook.php',
     ],
     'PHPUnit\\Runner\\BaseTestRunner' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/BaseTestRunner.php',
     ],
     'PHPUnit\\Runner\\BeforeFirstTestHook' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/Hook/BeforeFirstTestHook.php',
     ],
     'PHPUnit\\Runner\\BeforeTestHook' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/Hook/BeforeTestHook.php',
     ],
     'PHPUnit\\Runner\\DefaultTestResultCache' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/DefaultTestResultCache.php',
     ],
     'PHPUnit\\Runner\\Exception' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/Exception.php',
     ],
     'PHPUnit\\Runner\\Extension\\ExtensionHandler' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/Extension/ExtensionHandler.php',
     ],
     'PHPUnit\\Runner\\Extension\\PharLoader' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/Extension/PharLoader.php',
     ],
     'PHPUnit\\Runner\\Filter\\ExcludeGroupFilterIterator' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/Filter/ExcludeGroupFilterIterator.php',
     ],
     'PHPUnit\\Runner\\Filter\\Factory' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/Filter/Factory.php',
     ],
     'PHPUnit\\Runner\\Filter\\GroupFilterIterator' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/Filter/GroupFilterIterator.php',
     ],
     'PHPUnit\\Runner\\Filter\\IncludeGroupFilterIterator' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/Filter/IncludeGroupFilterIterator.php',
     ],
     'PHPUnit\\Runner\\Filter\\NameFilterIterator' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/Filter/NameFilterIterator.php',
     ],
     'PHPUnit\\Runner\\Hook' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/Hook/Hook.php',
     ],
     'PHPUnit\\Runner\\NullTestResultCache' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/NullTestResultCache.php',
     ],
     'PHPUnit\\Runner\\PhptTestCase' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/PhptTestCase.php',
     ],
     'PHPUnit\\Runner\\ResultCacheExtension' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/ResultCacheExtension.php',
     ],
     'PHPUnit\\Runner\\StandardTestSuiteLoader' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/StandardTestSuiteLoader.php',
     ],
     'PHPUnit\\Runner\\TestHook' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/Hook/TestHook.php',
     ],
     'PHPUnit\\Runner\\TestListenerAdapter' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/Hook/TestListenerAdapter.php',
     ],
     'PHPUnit\\Runner\\TestResultCache' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/TestResultCache.php',
     ],
     'PHPUnit\\Runner\\TestSuiteLoader' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/TestSuiteLoader.php',
     ],
     'PHPUnit\\Runner\\TestSuiteSorter' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/TestSuiteSorter.php',
     ],
     'PHPUnit\\Runner\\Version' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Runner/Version.php',
     ],
     'PHPUnit\\TextUI\\CliArguments\\Builder' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/CliArguments/Builder.php',
     ],
     'PHPUnit\\TextUI\\CliArguments\\Configuration' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/CliArguments/Configuration.php',
     ],
     'PHPUnit\\TextUI\\CliArguments\\Exception' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/CliArguments/Exception.php',
     ],
     'PHPUnit\\TextUI\\CliArguments\\Mapper' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/CliArguments/Mapper.php',
     ],
     'PHPUnit\\TextUI\\Command' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/Command.php',
     ],
     'PHPUnit\\TextUI\\DefaultResultPrinter' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/DefaultResultPrinter.php',
     ],
     'PHPUnit\\TextUI\\Exception' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/Exception/Exception.php',
     ],
     'PHPUnit\\TextUI\\Help' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/Help.php',
     ],
     'PHPUnit\\TextUI\\ReflectionException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/Exception/ReflectionException.php',
     ],
     'PHPUnit\\TextUI\\ResultPrinter' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/ResultPrinter.php',
     ],
     'PHPUnit\\TextUI\\RuntimeException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/Exception/RuntimeException.php',
     ],
     'PHPUnit\\TextUI\\TestDirectoryNotFoundException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/Exception/TestDirectoryNotFoundException.php',
     ],
     'PHPUnit\\TextUI\\TestFileNotFoundException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/Exception/TestFileNotFoundException.php',
     ],
     'PHPUnit\\TextUI\\TestRunner' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/TestRunner.php',
     ],
     'PHPUnit\\TextUI\\TestSuiteMapper' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/TestSuiteMapper.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\CodeCoverage\\CodeCoverage' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/CodeCoverage/CodeCoverage.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\CodeCoverage\\FilterMapper' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/CodeCoverage/FilterMapper.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\CodeCoverage\\Filter\\Directory' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/CodeCoverage/Filter/Directory.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\CodeCoverage\\Filter\\DirectoryCollection' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/CodeCoverage/Filter/DirectoryCollection.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\CodeCoverage\\Filter\\DirectoryCollectionIterator' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/CodeCoverage/Filter/DirectoryCollectionIterator.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\CodeCoverage\\Report\\Clover' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/CodeCoverage/Report/Clover.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\CodeCoverage\\Report\\Cobertura' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/CodeCoverage/Report/Cobertura.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\CodeCoverage\\Report\\Crap4j' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/CodeCoverage/Report/Crap4j.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\CodeCoverage\\Report\\Html' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/CodeCoverage/Report/Html.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\CodeCoverage\\Report\\Php' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/CodeCoverage/Report/Php.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\CodeCoverage\\Report\\Text' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/CodeCoverage/Report/Text.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\CodeCoverage\\Report\\Xml' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/CodeCoverage/Report/Xml.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\Configuration' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Configuration.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\Constant' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/PHP/Constant.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\ConstantCollection' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/PHP/ConstantCollection.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\ConstantCollectionIterator' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/PHP/ConstantCollectionIterator.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\ConvertLogTypes' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/Migrations/ConvertLogTypes.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\CoverageCloverToReport' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/Migrations/CoverageCloverToReport.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\CoverageCrap4jToReport' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/Migrations/CoverageCrap4jToReport.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\CoverageHtmlToReport' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/Migrations/CoverageHtmlToReport.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\CoveragePhpToReport' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/Migrations/CoveragePhpToReport.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\CoverageTextToReport' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/Migrations/CoverageTextToReport.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\CoverageXmlToReport' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/Migrations/CoverageXmlToReport.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\Directory' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Filesystem/Directory.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\DirectoryCollection' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Filesystem/DirectoryCollection.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\DirectoryCollectionIterator' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Filesystem/DirectoryCollectionIterator.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\Exception' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Exception.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\Extension' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/PHPUnit/Extension.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\ExtensionCollection' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/PHPUnit/ExtensionCollection.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\ExtensionCollectionIterator' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/PHPUnit/ExtensionCollectionIterator.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\File' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Filesystem/File.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\FileCollection' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Filesystem/FileCollection.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\FileCollectionIterator' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Filesystem/FileCollectionIterator.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\Generator' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Generator.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\Group' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Group/Group.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\GroupCollection' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Group/GroupCollection.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\GroupCollectionIterator' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Group/GroupCollectionIterator.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\Groups' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Group/Groups.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\IniSetting' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/PHP/IniSetting.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\IniSettingCollection' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/PHP/IniSettingCollection.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\IniSettingCollectionIterator' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/PHP/IniSettingCollectionIterator.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\IntroduceCoverageElement' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/Migrations/IntroduceCoverageElement.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\Loader' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Loader.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\LogToReportMigration' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/Migrations/LogToReportMigration.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\Logging\\Junit' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Logging/Junit.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\Logging\\Logging' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Logging/Logging.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\Logging\\TeamCity' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Logging/TeamCity.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\Logging\\TestDox\\Html' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Logging/TestDox/Html.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\Logging\\TestDox\\Text' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Logging/TestDox/Text.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\Logging\\TestDox\\Xml' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Logging/TestDox/Xml.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\Logging\\Text' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Logging/Text.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\Migration' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/Migrations/Migration.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\MigrationBuilder' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/MigrationBuilder.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\MigrationBuilderException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/MigrationBuilderException.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\MigrationException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/MigrationException.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\Migrator' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/Migrator.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\MoveAttributesFromFilterWhitelistToCoverage' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/Migrations/MoveAttributesFromFilterWhitelistToCoverage.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\MoveAttributesFromRootToCoverage' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/Migrations/MoveAttributesFromRootToCoverage.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\MoveWhitelistDirectoriesToCoverage' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/Migrations/MoveWhitelistDirectoriesToCoverage.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\MoveWhitelistExcludesToCoverage' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/Migrations/MoveWhitelistExcludesToCoverage.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\PHPUnit' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/PHPUnit/PHPUnit.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\Php' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/PHP/Php.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\PhpHandler' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/PHP/PhpHandler.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\RemoveCacheTokensAttribute' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/Migrations/RemoveCacheTokensAttribute.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\RemoveEmptyFilter' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/Migrations/RemoveEmptyFilter.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\RemoveLogTypes' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/Migrations/RemoveLogTypes.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\TestDirectory' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/TestSuite/TestDirectory.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\TestDirectoryCollection' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/TestSuite/TestDirectoryCollection.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\TestDirectoryCollectionIterator' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/TestSuite/TestDirectoryCollectionIterator.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\TestFile' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/TestSuite/TestFile.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\TestFileCollection' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/TestSuite/TestFileCollection.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\TestFileCollectionIterator' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/TestSuite/TestFileCollectionIterator.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\TestSuite' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/TestSuite/TestSuite.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\TestSuiteCollection' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/TestSuite/TestSuiteCollection.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\TestSuiteCollectionIterator' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/TestSuite/TestSuiteCollectionIterator.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\UpdateSchemaLocationTo93' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/Migrations/UpdateSchemaLocationTo93.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\Variable' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/PHP/Variable.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\VariableCollection' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/PHP/VariableCollection.php',
     ],
     'PHPUnit\\TextUI\\XmlConfiguration\\VariableCollectionIterator' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/TextUI/XmlConfiguration/PHP/VariableCollectionIterator.php',
     ],
     'PHPUnit\\Util\\Annotation\\DocBlock' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/Annotation/DocBlock.php',
     ],
     'PHPUnit\\Util\\Annotation\\Registry' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/Annotation/Registry.php',
     ],
     'PHPUnit\\Util\\Blacklist' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/Blacklist.php',
     ],
     'PHPUnit\\Util\\Cloner' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/Cloner.php',
     ],
     'PHPUnit\\Util\\Color' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/Color.php',
     ],
     'PHPUnit\\Util\\ErrorHandler' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/ErrorHandler.php',
     ],
     'PHPUnit\\Util\\Exception' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/Exception.php',
     ],
     'PHPUnit\\Util\\ExcludeList' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/ExcludeList.php',
     ],
     'PHPUnit\\Util\\FileLoader' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/FileLoader.php',
     ],
     'PHPUnit\\Util\\Filesystem' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/Filesystem.php',
     ],
     'PHPUnit\\Util\\Filter' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/Filter.php',
     ],
     'PHPUnit\\Util\\GlobalState' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/GlobalState.php',
     ],
     'PHPUnit\\Util\\InvalidDataSetException' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/InvalidDataSetException.php',
     ],
     'PHPUnit\\Util\\Json' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/Json.php',
     ],
     'PHPUnit\\Util\\Log\\JUnit' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/Log/JUnit.php',
     ],
     'PHPUnit\\Util\\Log\\TeamCity' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/Log/TeamCity.php',
     ],
     'PHPUnit\\Util\\PHP\\AbstractPhpProcess' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/PHP/AbstractPhpProcess.php',
     ],
     'PHPUnit\\Util\\PHP\\DefaultPhpProcess' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/PHP/DefaultPhpProcess.php',
     ],
     'PHPUnit\\Util\\PHP\\WindowsPhpProcess' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/PHP/WindowsPhpProcess.php',
     ],
     'PHPUnit\\Util\\Printer' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/Printer.php',
     ],
     'PHPUnit\\Util\\Reflection' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/Reflection.php',
     ],
     'PHPUnit\\Util\\RegularExpression' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/RegularExpression.php',
     ],
     'PHPUnit\\Util\\Test' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/Test.php',
     ],
     'PHPUnit\\Util\\TestDox\\CliTestDoxPrinter' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/TestDox/CliTestDoxPrinter.php',
     ],
     'PHPUnit\\Util\\TestDox\\HtmlResultPrinter' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/TestDox/HtmlResultPrinter.php',
     ],
     'PHPUnit\\Util\\TestDox\\NamePrettifier' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/TestDox/NamePrettifier.php',
     ],
     'PHPUnit\\Util\\TestDox\\ResultPrinter' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/TestDox/ResultPrinter.php',
     ],
     'PHPUnit\\Util\\TestDox\\TestDoxPrinter' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/TestDox/TestDoxPrinter.php',
     ],
     'PHPUnit\\Util\\TestDox\\TextResultPrinter' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/TestDox/TextResultPrinter.php',
     ],
     'PHPUnit\\Util\\TestDox\\XmlResultPrinter' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/TestDox/XmlResultPrinter.php',
     ],
     'PHPUnit\\Util\\TextTestListRenderer' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/TextTestListRenderer.php',
     ],
     'PHPUnit\\Util\\Type' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/Type.php',
     ],
     'PHPUnit\\Util\\VersionComparisonOperator' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/VersionComparisonOperator.php',
     ],
     'PHPUnit\\Util\\XdebugFilterScriptGenerator' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/XdebugFilterScriptGenerator.php',
     ],
     'PHPUnit\\Util\\Xml' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/Xml.php',
     ],
     'PHPUnit\\Util\\XmlTestListRenderer' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/XmlTestListRenderer.php',
     ],
     'PHPUnit\\Util\\Xml\\Exception' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/Xml/Exception.php',
     ],
     'PHPUnit\\Util\\Xml\\FailedSchemaDetectionResult' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/Xml/FailedSchemaDetectionResult.php',
     ],
     'PHPUnit\\Util\\Xml\\Loader' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/Xml/Loader.php',
     ],
     'PHPUnit\\Util\\Xml\\SchemaDetectionResult' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/Xml/SchemaDetectionResult.php',
     ],
     'PHPUnit\\Util\\Xml\\SchemaDetector' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/Xml/SchemaDetector.php',
     ],
     'PHPUnit\\Util\\Xml\\SchemaFinder' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/Xml/SchemaFinder.php',
     ],
     'PHPUnit\\Util\\Xml\\SnapshotNodeList' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/Xml/SnapshotNodeList.php',
     ],
     'PHPUnit\\Util\\Xml\\SuccessfulSchemaDetectionResult' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/Xml/SuccessfulSchemaDetectionResult.php',
     ],
     'PHPUnit\\Util\\Xml\\ValidationResult' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/Xml/ValidationResult.php',
     ],
     'PHPUnit\\Util\\Xml\\Validator' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Util/Xml/Validator.php',
     ],
     'PharIo\\Manifest\\Application' => [
@@ -2351,287 +2351,287 @@ return [
         'path' => $vendorDir . '/sebastian/cli-parser/src/exceptions/UnknownOptionException.php',
     ],
     'SebastianBergmann\\CodeCoverage\\BranchAndPathCoverageNotSupportedException' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/BranchAndPathCoverageNotSupportedException.php',
     ],
     'SebastianBergmann\\CodeCoverage\\CodeCoverage' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/CodeCoverage.php',
     ],
     'SebastianBergmann\\CodeCoverage\\DeadCodeDetectionNotSupportedException' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/DeadCodeDetectionNotSupportedException.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Driver/Driver.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Driver\\PathExistsButIsNotDirectoryException' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/PathExistsButIsNotDirectoryException.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Driver\\PcovDriver' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Driver/PcovDriver.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Driver\\PcovNotAvailableException' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/PcovNotAvailableException.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Driver\\PhpdbgDriver' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Driver/PhpdbgDriver.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Driver\\PhpdbgNotAvailableException' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/PhpdbgNotAvailableException.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Driver\\Selector' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Driver/Selector.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Driver\\WriteOperationFailedException' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/WriteOperationFailedException.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Driver\\WrongXdebugVersionException' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/WrongXdebugVersionException.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Driver\\Xdebug2Driver' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Driver/Xdebug2Driver.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Driver\\Xdebug2NotEnabledException' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/Xdebug2NotEnabledException.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Driver\\Xdebug3Driver' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Driver/Xdebug3Driver.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Driver\\Xdebug3NotEnabledException' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/Xdebug3NotEnabledException.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Driver\\XdebugNotAvailableException' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/XdebugNotAvailableException.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Exception' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/Exception.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Filter' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Filter.php',
     ],
     'SebastianBergmann\\CodeCoverage\\InvalidArgumentException' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/InvalidArgumentException.php',
     ],
     'SebastianBergmann\\CodeCoverage\\NoCodeCoverageDriverAvailableException' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverAvailableException.php',
     ],
     'SebastianBergmann\\CodeCoverage\\NoCodeCoverageDriverWithPathCoverageSupportAvailableException' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/NoCodeCoverageDriverWithPathCoverageSupportAvailableException.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Node\\AbstractNode' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Node/AbstractNode.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Node\\Builder' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Node/Builder.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Node\\CrapIndex' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Node/CrapIndex.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Node\\Directory' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Node/Directory.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Node\\File' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Node/File.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Node\\Iterator' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Node/Iterator.php',
     ],
     'SebastianBergmann\\CodeCoverage\\ParserException' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/ParserException.php',
     ],
     'SebastianBergmann\\CodeCoverage\\ProcessedCodeCoverageData' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/ProcessedCodeCoverageData.php',
     ],
     'SebastianBergmann\\CodeCoverage\\RawCodeCoverageData' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/RawCodeCoverageData.php',
     ],
     'SebastianBergmann\\CodeCoverage\\ReflectionException' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/ReflectionException.php',
     ],
     'SebastianBergmann\\CodeCoverage\\ReportAlreadyFinalizedException' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/ReportAlreadyFinalizedException.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Report\\Clover' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Report/Clover.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Report\\Cobertura' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Report/Cobertura.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Report\\Crap4j' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Report/Crap4j.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Report\\Html\\Dashboard' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Report/Html/Renderer/Dashboard.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Report\\Html\\Directory' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Report/Html/Renderer/Directory.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Report\\Html\\Facade' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Report/Html/Facade.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Report\\Html\\File' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Report/Html/Renderer/File.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Report\\Html\\Renderer' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Report/Html/Renderer.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Report\\PHP' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Report/PHP.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Report\\Text' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Report/Text.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Report\\Xml\\BuildInformation' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Report/Xml/BuildInformation.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Report\\Xml\\Coverage' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Report/Xml/Coverage.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Report\\Xml\\Directory' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Report/Xml/Directory.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Report\\Xml\\Facade' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Report/Xml/Facade.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Report\\Xml\\File' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Report/Xml/File.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Report\\Xml\\Method' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Report/Xml/Method.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Report\\Xml\\Node' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Report/Xml/Node.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Report\\Xml\\Project' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Report/Xml/Project.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Report\\Xml\\Report' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Report/Xml/Report.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Report\\Xml\\Source' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Report/Xml/Source.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Report\\Xml\\Tests' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Report/Xml/Tests.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Report\\Xml\\Totals' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Report/Xml/Totals.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Report\\Xml\\Unit' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Report/Xml/Unit.php',
     ],
     'SebastianBergmann\\CodeCoverage\\StaticAnalysisCacheNotConfiguredException' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/StaticAnalysisCacheNotConfiguredException.php',
     ],
     'SebastianBergmann\\CodeCoverage\\StaticAnalysis\\CacheWarmer' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/StaticAnalysis/CacheWarmer.php',
     ],
     'SebastianBergmann\\CodeCoverage\\StaticAnalysis\\CachingFileAnalyser' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/StaticAnalysis/CachingFileAnalyser.php',
     ],
     'SebastianBergmann\\CodeCoverage\\StaticAnalysis\\CodeUnitFindingVisitor' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/StaticAnalysis/CodeUnitFindingVisitor.php',
     ],
     'SebastianBergmann\\CodeCoverage\\StaticAnalysis\\ExecutableLinesFindingVisitor' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/StaticAnalysis/ExecutableLinesFindingVisitor.php',
     ],
     'SebastianBergmann\\CodeCoverage\\StaticAnalysis\\FileAnalyser' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/StaticAnalysis/FileAnalyser.php',
     ],
     'SebastianBergmann\\CodeCoverage\\StaticAnalysis\\IgnoredLinesFindingVisitor' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/StaticAnalysis/IgnoredLinesFindingVisitor.php',
     ],
     'SebastianBergmann\\CodeCoverage\\StaticAnalysis\\ParsingFileAnalyser' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/StaticAnalysis/ParsingFileAnalyser.php',
     ],
     'SebastianBergmann\\CodeCoverage\\TestIdMissingException' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/TestIdMissingException.php',
     ],
     'SebastianBergmann\\CodeCoverage\\UnintentionallyCoveredCodeException' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/UnintentionallyCoveredCodeException.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Util\\DirectoryCouldNotBeCreatedException' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/DirectoryCouldNotBeCreatedException.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Util\\Filesystem' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Util/Filesystem.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Util\\Percentage' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Util/Percentage.php',
     ],
     'SebastianBergmann\\CodeCoverage\\Version' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Version.php',
     ],
     'SebastianBergmann\\CodeCoverage\\XmlException' => [
-        'version' => '9.2.24.0',
+        'version' => '9.2.26.0',
         'path' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/XmlException.php',
     ],
     'SebastianBergmann\\CodeUnitReverseLookup\\Wizard' => [

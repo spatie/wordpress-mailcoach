@@ -15,8 +15,6 @@ use PHP_CodeSniffer\Util\Tokens;
 
 class ClassInstantiationSniff implements Sniff
 {
-
-
     /**
      * Returns an array of tokens this test wants to listen for.
      *
@@ -28,7 +26,6 @@ class ClassInstantiationSniff implements Sniff
 
     }//end register()
 
-
     /**
      * Processes this test, when one of its tokens is encountered.
      *
@@ -38,21 +35,22 @@ class ClassInstantiationSniff implements Sniff
      *
      * @return void
      */
-    public function process(File $phpcsFile, $stackPtr)
+    public function process(File $phpcsFile, $stackPtr): void
     {
         $tokens = $phpcsFile->getTokens();
 
         // Find the class name.
         $allowed = [
-            T_STRING                   => T_STRING,
-            T_NS_SEPARATOR             => T_NS_SEPARATOR,
-            T_SELF                     => T_SELF,
-            T_STATIC                   => T_STATIC,
-            T_VARIABLE                 => T_VARIABLE,
-            T_DOLLAR                   => T_DOLLAR,
-            T_OBJECT_OPERATOR          => T_OBJECT_OPERATOR,
+            T_STRING => T_STRING,
+            T_NS_SEPARATOR => T_NS_SEPARATOR,
+            T_SELF => T_SELF,
+            T_STATIC => T_STATIC,
+            T_PARENT => T_PARENT,
+            T_VARIABLE => T_VARIABLE,
+            T_DOLLAR => T_DOLLAR,
+            T_OBJECT_OPERATOR => T_OBJECT_OPERATOR,
             T_NULLSAFE_OBJECT_OPERATOR => T_NULLSAFE_OBJECT_OPERATOR,
-            T_DOUBLE_COLON             => T_DOUBLE_COLON,
+            T_DOUBLE_COLON => T_DOUBLE_COLON,
         ];
 
         $allowed += Tokens::$emptyTokens;
@@ -68,6 +66,7 @@ class ClassInstantiationSniff implements Sniff
                 && isset($tokens[$i]['attribute_closer']) === true
             ) {
                 $i = $tokens[$i]['attribute_closer'];
+
                 continue;
             }
 
@@ -75,10 +74,12 @@ class ClassInstantiationSniff implements Sniff
                 || $tokens[$i]['code'] === T_OPEN_CURLY_BRACKET
             ) {
                 $i = $tokens[$i]['bracket_closer'];
+
                 continue;
             }
 
             $classNameEnd = $i;
+
             break;
         }//end for
 
@@ -102,7 +103,7 @@ class ClassInstantiationSniff implements Sniff
         }
 
         $error = 'Parentheses must be used when instantiating a new class';
-        $fix   = $phpcsFile->addFixableError($error, $stackPtr, 'MissingParentheses');
+        $fix = $phpcsFile->addFixableError($error, $stackPtr, 'MissingParentheses');
         if ($fix === true) {
             $prev = $phpcsFile->findPrevious(Tokens::$emptyTokens, ($classNameEnd - 1), null, true);
             $phpcsFile->fixer->addContent($prev, '()');

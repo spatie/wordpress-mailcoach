@@ -15,8 +15,6 @@ use PHP_CodeSniffer\Util\Tokens;
 
 class StaticThisUsageSniff extends AbstractScopeSniff
 {
-
-
     /**
      * Constructs the test with the tokens it wishes to listen for.
      */
@@ -25,7 +23,6 @@ class StaticThisUsageSniff extends AbstractScopeSniff
         parent::__construct([T_CLASS, T_TRAIT, T_ENUM, T_ANON_CLASS], [T_FUNCTION]);
 
     }//end __construct()
-
 
     /**
      * Processes this test, when one of its tokens is encountered.
@@ -37,7 +34,7 @@ class StaticThisUsageSniff extends AbstractScopeSniff
      *
      * @return void
      */
-    public function processTokenWithinScope(File $phpcsFile, $stackPtr, $currScope)
+    public function processTokenWithinScope(File $phpcsFile, $stackPtr, $currScope): void
     {
         $tokens = $phpcsFile->getTokens();
 
@@ -66,23 +63,22 @@ class StaticThisUsageSniff extends AbstractScopeSniff
         }
 
         $next = $stackPtr;
-        $end  = $tokens[$stackPtr]['scope_closer'];
+        $end = $tokens[$stackPtr]['scope_closer'];
 
         $this->checkThisUsage($phpcsFile, $next, $end);
 
     }//end processTokenWithinScope()
 
-
     /**
      * Check for $this variable usage between $next and $end tokens.
      *
-     * @param File $phpcsFile The current file being scanned.
-     * @param int  $next      The position of the next token to check.
-     * @param int  $end       The position of the last token to check.
+     * @param \PHP_CodeSniffer\Files\File $phpcsFile The current file being scanned.
+     * @param int                         $next      The position of the next token to check.
+     * @param int                         $end       The position of the last token to check.
      *
      * @return void
      */
-    private function checkThisUsage(File $phpcsFile, $next, $end)
+    private function checkThisUsage(File $phpcsFile, $next, $end): void
     {
         $tokens = $phpcsFile->getTokens();
 
@@ -95,6 +91,7 @@ class StaticThisUsageSniff extends AbstractScopeSniff
             if ($tokens[$next]['code'] === T_ANON_CLASS) {
                 $this->checkThisUsage($phpcsFile, $next, $tokens[$next]['scope_opener']);
                 $next = $tokens[$next]['scope_closer'];
+
                 continue;
             }
 
@@ -108,7 +105,6 @@ class StaticThisUsageSniff extends AbstractScopeSniff
 
     }//end checkThisUsage()
 
-
     /**
      * Processes a token that is found within the scope that this test is
      * listening to.
@@ -119,7 +115,7 @@ class StaticThisUsageSniff extends AbstractScopeSniff
      *
      * @return void
      */
-    protected function processTokenOutsideScope(File $phpcsFile, $stackPtr)
+    protected function processTokenOutsideScope(File $phpcsFile, $stackPtr): void
     {
 
     }//end processTokenOutsideScope()

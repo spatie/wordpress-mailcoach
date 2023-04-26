@@ -15,8 +15,6 @@ use PHP_CodeSniffer\Util\Tokens;
 
 class DisallowComparisonAssignmentSniff implements Sniff
 {
-
-
     /**
      * Returns an array of tokens this test wants to listen for.
      *
@@ -28,7 +26,6 @@ class DisallowComparisonAssignmentSniff implements Sniff
 
     }//end register()
 
-
     /**
      * Processes this test, when one of its tokens is encountered.
      *
@@ -38,7 +35,7 @@ class DisallowComparisonAssignmentSniff implements Sniff
      *
      * @return void
      */
-    public function process(File $phpcsFile, $stackPtr)
+    public function process(File $phpcsFile, $stackPtr): void
     {
         $tokens = $phpcsFile->getTokens();
 
@@ -52,17 +49,18 @@ class DisallowComparisonAssignmentSniff implements Sniff
             }
         }
 
-        // Ignore values in array definitions.
-        $array = $phpcsFile->findNext(
-            T_ARRAY,
+        // Ignore values in array definitions or match structures.
+        $nextNonEmpty = $phpcsFile->findNext(
+            Tokens::$emptyTokens,
             ($stackPtr + 1),
-            null,
-            false,
             null,
             true
         );
 
-        if ($array !== false) {
+        if ($nextNonEmpty !== false
+            && ($tokens[$nextNonEmpty]['code'] === T_ARRAY
+            || $tokens[$nextNonEmpty]['code'] === T_MATCH)
+        ) {
             return;
         }
 
@@ -93,6 +91,7 @@ class DisallowComparisonAssignmentSniff implements Sniff
             ) {
                 $error = 'The value of a comparison must not be assigned to a variable';
                 $phpcsFile->addError($error, $stackPtr, 'AssignedComparison');
+
                 break;
             }
 
@@ -101,6 +100,7 @@ class DisallowComparisonAssignmentSniff implements Sniff
             ) {
                 $error = 'The value of a boolean operation must not be assigned to a variable';
                 $phpcsFile->addError($error, $stackPtr, 'AssignedBool');
+
                 break;
             }
         }

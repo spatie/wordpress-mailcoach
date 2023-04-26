@@ -11,7 +11,7 @@ return [
         'path' => $vendorDir . '/symfony/polyfill-mbstring/bootstrap.php',
     ],
     '6e3fae29631ef280660b3cdad06f25a8' => [
-        'version' => '3.2.0.0',
+        'version' => '3.2.1.0',
         'path' => $vendorDir . '/symfony/deprecation-contracts/function.php',
     ],
     '320cde22f66dd4f5d3fd621d3e88b98f' => [
@@ -19,11 +19,11 @@ return [
         'path' => $vendorDir . '/symfony/polyfill-ctype/bootstrap.php',
     ],
     '6124b4c8570aa390c21fafd04a26c69f' => [
-        'version' => '1.11.0.0',
+        'version' => '1.11.1.0',
         'path' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
     ],
     'e39a8b23c42d4e1452234d762b03835a' => [
-        'version' => '4.7.3.0',
+        'version' => '4.7.4.0',
         'path' => $vendorDir . '/ramsey/uuid/src/functions.php',
     ],
     '8825ede83f2f289127722d4e842cf7e8' => [
@@ -34,16 +34,12 @@ return [
         'version' => '1.27.0.0',
         'path' => $vendorDir . '/symfony/polyfill-intl-normalizer/bootstrap.php',
     ],
-    'a4a119a56e50fbb293281d9a48007e0e' => [
-        'version' => '1.27.0.0',
-        'path' => $vendorDir . '/symfony/polyfill-php80/bootstrap.php',
-    ],
     '9b38cf48e83f5d8f60375221cd213eee' => [
         'version' => '1.10.14.0',
         'path' => $vendorDir . '/phpstan/phpstan/bootstrap.php',
     ],
     'ec07570ca5a812141189b1fa81503674' => [
-        'version' => '9.6.3.0',
+        'version' => '9.6.7.0',
         'path' => $vendorDir . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
     ],
     '7b11c4dc42b3b3023073cb14e519683c' => [
@@ -51,11 +47,11 @@ return [
         'path' => $vendorDir . '/ralouphie/getallheaders/src/getallheaders.php',
     ],
     'b6b991a57620e2fb6b2f66f03fe9ddc2' => [
-        'version' => '6.2.5.0',
+        'version' => '6.2.8.0',
         'path' => $vendorDir . '/symfony/string/Resources/functions.php',
     ],
     '667aeda72477189d0494fecd327c3641' => [
-        'version' => '6.2.5.0',
+        'version' => '6.2.8.0',
         'path' => $vendorDir . '/symfony/var-dumper/Resources/functions/dump.php',
     ],
     '051bafe20e2674435a162870efa2d2a7' => [
@@ -67,23 +63,27 @@ return [
         'path' => $vendorDir . '/guzzlehttp/promises/src/functions_include.php',
     ],
     '3074abeef0bacf5811f59e9dee6311d1' => [
-        'version' => '1.36.2.0',
+        'version' => '1.37.1.0',
         'path' => $vendorDir . '/spatie/ray/src/helpers.php',
     ],
     '0d59ee240a4cd96ddbb4ff164fccea4d' => [
         'version' => '1.27.0.0',
         'path' => $vendorDir . '/symfony/polyfill-php73/bootstrap.php',
     ],
+    'a4a119a56e50fbb293281d9a48007e0e' => [
+        'version' => '1.27.0.0',
+        'path' => $vendorDir . '/symfony/polyfill-php80/bootstrap.php',
+    ],
     '23c18046f52bef3eea034657bafda50f' => [
         'version' => '1.27.0.0',
         'path' => $vendorDir . '/symfony/polyfill-php81/bootstrap.php',
     ],
     '7d3b315c4f303f2fc14aca642a738e50' => [
-        'version' => '1.0.4.0',
+        'version' => '1.0.5.0',
         'path' => $vendorDir . '/yoast/phpunit-polyfills/phpunitpolyfills-autoload.php',
     ],
     '37a3dc5111fe8f707ab4c132ef1dbc62' => [
-        'version' => '7.5.0.0',
+        'version' => '7.5.1.0',
         'path' => $vendorDir . '/guzzlehttp/guzzle/src/functions_include.php',
     ],
 ];
