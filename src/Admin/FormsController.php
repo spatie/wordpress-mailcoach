@@ -2,10 +2,12 @@
 
 namespace Spatie\WordPressMailcoach\Admin;
 
+use Spatie\MailcoachSdk\Support\PaginatedResults;
 use Spatie\WordPressMailcoach\Admin\Data\CreateOrUpdateFormData;
 use Spatie\WordPressMailcoach\Admin\Model\Form;
 use Spatie\WordPressMailcoach\Admin\Repository\FormRepository;
 use Spatie\WordPressMailcoach\Admin\ViewModel\CreateOrUpdateFormViewModel;
+use Spatie\WordPressMailcoach\Admin\ViewModel\IndexFormsViewModel;
 use Spatie\WordPressMailcoach\Includes\Api\MailcoachApi;
 use Spatie\WordPressMailcoach\Support\HasHooks;
 
@@ -17,8 +19,8 @@ if (! defined('ABSPATH')) {
 class FormsController implements HasHooks
 {
     private function __construct(
-        private MailcoachApi $mailcoach,
-        private FormRepository $formRepository,
+        private readonly MailcoachApi   $mailcoach,
+        private readonly FormRepository $formRepository,
     ) {
     }
 
@@ -41,18 +43,7 @@ class FormsController implements HasHooks
 
     public function indexForms(): void
     {
-        $forms = $this->formRepository->all();
-        $emailLists = $this->mailcoach->emailLists();
-
-        $emailLists = array_map(static function (Form $form) use ($emailLists): void {
-            foreach ($emailLists as $emailList) {
-                if ($emailList->uuid === $form->emailListUuid) {
-                    $form->setEmailList($emailList);
-
-                    return;
-                }
-            }
-        }, $forms);
+        $view = new IndexFormsViewModel($this->formRepository, $this->mailcoach);
 
         include __DIR__ . '/views/show-forms.php';
     }
@@ -82,5 +73,18 @@ class FormsController implements HasHooks
         $view = new CreateOrUpdateFormViewModel($this->mailcoach, $form);
 
         include __DIR__ . '/views/create-or-update-form.php';
+    }
+
+    private function setEmailListRelation(PaginatedResults $emailLists, array $forms): array
+    {
+        return array_map(static function (Form $form) use ($emailLists): void {
+            foreach ($emailLists as $emailList) {
+                if ($emailList->uuid === $form->emailListUuid) {
+                    $form->setEmailList($emailList);
+
+                    return;
+                }
+            }
+        }, $forms);
     }
 }

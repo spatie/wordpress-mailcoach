@@ -15,14 +15,13 @@
  * @wordpress-plugin
  * Plugin Name:       Mailcoach
  * Plugin URI:        https://github.com/spatie/wordpress-mailcoach
- * Description:       Show a summary of your Mailcoach campaigns, lists and templates.
+ * Description:       Create forms for Mailcoach.
  * Version:           1.0.0
  * Author:            Spatie
  * Author URI:        https://spatie.be
  * License:           MIT
  * Text Domain:       mailcoach
- * Domain Path:       /Languages
- * Requires PHP:      7.4
+ * Requires PHP:      8.1
  */
 
 use Spatie\WordpressMailcoach\Includes\Activator;
@@ -33,14 +32,12 @@ use Spatie\WordpressMailcoach\Includes\Main;
 defined('ABSPATH') or exit;
 
 // Autoloader
-require_once plugin_dir_path( __FILE__ ) . '/vendor/autoload_packages.php';
+require_once plugin_dir_path(__FILE__) . '/vendor/autoload_packages.php';
 require_once plugin_dir_path(__FILE__) . 'autoloader.php';
 
 define('MAILCOACH_VERSION', '1.0.0');
 define('MAILCOACH_API_KEY', null);
 define('MAILCOACH_DOMAIN', null);
-define('MAILCOACH_PLUGIN_DIR', __DIR__);
-define('MAILCOACH_PLUGIN_FILE', __FILE__);
 
 function activate_mailcoach(): void
 {
@@ -54,12 +51,13 @@ function deactivate_mailcoach(): void
     Deactivator::deactivate();
 }
 
-register_activation_hook(__FILE__, 'activate_mailcoach');
-register_deactivation_hook(__FILE__, 'deactivate_mailcoach');
+register_activation_hook(__FILE__, static fn () => activate_mailcoach());
+register_deactivation_hook(__FILE__, static fn () => deactivate_mailcoach());
 
 function runPlugin(): void
 {
     require_once plugin_dir_path(__FILE__) . 'src/Includes/Main.php';
+
     $plugin = new Main();
     $plugin->run();
 }
