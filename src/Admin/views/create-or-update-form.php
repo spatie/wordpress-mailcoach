@@ -1,5 +1,5 @@
 <?php
-    /** @var \Spatie\WordPressMailcoach\Admin\ViewModel\CreateOrUpdateForm $view */
+    /** @var \Spatie\WordPressMailcoach\Admin\ViewModel\CreateOrUpdateFormViewModel $view */
     ?>
 
 <form class="card-grid" method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="POST">
@@ -107,20 +107,20 @@
             <h2>Messages</h2>
 
             <p>
-                <label for="mailcoach-subscribe-success">Message when subscribed<br>
-                    <input type="text" size="70" id="mailcoach-subscribe-success" value="You have been subscribed.">
+                <label for="mailcoach-message-subscribed">Message when subscribed<br>
+                    <input type="text" size="70" name="message-subscribed" id="mailcoach-message-subscribed" value="<?php echo $view->messages()->subscribed ?>">
                 </label>
             </p>
 
             <p>
-                <label for="mailcoach-subscribe-pending">Message when pending subscription<br>
-                    <input type="text" size="70" id="mailcoach-subscribe-pending" value="You have been subscribed. Check your email to verify.">
+                <label for="mailcoach-message-pending">Message when pending subscription<br>
+                    <input type="text" size="70" name="message-pending" id="mailcoach-message-pending" value="<?php echo $view->messages()->pending ?>">
                 </label>
             </p>
 
             <p>
-                <label for="mailcoach-subscribe-already-subscribed">Message when already<br>
-                    <input type="text" size="70" id="mailcoach-subscribe-already-subscribed" value="You have already been subscribed.">
+                <label for="mailcoach-message-already-subscribed">Message when already subscribed<br>
+                    <input type="text" size="70" name="message-already-subscribed" id="mailcoach-message-already-subscribed" value="<?php echo $view->messages()->alreadySubscribed ?>">
                 </label>
             </p>
         </div>

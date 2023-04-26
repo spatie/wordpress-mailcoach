@@ -4,6 +4,7 @@ namespace Spatie\WordPressMailcoach\Admin\Data;
 
 use Spatie\WordPressMailcoach\Admin\Action\GenerateShortcode;
 use Spatie\WordPressMailcoach\Admin\Exception\InvalidData;
+use Spatie\WordPressMailcoach\Admin\ValueObject\Messages;
 
 // If this file is called directly, abort.
 if (! defined('ABSPATH')) {
@@ -16,6 +17,7 @@ class CreateOrUpdateFormData
         public string $name,
         public string $shortcode,
         public string $emailListUuid,
+        public Messages $messages,
         public string $content,
     ) {
     }
@@ -30,6 +32,7 @@ class CreateOrUpdateFormData
             $sanitizedName = sanitize_text_field($_POST['name']),
             $_POST['shortcode'] ?? (new GenerateShortcode())->execute($sanitizedName),
             sanitize_text_field($_POST['email-list']),
+            Messages::fromRequest(),
             stripslashes($_POST['content']),
         );
     }

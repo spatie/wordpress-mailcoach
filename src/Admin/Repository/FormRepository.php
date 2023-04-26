@@ -37,6 +37,9 @@ class FormRepository
                 'shortcode' => $data->shortcode,
                 'email_list_uuid' => $data->emailListUuid,
                 'content' => $data->content,
+                'message_subscribed' => $data->messages->subscribed,
+                'message_pending' => $data->messages->pending,
+                'message_already_subscribed' => $data->messages->alreadySubscribed,
             ]
         );
 
@@ -59,6 +62,9 @@ class FormRepository
                 'name' => $data->name,
                 'email_list_uuid' => $data->emailListUuid,
                 'content' => $data->content,
+                'message_subscribed' => $data->messages->subscribed,
+                'message_pending' => $data->messages->pending,
+                'message_already_subscribed' => $data->messages->alreadySubscribed,
             ],
             ['id' => $form->id]
         );

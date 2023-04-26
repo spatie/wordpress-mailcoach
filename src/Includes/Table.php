@@ -37,6 +37,9 @@ class Table
             shortcode varchar(55) NOT NULL UNIQUE,
             email_list_uuid varchar(36) NOT NULL,
             content text NOT NULL,
+            message_subscribed text NOT NULL,
+            message_pending text NOT NULL,
+            message_already_subscribed text NOT NULL,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
             PRIMARY KEY (id)
         ) {$charset_collate};";

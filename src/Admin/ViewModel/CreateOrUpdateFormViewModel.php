@@ -5,8 +5,9 @@ namespace Spatie\WordPressMailcoach\Admin\ViewModel;
 use Spatie\MailcoachSdk\Resources\EmailList;
 use Spatie\WordPressMailcoach\Admin\MailcoachApi;
 use Spatie\WordPressMailcoach\Admin\Model\Form;
+use Spatie\WordPressMailcoach\Admin\ValueObject\Messages;
 
-class CreateOrUpdateForm
+class CreateOrUpdateFormViewModel
 {
     public function __construct(
         private readonly MailcoachApi $mailcoach,
@@ -67,5 +68,14 @@ class CreateOrUpdateForm
     public function showShortcode(): bool
     {
         return $this->isEditMode();
+    }
+
+    public function messages(): Messages
+    {
+        if ($this->form === null) {
+            return Messages::default();
+        }
+
+        return $this->form->messages;
     }
 }
