@@ -27,19 +27,9 @@ class ShowSubscribeViewModel
         return SubscribeStatus::from($_GET['status']);
     }
 
-    public function isSubscribed(): bool
+    public function submitMessage(): string
     {
-        return $this->isProcessed() && $this->status() === SubscribeStatus::Subscribed;
-    }
-
-    public function isPending(): bool
-    {
-        return $this->isProcessed() && $this->status() === SubscribeStatus::Pending;
-    }
-
-    public function isAlreadySubscribed(): bool
-    {
-        return $this->isProcessed() && $this->status() === SubscribeStatus::AlreadySubscribed;
+        return $this->form->messages->fromStatus($this->status());
     }
 
     /**

@@ -2,6 +2,8 @@
 
 namespace Spatie\WordPressMailcoach\Admin\ValueObject;
 
+use Spatie\WordPressMailcoach\Admin\Enum\SubscribeStatus;
+
 class Messages
 {
     private function __construct(
@@ -46,5 +48,22 @@ class Messages
             'pending' => $this->pending,
             'already_subscribed' => $this->alreadySubscribed,
         ];
+    }
+
+    public function fromStatus(SubscribeStatus $status): string
+    {
+        if ($status === SubscribeStatus::Subscribed) {
+            return $this->subscribed;
+        }
+
+        if ($status === SubscribeStatus::Pending) {
+            return $this->pending;
+        }
+
+        if ($status === SubscribeStatus::AlreadySubscribed) {
+            return $this->alreadySubscribed;
+        }
+
+        throw new \RuntimeException("Could not find message for status `{$status->value}`");
     }
 }

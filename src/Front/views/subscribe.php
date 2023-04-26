@@ -16,17 +16,7 @@
         echo $view->form->content;
     } ?>
 
-    <!-- TODO: Customizable messages -->
-    <?php if ($view->isSubscribed()) { ?>
-        <p class="mailcoach-subscribe-status">You have been subscribed!</p>
+    <?php if ($view->isProcessed()) { ?>
+        <p class="mailcoach-subscribe-status"><?php echo $view->submitMessage() ?></p>
     <?php } ?>
-
-    <?php if ($view->isPending()) { ?>
-        <p class="mailcoach-subscribe-status">You have been subscribed. Check your email to verify!</p>
-    <?php } ?>
-
-    <?php if ($view->isAlreadySubscribed()) { ?>
-        <p class="mailcoach-subscribe-status">You have already been subscribed!</p>
-    <?php } ?>
-
 </form>
