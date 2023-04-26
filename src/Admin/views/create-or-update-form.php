@@ -1,6 +1,6 @@
 <?php
-    /** @var \Spatie\WordPressMailcoach\Admin\ViewModel\CreateOrUpdateFormViewModel $view */
-    ?>
+/** @var \Spatie\WordPressMailcoach\Admin\ViewModel\CreateOrUpdateFormViewModel $view */
+?>
 
 <form class="card-grid" method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
     <input type="hidden" name="action" value="create_new_form">
@@ -17,8 +17,8 @@
         </div>
 
         <?php
-            if ($view->showShortcode()) {
-                ?>
+        if ($view->showShortcode()) {
+            ?>
             <div>
                 <p>
                     <label for="shortcode">Copy this shortcode and paste it into your post, page, or text widget content</label>
@@ -28,8 +28,8 @@
                 </p>
             </div>
             <?php
-            }
-    ?>
+        }
+?>
 
         <p id="mailcoach-external-form-subscriptions-warning"></p>
 
@@ -37,16 +37,16 @@
         <select name="email-list" id="email-list">
 
         <?php
-    /** @var \Spatie\MailcoachSdk\Resources\EmailList $list */
-    foreach ($view->emailLists() as $list) {
-        echo "<option value='{$list->uuid}'";
+/** @var \Spatie\MailcoachSdk\Resources\EmailList $list */
+foreach ($view->emailLists() as $list) {
+    echo "<option value='{$list->uuid}'";
 
-        if ($list->uuid === $view->selectedEmailList()) {
-            echo " selected";
-        }
-        echo ">{$list->name}</option>";
+    if ($list->uuid === $view->selectedEmailList()) {
+        echo " selected";
     }
-    ?>
+    echo ">{$list->name}</option>";
+}
+?>
 
             <script>
                 if (verifyIfSelectedOptionsHasExternalFormSubscriptionsEnabled()) {
@@ -92,15 +92,15 @@
             </script>
 
         <textarea cols="100" rows="12" id="content" name="content" class="large-text code" data-config-field="form.body"><?php
-    if ($view->isEditMode()) {
-        echo $view->form->content;
-    } else {
-        echo '<label class="label label-required" for="email">Email</label>
+if ($view->isEditMode()) {
+    echo $view->form->content;
+} else {
+    echo '<label class="label label-required" for="email">Email</label>
 
 <input autocomplete="email" type="email" name="email" id="email" required label="Email" />
 
 <button type="submit" name="mailcoach_subscribe_submit" id="submit">Subscribe</button>';
-    }?></textarea>
+}?></textarea>
     </section>
     <section>
         <div>
@@ -135,4 +135,4 @@
 if ($view->isEditMode()) {
     include __DIR__ . '/delete-form.php';
 }
-    ?>
+?>
