@@ -74,9 +74,7 @@ class FormRepository
         }
     }
 
-    /**
-     * @return array<array{id: string, name: string, email_list_uuid: string, content: string}>
-     */
+    /** @return array<Form> */
     public function all(): array
     {
         global $wpdb;
@@ -92,6 +90,7 @@ class FormRepository
         }, $result);
     }
 
+    /** @return string[] */
     public function allShortCodes(): array
     {
         global $wpdb;

@@ -25,7 +25,7 @@ class SettingsController implements HasHooks
 
     public function initializeHooks(): void
     {
-        add_action('admin_init', fn () => $this->settings::initialise());
+        add_action('admin_init', fn () => $this->settings->initialise());
 
         add_action('admin_post_nopriv_store_settings_form', fn () => $this->storeSettings());
         add_action('admin_post_store_settings_form', fn () => $this->storeSettings());

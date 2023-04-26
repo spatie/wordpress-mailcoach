@@ -15,6 +15,7 @@ class IndexFormsViewModel
     ) {
     }
 
+    /** @return string[] */
     public function tableHeaders(): array
     {
         return ['Name', 'Shortcode', 'Email List', 'Date'];
@@ -23,26 +24,30 @@ class IndexFormsViewModel
     /** @return Form[] */
     public function forms(): array
     {
-        return $this->formRepository->all();
+        $forms = $this->formRepository->all();
+
+        return $this->setEmailListRelation($forms, $this->emailLists());
     }
 
-    public function emailLists(): array
+    public function emailLists(): PaginatedResults
     {
-        $emailLists = $this->mailcoach->emailLists();
-
-        return $this->setEmailListRelation($emailLists, $this->forms());
+        return $this->mailcoach->emailLists();
     }
 
-    private function setEmailListRelation(PaginatedResults $emailLists, array $forms): array
+    /**
+     * @param Form[] $forms
+     * @return Form[]
+     */
+    private function setEmailListRelation(array $forms, PaginatedResults $emailLists): array
     {
-        return array_map(static function (Form $form) use ($emailLists): void {
+        return array_map(function (Form $form) use ($emailLists): Form {
             foreach ($emailLists as $emailList) {
                 if ($emailList->uuid === $form->emailListUuid) {
-                    $form->setEmailList($emailList);
-
-                    return;
+                    return $form->setEmailList($emailList);
                 }
             }
+
+            return $form;
         }, $forms);
     }
 }

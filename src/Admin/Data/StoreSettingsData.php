@@ -27,6 +27,6 @@ class StoreSettingsData
     {
         $url = parse_url($url);
 
-        return ($url['scheme'] . '://' . $url['host']) ?? '';
+        return $url['scheme'] . '://' . $url['host'];
     }
 }

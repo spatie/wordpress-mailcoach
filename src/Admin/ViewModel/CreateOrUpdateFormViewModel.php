@@ -15,11 +15,13 @@ class CreateOrUpdateFormViewModel
     ) {
     }
 
+    /** @return EmailList[] */
     public function emailLists(): array
     {
         return $this->mailcoach->emailListOptions();
     }
 
+    /** @return string[] */
     public function enabledEmailListNames(): array
     {
         $lists = array_filter($this->emailLists(), static function (EmailList $emailList) {

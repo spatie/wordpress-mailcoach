@@ -16,6 +16,7 @@ class Settings
     ) {
     }
 
+    /** @return string[] */
     public static function keys(): array
     {
         return [
@@ -24,12 +25,17 @@ class Settings
         ];
     }
 
-    public static function initialise(): self
+    public static function make(): self
     {
         return new self(
             get_option(self::KEY_API_TOKEN),
             get_option(self::KEY_API_ENDPOINT),
         );
+    }
+
+    public function initialise(): void
+    {
+        $this::make();
     }
 
     public function apiToken(): string

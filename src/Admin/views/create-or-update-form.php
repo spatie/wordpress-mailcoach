@@ -71,7 +71,7 @@
                 }
 
                 function verifyIfSelectedOptionsHasExternalFormSubscriptionsEnabled() {
-                    let enabledLists = <?php echo json_encode($view->enabledEmailListNames(), true); ?>;
+                    let enabledLists = <?php echo json_encode($view->enabledEmailListNames(), 1); ?>;
 
                     const selectedOptionText = getSelectedOption();
 

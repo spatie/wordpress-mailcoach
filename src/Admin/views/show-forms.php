@@ -24,7 +24,7 @@
             echo "<tr>";
             echo "<td class='text-xs'><a href={$form->editUrl()}>{$form->name}</a></td>";
             echo "<td><input type='text' readonly='readonly' value='[{$form->shortcode}]' class='large-text code'></td>";
-            echo "<td>{$form->emailList->name}</td>";
+            echo "<td>{$form->emailList?->name}</td>";
             echo "<td>{$form->createdAt()}</td>";
             echo "</tr>";
         } ?>

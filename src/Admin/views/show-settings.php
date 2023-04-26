@@ -1,3 +1,7 @@
+<?php
+/** @var string $apiToken */
+/** @var string $apiEndpoint */
+?>
 <section>
     <div>
         <form class="card-grid" method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="POST">
@@ -18,7 +22,7 @@
                         API Token
                     </label>
 
-                    <input autocomplete="off" type="text" name="mailcoach_api_token" id="mailcoach_api_token" placeholder="Enter API Key" class="input " required value="<?php echo anonymizeSensitiveDate(get_option('mailcoach_api_token')); ?>" label="API Token">
+                    <input autocomplete="off" type="text" name="mailcoach_api_token" id="mailcoach_api_token" placeholder="Enter API Key" class="input " required value="<?php echo $apiToken ?>" label="API Token">
                 </div>
 
                 <div class="form-field mt-4">
@@ -26,7 +30,7 @@
                         API Endpoint
                     </label>
 
-                    <input autocomplete="off" type="url" name="mailcoach_api_endpoint" id="mailcoach_api_endpoint" class="input " placeholder="Enter Endpoint" required value="<?php echo get_option('mailcoach_api_endpoint'); ?>" label="API Endpoint">
+                    <input autocomplete="off" type="url" name="mailcoach_api_endpoint" id="mailcoach_api_endpoint" class="input " placeholder="Enter Endpoint" required value="<?php echo $apiEndpoint ?>" label="API Endpoint">
                 </div>
 
                 <input type="hidden" name="action" value="store_settings_form">

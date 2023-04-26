@@ -11,10 +11,14 @@ if (! defined('ABSPATH')) {
 
 class CreateSubscriberData
 {
+    /** @var string[] */
     private static array $toIgnore = [
         '_wp_http_referer', 'mailcoach_subscribe_nonce', 'mailcoach_subscribe_submit', 'email_list_uuid', 'action',
     ];
 
+    /**
+     * @param array<string|int, string> $attributes
+     */
     private function __construct(
         public string $emailListUuid,
         public array $attributes,

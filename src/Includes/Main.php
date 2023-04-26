@@ -20,7 +20,7 @@ class Main
     private function defineAdminHooks(): void
     {
         if (is_admin()) {
-            $admin = AdminMenu::make(Settings::initialise());
+            $admin = AdminMenu::make(Settings::make());
             $admin->initializeHooks();
         }
 

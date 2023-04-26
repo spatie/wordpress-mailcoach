@@ -8,5 +8,6 @@ interface Model
 
     public static function fromObject(object $data): self;
 
+    /** @return array<string, mixed> */
     public function toArray(): array;
 }

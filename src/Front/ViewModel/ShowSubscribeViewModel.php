@@ -22,14 +22,11 @@ class ShowSubscribeViewModel
         return isset($_GET['status']);
     }
 
-    public function status(): ?SubscribeStatus
-    {
-        return SubscribeStatus::from($_GET['status']);
-    }
-
     public function submitMessage(): string
     {
-        return $this->form->messages->fromStatus($this->status());
+        $status = SubscribeStatus::from($_GET['status']);
+
+        return $this->form->messages->fromStatus($status);
     }
 
     /**

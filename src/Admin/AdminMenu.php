@@ -96,6 +96,9 @@ class AdminMenu implements HasHooks
 
     public function createHomepage(): void
     {
+        $apiToken = anonymizeSensitiveDate(get_option('mailcoach_api_token'));
+        $apiEndpoint = get_option('mailcoach_api_endpoint');
+
         include __DIR__ . '/views/show-settings.php';
 
         if ($this->mailcoach->hasCredentials()) {
