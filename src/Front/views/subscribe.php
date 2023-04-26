@@ -18,15 +18,15 @@
 
     <!-- TODO: Customizable messages -->
     <?php if ($view->isSubscribed()) { ?>
-        <p class="mailcoach-subscribe-success">You have been subscribed!</p>
+        <p class="mailcoach-subscribe-status">You have been subscribed!</p>
     <?php } ?>
 
     <?php if ($view->isPending()) { ?>
-        <p class="mailcoach-subscribe-success">You have been subscribed. Check your email to verify!</p>
+        <p class="mailcoach-subscribe-status">You have been subscribed. Check your email to verify!</p>
     <?php } ?>
 
     <?php if ($view->isAlreadySubscribed()) { ?>
-        <p class="mailcoach-subscribe-success">You have already been subscribed!</p>
+        <p class="mailcoach-subscribe-status">You have already been subscribed!</p>
     <?php } ?>
 
 </form>

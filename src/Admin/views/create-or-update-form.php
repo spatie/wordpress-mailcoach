@@ -91,7 +91,7 @@
                 }
             </script>
 
-        <textarea cols="100" rows="24" id="content" name="content" class="large-text code" data-config-field="form.body"><?php
+        <textarea cols="100" rows="12" id="content" name="content" class="large-text code" data-config-field="form.body"><?php
     if ($view->isEditMode()) {
         echo $view->form->content;
     } else {
@@ -101,9 +101,32 @@
 
 <button type="submit" name="mailcoach_subscribe_submit" id="submit">Subscribe</button>';
     }?></textarea>
-
-            <button type="submit" name="submit" id="submit" class="button-primary">
-                Save
-            </button>
     </section>
+    <section>
+        <div>
+            <h2>Messages</h2>
+
+            <p>
+                <label for="mailcoach-subscribe-success">Message when subscribed<br>
+                    <input type="text" size="70" id="mailcoach-subscribe-success" value="You have been subscribed.">
+                </label>
+            </p>
+
+            <p>
+                <label for="mailcoach-subscribe-pending">Message when pending subscription<br>
+                    <input type="text" size="70" id="mailcoach-subscribe-pending" value="You have been subscribed. Check your email to verify.">
+                </label>
+            </p>
+
+            <p>
+                <label for="mailcoach-subscribe-already-subscribed">Message when already<br>
+                    <input type="text" size="70" id="mailcoach-subscribe-already-subscribed" value="You have already been subscribed.">
+                </label>
+            </p>
+        </div>
+    </section>
+
+    <button type="submit" name="submit" id="submit" class="button-primary">
+        Save
+    </button>
 </form>

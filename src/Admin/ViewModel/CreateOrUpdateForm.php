@@ -9,7 +9,7 @@ use Spatie\WordPressMailcoach\Admin\Model\Form;
 class CreateOrUpdateForm
 {
     public function __construct(
-        private MailcoachApi $mailcoach,
+        private readonly MailcoachApi $mailcoach,
         public ?Form $form = null,
     ) {
     }

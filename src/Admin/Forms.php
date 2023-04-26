@@ -60,7 +60,7 @@ class Forms implements HasHooks
     {
         $view = new CreateOrUpdateForm($this->mailcoach);
 
-        include __DIR__ . '/views/create-form.php';
+        include __DIR__ . '/views/create-or-update-form.php';
     }
 
     public function createOrUpdateForm(): void
@@ -80,6 +80,6 @@ class Forms implements HasHooks
 
         $view = new CreateOrUpdateForm($this->mailcoach, $form);
 
-        include __DIR__ . '/views/create-form.php';
+        include __DIR__ . '/views/create-or-update-form.php';
     }
 }
