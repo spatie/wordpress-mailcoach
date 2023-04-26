@@ -3,6 +3,7 @@
 namespace Spatie\WordPressMailcoach\Admin;
 
 use Spatie\WordPressMailcoach\Admin\Data\CreateOrUpdateFormData;
+use Spatie\WordPressMailcoach\Admin\Data\DeleteFormData;
 use Spatie\WordPressMailcoach\Admin\Repository\FormRepository;
 use Spatie\WordPressMailcoach\Admin\ViewModel\CreateOrUpdateFormViewModel;
 use Spatie\WordPressMailcoach\Admin\ViewModel\IndexFormsViewModel;
@@ -30,6 +31,7 @@ class FormsController implements HasHooks
     public function initializeActionHooks(): void
     {
         add_action('admin_post_create_new_form', fn () => $this->createOrUpdateForm());
+        add_action('admin_post_delete_form', fn () => $this->deleteForm());
     }
 
     public function initializeHooks(): void
@@ -71,5 +73,14 @@ class FormsController implements HasHooks
         $view = new CreateOrUpdateFormViewModel($this->mailcoach, $form);
 
         include __DIR__ . '/views/create-or-update-form.php';
+    }
+
+    public function deleteForm(): void
+    {
+        $data = DeleteFormData::fromRequest();
+
+        $this->formRepository->delete($data->shortcode);
+
+        wp_redirect('/wp-admin/admin.php?page=mailcoach-forms');
     }
 }

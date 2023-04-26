@@ -2,7 +2,7 @@
     /** @var \Spatie\WordPressMailcoach\Admin\ViewModel\CreateOrUpdateFormViewModel $view */
     ?>
 
-<form class="card-grid" method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="POST">
+<form class="card-grid" method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
     <input type="hidden" name="action" value="create_new_form">
     <?php wp_nonce_field('create_new_form', 'mailcoach_create_new_form_nonce'); ?>
 
@@ -130,3 +130,9 @@
         Save
     </button>
 </form>
+
+<?php
+if ($view->isEditMode()) {
+    include __DIR__ . '/delete-form.php';
+}
+    ?>

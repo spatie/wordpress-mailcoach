@@ -26,6 +26,11 @@ class DatabaseException extends RuntimeException
         return new self();
     }
 
+    public static function failedToDelete(): self
+    {
+        return new self();
+    }
+
     public static function shortcodeIsUnique(): self
     {
         return new self();

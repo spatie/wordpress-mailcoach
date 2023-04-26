@@ -74,6 +74,19 @@ class FormRepository
         }
     }
 
+    public function delete(string $shortcode): void
+    {
+        global $wpdb;
+
+        $tableName = Form::tableName();
+
+        $result = $wpdb->delete($tableName, ['shortcode' => $shortcode]);
+
+        if ($result === false) {
+            throw DatabaseException::failedToDelete();
+        }
+    }
+
     /** @return array<Form> */
     public function all(): array
     {
