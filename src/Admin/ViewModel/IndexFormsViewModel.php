@@ -15,6 +15,11 @@ class IndexFormsViewModel
     ) {
     }
 
+    public function isApiSetup(): bool
+    {
+        return $this->mailcoach->hasCredentials();
+    }
+
     /** @return string[] */
     public function tableHeaders(): array
     {
@@ -24,9 +29,13 @@ class IndexFormsViewModel
     /** @return Form[] */
     public function forms(): array
     {
-        $forms = $this->formRepository->all();
+        try {
+            $forms = $this->formRepository->all();
 
-        return $this->setEmailListRelation($forms, $this->emailLists());
+            return $this->setEmailListRelation($forms, $this->emailLists());
+        } catch (\Exception $e) {
+            return [];
+        }
     }
 
     public function emailLists(): PaginatedResults

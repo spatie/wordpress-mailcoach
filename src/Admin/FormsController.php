@@ -63,7 +63,7 @@ class FormsController implements HasHooks
 
         $form = $this->formRepository->firstByShortcode($data->shortcode);
 
-        wp_redirect($form?->editUrl() ?? '/wp-admin/admin.php?page=mailcoach-forms');
+        wp_redirect(($form?->editUrl() ?? '/wp-admin/admin.php?page=mailcoach-forms') . '&saved=1');
     }
 
     public function editForm(): void

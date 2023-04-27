@@ -2,47 +2,33 @@
 /** @var string $apiToken */
 /** @var string $apiEndpoint */
 ?>
-<section>
-    <div>
-        <form class="card-grid" method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="POST">
-            <fieldset class="card form-grid max-w-[50%]">
-                <div class="flex-none flex">
-                    <h1 class="mt-1 markup-h1 truncate text-3xl font-bold">Mailcoach API Settings</h1>
-                </div>
 
-                <p class="text-xs">
-                    <?php echo esc_html__('You can create an API key on the Profile page of your account.', 'WordPress-mailcoach'); ?>
-                </p>
+<div class="wrap">
+    <h1>Mailcoach Settings</h1>
+    <p class="text-xs">
+        <?php echo esc_html__('You can create an API key on the Profile page of your account.', 'WordPress-mailcoach'); ?>
+    </p>
+    <form method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
+        <input type="hidden" name="action" value="store_settings_form">
+        <table class="form-table" role="presentation">
+            <tbody>
+                <tr>
+                    <th scope="row"><label for="mailcoach_api_token">API Token</label></th>
+                    <td>
+                        <input name="mailcoach_api_token" type="text" id="mailcoach_api_token" value="<?php echo $apiToken ?>" placeholder="Enter API Token" class="regular-text" required>
+                        <p class="description">You can find this in the settings of your Mailcoach profile.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="mailcoach_api_endpoint">Mailcoach URL</label></th>
+                    <td>
+                        <input name="mailcoach_api_endpoint" type="url" id="mailcoach_api_endpoint" value="<?php echo $apiEndpoint ?>" placeholder="Enter URL" class="regular-text" required>
+                        <p class="description">The base URL of your Mailcoach instance,<br/>when using Mailcoach Cloud this is <code>https://&lt;your-team-url&gt;.mailcoach.app</code>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
-                <div class="form-legend mt-8">
-                </div>
-
-                <div class="form-field">
-                    <label class="label label-required" for="mailcoach_api_token">
-                        API Token
-                    </label>
-
-                    <input autocomplete="off" type="text" name="mailcoach_api_token" id="mailcoach_api_token" placeholder="Enter API Key" class="input " required value="<?php echo $apiToken ?>" label="API Token">
-                </div>
-
-                <div class="form-field mt-4">
-                    <label class="label label-required" for="mailcoach_api_endpoint">
-                        API Endpoint
-                    </label>
-
-                    <input autocomplete="off" type="url" name="mailcoach_api_endpoint" id="mailcoach_api_endpoint" class="input " placeholder="Enter Endpoint" required value="<?php echo $apiEndpoint ?>" label="API Endpoint">
-                </div>
-
-                <input type="hidden" name="action" value="store_settings_form">
-
-                <div class="form-field mt-4">
-                    <button type="submit" name="submit" id="submit" class="primary-button">
-                        Update API Key
-                    </button>
-                </div>
-
-            </fieldset>
-        </form>
-    </div>
-
-</section>
+        <p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes"></p>
+    </form>
+</div>

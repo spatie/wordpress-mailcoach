@@ -2,137 +2,147 @@
 /** @var \Spatie\WordPressMailcoach\Admin\ViewModel\CreateOrUpdateFormViewModel $view */
 ?>
 
-<form class="card-grid" method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
-    <input type="hidden" name="action" value="create_new_form">
-    <?php wp_nonce_field('create_new_form', 'mailcoach_create_new_form_nonce'); ?>
+<script>
+    document.getElementById('toplevel_page_mailcoach').classList.remove('wp-not-current-submenu');
+    document.getElementById('toplevel_page_mailcoach').classList.add('wp-has-current-submenu');
 
-    <section class="flex-grow min-w-0 flex flex-col">
-        <div class="flex-none flex">
-            <h1 class="mt-1 markup-h1 truncate text-xl font-bold"><?php echo $view->pageTitle(); ?></h1>
+    document.querySelector('#toplevel_page_mailcoach > a').classList.remove('wp-not-current-submenu');
+    document.querySelector('#toplevel_page_mailcoach > a').classList.add('wp-has-current-submenu', 'wp-menu-open');
+    document.querySelector('#toplevel_page_mailcoach li:nth-child(3)').classList.add('current');
+</script>
+
+<div class="wrap">
+    <?php if ($_GET['saved'] ?? null === 1) { ?>
+        <div class="notice notice-success">
+            <p>Form saved successfully</p>
         </div>
+    <?php } ?>
 
-        <div>
-            <label for="name">Name</label>
-            <input type="text" name="name" size="30" value="<?php echo $view->formName(); ?>" id="name" spellcheck="true" autocomplete="off">
-        </div>
+    <h1 id="add-new-user"><?= $view->pageTitle() ?></h1>
 
-        <?php
-        if ($view->showShortcode()) {
-            ?>
-            <div>
-                <p>
-                    <label for="shortcode">Copy this shortcode and paste it into your post, page, or text widget content</label>
-                    <span>
-                <input type="text" id="shortcode" readonly="readonly" class="large-text code" value="[<?php echo $view->form->shortcode; ?>]">
-            </span>
-                </p>
-            </div>
-            <?php
-        }
-?>
+    <form class="validate" method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
+        <input type="hidden" name="action" value="create_new_form">
+        <?php wp_nonce_field('create_new_form', 'mailcoach_create_new_form_nonce'); ?>
 
-        <p id="mailcoach-external-form-subscriptions-warning"></p>
+        <table class="form-table" role="presentation">
+            <tbody>
+                <tr class="form-field form-required">
+                    <th scope="row"><label for="name">Name</label></th>
+                    <td><input name="name" type="text" id="name" value="<?= $view->formName() ?>" aria-required="true" size="30" required></td>
+                </tr>
 
-        <label for="email-list">Choose a list</label>
-        <select name="email-list" id="email-list">
+                <?php if ($view->showShortcode()) { ?>
+                    <tr class="form-field form-required">
+                        <th scope="row"><label for="shortcode">Shortcode</label></th>
+                        <td><input name="shortcode" type="text" id="shortcode" value="<?= $view->form->shortcode ?>" readonly></td>
+                    </tr>
+                <?php } ?>
 
-        <?php
-/** @var \Spatie\MailcoachSdk\Resources\EmailList $list */
-foreach ($view->emailLists() as $list) {
-    echo "<option value='{$list->uuid}'";
+                <tr class="form-field">
+                    <th scope="row"><label for="email-list">Email list</label></th>
+                    <td>
+                        <select name="email-list" id="email-list">
+                            <?php foreach ($view->emailLists() as $emailList) { ?>
+                                <option
+                                    <?= $emailList->uuid === $view->selectedEmailList() ? 'selected' : '' ?>
+                                    value="<?= $emailList->uuid ?>"
+                                ><?= $emailList->name ?></option>
+                            <?php } ?>
+                        </select>
+                        <p id="mailcoach-external-form-subscriptions-warning" class="description notice notice-warning"></p>
+                    </td>
+                </tr>
 
-    if ($list->uuid === $view->selectedEmailList()) {
-        echo " selected";
-    }
-    echo ">{$list->name}</option>";
-}
-?>
-
-            <script>
-                if (verifyIfSelectedOptionsHasExternalFormSubscriptionsEnabled()) {
-                    addWarning();
-                } else {
-                    removeWarning();
-                }
-
-                document.getElementById("email-list").addEventListener("change", function() {
-                    if (verifyIfSelectedOptionsHasExternalFormSubscriptionsEnabled()) {
-                        addWarning();
-                    } else {
-                        removeWarning();
-                    }
-                });
-
-                function getSelectedOption() {
-                    const emailList = document.getElementById("email-list");
-                    const selectedOption = emailList.options[emailList.selectedIndex];
-
-                    return selectedOption.text;
-                }
-
-                function verifyIfSelectedOptionsHasExternalFormSubscriptionsEnabled() {
-                    let enabledLists = <?php echo json_encode($view->enabledEmailListNames(), 1); ?>;
-
-                    const selectedOptionText = getSelectedOption();
-
-                    return ! enabledLists.includes(selectedOptionText);
-                }
-
-                function addWarning() {
-                    let warning = document.getElementById('mailcoach-external-form-subscriptions-warning');
-
-                    warning.innerHTML = 'External form subscriptions are not enabled for this list. Please enable them in the Mailcoach dashboard.'
-                }
-
-                function removeWarning() {
-                    let warning = document.getElementById('mailcoach-external-form-subscriptions-warning');
-
-                    warning.innerHTML = '';
-                }
-            </script>
-
-        <textarea cols="100" rows="12" id="content" name="content" class="large-text code" data-config-field="form.body"><?php
-if ($view->isEditMode()) {
-    echo $view->form->content;
-} else {
-    echo '<label class="label label-required" for="email">Email</label>
+                <tr class="form-field">
+                    <th scope="row"><label for="content">Form</label></th>
+                    <td>
+                        <textarea cols="30" rows="12" id="content" name="content" class="large-text code" data-config-field="form.body"><?php if ($view->isEditMode()) { ?>
+<?= $view->form->content ?>
+<?php } else { ?>
+<label class="label label-required" for="email">Email</label>
 
 <input autocomplete="email" type="email" name="email" id="email" required label="Email" />
 
-<button type="submit" name="mailcoach_subscribe_submit" id="submit">Subscribe</button>';
-}?></textarea>
-    </section>
-    <section>
-        <div>
-            <h2>Messages</h2>
+<button type="submit" name="mailcoach_subscribe_submit" id="submit">Subscribe</button>
+<?php } ?></textarea>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
-            <p>
-                <label for="mailcoach-message-subscribed">Message when subscribed<br>
-                    <input type="text" size="70" name="message-subscribed" id="mailcoach-message-subscribed" value="<?php echo $view->messages()->subscribed ?>">
-                </label>
-            </p>
+        <h2>Messages</h2>
 
-            <p>
-                <label for="mailcoach-message-pending">Message when pending subscription<br>
-                    <input type="text" size="70" name="message-pending" id="mailcoach-message-pending" value="<?php echo $view->messages()->pending ?>">
-                </label>
-            </p>
+        <table class="form-table">
+            <tbody>
+                <tr class="form-field form-required">
+                    <th scope="row"><label for="message-subscribed">Message when subscribed</label></th>
+                    <td><input name="message-subscribed" type="text" id="message-subscribed" value="<?= $view->messages()->subscribed ?>" required></td>
+                </tr>
 
-            <p>
-                <label for="mailcoach-message-already-subscribed">Message when already subscribed<br>
-                    <input type="text" size="70" name="message-already-subscribed" id="mailcoach-message-already-subscribed" value="<?php echo $view->messages()->alreadySubscribed ?>">
-                </label>
-            </p>
+                <tr class="form-field form-required">
+                    <th scope="row"><label for="message-pending">Message when pending subscription</label></th>
+                    <td><input name="message-pending" type="text" id="message-pending" value="<?= $view->messages()->pending ?>" required></td>
+                </tr>
+
+                <tr class="form-field form-required">
+                    <th scope="row"><label for="message-already-subscribed">Message when already subscribed</label></th>
+                    <td><input name="message-already-subscribed" type="text" id="message-already-subscribed" value="<?= $view->messages()->alreadySubscribed ?>" required></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <input type="submit" name="submit" id="submit" class="button button-primary d-inline-block" value="Save">
+    </form>
+    <?php if ($view->isEditMode()) { ?>
+        <div style="text-align: right; margin-top: -30px; margin-right: 45px;">
+            <?php include __DIR__ . '/delete-form.php'; ?>
         </div>
-    </section>
+    <?php } ?>
+</div>
 
-    <button type="submit" name="submit" id="submit" class="button-primary">
-        Save
-    </button>
-</form>
+<script>
+    document.getElementById('mailcoach-external-form-subscriptions-warning').style.display = 'none';
 
-<?php
-if ($view->isEditMode()) {
-    include __DIR__ . '/delete-form.php';
-}
-?>
+    if (verifyIfSelectedOptionsHasExternalFormSubscriptionsEnabled()) {
+        addWarning();
+    } else {
+        removeWarning();
+    }
+
+    document.getElementById("email-list").addEventListener("change", function() {
+        if (verifyIfSelectedOptionsHasExternalFormSubscriptionsEnabled()) {
+            addWarning();
+        } else {
+            removeWarning();
+        }
+    });
+
+    function getSelectedOption() {
+        const emailList = document.getElementById("email-list");
+        const selectedOption = emailList.options[emailList.selectedIndex];
+
+        return selectedOption.text;
+    }
+
+    function verifyIfSelectedOptionsHasExternalFormSubscriptionsEnabled() {
+        let enabledLists = <?php echo json_encode($view->enabledEmailListNames(), 1); ?>;
+
+        const selectedOptionText = getSelectedOption();
+
+        return ! enabledLists.includes(selectedOptionText);
+    }
+
+    function addWarning() {
+        let warning = document.getElementById('mailcoach-external-form-subscriptions-warning');
+
+        warning.innerHTML = 'External form subscriptions are not enabled for this list. Please enable them in the Mailcoach dashboard.'
+        warning.style.display = 'block';
+    }
+
+    function removeWarning() {
+        let warning = document.getElementById('mailcoach-external-form-subscriptions-warning');
+
+        warning.innerHTML = '';
+        warning.style.display = 'none';
+    }
+</script>

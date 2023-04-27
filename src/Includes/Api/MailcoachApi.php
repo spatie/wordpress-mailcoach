@@ -34,8 +34,7 @@ class MailcoachApi
     public function hasCredentials(): bool
     {
         return $this->apiToken !== ''
-            && filter_var($this->apiEndpoint, FILTER_VALIDATE_URL)
-            && str_ends_with($this->apiEndpoint, 'mailcoach.app/api');
+            && filter_var($this->apiEndpoint, FILTER_VALIDATE_URL);
     }
 
     public function emailLists(): PaginatedResults

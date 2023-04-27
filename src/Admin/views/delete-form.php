@@ -11,14 +11,7 @@
 
     <input type="hidden" name="shortcode" value=<?php echo $view->form->shortcode; ?>>
 
-    <input
-        type="submit"
-        name="mailcoach-delete-form"
-        id="mailcoach-delete-form"
-        class="delete"
-        value="Delete"
-        onclick="clicked()"
-    >
+    <a class="menu-delete" style="color: #b32d2e; display: inline-block; margin-top: 5px; margin-left: auto;" href="#" onclick="clicked()">Delete</a>
 </form>
 
 <script>

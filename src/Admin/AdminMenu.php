@@ -53,7 +53,7 @@ class AdminMenu implements HasHooks
     public function createMenu(): void
     {
         add_menu_page(
-            __('Mailcoach'),
+            __('Mailcoach Settings'),
             __('Mailcoach'),
             'manage_options',
             'mailcoach',
