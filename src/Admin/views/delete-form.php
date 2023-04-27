@@ -4,6 +4,7 @@
 
 <form
     method="POST"
+    id="mailcoach-delete-form"
     action="<?php echo esc_url(admin_url('admin-post.php')); ?>"
 >
     <input type="hidden" name="action" value="delete_form">
