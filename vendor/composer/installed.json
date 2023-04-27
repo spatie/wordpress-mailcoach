@@ -6118,6 +6118,7 @@
     "dev": true,
     "dev-package-names": [
         "antecedent/patchwork",
+        "automattic/jetpack-autoloader",
         "bamarni/composer-bin-plugin",
         "brain/monkey",
         "brick/math",

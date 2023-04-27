@@ -4,59 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "52a851e6cbd2af1b8f6df2f1bb91ee6e",
+    "content-hash": "c269d5d5eda04990e301e667c8c209de",
     "packages": [
-        {
-            "name": "automattic/jetpack-autoloader",
-            "version": "v2.11.19",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Automattic/jetpack-autoloader.git",
-                "reference": "d7a251cf7f1cff782508a46d13991e72fe7ebbf1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Automattic/jetpack-autoloader/zipball/d7a251cf7f1cff782508a46d13991e72fe7ebbf1",
-                "reference": "d7a251cf7f1cff782508a46d13991e72fe7ebbf1",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.1 || ^2.0"
-            },
-            "require-dev": {
-                "automattic/jetpack-changelogger": "^3.3.2",
-                "yoast/phpunit-polyfills": "1.0.4"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "autotagger": true,
-                "class": "Automattic\\Jetpack\\Autoloader\\CustomAutoloaderPlugin",
-                "mirror-repo": "Automattic/jetpack-autoloader",
-                "changelogger": {
-                    "link-template": "https://github.com/Automattic/jetpack-autoloader/compare/v${old}...v${new}"
-                },
-                "branch-alias": {
-                    "dev-trunk": "2.11.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Automattic\\Jetpack\\Autoloader\\": "src"
-                },
-                "classmap": [
-                    "src/AutoloadGenerator.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "description": "Creates a custom autoloader for a plugin or theme.",
-            "support": {
-                "source": "https://github.com/Automattic/jetpack-autoloader/tree/v2.11.19"
-            },
-            "time": "2023-04-25T15:05:38+00:00"
-        },
         {
             "name": "guzzlehttp/guzzle",
             "version": "7.5.1",
@@ -769,6 +718,57 @@
                 "source": "https://github.com/antecedent/patchwork/tree/2.1.25"
             },
             "time": "2023-02-19T12:51:24+00:00"
+        },
+        {
+            "name": "automattic/jetpack-autoloader",
+            "version": "v2.11.19",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Automattic/jetpack-autoloader.git",
+                "reference": "d7a251cf7f1cff782508a46d13991e72fe7ebbf1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Automattic/jetpack-autoloader/zipball/d7a251cf7f1cff782508a46d13991e72fe7ebbf1",
+                "reference": "d7a251cf7f1cff782508a46d13991e72fe7ebbf1",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.1 || ^2.0"
+            },
+            "require-dev": {
+                "automattic/jetpack-changelogger": "^3.3.2",
+                "yoast/phpunit-polyfills": "1.0.4"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "autotagger": true,
+                "class": "Automattic\\Jetpack\\Autoloader\\CustomAutoloaderPlugin",
+                "mirror-repo": "Automattic/jetpack-autoloader",
+                "changelogger": {
+                    "link-template": "https://github.com/Automattic/jetpack-autoloader/compare/v${old}...v${new}"
+                },
+                "branch-alias": {
+                    "dev-trunk": "2.11.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Automattic\\Jetpack\\Autoloader\\": "src"
+                },
+                "classmap": [
+                    "src/AutoloadGenerator.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Creates a custom autoloader for a plugin or theme.",
+            "support": {
+                "source": "https://github.com/Automattic/jetpack-autoloader/tree/v2.11.19"
+            },
+            "time": "2023-04-25T15:05:38+00:00"
         },
         {
             "name": "bamarni/composer-bin-plugin",

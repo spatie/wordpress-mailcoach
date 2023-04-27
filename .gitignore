@@ -5,7 +5,7 @@
 build
 coverage
 docs
-phpunit.xml
+phpunit.xml.dist
 psalm.xml
 vendor-bin
 vendor

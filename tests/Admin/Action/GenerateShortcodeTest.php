@@ -2,8 +2,8 @@
 
 namespace Spatie\WordPressMailcoach\Tests\Admin\Action;
 
-use PHPUnit\Framework\TestCase;
 use Spatie\WordPressMailcoach\Admin\Action\GenerateShortcode;
+use Spatie\WordPressMailcoach\Tests\TestCase;
 
 class GenerateShortcodeTest extends TestCase
 {

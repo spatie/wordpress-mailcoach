@@ -5,7 +5,7 @@ return [
         'name' => 'spatie/wordpress-mailcoach',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '6c64d309cd37e687209bfe890d91b9f6f9baa1ed',
+        'reference' => '9d64c511f2806504b82f88ba999a61a9e85220e4',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => [],
@@ -28,7 +28,7 @@ return [
             'type' => 'composer-plugin',
             'install_path' => __DIR__ . '/../automattic/jetpack-autoloader',
             'aliases' => [],
-            'dev_requirement' => false,
+            'dev_requirement' => true,
         ],
         'bamarni/composer-bin-plugin' => [
             'pretty_version' => '1.8.2',
@@ -630,7 +630,7 @@ return [
         'spatie/wordpress-mailcoach' => [
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '6c64d309cd37e687209bfe890d91b9f6f9baa1ed',
+            'reference' => '9d64c511f2806504b82f88ba999a61a9e85220e4',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => [],
