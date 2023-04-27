@@ -20,11 +20,5 @@ jobs:
           php-version: '8.1'
           coverage: none
 
-      - name: Debug
-        run: composer dump-autoload
-
-      - name: Install composer dependencies
-        run: composer install --prefer-dist --no-progress --no-suggest --ansi
-
       - name: Run PHPStan
         run: ./vendor/bin/phpstan --error-format=github
