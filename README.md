@@ -4,7 +4,7 @@
 
 > Mailcoach for WordPress
 
-This plugin shows a summary of your Mailcoach campaigns, lists and templates inside the WordPress control panel.
+This plugin allows admins to create a subscribe form to a mailcoach email list. This can be plugged into your website with a shortcode.
 
 ![Screenshot](./docs/screenshot.png)
 
