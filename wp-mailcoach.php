@@ -10,17 +10,17 @@
  *
  * @link              https://mailcoach.app
  * @since             1.0.0
- * @package           Mailcoach
+ * @package           Mailcoach Forms
  *
  * @wordpress-plugin
- * Plugin Name:       Mailcoach
+ * Plugin Name:       Mailcoach Forms
  * Plugin URI:        https://github.com/spatie/wordpress-mailcoach
  * Description:       Create forms for Mailcoach.
  * Version:           1.0.0
  * Author:            Spatie
  * Author URI:        https://spatie.be
  * License:           MIT
- * Text Domain:       mailcoach
+ * Text Domain:       mailcoach-forms
  * Requires PHP:      8.1
  */
 
