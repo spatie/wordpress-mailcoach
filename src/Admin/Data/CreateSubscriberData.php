@@ -41,6 +41,7 @@ class CreateSubscriberData
 
         $attributes = [];
         foreach ($_POST as $key => $value) {
+            $key = sanitize_key($key);
             if (in_array($key, self::$toIgnore, true)) {
                 continue;
             }

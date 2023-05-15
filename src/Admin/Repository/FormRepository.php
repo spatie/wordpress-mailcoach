@@ -44,14 +44,14 @@ class FormRepository
         );
 
         if ($result === false) {
-            throw DatabaseException::failedToInsert();
+            throw DatabaseException::failedToInsert(Form::tableName());
         }
     }
 
     public function update(CreateOrUpdateFormData $data, Form $form): void
     {
         if ($form->shortcode !== $data->shortcode) {
-            throw DatabaseException::shortcodeIsUnique();
+            throw DatabaseException::shortcodeIsUnique($data->shortcode);
         }
 
         global $wpdb;
@@ -70,7 +70,7 @@ class FormRepository
         );
 
         if ($result === false) {
-            throw DatabaseException::failedToInsert();
+            throw DatabaseException::failedToUpdate(Form::tableName(), $form->id);
         }
     }
 
@@ -83,7 +83,7 @@ class FormRepository
         $result = $wpdb->delete($tableName, ['shortcode' => $shortcode]);
 
         if ($result === false) {
-            throw DatabaseException::failedToDelete();
+            throw DatabaseException::failedToDelete($tableName, $shortcode);
         }
     }
 

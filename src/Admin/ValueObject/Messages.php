@@ -3,6 +3,7 @@
 namespace Spatie\WordPressMailcoach\Admin\ValueObject;
 
 use Spatie\WordPressMailcoach\Admin\Enum\SubscribeStatus;
+use Spatie\WordPressMailcoach\Admin\Exception\NotFound;
 
 class Messages
 {
@@ -64,6 +65,6 @@ class Messages
             return $this->alreadySubscribed;
         }
 
-        throw new \RuntimeException("Could not find message for status `{$status->value}`");
+        throw NotFound::messages($status);
     }
 }

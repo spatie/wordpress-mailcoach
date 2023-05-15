@@ -33,7 +33,7 @@ class CreateOrUpdateFormData
             $_POST['shortcode'] ?? (new GenerateShortcode())->execute($sanitizedName),
             sanitize_text_field($_POST['email-list']),
             Messages::fromRequest(),
-            stripslashes($_POST['content']),
+            stripslashes(sanitize_text_field($_POST['content'])),
         );
     }
 }
