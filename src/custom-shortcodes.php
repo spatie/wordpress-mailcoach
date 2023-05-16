@@ -4,7 +4,7 @@ use Spatie\WordPressMailcoach\Admin\Exception\NotFound;
 use Spatie\WordPressMailcoach\Admin\Repository\FormRepository;
 use Spatie\WordPressMailcoach\Front\ViewModel\ShowSubscribeViewModel;
 
-function subscribeLink($attributes, $content, $tag)
+function mailcoach_subscribe_link($attributes, $content, $tag)
 {
     $form = FormRepository::make()->firstByShortcode($tag);
 
@@ -23,5 +23,5 @@ function subscribeLink($attributes, $content, $tag)
 
 // @todo how can we optimize this?
 foreach (FormRepository::make()->allShortCodes() as $shortCode) {
-    add_shortcode($shortCode, 'subscribeLink');
+    add_shortcode($shortCode, 'mailcoach_subscribe_link');
 }

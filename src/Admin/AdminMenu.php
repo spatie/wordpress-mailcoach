@@ -96,7 +96,7 @@ class AdminMenu implements HasHooks
 
     public function createHomepage(): void
     {
-        $apiToken = anonymizeSensitiveDate(get_option('mailcoach_api_token'));
+        $apiToken = mailcoach_anonymize_api_key(get_option('mailcoach_api_token'));
         $apiEndpoint = get_option('mailcoach_api_endpoint');
 
         include __DIR__ . '/views/show-settings.php';
@@ -104,7 +104,7 @@ class AdminMenu implements HasHooks
         if ($this->mailcoach->hasCredentials()) {
             $lists = $this->mailcoach->emailLists();
 
-            $basePathUI = mailcoachTenantUrl($this->settings);
+            $basePathUI = mailcoach_tenant_url($this->settings);
 
             include __DIR__ . '/views/show-email-lists.php';
         }

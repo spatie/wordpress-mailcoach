@@ -14,7 +14,7 @@ class ShowSubscribeViewModel
 
     public function currentUrl(): string
     {
-        return currentUrl();
+        return mailcoach_current_url();
     }
 
     public function isProcessed(): bool
