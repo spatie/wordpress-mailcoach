@@ -11,9 +11,9 @@ parameters:
 			path: src/Admin/ValueObject/Messages.php
 
 		-
-			message: "#^Static method Spatie\\\\WordPressMailcoach\\\\Includes\\\\Deactivator\\:\\:deleteOptions\\(\\) is unused\\.$#"
+			message: "#^Call to function count\\(\\) on a separate line has no effect\\.$#"
 			count: 1
-			path: src/Includes/Deactivator.php
+			path: src/Admin/views/show-forms.php
 
 		-
 			message: "#^Function subscribeLink\\(\\) has no return type specified\\.$#"

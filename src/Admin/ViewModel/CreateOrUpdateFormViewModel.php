@@ -63,6 +63,11 @@ class CreateOrUpdateFormViewModel
         return $this->isEditMode();
     }
 
+    public function isSaved(): bool
+    {
+        return isset($_GET['saved']) && sanitize_text_field($_GET['saved']);
+    }
+
     public function messages(): Messages
     {
         if ($this->form === null) {

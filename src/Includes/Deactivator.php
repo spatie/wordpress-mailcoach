@@ -14,7 +14,7 @@ class Deactivator
 {
     public static function deactivate(): void
     {
-        // self::deleteOptions();
+        self::deleteOptions();
 
         Table::dropTables();
     }

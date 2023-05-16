@@ -22,14 +22,14 @@
                 <?php if (count($view->forms())) { ?>
                     <?php foreach ($view->forms() as $form) { ?>
                         <tr class='format-standard'>
-                        <td class='text-xs'><a href="<?= $form->editUrl() ?>"><?= $form->name ?></a></td>
-                        <td><input type='text' readonly='readonly' value='[<?= $form->shortcode ?>]' class='large-text code'></td>
-                        <td><?= $form->emailList?->name ?></td>
-                        <td><?= $form->createdAt() ?></td>
+                        <td class='text-xs'><a href="<?php echo $form->editUrl() ?>"><?php echo $form->name ?></a></td>
+                        <td><input type='text' readonly='readonly' value='[<?php echo $form->shortcode ?>]' class='large-text code'></td>
+                        <td><?php echo $form->emailList?->name ?></td>
+                        <td><?php echo $form->createdAt() ?></td>
                         </tr>
                     <?php } ?>
                 <?php } else { ?>
-                    <td colspan="<?= count($view->tableHeaders()) ?>">No forms yet.</td>
+                    <td colspan="<?php count($view->tableHeaders()) ?>">No forms yet.</td>
                 <?php } ?>
             </tbody>
 
@@ -45,7 +45,7 @@
     </section>
 <?php } else { ?>
     <div class="notice notice-error" style="margin-left: 0;">
-        <p>Your Mailcoach credentials have not been set up yet. <a href="<?= admin_url('admin.php?page=mailcoach') ?>">You
+        <p>Your Mailcoach credentials have not been set up yet. <a href="<?php admin_url('admin.php?page=mailcoach') ?>">You
                 can do this here</a></p>
     </div>
 <?php } ?>

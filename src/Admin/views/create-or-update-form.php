@@ -12,13 +12,13 @@
 </script>
 
 <div class="wrap">
-    <?php if ($_GET['saved'] ?? null === 1) { ?>
+    <?php if ($view->isSaved()) { ?>
         <div class="notice notice-success">
             <p>Form saved successfully</p>
         </div>
     <?php } ?>
 
-    <h1 id="add-new-user"><?= $view->pageTitle() ?></h1>
+    <h1 id="add-new-user"><?php echo $view->pageTitle() ?></h1>
 
     <form class="validate" method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
         <input type="hidden" name="action" value="create_new_form">
@@ -28,13 +28,13 @@
             <tbody>
                 <tr class="form-field form-required">
                     <th scope="row"><label for="name">Name</label></th>
-                    <td><input name="name" type="text" id="name" value="<?= $view->formName() ?>" aria-required="true" size="30" required></td>
+                    <td><input name="name" type="text" id="name" value="<?php echo $view->formName() ?>" aria-required="true" size="30" required></td>
                 </tr>
 
                 <?php if ($view->showShortcode()) { ?>
                     <tr class="form-field form-required">
                         <th scope="row"><label for="shortcode">Shortcode</label></th>
-                        <td><input name="shortcode" type="text" id="shortcode" value="<?= $view->form->shortcode ?>" readonly></td>
+                        <td><input name="shortcode" type="text" id="shortcode" value="<?php echo $view->form->shortcode ?>" readonly></td>
                     </tr>
                 <?php } ?>
 
@@ -44,9 +44,9 @@
                         <select name="email-list" id="email-list">
                             <?php foreach ($view->emailLists() as $emailList) { ?>
                                 <option
-                                    <?= $emailList->uuid === $view->selectedEmailList() ? 'selected' : '' ?>
-                                    value="<?= $emailList->uuid ?>"
-                                ><?= $emailList->name ?></option>
+                                    <?php echo $emailList->uuid === $view->selectedEmailList() ? 'selected' : '' ?>
+                                    value="<?php echo $emailList->uuid ?>"
+                                ><?php echo $emailList->name ?></option>
                             <?php } ?>
                         </select>
                         <p id="mailcoach-external-form-subscriptions-warning" class="description notice notice-warning"></p>
@@ -57,7 +57,7 @@
                     <th scope="row"><label for="content">Form</label></th>
                     <td>
                         <textarea cols="30" rows="12" id="content" name="content" class="large-text code" data-config-field="form.body"><?php if ($view->isEditMode()) { ?>
-<?= $view->form->content ?>
+<?php echo $view->form->content ?>
 <?php } else { ?>
 <label class="label label-required" for="email">Email</label>
 
@@ -76,17 +76,17 @@
             <tbody>
                 <tr class="form-field form-required">
                     <th scope="row"><label for="message-subscribed">Message when subscribed</label></th>
-                    <td><input name="message-subscribed" type="text" id="message-subscribed" value="<?= $view->messages()->subscribed ?>" required></td>
+                    <td><input name="message-subscribed" type="text" id="message-subscribed" value="<?php echo $view->messages()->subscribed ?>" required></td>
                 </tr>
 
                 <tr class="form-field form-required">
                     <th scope="row"><label for="message-pending">Message when pending subscription</label></th>
-                    <td><input name="message-pending" type="text" id="message-pending" value="<?= $view->messages()->pending ?>" required></td>
+                    <td><input name="message-pending" type="text" id="message-pending" value="<?php echo $view->messages()->pending ?>" required></td>
                 </tr>
 
                 <tr class="form-field form-required">
                     <th scope="row"><label for="message-already-subscribed">Message when already subscribed</label></th>
-                    <td><input name="message-already-subscribed" type="text" id="message-already-subscribed" value="<?= $view->messages()->alreadySubscribed ?>" required></td>
+                    <td><input name="message-already-subscribed" type="text" id="message-already-subscribed" value="<?php echo $view->messages()->alreadySubscribed ?>" required></td>
                 </tr>
             </tbody>
         </table>
