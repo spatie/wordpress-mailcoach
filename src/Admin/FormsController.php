@@ -68,7 +68,7 @@ class FormsController implements HasHooks
 
     public function editForm(): void
     {
-        $form = $this->formRepository->firstById($_GET['form']);
+        $form = $this->formRepository->firstById((int)$_GET['form']);
 
         $view = new CreateOrUpdateFormViewModel($this->mailcoach, $form);
 

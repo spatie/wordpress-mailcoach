@@ -24,7 +24,7 @@ class ShowSubscribeViewModel
 
     public function submitMessage(): string
     {
-        $status = SubscribeStatus::from($_GET['status']);
+        $status = SubscribeStatus::from(sanitize_text_field($_GET['status']));
 
         return $this->form->messages->fromStatus($status);
     }
