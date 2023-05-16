@@ -35,26 +35,22 @@ defined('ABSPATH') or exit;
 require_once plugin_dir_path(__FILE__) . '/vendor/autoload_packages.php';
 require_once plugin_dir_path(__FILE__) . 'autoloader.php';
 
-define('MAILCOACH_VERSION', '1.0.0');
-define('MAILCOACH_API_KEY', null);
-define('MAILCOACH_DOMAIN', null);
-
-function activate_mailcoach(): void
+function mailcoach_activate_plugin(): void
 {
     require_once plugin_dir_path(__FILE__) . 'src/Includes/Activator.php';
     Activator::activate();
 }
 
-function deactivate_mailcoach(): void
+function mailcoach_deactivate_plugin(): void
 {
     require_once plugin_dir_path(__FILE__) . 'src/Includes/Deactivator.php';
     Deactivator::deactivate();
 }
 
-register_activation_hook(__FILE__, static fn () => activate_mailcoach());
-register_deactivation_hook(__FILE__, static fn () => deactivate_mailcoach());
+register_activation_hook(__FILE__, static fn () => mailcoach_activate_plugin());
+register_deactivation_hook(__FILE__, static fn () => mailcoach_deactivate_plugin());
 
-function runPlugin(): void
+function mailcoach_run_plugin(): void
 {
     require_once plugin_dir_path(__FILE__) . 'src/Includes/Main.php';
 
@@ -62,4 +58,4 @@ function runPlugin(): void
     $plugin->run();
 }
 
-runPlugin();
+mailcoach_run_plugin();
