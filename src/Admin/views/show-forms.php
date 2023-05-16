@@ -22,10 +22,10 @@
                 <?php if (count($view->forms())) { ?>
                     <?php foreach ($view->forms() as $form) { ?>
                         <tr class='format-standard'>
-                        <td class='text-xs'><a href="<?php echo $form->editUrl() ?>"><?php echo $form->name ?></a></td>
-                        <td><input type='text' readonly='readonly' value='[<?php echo $form->shortcode ?>]' class='large-text code'></td>
-                        <td><?php echo $form->emailList?->name ?></td>
-                        <td><?php echo $form->createdAt() ?></td>
+                        <td class='text-xs'><a href="<?php echo esc_url($form->editUrl()) ?>"><?php echo esc_html($form->name) ?></a></td>
+                        <td><input type='text' readonly='readonly' value='[<?php echo esc_html($form->shortcode) ?>]' class='large-text code'></td>
+                        <td><?php echo esc_html($form->emailList?->name) ?></td>
+                        <td><?php echo esc_html($form->createdAt()) ?></td>
                         </tr>
                     <?php } ?>
                 <?php } else { ?>

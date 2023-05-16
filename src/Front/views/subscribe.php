@@ -4,9 +4,9 @@
     method="POST"
     action="<?php echo $view->form->actionUrl(); ?>">
 
-    <input type="hidden" name="redirect_after_subscribed" value=<?php echo $view->endpoints()['subscribed']; ?>>
-    <input type="hidden" name="redirect_after_subscription_pending" value=<?php echo $view->endpoints()['pending']; ?>>
-    <input type="hidden" name="redirect_after_already_subscribed" value=<?php echo $view->endpoints()['already_subscribed']; ?>>
+    <input type="hidden" name="redirect_after_subscribed" value=<?php echo esc_url($view->endpoints()['subscribed']); ?>>
+    <input type="hidden" name="redirect_after_subscription_pending" value=<?php echo esc_url($view->endpoints()['pending']); ?>>
+    <input type="hidden" name="redirect_after_already_subscribed" value=<?php echo esc_url($view->endpoints()['already_subscribed']); ?>>
 
     <input type="hidden" name="action" value="process_subscribe_form" />
 
@@ -17,6 +17,6 @@
     } ?>
 
     <?php if ($view->isProcessed()) { ?>
-        <p class="mailcoach-subscribe-status"><?php echo $view->submitMessage() ?></p>
+        <p class="mailcoach-subscribe-status"><?php echo esc_html($view->submitMessage()) ?></p>
     <?php } ?>
 </form>

@@ -24,7 +24,7 @@
             <tbody>
             <?php foreach ($lists->results() as $list) {
                 //$created = wp_date(get_option('date_format'), strtotime($list->attributes['created_at']));
-                $linkToMailcoach = $basePathUI . '/email-lists/' . $list->attributes['uuid'] . '/summary';
+                $linkToMailcoach = esc_url($basePathUI . '/email-lists/' . $list->attributes['uuid'] . '/summary');
 
                 echo "<tr>";
                 echo "<td><a href='{$linkToMailcoach}' target='_blank'>{$list->attributes['name']}</a></td>";

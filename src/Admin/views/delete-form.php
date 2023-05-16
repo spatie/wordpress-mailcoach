@@ -10,7 +10,7 @@
     <input type="hidden" name="action" value="delete_form">
     <?php wp_nonce_field('delete_form', 'mailcoach_delete_form_nonce'); ?>
 
-    <input type="hidden" name="shortcode" value=<?php echo $view->form->shortcode; ?>>
+    <input type="hidden" name="shortcode" value=<?php echo esc_html($view->form->shortcode); ?>>
 
     <a class="menu-delete" style="color: #b32d2e; display: inline-block; margin-top: 5px; margin-left: auto;" href="#" onclick="clicked()">Delete</a>
 </form>

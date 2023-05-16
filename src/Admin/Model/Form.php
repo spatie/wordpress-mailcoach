@@ -78,7 +78,7 @@ class Form implements Model
             'name' => $this->name,
             'shortcode' => $this->shortcode,
             'email_list_uuid' => $this->emailListUuid,
-            'content' => $this->content,
+            'content' => esc_html($this->content),
             'messages' => $this->messages->toArray(),
             'created_at' => $this->createdAt(),
         ];
