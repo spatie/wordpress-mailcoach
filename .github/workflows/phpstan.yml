@@ -9,20 +9,23 @@ on:
 
 jobs:
   phpstan:
-    name: phpstan
-    runs-on: ubuntu-latest
+    name: Phpstan ${{ matrix.php }} (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    matrix:
+      php: [8.1, 8.2]
+      os: [ubuntu-latest, windows-latest]
     steps:
       - uses: actions/checkout@v3
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.1'
+          php-version: ${{ matrix.php }}
           coverage: none
           tools: composer:latest
 
       - name: Install composer dependencies
-        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+        run: composer update -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
       - name: Run PHPStan
         run: ./vendor/bin/phpstan --error-format=github
