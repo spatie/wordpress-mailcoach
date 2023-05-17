@@ -37,5 +37,10 @@ jobs:
       - name: Install dependencies
         run: composer update -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
+      - name: Set up WordPress and WordPress Test Library
+        uses: sjinks/setup-wordpress-test-library@master
+        with:
+          version: latest
+
       - name: Execute tests
         run: vendor/bin/phpunit
