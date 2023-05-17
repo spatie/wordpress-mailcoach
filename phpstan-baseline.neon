@@ -16,21 +16,21 @@ parameters:
 			path: src/Admin/views/show-forms.php
 
 		-
-			message: "#^Function subscribeLink\\(\\) has no return type specified\\.$#"
+			message: "#^Function mailcoach_subscribe_link\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/custom-shortcodes.php
 
 		-
-			message: "#^Function subscribeLink\\(\\) has parameter \\$attributes with no type specified\\.$#"
+			message: "#^Function mailcoach_subscribe_link\\(\\) has parameter \\$attributes with no type specified\\.$#"
 			count: 1
 			path: src/custom-shortcodes.php
 
 		-
-			message: "#^Function subscribeLink\\(\\) has parameter \\$content with no type specified\\.$#"
+			message: "#^Function mailcoach_subscribe_link\\(\\) has parameter \\$content with no type specified\\.$#"
 			count: 1
 			path: src/custom-shortcodes.php
 
 		-
-			message: "#^Function subscribeLink\\(\\) has parameter \\$tag with no type specified\\.$#"
+			message: "#^Function mailcoach_subscribe_link\\(\\) has parameter \\$tag with no type specified\\.$#"
 			count: 1
 			path: src/custom-shortcodes.php
