@@ -34,7 +34,7 @@
                 <?php if ($view->showShortcode()) { ?>
                     <tr class="form-field form-required">
                         <th scope="row"><label for="shortcode">Shortcode</label></th>
-                        <td><input name="shortcode" type="text" id="shortcode" value="<?php echo esc_html($view->form->shortcode) ?>" readonly></td>
+                        <td><input name="shortcode" type="text" id="shortcode" value="<?php echo esc_html($view->form?->shortcode ?? '') ?>" readonly></td>
                     </tr>
                 <?php } ?>
 
@@ -57,7 +57,7 @@
                     <th scope="row"><label for="content">Form</label></th>
                     <td>
                         <textarea cols="30" rows="12" id="content" name="content" class="large-text code" data-config-field="form.body"><?php if ($view->isEditMode()) { ?>
-<?php echo esc_html($view->form->content) ?>
+<?php echo esc_html($view->form?->content ?? '') ?>
 <?php } else { ?>
 <label class="label label-required" for="email">Email</label>
 

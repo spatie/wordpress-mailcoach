@@ -24,7 +24,7 @@
                         <tr class='format-standard'>
                         <td class='text-xs'><a href="<?php echo esc_url($form->editUrl()) ?>"><?php echo esc_html($form->name) ?></a></td>
                         <td><input type='text' readonly='readonly' value='[<?php echo esc_html($form->shortcode) ?>]' class='large-text code'></td>
-                        <td><?php echo esc_html($form->emailList?->name) ?></td>
+                        <td><?php echo esc_html($form->emailList?->name ?? '') ?></td>
                         <td><?php echo esc_html($form->createdAt()) ?></td>
                         </tr>
                     <?php } ?>

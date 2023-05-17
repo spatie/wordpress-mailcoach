@@ -2,6 +2,7 @@
 
 namespace Spatie\WordPressMailcoach\Admin\ViewModel;
 
+use Spatie\MailcoachSdk\Resources\EmailList;
 use Spatie\MailcoachSdk\Support\PaginatedResults;
 use Spatie\WordPressMailcoach\Admin\Model\Form;
 use Spatie\WordPressMailcoach\Admin\Repository\FormRepository;
@@ -45,6 +46,7 @@ class IndexFormsViewModel
 
     /**
      * @param Form[] $forms
+     * @param PaginatedResults<EmailList> $emailLists
      * @return Form[]
      */
     private function setEmailListRelation(array $forms, PaginatedResults $emailLists): array
