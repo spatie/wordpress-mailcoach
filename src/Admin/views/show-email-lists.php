@@ -25,10 +25,12 @@
             <?php foreach ($lists->results() as $list) {
                 //$created = wp_date(get_option('date_format'), strtotime($list->attributes['created_at']));
                 $linkToMailcoach = esc_url($basePathUI . '/email-lists/' . $list->attributes['uuid'] . '/summary');
+                $name = esc_html($list->attributes['name']);
+                $activeSubscribersCount = esc_html($list->attributes['active_subscribers_count']);
 
                 echo "<tr>";
-                echo "<td><a href='{$linkToMailcoach}' target='_blank'>{$list->attributes['name']}</a></td>";
-                echo "<td>{$list->attributes['active_subscribers_count']}</td>";
+                echo "<td><a href='{$linkToMailcoach}' target='_blank'>{$name}</a></td>";
+                echo "<td>{$activeSubscribersCount}</td>";
                 echo "</tr>";
             } ?>
             </tbody>

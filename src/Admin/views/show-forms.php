@@ -12,9 +12,9 @@
         <table class="wp-list-table widefat fixed striped table-view-list posts">
             <thead>
             <tr>
-                <?php foreach ($view->tableHeaders() as $header) {
-                    echo "<th scope=\"col\" class=\"manage-column\">{$header}</th>";
-                } ?>
+                <?php foreach ($view->tableHeaders() as $header) { ?>
+                    <th scope="col" class="manage-column"><?php echo esc_html($header) ?></th>
+                <?php } ?>
             </tr>
             </thead>
 
@@ -35,9 +35,9 @@
 
             <tfoot>
                 <tr>
-                    <?php foreach ($view->tableHeaders() as $header) {
-                        echo "<th scope=\"col\" class=\"manage-column\">{$header}</th>";
-                    } ?>
+                    <?php foreach ($view->tableHeaders() as $header) { ?>
+                        <th scope="col" class="manage-column"><?php echo esc_html($header) ?></th>
+                    <?php } ?>
                 </tr>
             </tfoot>
 
