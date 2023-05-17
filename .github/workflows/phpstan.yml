@@ -9,7 +9,7 @@ on:
 
 jobs:
   phpstan:
-    name: Phpstan ${{ matrix.php }} (${{ matrix.os }})
+    name: Phpstan ${{ matrix.php }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
