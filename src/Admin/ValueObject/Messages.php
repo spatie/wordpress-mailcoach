@@ -14,6 +14,9 @@ class Messages
     ) {
     }
 
+    /**
+     * @param object{message_subscribed: string, message_pending: string, message_already_subscribed: string} $data
+     */
     public static function fromObject(object $data): self
     {
         return new self(

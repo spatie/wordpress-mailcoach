@@ -6,6 +6,21 @@ parameters:
 			path: src/Admin/AdminMenu.php
 
 		-
+			message: "#^Cannot access offset 'host' on array\\{scheme\\?\\: string, host\\?\\: string, port\\?\\: int\\<0, 65535\\>, user\\?\\: string, pass\\?\\: string, path\\?\\: string, query\\?\\: string, fragment\\?\\: string\\}\\|false\\.$#"
+			count: 1
+			path: src/Admin/Data/StoreSettingsData.php
+
+		-
+			message: "#^Cannot access offset 'scheme' on array\\{scheme\\?\\: string, host\\?\\: string, port\\?\\: int\\<0, 65535\\>, user\\?\\: string, pass\\?\\: string, path\\?\\: string, query\\?\\: string, fragment\\?\\: string\\}\\|false\\.$#"
+			count: 1
+			path: src/Admin/Data/StoreSettingsData.php
+
+		-
+			message: "#^Parameter \\$createdAt of class Spatie\\\\WordPressMailcoach\\\\Admin\\\\Model\\\\Form constructor expects DateTimeImmutable, DateTimeImmutable\\|false given\\.$#"
+			count: 1
+			path: src/Admin/Model/Form.php
+
+		-
 			message: "#^Unreachable statement \\- code above always terminates\\.$#"
 			count: 1
 			path: src/Admin/ValueObject/Messages.php

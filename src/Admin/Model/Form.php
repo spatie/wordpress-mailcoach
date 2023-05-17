@@ -27,6 +27,9 @@ class Form implements Model
     ) {
     }
 
+    /**
+     * @param object{id: string, name: string, shortcode: string, email_list_uuid: string, content: string, created_at: string, message_subscribed: string, message_pending: string, message_already_subscribed: string} $data
+     */
     public static function fromObject(object $data): self
     {
         return new self(

@@ -3,6 +3,8 @@
 namespace Spatie\WordPressMailcoach\Admin\Data;
 
 // If this file is called directly, abort.
+use RuntimeException;
+
 if (! defined('ABSPATH')) {
     exit;
 }
@@ -25,6 +27,10 @@ class StoreSettingsData
 
     private static function getDomain(string $url): string
     {
+        if (! filter_var($url, FILTER_VALIDATE_URL)) {
+            throw new RuntimeException("The given URL is not valid");
+        }
+
         $url = parse_url($url);
 
         return $url['scheme'] . '://' . $url['host'];
