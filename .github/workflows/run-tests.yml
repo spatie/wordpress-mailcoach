@@ -37,17 +37,5 @@ jobs:
       - name: Install dependencies
         run: composer update -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
-      - name: Set up WordPress and WordPress Test Library
-        uses: sjinks/setup-wordpress-test-library@master
-        with:
-          version: latest
-
-      - name: Verify MariaDB connection
-        run: |
-          while ! mysqladmin ping -h 127.0.0.1 -P ${{ job.services.mysql.ports[3306] }} --silent; do
-            sleep 1
-          done
-        timeout-minutes: 1
-
       - name: Execute tests
         run: vendor/bin/phpunit
