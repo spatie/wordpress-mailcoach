@@ -23,6 +23,15 @@ class Table
         return "{$wpdb->prefix}mailcoach_forms";
     }
 
+    public static function tablesExists(): bool
+    {
+        global $wpdb;
+
+        $formsTable = self::forms();
+
+        return $wpdb->get_var("SHOW TABLES LIKE '{$formsTable}'") === $formsTable;
+    }
+
     private static function createFormsTable(): void
     {
         global $wpdb;

@@ -31,27 +31,10 @@ class EnvironmentTest extends TestCase
     }
 
     /**
-     * Test that we can mock WordPress functions
-     *
-     * @see https://giuseppe-mazzapica.gitbook.io/brain-monkey/functions-testing-tools/functions-when#justreturn
-     */
-    public function testMockWordPressFunction(): void
-    {
-        $this->assertIsNumeric(
-            wp_insert_post([
-                'post_title' => 'If I learn it again, I would recommend:',
-                'post_content' => 'grow aloe. then grow cactus. then grow sempervivum. then grow lithops and echeveria',
-            ])
-        );
-
-        $this->assertSame(1, wp_insert_post());
-    }
-
-    /**
      * A test ensuring that the composer autoloader works
      */
     public function testAutoloaderWorks(): void
     {
-        (new Main())->run();
+        $this->assertNull((new Main())->run());
     }
 }
