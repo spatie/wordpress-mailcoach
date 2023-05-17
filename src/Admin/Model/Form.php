@@ -23,6 +23,8 @@ class Form implements Model
         public string $content,
         public Messages $messages,
         public DateTimeImmutable $createdAt,
+
+        // Relations
         public ?EmailList $emailList = null,
     ) {
     }
@@ -81,7 +83,7 @@ class Form implements Model
             'name' => $this->name,
             'shortcode' => $this->shortcode,
             'email_list_uuid' => $this->emailListUuid,
-            'content' => esc_html($this->content),
+            'content' => $this->content,
             'messages' => $this->messages->toArray(),
             'created_at' => $this->createdAt(),
         ];
