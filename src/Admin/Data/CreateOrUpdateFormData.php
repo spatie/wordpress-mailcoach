@@ -30,7 +30,7 @@ class CreateOrUpdateFormData
 
         return new self(
             $sanitizedName = sanitize_text_field($_POST['name']),
-            $_POST['shortcode'] ?? (new GenerateShortcode())->execute($sanitizedName),
+            sanitize_text_field($_POST['shortcode']) ?? (new GenerateShortcode())->execute($sanitizedName),
             sanitize_text_field($_POST['email-list']),
             Messages::fromRequest(),
             stripslashes(wp_kses_stripslashes($_POST['content'])),
