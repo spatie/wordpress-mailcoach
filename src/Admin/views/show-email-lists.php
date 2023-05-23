@@ -16,23 +16,19 @@
         <table class="wp-list-table widefat fixed striped table-view-list postso">
             <thead>
             <tr>
-                <?php foreach ($headers as $header) {
-                    echo "<th>{$header}</th>";
-                } ?>
+                <?php foreach ($headers as $header) { ?>
+                    <th><?php echo esc_html($header) ?></th>
+                <?php } ?>
             </tr>
             </thead>
             <tbody>
-            <?php foreach ($lists->results() as $list) {
-                //$created = wp_date(get_option('date_format'), strtotime($list->attributes['created_at']));
-                $linkToMailcoach = esc_url($basePathUI . '/email-lists/' . $list->attributes['uuid'] . '/summary');
-                $name = esc_html($list->attributes['name']);
-                $activeSubscribersCount = esc_html($list->attributes['active_subscribers_count']);
-
-                echo "<tr>";
-                echo "<td><a href='{$linkToMailcoach}' target='_blank'>{$name}</a></td>";
-                echo "<td>{$activeSubscribersCount}</td>";
-                echo "</tr>";
-            } ?>
+            <?php foreach ($lists->results() as $list) { ?>
+                <?php $linkToMailcoach = esc_url($basePathUI . '/email-lists/' . $list->attributes['uuid'] . '/summary'); ?>
+                <tr>
+                    <td><a href="<?php echo esc_url($linkToMailcoach) ?>" target="_blank"><?php echo esc_html($list->attributes['name']) ?></a></td>
+                    <td><?php echo esc_html($list->attributes['active_subscribers_count']) ?></td>
+                </tr>
+            <?php } ?>
             </tbody>
         </table>
 
