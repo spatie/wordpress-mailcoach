@@ -12,7 +12,7 @@ if (! defined('ABSPATH')) {
 
 class Deactivator
 {
-    public static function deactivate(): void
+    public static function uninstall(): void
     {
         self::deleteOptions();
 

@@ -41,14 +41,14 @@ function mailcoach_activate_plugin(): void
     Activator::activate();
 }
 
-function mailcoach_deactivate_plugin(): void
+function mailcoach_uninstall_plugin(): void
 {
     require_once plugin_dir_path(__FILE__) . 'src/Includes/Deactivator.php';
-    Deactivator::deactivate();
+    Deactivator::uninstall();
 }
 
 register_activation_hook(__FILE__, static fn () => mailcoach_activate_plugin());
-register_deactivation_hook(__FILE__, static fn () => mailcoach_deactivate_plugin());
+register_uninstall_hook(__FILE__, static fn () => mailcoach_uninstall_plugin());
 
 function mailcoach_run_plugin(): void
 {
