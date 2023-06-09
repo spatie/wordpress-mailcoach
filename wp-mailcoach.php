@@ -15,6 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       Mailcoach
  * Plugin URI:        https://github.com/spatie/wordpress-mailcoach
+ * Contributors:      nielsvanpach
  * Description:       Create forms for Mailcoach.
  * Version:           1.0.0
  * Author:            Spatie

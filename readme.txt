@@ -12,3 +12,6 @@ This plugin allows admins to create a subscribe form to a mailcoach email list. 
 
 == Description ==
 
+Mailcoach is an email marketing platform that covers all your email needs for a fraction of the cost. Don't pay for your subscribers, pay for what you send.
+
+
