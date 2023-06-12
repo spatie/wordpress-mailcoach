@@ -14,14 +14,6 @@ We invest a lot of resources into creating [best in class open source packages](
 
 We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
 
-
-### To Do
-
-- Setup testing environment (PhpUnit or Pest)
-- Add tests
-- Verify security, perhaps a WP developer can look into this?
-- Find a better solution than calling db in `custom-shortcodes.php`
-
 ### Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
@@ -38,6 +30,13 @@ If you discover any security related issues, please email [security@spatie.be](m
 
 - [Niels Vanpachtenbeke](https://github.com/nielsvanp)
 - [All Contributors](../../contributors)
+
+
+## Release instructions for maintainers
+
+- update spatie/laravel-mailcoach in `composer.json` with the highest version number of the package
+- update `readme.txt` and `wp-mailcoach` with the new release number
+- create a new release, it will automatically be pushed to the WordPress SVN
 
 ## License
 
