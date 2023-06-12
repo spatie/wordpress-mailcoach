@@ -34,7 +34,7 @@ If you discover any security related issues, please email [security@spatie.be](m
 
 ## Release instructions for maintainers
 
-- update spatie/laravel-mailcoach in `composer.json` with the highest version number of the package
+- update `spatie/mailcoach-sdk-php` in `composer.json` with the highest version number of the package
 - update `readme.txt` and `wp-mailcoach` with the new release number
 - create a new release, it will automatically be pushed to the WordPress SVN
 
