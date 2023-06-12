@@ -1,3 +1,7 @@
+## 0.0.5 - 2023-06-12
+
+**Full Changelog**: https://github.com/spatie/wordpress-mailcoach/compare/0.0.4...0.0.5
+
 ## 0.0.4 - 2023-06-09
 
 **Full Changelog**: https://github.com/spatie/wordpress-mailcoach/compare/0.0.3...0.0.4
