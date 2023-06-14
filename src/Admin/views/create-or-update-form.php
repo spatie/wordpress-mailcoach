@@ -11,6 +11,7 @@
     document.querySelector('#toplevel_page_mailcoach li:nth-child(3)').classList.add('current');
 </script>
 
+<?php if ($view->isApiSetup()) { ?>
 <div class="wrap">
     <?php if ($view->isSaved()) { ?>
         <div class="notice notice-success">
@@ -146,3 +147,9 @@
         warning.style.display = 'none';
     }
 </script>
+<?php } else { ?>
+    <div class="notice notice-error" style="margin-left: 0;">
+        <p>Your Mailcoach credentials have not been set up yet. <a href="<?php admin_url('admin.php?page=mailcoach') ?>">You
+                can do this here</a></p>
+    </div>
+<?php } ?>

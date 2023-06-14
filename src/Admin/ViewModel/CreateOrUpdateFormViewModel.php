@@ -38,6 +38,11 @@ class CreateOrUpdateFormViewModel
         );
     }
 
+    public function isApiSetup(): bool
+    {
+        return $this->mailcoach->hasCredentials();
+    }
+
     public function isEditMode(): bool
     {
         return $this->form !== null;
