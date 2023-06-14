@@ -29,7 +29,7 @@
                         </tr>
                     <?php } ?>
                 <?php } else { ?>
-                    <td colspan="<?php count($view->tableHeaders()) ?>">No forms yet.</td>
+                    <td colspan="<?php echo count($view->tableHeaders()) ?>">No forms yet.</td>
                 <?php } ?>
             </tbody>
 
