@@ -48,8 +48,8 @@ function mailcoach_uninstall_plugin(): void
     Deactivator::uninstall();
 }
 
-register_activation_hook(__FILE__, static fn () => mailcoach_activate_plugin());
-register_uninstall_hook(__FILE__, static fn () => mailcoach_uninstall_plugin());
+register_activation_hook(__FILE__, 'mailcoach_activate_plugin');
+register_uninstall_hook(__FILE__, 'mailcoach_uninstall_plugin');
 
 function mailcoach_run_plugin(): void
 {

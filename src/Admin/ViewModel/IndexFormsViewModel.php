@@ -11,8 +11,8 @@ use Spatie\WordPressMailcoach\Includes\Api\MailcoachApi;
 class IndexFormsViewModel
 {
     public function __construct(
-        private FormRepository $formRepository,
-        private MailcoachApi $mailcoach,
+        private readonly FormRepository $formRepository,
+        private readonly MailcoachApi $mailcoach,
     ) {
     }
 

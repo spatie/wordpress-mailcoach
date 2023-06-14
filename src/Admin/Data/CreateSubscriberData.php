@@ -30,8 +30,8 @@ class CreateSubscriberData
         if (! isset(
             $_POST['mailcoach_subscribe_submit'],
             $_POST['mailcoach_subscribe_nonce'],
-            $_POST['email_list_uuid']
-        )) {
+            $_POST['email_list_uuid'])
+        ) {
             throw InvalidData::fromRequest();
         }
 

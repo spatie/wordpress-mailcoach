@@ -22,3 +22,7 @@
 /phpunit.xml            export-ignore
 /psalm.xml              export-ignore
 /vendor-bin             export-ignore
+/.lint-staged.config.js export-ignore
+/.phpcs.xml             export-ignore
+/.phpstan-baseline.neon export-ignore
+/.phpstan.neon.dist     export-ignore

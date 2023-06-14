@@ -19,7 +19,7 @@ class AdminMenu implements HasHooks
 
     private MailcoachApi $mailcoach;
 
-    private function __construct(private Settings $settings)
+    private function __construct(private readonly Settings $settings)
     {
         $this->settingsController = SettingsController::make($settings);
         $this->mailcoach = MailcoachApi::fromSettings($settings);
