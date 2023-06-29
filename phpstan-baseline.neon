@@ -26,11 +26,6 @@ parameters:
 			path: src/Admin/ValueObject/Messages.php
 
 		-
-			message: "#^Call to function count\\(\\) on a separate line has no effect\\.$#"
-			count: 1
-			path: src/Admin/views/show-forms.php
-
-		-
 			message: "#^Function mailcoach_subscribe_link\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/custom-shortcodes.php
