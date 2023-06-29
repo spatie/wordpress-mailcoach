@@ -8,6 +8,18 @@ This plugin allows admins to create a subscribe form to a mailcoach email list. 
 
 ![Screenshot](./docs/screenshot.png)
 
+## Installation
+
+To install the Mailcoach plugin, follow these steps:
+
+1. Go to your WordPress site and navigate to the "Plugins" section.
+2. Click on the "Add New" button.
+3. Search for "Mailcoach" and click on the plugin.
+4. Click "Activate" to enable the plugin.
+5. You will now be able to see Mailcoach in your Admin navigation.
+
+Alternatively, you can download the plugin directly from the WordPress plugin store at https://wordpress.org/plugins/forms-mailcoach/
+
 ## Support us
 
 We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
