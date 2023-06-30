@@ -1,3 +1,7 @@
+## 0.0.12 - 2023-06-30
+
+**Full Changelog**: https://github.com/spatie/wordpress-mailcoach/compare/0.0.11...0.0.12
+
 ## 0.0.11 - 2023-06-30
 
 ### What's Changed
