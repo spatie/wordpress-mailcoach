@@ -11,6 +11,6 @@ To install the Mailcoach plugin, follow these steps:
 4. Click "Activate" to enable the plugin.
 5. You will now be able to see Mailcoach in your Admin navigation.
 
-Alternatively, you can download the plugin directly from the WordPress plugin store at https://wordpress.org/plugins/forms-mailcoach/.
+Alternatively, you can download the plugin directly from the WordPress plugin store at [https://wordpress.org/plugins/forms-mailcoach/](https://wordpress.org/plugins/forms-mailcoach/).
 
 ![](https://blog.mailcoach.de-fra1.upcloudobjects.com/WNYT3ePe9wh2UTVBBv103zmoXtXHqmn3JSGzQFls.png)
