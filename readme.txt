@@ -18,7 +18,6 @@ Mailcoach is an email marketing platform that covers all your email needs for a 
 
 Cloud, stand-alone, or integrated in a project, it's the perfect email list service for bloggers, artisans and entrepreneurs.
 
-
 This plugin allows admins to create a subscribe form to a mailcoach email list. This can be plugged into your website with a shortcode.
 
 
@@ -36,11 +35,12 @@ Alternatively, you can download the plugin directly from the WordPress plugin st
 
 ![](https://blog.mailcoach.de-fra1.upcloudobjects.com/WNYT3ePe9wh2UTVBBv103zmoXtXHqmn3JSGzQFls.png)
 
+
 ## Using Mailcoach
 
 ### Setting up your credentials
 
-Before we can proceed, we need an API Token and Mailcoach URL. You can find this information in the settings of your Mailcoach profile on your Mailcoach instance.
+Before we can proceed, you'll need an API Token and the Mailcoach URL, which can be obtained from your Mailcoach profile settings.
 
 1. Log in to your Mailcoach instance and access your Mailcoach profile settings.
 2. Create a new API Token.
@@ -48,12 +48,16 @@ Before we can proceed, we need an API Token and Mailcoach URL. You can find this
 4. Save the settings.
 5. You should be able to view all your email lists with the number of subscribers. If no lists are displayed, make sure you create a list on your Mailcoach instance first.
 
+![](https://blog.mailcoach.de-fra1.upcloudobjects.com/WNYT3ePe9wh2UTVBBv103zmoXtXHqmn3JSGzQFls.png)
+
 ![](https://blog.mailcoach.de-fra1.upcloudobjects.com/3lO5o6vFQWxN4BwIhUqIABSELQKu6A9dixwhLQAl.png)
 
-### Creating a subscribe form
 
-Now let's move on to the core functionality of the plugin.
-Navigate to the "Forms" or "Add Form" section in the WordPress Admin panel.
+### Creating a form
+
+Now let's move on to the core functionality of the plugin. Navigate to the "Forms" or "Add Form" section in the WordPress Admin panel.
+
+You can easily design and customize a form with your own HTML to seamlessly integrate with your website's look and feel.
 
 You may encounter a warning regarding the "Email List" with the message "External form subscriptions are not enabled for this list. Please enable them in the Mailcoach dashboard."
 To enable external form subscriptions, go to the email list settings on your Mailcoach instance.
@@ -61,13 +65,19 @@ Access the "Onboarding" tab and enable the option "Allow POST from an external f
 
 After saving the form, you will notice a shortcode field that cannot be updated. Copy the shortcode for later use.
 
-### Adding the subscribe form to your website
-
-To display the form on a specific page, follow these steps:
-
-1. Go to the desired page where you want to show the form.
-2. Paste the copied shortcode where you want the form to appear.
-3. Make sure the shortcode is enclosed within [brackets].
-4. After inserting the shortcode, view the page to test if the form is working correctly. Please note that there is spam protection in place using Cloudflare turnstile.
-
 You also have the option to customize the messages displayed to the user after they attempt to subscribe.
+
+![](https://blog.mailcoach.de-fra1.upcloudobjects.com/1Nx1zcS7tPXpXV4yrBT6R3GsurpnCHVAwFCE8lUg.png)
+
+
+### Embed a form on your page
+
+Displaying your subscription form on specific pages is a breeze.
+
+1. Navigate to the desired page where you want to showcase the form.
+2. Paste the shortcode at the desired location on the page.
+3. Ensure that the shortcode is enclosed within [brackets].
+4. After inserting the shortcode, preview the page to verify the form's functionality. Please note that Cloudflare 5. turnstile provides spam protection for your forms.
+
+![](https://blog.mailcoach.de-fra1.upcloudobjects.com/Qsr7NEUvwS5Sp1dUykH9DAxHSSoFKjMn2OFZ9JwC.png)
+![](https://blog.mailcoach.de-fra1.upcloudobjects.com/3JUysjSHDhn93lPSnkkYEDcIRDc99c1hDevh4TC1.png)
