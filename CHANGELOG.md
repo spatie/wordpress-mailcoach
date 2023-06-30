@@ -1,3 +1,15 @@
+## 0.0.11 - 2023-06-30
+
+### What's Changed
+
+- Docs by @Nielsvanpach in https://github.com/spatie/wordpress-mailcoach/pull/3
+
+### New Contributors
+
+- @Nielsvanpach made their first contribution in https://github.com/spatie/wordpress-mailcoach/pull/3
+
+**Full Changelog**: https://github.com/spatie/wordpress-mailcoach/compare/0.0.10...0.0.11
+
 ## 0.0.10 - 2023-06-14
 
 **Full Changelog**: https://github.com/spatie/wordpress-mailcoach/compare/0.0.9...0.0.10
