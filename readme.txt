@@ -8,9 +8,12 @@ Tested up to: 6.2
 Stable tag: 0.0.12
 License: MIT
 
-Mailcoach is an email marketing platform that covers all your email needs for a fraction of the cost. Don't pay for subscribers, pay for what you send.
+
+Embed forms easily on your WordPress site with this plugin. Use shortcodes to add them to specific pages, creating a seamless user experience.
 
 == Description ==
+
+Mailcoach is an email marketing platform that covers all your email needs for a fraction of the cost. Don't pay for subscribers, pay for what you send.
 
 ## Introduction
 

@@ -4,9 +4,9 @@
 
 > Mailcoach for WordPress
 
-This plugin allows admins to create a subscribe form to a mailcoach email list. This can be plugged into your website with a shortcode.
+This plugin allows you to embed forms on your WordPress website.
+This can be done on specific pages of your website using a shortcode, providing a seamless and user-friendly experience for your visitors.
 
-![Screenshot](./docs/screenshot.png)
 
 ## Documentation
 
