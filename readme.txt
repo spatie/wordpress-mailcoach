@@ -5,7 +5,7 @@ Tags: mail, mass mailing, spatie, mailcoach, developer
 Requires PHP: 8.1
 Requires at least: 8.1
 Tested up to: 6.2
-Stable tag: 0.0.10
+Stable tag: 0.0.12
 License: MIT
 
 Mailcoach is an email marketing platform that covers all your email needs for a fraction of the cost. Don't pay for subscribers, pay for what you send.

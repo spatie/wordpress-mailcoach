@@ -9,7 +9,7 @@
  * that starts the plugin.
  *
  * @link              https://mailcoach.app
- * @since             0.0.10
+ * @since             0.0.12
  * @package           Mailcoach
  *
  * @wordpress-plugin
