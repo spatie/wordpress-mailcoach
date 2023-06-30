@@ -1,4 +1,4 @@
 ---
 title: Getting started
-weight: 0
+weight: 2
 ---

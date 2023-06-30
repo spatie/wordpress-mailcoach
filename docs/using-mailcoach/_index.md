@@ -1,4 +1,4 @@
 ---
 title: Using Mailcoach
-weight: 1
+weight: 2
 ---

@@ -1,6 +1,6 @@
 ---
 title: In an existing WordPress app
-weight: 4
+weight: 3
 ---
 
 To install the Mailcoach plugin, follow these steps:
