@@ -11,6 +11,6 @@ Displaying your subscription form on specific pages is a breeze.
 
 ![](https://blog.mailcoach.de-fra1.upcloudobjects.com/Qsr7NEUvwS5Sp1dUykH9DAxHSSoFKjMn2OFZ9JwC.png)
 
-After inserting the shortcode, preview the page to verify the form's functionality. Please note that Cloudflare 5. turnstile provides spam protection for your forms.
+After inserting the shortcode, preview the page to verify the form's functionality. Please note that Cloudflare turnstile provides spam protection for your forms.
 
 ![](https://blog.mailcoach.de-fra1.upcloudobjects.com/3JUysjSHDhn93lPSnkkYEDcIRDc99c1hDevh4TC1.png)
