@@ -9,9 +9,9 @@
         ?><p>No lists were found on your account.</p><?php
     }
 
-    if (! empty($lists->results())) {
-        $headers = ['Name', 'Subscribers'];
-        ?>
+if (! empty($lists->results())) {
+    $headers = ['Name', 'Subscribers'];
+    ?>
 
         <table class="wp-list-table widefat fixed striped table-view-list postso">
             <thead>
@@ -33,6 +33,6 @@
         </table>
 
         <?php
-    }
+}
 ?>
 </section>
