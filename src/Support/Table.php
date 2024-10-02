@@ -36,6 +36,10 @@ class Table
     {
         global $wpdb;
 
+        if (self::tablesExists()) {
+            return;
+        }
+
         $tableName = self::forms();
 
         $charset_collate = $wpdb->get_charset_collate();
