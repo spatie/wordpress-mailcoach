@@ -1,3 +1,16 @@
+## 0.0.13 - 2024-10-02
+
+### What's Changed
+
+* Bug fix: error on reactivation by @Nielsvanpach in https://github.com/spatie/wordpress-mailcoach/pull/6
+* Bump braces from 3.0.2 to 3.0.3 by @dependabot in https://github.com/spatie/wordpress-mailcoach/pull/5
+
+### New Contributors
+
+* @dependabot made their first contribution in https://github.com/spatie/wordpress-mailcoach/pull/5
+
+**Full Changelog**: https://github.com/spatie/wordpress-mailcoach/compare/0.0.12...0.0.13
+
 ## 0.0.12 - 2023-06-30
 
 **Full Changelog**: https://github.com/spatie/wordpress-mailcoach/compare/0.0.11...0.0.12
