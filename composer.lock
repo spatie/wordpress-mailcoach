@@ -596,16 +596,16 @@
         },
         {
             "name": "spatie/mailcoach-sdk-php",
-            "version": "1.1.0",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/mailcoach-sdk-php.git",
-                "reference": "b0bd6949d3744b2127a9ec5615e0e2325f8d4d91"
+                "reference": "486972cd1102f25dec8237fdab677ad71f0346ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/mailcoach-sdk-php/zipball/b0bd6949d3744b2127a9ec5615e0e2325f8d4d91",
-                "reference": "b0bd6949d3744b2127a9ec5615e0e2325f8d4d91",
+                "url": "https://api.github.com/repos/spatie/mailcoach-sdk-php/zipball/486972cd1102f25dec8237fdab677ad71f0346ec",
+                "reference": "486972cd1102f25dec8237fdab677ad71f0346ec",
                 "shasum": ""
             },
             "require": {
@@ -648,7 +648,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/mailcoach-sdk-php/issues",
-                "source": "https://github.com/spatie/mailcoach-sdk-php/tree/1.1.0"
+                "source": "https://github.com/spatie/mailcoach-sdk-php/tree/1.7.0"
             },
             "funding": [
                 {
@@ -656,7 +656,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-02-09T12:45:49+00:00"
+            "time": "2024-08-28T15:54:25+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
