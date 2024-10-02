@@ -9,7 +9,7 @@
  * that starts the plugin.
  *
  * @link              https://mailcoach.app
- * @since             0.0.13
+ * @since             0.0.14
  * @package           Mailcoach
  *
  * @wordpress-plugin
@@ -17,7 +17,7 @@
  * Plugin URI:        https://github.com/spatie/wordpress-mailcoach
  * Contributors:      nielsvanpach
  * Description:       Create forms for Mailcoach.
- * Version:           0.0.13
+ * Version:           0.0.14
  * Author:            Spatie
  * Author URI:        https://spatie.be
  * License:           MIT
