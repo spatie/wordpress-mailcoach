@@ -1,5 +1,5 @@
 === Mailcoach ===
-Contributors: nielsvanp
+Contributors: nielsvanp, freekmurze
 Donate link: https://github.com/sponsors/spatie
 Tags: mail, mass mailing, spatie, mailcoach, developer
 Requires PHP: 8.1
