@@ -5,7 +5,7 @@ Tags: mail, mass mailing, spatie, mailcoach, developer
 Requires PHP: 8.1
 Requires at least: 6.2
 Tested up to: 6.2
-Stable tag: 0.0.14
+Stable tag: 0.0.15
 License: MIT
 
 
