@@ -1,3 +1,16 @@
+## 0.0.14 - 2024-10-02
+
+### What's Changed
+
+* Bump stefanzweifel/git-auto-commit-action from 4 to 5 by @dependabot in https://github.com/spatie/wordpress-mailcoach/pull/7
+* Bump actions/checkout from 3 to 4 by @dependabot in https://github.com/spatie/wordpress-mailcoach/pull/8
+* Bump szepeviktor/phpstan-wordpress from 1.3.0 to 1.3.5 by @dependabot in https://github.com/spatie/wordpress-mailcoach/pull/10
+* Bump guzzlehttp/guzzle from 7.7.0 to 7.9.2 by @dependabot in https://github.com/spatie/wordpress-mailcoach/pull/9
+* Bump phpstan/extension-installer from 1.3.1 to 1.4.3 by @dependabot in https://github.com/spatie/wordpress-mailcoach/pull/12
+* Bump yoast/wp-test-utils from 1.1.1 to 1.2.0 by @dependabot in https://github.com/spatie/wordpress-mailcoach/pull/11
+
+**Full Changelog**: https://github.com/spatie/wordpress-mailcoach/compare/0.0.13...0.0.14
+
 ## 0.0.13 - 2024-10-02
 
 ### What's Changed
