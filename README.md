@@ -1,4 +1,4 @@
-[![Latest Version](https://img.shields.io/github/release/spatie/wordpress-mailcoach.svg?style=flat-square)](https://github.com/spatie/statamic-mailcoach/releases)
+[![Latest Version](https://img.shields.io/github/release/spatie/wordpress-mailcoach.svg?style=flat-square)](https://github.com/spatie/wordpress-mailcoach/releases)
 
 # Mailcoach
 
