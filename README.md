@@ -7,11 +7,11 @@
 This plugin allows you to embed forms on your WordPress website.
 This can be done on specific pages of your website using a shortcode, providing a seamless and user-friendly experience for your visitors.
 
-
 ## Documentation
 
 You can find the documentation on [https://spatie.be/docs/wordpress-mailcoach](https://spatie.be/docs/wordpress-mailcoach).
 
+**Please note that this plugin is no longer supported.** You’re still welcome to use it, but please be aware that it’s now self-managed and no longer maintained by our team.
 
 ## Support us
 
@@ -33,15 +33,14 @@ If you discover any security related issues, please email [security@spatie.be](m
 
 ## Credits
 
-- [Niels Vanpachtenbeke](https://github.com/nielsvanp)
-- [All Contributors](../../contributors)
-
+-   [Niels Vanpachtenbeke](https://github.com/nielsvanp)
+-   [All Contributors](../../contributors)
 
 ## Release instructions for maintainers
 
-- update `spatie/mailcoach-sdk-php` in `composer.json` with the highest version number of the package
-- update `readme.txt` and `wp-mailcoach` with the new release number
-- create a new release, it will automatically be pushed to the WordPress SVN
+-   update `spatie/mailcoach-sdk-php` in `composer.json` with the highest version number of the package
+-   update `readme.txt` and `wp-mailcoach` with the new release number
+-   create a new release, it will automatically be pushed to the WordPress SVN
 
 ## License
 
