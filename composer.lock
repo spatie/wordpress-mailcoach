@@ -599,26 +599,25 @@
         },
         {
             "name": "spatie/mailcoach-sdk-php",
-            "version": "1.8.1",
+            "version": "1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/mailcoach-sdk-php.git",
-                "reference": "6f1ac731639518f2b252e909df797838e0041556"
+                "reference": "6c641b909aa5ca6b4e06e5d5d78219f691379b15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/mailcoach-sdk-php/zipball/6f1ac731639518f2b252e909df797838e0041556",
-                "reference": "6f1ac731639518f2b252e909df797838e0041556",
+                "url": "https://api.github.com/repos/spatie/mailcoach-sdk-php/zipball/6c641b909aa5ca6b4e06e5d5d78219f691379b15",
+                "reference": "6c641b909aa5ca6b4e06e5d5d78219f691379b15",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.1"
+                "php": "^8.3"
             },
             "require-dev": {
                 "guzzlehttp/guzzle": "^7.0",
                 "laravel/pint": "^1.2",
-                "pestphp/pest": "^1.20",
-                "pestphp/pest-plugin-mock": "^1.0",
+                "pestphp/pest": "^4.0",
                 "phpstan/phpstan": "^1.9",
                 "spatie/invade": "^2.1",
                 "spatie/ray": "^1.28",
@@ -653,7 +652,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/mailcoach-sdk-php/issues",
-                "source": "https://github.com/spatie/mailcoach-sdk-php/tree/1.8.1"
+                "source": "https://github.com/spatie/mailcoach-sdk-php/tree/1.10.0"
             },
             "funding": [
                 {
@@ -661,7 +660,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-11-08T07:51:47+00:00"
+            "time": "2026-05-29T18:49:06+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -6419,12 +6418,12 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.1"
     },
-    "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "platform-dev": {},
+    "plugin-api-version": "2.9.0"
 }
