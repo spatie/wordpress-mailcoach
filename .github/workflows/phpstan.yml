@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - '**.php'
+      - 'composer.json'
+      - 'composer.lock'
       - 'phpstan.neon.dist'
       - '.github/workflows/phpstan.yml'
 
@@ -14,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php: [8.1, 8.2]
+        php: ['8.3', '8.4', '8.5']
         os: [ubuntu-latest]
 
     steps:
@@ -28,7 +30,7 @@ jobs:
           tools: composer:latest
 
       - name: Install composer dependencies
-        run: composer update -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+        run: composer install --no-interaction --no-progress --prefer-dist
 
       - name: Run PHPStan
         run: ./vendor/bin/phpstan --error-format=github

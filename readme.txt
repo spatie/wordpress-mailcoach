@@ -2,10 +2,10 @@
 Contributors: nielsvanp, freekmurze
 Donate link: https://github.com/sponsors/spatie
 Tags: mail, mass mailing, spatie, mailcoach, developer
-Requires PHP: 8.1
+Requires PHP: 8.3
 Requires at least: 6.2
-Tested up to: 6.6.2
-Stable tag: 0.0.16
+Tested up to: 7.1.4
+Stable tag: 0.0.17
 License: MIT
 
 
@@ -25,6 +25,8 @@ This plugin allows admins to create a subscribe form to a mailcoach email list. 
 
 
 ## Installation
+
+Version 0.0.17 and later require PHP 8.3 or newer. Update PHP before updating the plugin.
 
 To install the Mailcoach plugin, follow these steps:
 

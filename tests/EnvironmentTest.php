@@ -37,4 +37,23 @@ class EnvironmentTest extends TestCase
     {
         $this->assertNull((new Main())->run());
     }
+
+    public function testPluginRequirementsMatchTheBundledSdk(): void
+    {
+        require_once ABSPATH . 'wp-admin/includes/plugin.php';
+
+        $plugin = get_plugin_data(dirname(__DIR__) . '/wp-mailcoach.php');
+        $readme = get_file_data(dirname(__DIR__) . '/readme.txt', [
+            'php' => 'Requires PHP',
+            'version' => 'Stable tag',
+        ]);
+        $composer = json_decode(file_get_contents(dirname(__DIR__) . '/composer.json'), true);
+
+        $this->assertSame('8.3', $plugin['RequiresPHP']);
+        $this->assertSame($plugin['RequiresPHP'], $readme['php']);
+        $this->assertSame('^8.3', $composer['require']['php']);
+        $this->assertSame($plugin['Version'], $readme['version']);
+        $this->assertTrue(is_php_version_compatible($plugin['RequiresPHP']));
+        $this->assertTrue(version_compare('8.2.99', $plugin['RequiresPHP'], '<'));
+    }
 }
