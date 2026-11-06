@@ -60,6 +60,11 @@ jobs:
           composer check-platform-reqs
           composer audit
 
+      - name: Install WordPress test tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y subversion default-mysql-client
+
       - name: Install WordPress test suite
         run: bash bin/install-wp-tests.sh wordpress_test root root 127.0.0.1 ${{ matrix.wordpress }}
 
