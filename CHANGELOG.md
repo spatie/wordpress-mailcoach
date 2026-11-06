@@ -1,3 +1,23 @@
+## 0.0.17 - 2026-11-06
+
+### Requirements
+
+**PHP 8.3 or newer is now required (previously PHP 8.1). Upgrade PHP before updating the plugin.** The WordPress minimum remains 6.2; compatibility is tested through WordPress 7.1.4.
+
+### Changes since 0.0.16
+
+- Bundle Mailcoach SDK 1.10.0 (the last published plugin bundled 1.7.0), with PHP requirements aligned across Composer and WordPress metadata.
+- Update Guzzle 7 and its dependencies to patched releases without adopting Guzzle 8.
+- Repair WordPress integration-test bootstrapping and restore actual runtime CI on PHP 8.3, 8.4 and 8.5, including the minimum WordPress version, email-list HTTP integration, form-list filtering and production-only activation.
+- Build the WordPress distribution from the lockfile on PHP 8.3 without bypassing platform requirements; check platform compatibility and security advisories.
+- Include previously unreleased documentation, contributor and development-tool/CI maintenance. The existing self-managed/unsupported project status is unchanged.
+
+### Known limitation
+
+Fresh activation with WordPress debugging enabled can report unexpected output when shortcode registration queries the forms table before the activation hook creates it. This issue was observed during review and is intentionally left unchanged for separate consideration. Passing activation coverage uses an initialized test database and does not establish missing-table activation success; no published-distribution before/after comparison was performed.
+
+**Full Changelog**: https://github.com/spatie/wordpress-mailcoach/compare/0.0.16...0.0.17
+
 ## 0.0.16 - 2024-10-02
 
 **Full Changelog**: https://github.com/spatie/wordpress-mailcoach/compare/0.0.15...0.0.16
