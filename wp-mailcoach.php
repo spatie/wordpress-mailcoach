@@ -17,7 +17,7 @@
  * Plugin URI:        https://github.com/spatie/wordpress-mailcoach
  * Contributors:      nielsvanpach
  * Description:       Create forms for Mailcoach.
- * Version:           0.0.17
+ * Version:           0.0.18
  * Author:            Spatie
  * Author URI:        https://spatie.be
  * License:           MIT
