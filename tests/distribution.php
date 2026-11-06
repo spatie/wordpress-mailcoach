@@ -14,6 +14,7 @@ if (! file_exists($pluginDirectory)) {
 }
 
 $plugin = 'forms-mailcoach/wp-mailcoach.php';
+deactivate_plugins($plugin);
 $result = activate_plugin($plugin);
 if (is_wp_error($result)) {
     throw new RuntimeException($result->get_error_message());
