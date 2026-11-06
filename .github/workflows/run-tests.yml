@@ -71,8 +71,15 @@ jobs:
       - name: Execute tests
         run: vendor/bin/phpunit
 
-      - name: Verify production-only plugin activation
+      - name: Verify production-only plugin on initialized WordPress
         run: |
           composer install -o --no-dev --no-interaction --prefer-dist
+          composer check-platform-reqs --no-dev
+          php tests/distribution.php
+
+      - name: Verify production client without native ctype
+        run: |
+          sudo phpdismod -s cli ctype
+          php -r 'if (extension_loaded("ctype")) { throw new RuntimeException("Native ctype is still enabled."); }'
           composer check-platform-reqs --no-dev
           php tests/distribution.php

@@ -35,4 +35,17 @@ if ($api->hasCredentials()) {
     throw new RuntimeException('The plugin should recognize missing API credentials.');
 }
 
-echo "Production-only plugin activation passed on PHP " . PHP_VERSION . " and WordPress " . get_bloginfo('version') . PHP_EOL;
+update_option('mailcoach_api_token', 'distribution-test-token');
+update_option('mailcoach_api_endpoint', 'http://127.0.0.1:8080');
+
+$api = Spatie\WordPressMailcoach\Includes\Api\MailcoachApi::fromSettings(
+    Spatie\WordPressMailcoach\Admin\ValueObject\Settings::make(),
+);
+if (! $api->hasCredentials()) {
+    throw new RuntimeException('The production client should accept an endpoint with an explicit port.');
+}
+
+delete_option('mailcoach_api_token');
+delete_option('mailcoach_api_endpoint');
+
+echo "Production-only plugin passed on initialized WordPress " . get_bloginfo('version') . ', PHP ' . PHP_VERSION . ', native ctype ' . (extension_loaded('ctype') ? 'enabled' : 'disabled') . PHP_EOL;
