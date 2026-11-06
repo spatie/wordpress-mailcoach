@@ -17,12 +17,13 @@
  * Plugin URI:        https://github.com/spatie/wordpress-mailcoach
  * Contributors:      nielsvanpach
  * Description:       Create forms for Mailcoach.
- * Version:           0.0.16
+ * Version:           0.0.17
  * Author:            Spatie
  * Author URI:        https://spatie.be
  * License:           MIT
  * Text Domain:       mailcoach-forms
- * Requires PHP:      8.1
+ * Requires at least: 6.2
+ * Requires PHP:      8.3
  */
 
 use Spatie\WordpressMailcoach\Includes\Activator;

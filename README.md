@@ -7,6 +7,8 @@
 This plugin allows you to embed forms on your WordPress website.
 This can be done on specific pages of your website using a shortcode, providing a seamless and user-friendly experience for your visitors.
 
+Version 0.0.17 and later require PHP 8.3 or newer. Update PHP before updating the plugin.
+
 ## Documentation
 
 You can find the documentation on [https://spatie.be/docs/wordpress-mailcoach](https://spatie.be/docs/wordpress-mailcoach).
