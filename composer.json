@@ -20,7 +20,7 @@
     ],
     "require": {
         "php": "^8.3",
-        "guzzlehttp/guzzle": "^7.5",
+        "guzzlehttp/guzzle": "^8.3",
         "spatie/mailcoach-sdk-php": "^1.10.0",
         "automattic/jetpack-autoloader": "^2.11"
     },
